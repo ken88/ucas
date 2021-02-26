@@ -95,19 +95,14 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="login" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
                         <li><a href="#" onclick="launchFieldHelp('apply1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">What is Apply?</a></li>
-                        <li><a href="#" onclick="launchFieldHelp('/help/index1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">Help</a></li>
-                        <li class="last"><select name="cboLang" size="1" onchange="document.Form1.functionname.value='changelanguage';document.Form1.submit();">
-                                <option value="2">Cymraeg</option>
-                                <option value="1" selected="selected">English</option>
-                            </select>
-                        </li>
+                        <li class="last"><a href="#" onclick="launchFieldHelp('/help/index2', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">Help</a></li>
                     </ul><h3>Key</h3>
                     <ul id="key">
                         <li id="help" class="last">Help</li>
@@ -171,7 +166,9 @@
                                     <label >&nbsp;</label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="submit" name="btnRegister" value="register" tabindex="3" class="submitBtn"/>
+                                    <a href="register">
+                                    <input type="button" name="btnRegister" value="register" tabindex="3" class="submitBtn"/>
+                                    </a>
 
                                 </div>
                             </div><!--close form element -->

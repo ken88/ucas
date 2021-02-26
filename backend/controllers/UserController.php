@@ -11,6 +11,19 @@ class UserController extends BaseController
         return $this->renderPartial('index');
     }
 
+    # 注册
+    public function actionRegister() {
+        return $this->renderPartial('register');
+    }
+
+    public function actionRegister1() {
+        return $this->renderPartial('register1');
+    }
+
+    public function actionRegister2() {
+        return $this->renderPartial('register2');
+    }
+
     public function actionApply1() {
         return $this->renderPartial('/apply/index1');
     }
