@@ -1,0 +1,225 @@
+/*
+CSS Document
+Author: Gary Morris
+Client: UCAS
+Date: 201206
+*/
+
+#backgroundPopup {
+    display: none;
+    position: fixed;
+    _position: absolute; /* hack for internet explorer 6*/
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000000;
+    border: 1px solid #333333;
+    z-index: 1;
+    padding: 0;
+} 
+
+#popupContact {
+    display: none;
+    position: absolute;
+    _position: absolute; /* hack for internet explorer 6*/
+    height: auto;
+    width: 498px;
+    background: #FFFFFF;
+    border: 2px solid #333333;
+    z-index: 2;
+    font-size: 13px;
+
+} 
+
+#popupContact h1 {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #333333;
+  padding: 6px;
+  margin-bottom: 2px;
+  margin-top: 0;
+  background: #E11C18;
+}
+
+#popupContactOK {
+    display: none;
+    position: absolute;
+    _position: absolute; /* hack for internet explorer 6*/
+    height: auto;
+    width: 298px;
+    background: #FFFFFF;
+    border: 2px solid #333333;
+    z-index: 2;
+    font-size: 13px;
+
+} 
+
+#popupContactOK h1 {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #333333;
+  padding: 6px;
+  margin-bottom: 2px;
+  margin-top: 0;
+  background: #E11C18;
+}
+
+
+#contactArea {
+  padding-left: 3px;
+} 
+
+#popupSave {
+  margin-left: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#popupCancel, #popupOK {
+  margin-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#popupAgree{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.popupHeader{
+  float:left;
+  width:100%;
+  margin-left: 5px;
+}
+
+.popupCol{
+  float:left;
+  width:45%;
+  margin-left: 5px;
+}
+
+.popup2ndCol{
+  float:right;
+  width:45%;
+  margin-left: 5px;
+}
+
+.clear{
+  clear:both;
+}
+
+.thisForm{
+  width:100%;
+  float: left;
+}
+
+#titleMsg{
+  margin: 10px;
+  padding: 0;
+}
+
+#appsNoQualsList{
+  margin: 10px;
+  padding: 0;
+}
+#appsNoQualsListOKOnly{
+  margin: 10px;
+  padding: 0;
+}
+
+#popupOKOnly{
+  /* styles for button */ 
+  width: 80px; 
+  height: 30px; 
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align:center;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+     
+  /* button colour */
+  background-color: #e11c18;
+   
+  /* css3 implementation :) */
+  /* rounded corner */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;     
+    
+  /* drop shadow */
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    
+  /* text shadow */
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+#popupAgreed, #popupCancel, #popupOK{
+  /* styles for button */ 
+  width: 80px; 
+  height: 30px; 
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align:center;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+     
+  /* button colour */
+  background-color: #e11c18;
+   
+  /* css3 implementation :) */
+  /* rounded corner */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;     
+    
+  /* drop shadow */
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    
+  /* text shadow */
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+}
+
+#btnsPopUpCentre{
+  margin-left:120px;
+  margin-bottom:10px;
+  float:left;
+}
+
+#btnsPopUpCentreOKOnly{
+  margin-left:85px;
+  margin-bottom:10px;
+  float:left;
+}
+
+.headingValue{
+  width: 200px;
+  float: left;
+}
+
+.fieldValue{
+  width: 40px;
+  float: left;
+}

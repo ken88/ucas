@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+	<defs>
+		<linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+			<stop offset="0%" stop-color="#1F2935" stop-opacity="0.5" />
+			<stop offset="100%" stop-color="#1F2935" />
+		</linearGradient>
+	</defs>
+
+	<polygon points="0,0 100,60 100,101 0,101" fill="url(#gradient)" />
+	<line x1="0" y1="100" x2="100" y2="100" stroke="#1F2935" />
+</svg>
