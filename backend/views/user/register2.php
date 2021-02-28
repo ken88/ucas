@@ -87,12 +87,17 @@
             <div id="strapLineApply">
                 <h1 class="EN">Register: Initial details</h1>
             </div><!--strapLineApply ENDS here-->
-            <!--This 3 lines of code target the printed page only-->  <div id="strapLineApplyPrint">  <img src="/static/picture/apply_interactive_pagehead_print.jpg" alt="apply" />  </div><!--StrapLinePrint ENDS here--></div><!--header ENDS here-->
+            <!--This 3 lines of code target the printed page only-->
+            <div id="strapLineApplyPrint">
+                <img src="/static/picture/apply_interactive_pagehead_print.jpg" alt="apply" />
+            </div>
+            <!--StrapLinePrint ENDS here-->
+        </div>
+        <!--header ENDS here-->
 
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -175,9 +180,7 @@
                                 <p class="bold">Compulsory fields are marked with an asterisk (<span class="Req">*</span>).
 
                                 <br>
-                                <div class="errorTxt">
-
-                                </div>
+                                <div class="errorTxt"></div>
                                 <div style="display: none;" id="dialog-modal-extended-chars" title="Information">
                                     <p>You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them.</p>
                                 </div>
@@ -191,8 +194,9 @@
                                         <label for="titleCombo">Title<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fullWidth"><select name="cboTitle" size="1" onchange="setGender(tg, this, document.forms[0].genderCombo);" class="floatLeft" id="titleCombo">
-                                                <option value="-">Please select...</option>
+                                        <div id="fullWidth">
+                                            <select name="title" id="title" size="1"  class="floatLeft" >
+                                                <option value="">Please select...</option>
                                                 <option value="Miss">Miss</option>
                                                 <option value="Mr">Mr</option>
                                                 <option value="Mrs">Mrs</option>
@@ -257,10 +261,10 @@
                                         <label for="genderCombo">Gender<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fullWidth"><select name="cboGender" size="1" class="floatLeft" id="genderCombo">
-                                                <option value="-">Please select...</option>
-                                                <option value="M">Male</option>
-                                                <option value="F">Female</option>
+                                        <div id="fullWidth"><select name="gender" size="1" class="floatLeft" id="gender">
+                                                <option value="">Please select...</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
                                             </select>
                                         </div>
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.INITIALDETAILS.FIELD.GENDER'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -273,7 +277,7 @@
                                         <label for="forenameText">First/given name(s)<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtForename" value="" size="24" maxlength="50" class="floatLeft" id="forenameText">
+                                        <input type="text" name="txtForename" value="" size="24" maxlength="50" class="floatLeft" id="txtForename">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.INITIALDETAILS.FIELD.FORENAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -284,7 +288,7 @@
                                         <label for="surnameText">Surname/family name<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtSurname" value="" size="24" maxlength="30" class="floatLeft" id="surnameText">
+                                        <input type="text" name="txtSurname" value="" size="24" maxlength="30" class="floatLeft" id="txtSurname">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.INITIALDETAILS.FIELD.SURNAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -295,8 +299,8 @@
                                         <label for="dobDayCombo">Date of birth<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fullWidth"><select name="cboDobDay" size="1" class="floatLeft" id="dobDayCombo">
-                                                <option value="-">Day</option>
+                                        <div id="fullWidth"><select name="cboDobDay" size="1" class="floatLeft" id="cboDobDay">
+                                                <option value="">Day</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -330,8 +334,9 @@
                                                 <option value="31">31</option>
                                             </select>
                                         </div>
-                                        <div id="fullWidth"><select name="cboDobMonth" size="1" class="floatLeft" id="dobMonthCombo">
-                                                <option value="-">Month</option>
+                                        <div id="fullWidth">
+                                            <select name="cboDobMonth" size="1" class="floatLeft" id="cboDobMonth">
+                                                <option value="">Month</option>
                                                 <option value="1">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
@@ -346,8 +351,9 @@
                                                 <option value="12">December</option>
                                             </select>
                                         </div>
-                                        <div id="fullWidth"><select name="cboDobYear" size="1" class="floatLeft" id="dobYearCombo">
-                                                <option value="-">Year</option>
+                                        <div id="fullWidth">
+                                            <select name="cboDobYear" size="1" class="floatLeft" id="cboDobYear">
+                                                <option value="">Year</option>
                                                 <option value="2008">2008</option>
                                                 <option value="2007">2007</option>
                                                 <option value="2006">2006</option>
@@ -450,13 +456,12 @@
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <table><tbody><tr>
-                                                <td><input type="submit" name="btnNext" value="next" onclick="setJavaEnabled()" style="position : absolute; top : -1000px; left : -1000px;">
-                                                    <input type="submit" name="btnPrevious" value="previous" onclick="setJavaEnabled()" class="submitBtn">
-                                                    <input type="hidden" name="hidJavaScriptEnabled" value="false" id="hidJavaScriptEnabled">
-                                                    &nbsp;&nbsp;<input type="submit" name="btnNext" value="next" onclick="setJavaEnabled()" class="submitBtn">
-                                                </td>
-                                            </tr></tbody></table>
+                                        <a href="register1">
+                                        <input type="button" name="btnPrevious" value="previous"  class="submitBtn">
+                                        </a>
+                                        &nbsp;&nbsp;
+                                        <input type="button" name="btnNext" value="next" onclick="check()" class="submitBtn">
+
                                     </div>
                                 </div>
                                 <!-- Previous and Next  Buttons ends here-->
@@ -479,7 +484,6 @@
             <div class="clearDiv">&nbsp;</div>
             <!-- temporary position/style -->
 
-        </form><!-- Form ends here -->
         <!-- 'footer' div starts here  -->
         <div id="footer">
             <ul class="floatLeft">
@@ -509,3 +513,41 @@
 <div id="backgroundPopup"></div>
 </body>
 </html>
+<script type="text/javascript">
+    function check() {
+
+        var  title = $('#title').val(); // 标题*
+        var  gender = $('#gender').val(); // 性别*
+        var  txtForename = $('#txtForename').val(); // 名
+        var  txtSurname = $('#txtSurname').val(); // 姓
+        var  cboDobYear = $('#cboDobYear').val(); // 年
+        var  cboDobMonth = $('#cboDobMonth').val(); // 月
+        var  cboDobDay = $('#cboDobDay').val(); // 日
+        var err = '';
+        if(title == '') {
+            err += '<p>Your title must be selected.</p>';
+        }
+        if(gender == '') {
+            err += '<p>Your gender must be specified.</p>';
+
+        }
+        if(txtForename == '') {
+
+            err += '<p>Your first/given name(s) must be provided.</p>';
+        }
+        if(txtSurname == '') {
+
+            err += '<p>Your surname/family name must be provided.</p>';
+        }
+        if(cboDobYear == '' || cboDobMonth == '' || cboDobDay == '') {
+
+            err += '<p>Your date of birth must be provided.</p>';
+        }
+        else {
+            window.location="register3"
+        }
+        $('.errorTxt').html(err);
+        scrollTo(0,0);
+
+    }
+</script>
