@@ -545,7 +545,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtCntryOfBirth" value="" size="32" maxlength="250" class="floatLeft" id="countryOfBirthTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="launchDefaultPopUp('PopUpServlet', '?functionname=coblist', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=coblist', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.COUNTRYOFBIRTH'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -650,7 +650,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtNatioality" value="" size="32" maxlength="250" class="floatLeft" id="nationalityTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList2" value="see list" onclick="launchDefaultPopUp('PopUpServlet', '?functionname=natlist', 'document.Form1.txtNatioality'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList2" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=natlist', 'document.Form1.txtNatioality'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.NATIONALITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -663,7 +663,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtDualNatioality" value="" size="32" maxlength="250" class="floatLeft" id="dualNationalityTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList3" value="see list" onclick="launchDefaultPopUp('PopUpServlet', '?functionname=natlist', 'document.Form1.txtDualNatioality'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList3" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=natlist', 'document.Form1.txtDualNatioality'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.DUALNATIONALITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -689,7 +689,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtResidentialCategory" value="" size="32" maxlength="50" class="floatLeft" id="residentialCategoryTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnResCategoryList" value="see list" onclick="launchDefaultPopUp('PopUpServlet', '?functionname=rescatlist', 'document.Form1.txtResidentialCategory'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnResCategoryList" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=rescatlist', 'document.Form1.txtResidentialCategory'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.RESIDENTIALCATEGORY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -1163,7 +1163,7 @@
                                     <div class="thisFormField">
                                         (This field is only available if you select fee code '02   UK, Chl, IoM or EU student finance services')
                                         <br>    <input type="text" name="txtSSA_FeeName" value="" size="32" maxlength="30" disabled="" readonly="" class="floatLeft" id="StudentSupportArrangementsTextEntry" style="background-color: silver;">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnLeaList" value="see list" onclick="launchDefaultPopUp('PopUpServlet', '?functionname=lealist', 'document.Form1.txtSSA_FeeName'); return false;" class="seeListBtn" disabled="">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnLeaList" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=lealist', 'document.Form1.txtSSA_FeeName'); return false;" class="seeListBtn" disabled="">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.STUDENTSUPPORTARRANGEMENTS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -1253,7 +1253,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <textarea name="txtDisabilitySplNeeds" rows="6" cols="10" readonly="true" class="floatLeft" id="disNeedsTextEntry"></textarea>
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnDisList1" value="see list" onclick="launchDefaultPopUp('PopUpServlet', '?functionname=dislist', 'document.Form1.txtDisabilitySplNeeds'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnDisList1" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=dislist', 'document.Form1.txtDisabilitySplNeeds'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.DISABILITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
