@@ -3,6 +3,8 @@
 
 namespace backend\controllers;
 
+use common\models\User;
+use Yii;
 
 class UserController extends BaseController
 {
@@ -21,6 +23,26 @@ class UserController extends BaseController
     }
 
     public function actionRegister2() {
+        if (Yii::$app->request->post()) {
+            $cboTitle       = Yii::$app->request->post('title');        # 标题
+            $cboGender      = Yii::$app->request->post('gender');       # 性别
+            $txtForename    = Yii::$app->request->post('txtForename');  # 名
+            $txtSurname     = Yii::$app->request->post('txtSurname');   # 姓
+            $cboDobDay      = Yii::$app->request->post('cboDobDay');    # 出生日
+            $cboDobMonth    = Yii::$app->request->post('cboDobMonth');  # 出生月
+            $cboDobYear     = Yii::$app->request->post('cboDobYear');   # 出生年
+            $user = new User();
+            $user->cboTitle = $cboTitle;
+            $user->cboGender = $cboGender;
+            $user->txtForename = $txtForename;
+            $user->txtSurname = $txtSurname;
+            $user->cboDobDay = $cboDobDay;
+            $user->cboDobMonth = $cboDobMonth;
+            $user->cboDobYear = $cboDobYear;
+            if ($user->insert()) {
+                return $this->redirect(['register3']);
+            }
+        }
         return $this->renderPartial('register2');
     }
 

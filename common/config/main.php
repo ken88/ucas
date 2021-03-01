@@ -9,12 +9,12 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        # 物流数据库
+        # 数据库
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'localhost',
+            'dsn' => 'mysql:host=47.116.137.216:23306;dbname=ucas',
             'username' => 'root',
-            'password' => '123456',
+            'password' => '8771cd!',
             'charset' => 'utf8',
         ],
 
