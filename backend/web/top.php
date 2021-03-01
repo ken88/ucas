@@ -21,6 +21,15 @@
         .video{text-align: center; margin-top: 1.4em;}
         #splNeedsDetailsTextEntry{width:90%; margin-top: 0px;}
         #disNeedsTextEntry{width:63%; margin-top: 0px;}
+        #highestExpectedQualCombo{width:90%; margin-right: 1px;}
+        #statementTextEntry{width:90%; margin-top: 0px;}
+        #ViewAll td.sectionHeading {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #81725e;
+            width: 300px;
+        }
+
     </style>
     <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/general.js"></script>
