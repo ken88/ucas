@@ -42,41 +42,65 @@ although you will be able to print these letters from the Track system if necess
     }
 
     public function actionIndex() {
-        return $this->renderPartial('index');
+        $data = [
+            'view' => 'welcome'
+        ];
+        return $this->renderPartial('index',$data);
     }
 
     public function actionWelcome() {
-        return $this->renderPartial('welcome');
+        $data = [
+            'view' => 'welcome'
+        ];
+        return $this->renderPartial('welcome',$data);
     }
 
     # 个人资料
     public function actionPersonaldetails() {
-        return $this->renderPartial('personaldetails');
+        $data = [
+            'view' => 'personaldetails'
+        ];
+        return $this->renderPartial('personaldetails',$data);
     }
 
     # 选择项
     public function actionChoices() {
-        return $this->renderPartial('choices');
+        $data = [
+            'view' => 'choices'
+        ];
+        return $this->renderPartial('choices',$data);
     }
 
     # 教育
     public function actionEducation() {
-        return $this->renderPartial('education');
+        $data = [
+            'view' => 'education'
+        ];
+        return $this->renderPartial('education',$data);
     }
 
     # 就业机会
     public function actionEmployment() {
-        return $this->renderPartial('employment');
+        $data = [
+            'view' => 'employment'
+        ];
+        return $this->renderPartial('employment',$data);
     }
 
     # 陈述
     public function actionStatement() {
-        return $this->renderPartial('statement');
+        $data = [
+            'view' => 'statement'
+        ];
+        return $this->renderPartial('statement',$data);
     }
 
     # 查看所有细节
     public function actionViewalldetails() {
-        return $this->renderPartial('viewalldetails');
+        $data = [
+            'view' => 'viewalldetails'
+        ];
+        return $this->renderPartial('viewalldetails',$data);
     }
 
 }

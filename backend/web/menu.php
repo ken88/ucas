@@ -1,27 +1,27 @@
 <div id="leftNavInternal" class="floatLeft">
     <ul>
-        <li class="">
+        <li class="notStarted" id="welcome">
             <a href="welcome">Welcome</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="personaldetails">
             <a href="personaldetails">Personal details</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="choices">
             <a href="choices">Choices</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="education">
             <a href="education">Education</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="employment">
             <a href="employment">Employment</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="statement">
             <a href="statement">Statement</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="viewalldetails">
             <a href="viewalldetails">View all details</a>
         </li>
-        <li class="notStarted">
+        <li class="notStarted" id="Pay-Send">
             Pay/Send
         </li>
         <li class="last">
@@ -40,3 +40,9 @@
     <!--key ENDS here-->
 </div>
 <!--leftNav ENDS here-->
+<script type="text/javascript">
+    var viewName = '<?php echo $view?>';
+    $(function () {
+        $('#'+viewName).addClass('current');
+    })
+</script>
