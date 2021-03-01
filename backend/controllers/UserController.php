@@ -66,4 +66,5 @@ class UserController extends BaseController
     public function actionApply1() {
         return $this->renderPartial('/apply/index1');
     }
+
 }
