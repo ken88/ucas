@@ -1,50 +1,66 @@
 <?php
+
 namespace common\models;
 
 use Yii;
-use yii\base\NotSupportedException;
-use yii\behaviors\TimestampBehavior;
-use yii\db\ActiveRecord;
-use yii\web\IdentityInterface;
 
 /**
- * User model
+ * This is the model class for table "user".
  *
- * @property integer $id
- * @property string $username
- * @property string $password_hash
- * @property string $password_reset_token
- * @property string $verification_token
- * @property string $email
- * @property string $auth_key
- * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
- * @property string $password write-only password
+ * @property int $id
+ * @property string $cboTitle 标题
+ * @property string $cboGender 性别
+ * @property string $txtForename 名
+ * @property string $txtSurname 姓
+ * @property int $cboDobDay 出生日
+ * @property string $cboDobMonth 出生月
+ * @property int $cboDobYear 出生年
+ * @property string $radioLocation 邮政
+ * @property string $txtAddrLine1 邮寄地址1
+ * @property string|null $txtAddrLine2 邮寄地址2
+ * @property string|null $txtAddrLine3 邮寄地址3
+ * @property string|null $txtAddrLine4 邮寄地址4
+ * @property string $cboCountryId 国家
+ * @property string|null $txtHomeTelNo 座机
+ * @property string|null $txtMobileTelNo 手机
+ * @property string $txtEmail 邮箱
+ * @property int|null $chkEducationalOption 您的选择
+ * @property int|null $chkCommercialOption 学生必需品
+ * @property int|null $chkUnplacedCommsFlag 相关课程
+ * @property int|null $chkEmailOption 电子邮件
+ * @property int|null $chkTxtOption 短信
+ * @property int|null $chkMailingsOption 邮政
+ * @property string $txtPassword 密码
+ * @property string $cboSecurityQuestion1 问题1
+ * @property string $txtReply1 回答1
+ * @property string $cboSecurityQuestion2 问题2
+ * @property string $txtReply2 回答2
+ * @property string $cboSecurityQuestion3 问题3
+ * @property string $txtReply3 回答3
+ * @property string $cboSecurityQuestion4 问题4
+ * @property string $txtReply4 回答4
+ * @property int|null $create_time 创建时间
+ * @property string|null $personal_id 个人id
+ *
+ * @property AdditionalInformation $additionalInformation
+ * @property Choice $choice
+ * @property Choices[] $choices
+ * @property Education $education
+ * @property Employer[] $employers
+ * @property Employment $employment
+ * @property PersonalDetails $personalDetails
+ * @property Reference $reference
+ * @property School[] $schools
+ * @property Statement $statement
  */
-class User extends ActiveRecord implements IdentityInterface
+class User extends \yii\db\ActiveRecord
 {
-    const STATUS_DELETED = 0;
-    const STATUS_INACTIVE = 9;
-    const STATUS_ACTIVE = 10;
-
-
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return '{{%user}}';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
-        ];
+        return 'user';
     }
 
     /**
@@ -53,160 +69,156 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['status', 'default', 'value' => self::STATUS_INACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
+            [['cboTitle', 'cboGender', 'txtForename', 'txtSurname', 'cboDobDay', 'cboDobMonth', 'cboDobYear', 'radioLocation', 'txtAddrLine1', 'cboCountryId', 'txtEmail', 'txtPassword', 'cboSecurityQuestion1', 'txtReply1', 'cboSecurityQuestion2', 'txtReply2', 'cboSecurityQuestion3', 'txtReply3', 'cboSecurityQuestion4', 'txtReply4'], 'required'],
+            [['cboDobDay', 'cboDobYear', 'chkEducationalOption', 'chkCommercialOption', 'chkUnplacedCommsFlag', 'chkEmailOption', 'chkTxtOption', 'chkMailingsOption', 'create_time'], 'integer'],
+            [['cboTitle', 'cboGender'], 'string', 'max' => 10],
+            [['txtForename', 'txtSurname', 'cboCountryId', 'txtHomeTelNo', 'txtMobileTelNo'], 'string', 'max' => 50],
+            [['cboDobMonth', 'personal_id'], 'string', 'max' => 20],
+            [['radioLocation', 'txtAddrLine1', 'txtAddrLine2', 'txtAddrLine3', 'txtAddrLine4', 'txtPassword', 'txtReply1', 'txtReply2', 'txtReply3', 'txtReply4'], 'string', 'max' => 255],
+            [['txtEmail', 'cboSecurityQuestion1', 'cboSecurityQuestion2', 'cboSecurityQuestion3', 'cboSecurityQuestion4'], 'string', 'max' => 100],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function findIdentity($id)
+    public function attributeLabels()
     {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        return [
+            'id' => 'ID',
+            'cboTitle' => 'Cbo Title',
+            'cboGender' => 'Cbo Gender',
+            'txtForename' => 'Txt Forename',
+            'txtSurname' => 'Txt Surname',
+            'cboDobDay' => 'Cbo Dob Day',
+            'cboDobMonth' => 'Cbo Dob Month',
+            'cboDobYear' => 'Cbo Dob Year',
+            'radioLocation' => 'Radio Location',
+            'txtAddrLine1' => 'Txt Addr Line1',
+            'txtAddrLine2' => 'Txt Addr Line2',
+            'txtAddrLine3' => 'Txt Addr Line3',
+            'txtAddrLine4' => 'Txt Addr Line4',
+            'cboCountryId' => 'Cbo Country ID',
+            'txtHomeTelNo' => 'Txt Home Tel No',
+            'txtMobileTelNo' => 'Txt Mobile Tel No',
+            'txtEmail' => 'Txt Email',
+            'chkEducationalOption' => 'Chk Educational Option',
+            'chkCommercialOption' => 'Chk Commercial Option',
+            'chkUnplacedCommsFlag' => 'Chk Unplaced Comms Flag',
+            'chkEmailOption' => 'Chk Email Option',
+            'chkTxtOption' => 'Chk Txt Option',
+            'chkMailingsOption' => 'Chk Mailings Option',
+            'txtPassword' => 'Txt Password',
+            'cboSecurityQuestion1' => 'Cbo Security Question1',
+            'txtReply1' => 'Txt Reply1',
+            'cboSecurityQuestion2' => 'Cbo Security Question2',
+            'txtReply2' => 'Txt Reply2',
+            'cboSecurityQuestion3' => 'Cbo Security Question3',
+            'txtReply3' => 'Txt Reply3',
+            'cboSecurityQuestion4' => 'Cbo Security Question4',
+            'txtReply4' => 'Txt Reply4',
+            'create_time' => 'Create Time',
+            'personal_id' => 'Personal ID',
+        ];
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
-    }
-
-    /**
-     * Finds user by username
+     * Gets query for [[AdditionalInformation]].
      *
-     * @param string $username
-     * @return static|null
+     * @return \yii\db\ActiveQuery
      */
-    public static function findByUsername($username)
+    public function getAdditionalInformation()
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        return $this->hasOne(AdditionalInformation::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Finds user by password reset token
+     * Gets query for [[Choice]].
      *
-     * @param string $token password reset token
-     * @return static|null
+     * @return \yii\db\ActiveQuery
      */
-    public static function findByPasswordResetToken($token)
+    public function getChoice()
     {
-        if (!static::isPasswordResetTokenValid($token)) {
-            return null;
-        }
-
-        return static::findOne([
-            'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
-        ]);
+        return $this->hasOne(Choice::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Finds user by verification email token
+     * Gets query for [[Choices]].
      *
-     * @param string $token verify email token
-     * @return static|null
+     * @return \yii\db\ActiveQuery
      */
-    public static function findByVerificationToken($token) {
-        return static::findOne([
-            'verification_token' => $token,
-            'status' => self::STATUS_INACTIVE
-        ]);
+    public function getChoices()
+    {
+        return $this->hasMany(Choices::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Finds out if password reset token is valid
+     * Gets query for [[Education]].
      *
-     * @param string $token password reset token
-     * @return bool
+     * @return \yii\db\ActiveQuery
      */
-    public static function isPasswordResetTokenValid($token)
+    public function getEducation()
     {
-        if (empty($token)) {
-            return false;
-        }
-
-        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
-        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
-        return $timestamp + $expire >= time();
+        return $this->hasOne(Education::className(), ['user_id' => 'id']);
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->getPrimaryKey();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAuthKey()
-    {
-        return $this->auth_key;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->getAuthKey() === $authKey;
-    }
-
-    /**
-     * Validates password
+     * Gets query for [[Employers]].
      *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
+     * @return \yii\db\ActiveQuery
      */
-    public function validatePassword($password)
+    public function getEmployers()
     {
-        return Yii::$app->security->validatePassword($password, $this->password_hash);
+        return $this->hasMany(Employer::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Generates password hash from password and sets it to the model
+     * Gets query for [[Employment]].
      *
-     * @param string $password
+     * @return \yii\db\ActiveQuery
      */
-    public function setPassword($password)
+    public function getEmployment()
     {
-        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+        return $this->hasOne(Employment::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Generates "remember me" authentication key
+     * Gets query for [[PersonalDetails]].
+     *
+     * @return \yii\db\ActiveQuery
      */
-    public function generateAuthKey()
+    public function getPersonalDetails()
     {
-        $this->auth_key = Yii::$app->security->generateRandomString();
+        return $this->hasOne(PersonalDetails::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Generates new password reset token
+     * Gets query for [[Reference]].
+     *
+     * @return \yii\db\ActiveQuery
      */
-    public function generatePasswordResetToken()
+    public function getReference()
     {
-        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        return $this->hasOne(Reference::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Generates new token for email verification
+     * Gets query for [[Schools]].
+     *
+     * @return \yii\db\ActiveQuery
      */
-    public function generateEmailVerificationToken()
+    public function getSchools()
     {
-        $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
+        return $this->hasMany(School::className(), ['user_id' => 'id']);
     }
 
     /**
-     * Removes password reset token
+     * Gets query for [[Statement]].
+     *
+     * @return \yii\db\ActiveQuery
      */
-    public function removePasswordResetToken()
+    public function getStatement()
     {
-        $this->password_reset_token = null;
+        return $this->hasOne(Statement::className(), ['user_id' => 'id']);
     }
 }

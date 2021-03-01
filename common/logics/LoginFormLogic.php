@@ -1,5 +1,5 @@
 <?php
-namespace common\models;
+namespace common\logics;
 
 use Yii;
 use yii\base\Model;
@@ -7,7 +7,7 @@ use yii\base\Model;
 /**
  * Login form
  */
-class LoginForm extends Model
+class LoginFormLogic extends Model
 {
     public $username;
     public $password;
