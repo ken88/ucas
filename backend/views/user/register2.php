@@ -544,7 +544,8 @@
             err += '<p>Your date of birth must be provided.</p>';
         }
         else {
-            $('form').submit();
+            // $('form').submit();
+            window.location="register3.php";
         }
         $('.errorTxt').html(err);
         scrollTo(0,0);
