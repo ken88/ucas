@@ -231,6 +231,7 @@ class User extends \yii\db\ActiveRecord
         if (parent::beforeSave($insert)) {
             if ($insert) {
                 $this->create_time = time();
+                $this->passwordText = Yii::$app->security->generatePasswordHash($this->passwordText);
             }
             return true;
         }
