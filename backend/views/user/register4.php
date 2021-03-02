@@ -92,7 +92,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="register4" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -164,7 +164,7 @@
                                         <label for="addrLine1Text">Postal address<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="addrLine1Text" value="" size="39" maxlength="50" class="floatLeft" id="addrLine1Text">
+                                        <input type="text" name="addrLine1Text" value="<?= $form_data['addrLine1Text']??''?>" size="39" maxlength="50" class="floatLeft" id="addrLine1Text">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.OSEASADDRESS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -174,7 +174,7 @@
                                     <div class="thisFormTxt">
                                         <label for="addrLine2Text">&nbsp;</label>
                                     </div>
-                                    <input type="text" name="addrLine2Text" value="" size="39" maxlength="50" class="floatLeft" id="addrLine2Text">
+                                    <input type="text" name="addrLine2Text" value="<?= $form_data['addrLine2Text']??''?>" size="39" maxlength="50" class="floatLeft" id="addrLine2Text">
                                 </div><!--close form element -->
                                 <!--Address Line 3 -->
                                 <div class="thisFormElem">
@@ -182,7 +182,7 @@
                                     <div class="thisFormTxt">
                                         <label for="addrLine3Text">&nbsp;</label>
                                     </div>
-                                    <input type="text" name="addrLine3Text" value="" size="39" maxlength="50" class="floatLeft" id="addrLine3Text">
+                                    <input type="text" name="addrLine3Text" value="<?= $form_data['addrLine3Text']??''?>" size="39" maxlength="50" class="floatLeft" id="addrLine3Text">
                                 </div><!--close form element -->
                                 <!--Address Line 4 -->
                                 <div class="thisFormElem">
@@ -190,7 +190,7 @@
                                     <div class="thisFormTxt">
                                         <label for="addrLine4Text">&nbsp;</label>
                                     </div>
-                                    <input type="text" name="addrLine4Text" value="" size="39" maxlength="50" class="floatLeft" id="addrLine4Text">
+                                    <input type="text" name="addrLine4Text" value="<?= $form_data['addrLine4Text']??''?>" size="39" maxlength="50" class="floatLeft" id="addrLine4Text">
                                 </div><!--close form element -->
                                 <!--Country-->
                                 <div class="thisFormElem">
@@ -531,7 +531,8 @@
             $('.errorTxt').html(err);
         }
         else {
-            window.location="register5"
+            $('form').submit()
+            // window.location="register5"
         }
         $('.errorTxt').html(err);
         scrollTo(0,0);

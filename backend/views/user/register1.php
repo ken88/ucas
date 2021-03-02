@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -95,7 +92,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="register1" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -172,7 +169,7 @@
                                     <label for="termsCheckBox">Please tick the box if you accept the terms and conditions<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="checkbox" id="termsCheckBox" name="termsCheckBox" class="floatLeft">
+                                    <input type="checkbox" id="termsCheckBox" name="termsCheckBox" <?= (isset($form_data['termsCheckBox'])&& $form_data['termsCheckBox']=='on')? 'checked' : '' ?>  class="floatLeft">
 
                                     <a href="#" onclick="launchFieldHelp('/help/index4', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt=""></a>
@@ -232,7 +229,7 @@
     function check() {
 
         if($('#termsCheckBox').is(':checked')) {
-            window.location="register2"
+            $('form').submit()
 
         }else {
             $('.errorTxt').show();

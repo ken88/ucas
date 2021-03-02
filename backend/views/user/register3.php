@@ -92,7 +92,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="register3" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -265,7 +265,8 @@
         }
 
         else {
-            window.location="register4"
+            $('form').submit()
+            // window.location="register4"
         }
 
         scrollTo(0,0);

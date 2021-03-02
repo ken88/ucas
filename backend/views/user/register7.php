@@ -142,7 +142,7 @@
                     <div class="clearDiv">&nbsp;</div><br>
 
                     <!-- Print username near top of page -->
-                    <div class="body">Your username is&nbsp;:&nbsp;<strong>abbb3</strong></div><br>
+                    <div class="body">Your username is&nbsp;:&nbsp;<strong><?= $model->id ?></strong></div><br>
 
                     <!-- Print 'please make a note of your username' warning (always shown on this page) -->
                     <div class="warningTxt"><strong>Please make a note of your username now, as it will not be displayed at a later stage.</strong></div><br>

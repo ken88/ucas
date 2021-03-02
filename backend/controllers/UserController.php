@@ -4,88 +4,131 @@
 namespace backend\controllers;
 
 use common\models\User;
+use function Webmozart\Assert\Tests\StaticAnalysis\notNull;
 use Yii;
+use yii\helpers\Url;
 
 class UserController extends BaseController
 {
     # 登录首页
-    public function actionIndex() {
+    public function actionIndex()
+    {
         return $this->renderPartial('index');
     }
 
     # 注册
-    public function actionRegister() {
+    public function actionRegister()
+    {
         return $this->renderPartial('register');
     }
 
-    public function actionRegister1() {
-        return $this->renderPartial('register1');
+    public function actionRegister1()
+    {
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            return $this->redirect(Url::to(['user/register2']));
+        }
+        return $this->renderPartial('register1', [
+            'form_data' => Yii::$app->session->get('form_data'),
+        ]);
     }
 
-    public function actionRegister2() {
-//        if (Yii::$app->request->post()) {
-//            $cboTitle       = Yii::$app->request->post('title');        # 标题
-//            $cboGender      = Yii::$app->request->post('gender');       # 性别
-//            $txtForename    = Yii::$app->request->post('txtForename');  # 名
-//            $txtSurname     = Yii::$app->request->post('txtSurname');   # 姓
-//            $cboDobDay      = Yii::$app->request->post('cboDobDay');    # 出生日
-//            $cboDobMonth    = Yii::$app->request->post('cboDobMonth');  # 出生月
-//            $cboDobYear     = Yii::$app->request->post('cboDobYear');   # 出生年
-//            $user = new User();
-//            $user->cboTitle = $cboTitle;
-//            $user->cboGender = $cboGender;
-//            $user->txtForename = $txtForename;
-//            $user->txtSurname = $txtSurname;
-//            $user->cboDobDay = $cboDobDay;
-//            $user->cboDobMonth = $cboDobMonth;
-//            $user->cboDobYear = $cboDobYear;
-//            if ($user->insert()) {
-//                return $this->redirect(['register3']);
-//            }
-//        }
-        return $this->renderPartial('register2');
+    public function actionRegister2()
+    {
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            return $this->redirect(Url::to(['user/register3']));
+        }
+        return $this->renderPartial('register2', [
+            'form_data' => Yii::$app->session->get('form_data'),
+        ]);
     }
 
-    public function actionRegister3() {
+    public function actionRegister3()
+    {
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            return $this->redirect(Url::to(['user/register4']));
+        }
         return $this->renderPartial('register3');
     }
 
-    public function actionRegister4() {
-        return $this->renderPartial('register4');
+    public function actionRegister4()
+    {
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            return $this->redirect(Url::to(['user/register5']));
+        }
+        return $this->renderPartial('register4', [
+            'form_data' => Yii::$app->session->get('form_data'),
+        ]);
     }
 
-    public function actionRegister5() {
-        return $this->renderPartial('register5');
+    public function actionRegister5()
+    {
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            return $this->redirect(Url::to(['user/register6']));
+        }
+        return $this->renderPartial('register5', [
+            'form_data' => Yii::$app->session->get('form_data'),
+        ]);
     }
 
-    public function actionRegister6() {
+    public function actionRegister6()
+    {
+        if (Yii::$app->request->isPost) {
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            return $this->redirect(Url::to(['user/register7']));
+        }
         return $this->renderPartial('register6');
     }
-    public function actionRegister7() {
-        return $this->renderPartial('register7');
+
+    /**
+     * register7 注册结束,返回id
+     * @return string|\yii\web\Response
+     */
+    public function actionRegister7()
+    {
+        $model = new User();
+        $model->attributes = Yii::$app->session->get('form_data');
+        if (!$model->save()) {
+            return $this->redirect(Url::to(['user/register']));
+        } else {
+            Yii::$app->session->set('form_data', []);
+            return $this->renderPartial('register7', [
+                'model' => $model
+            ]);
+        }
     }
 
-    public function actionRegister8() {
+    public function actionRegister8()
+    {
         return $this->renderPartial('register8');
     }
 
-    public function actionRegister9() {
+    public function actionRegister9()
+    {
         return $this->renderPartial('register9');
     }
 
-    public function actionRegister10() {
+    public function actionRegister10()
+    {
         return $this->renderPartial('register10');
     }
 
-    public function actionRegister11() {
+    public function actionRegister11()
+    {
         return $this->renderPartial('register11');
     }
 
-    public function actionRegister12() {
+    public function actionRegister12()
+    {
         return $this->renderPartial('register12');
     }
 
-    public function actionApply1() {
+    public function actionApply1()
+    {
         return $this->renderPartial('/apply/index1');
     }
 

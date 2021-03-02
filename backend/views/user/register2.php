@@ -277,7 +277,7 @@
                                         <label for="forenameText">First/given name(s)<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtForename" value="" size="24" maxlength="50" class="floatLeft" id="txtForename">
+                                        <input type="text" name="txtForename" value="<?= $form_data['txtForename']??''?>" size="24" maxlength="50" class="floatLeft" id="txtForename">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.INITIALDETAILS.FIELD.FORENAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -288,7 +288,7 @@
                                         <label for="surnameText">Surname/family name<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtSurname" value="" size="24" maxlength="30" class="floatLeft" id="txtSurname">
+                                        <input type="text" name="txtSurname" value="<?= $form_data['txtSurname']??''?>" size="24" maxlength="30" class="floatLeft" id="txtSurname">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.INITIALDETAILS.FIELD.SURNAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -544,8 +544,8 @@
             err += '<p>Your date of birth must be provided.</p>';
         }
         else {
-            // $('form').submit();
-            window.location="register3";
+            $('form').submit();
+            // window.location="register3";
         }
         $('.errorTxt').html(err);
         scrollTo(0,0);

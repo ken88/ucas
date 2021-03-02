@@ -92,7 +92,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="register5" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -170,38 +170,38 @@
                                         <label for="address">Postal address<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormTxt">
-                                        aa
+                                        <?= $form_data['addrLine1Text'] ?? '' ?>
                                     </div>
                                     <!--Address Line 2 -->
                                     <div class="thisFormTxt">
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormTxt">
-                                        bb
+                                        <?= $form_data['addrLine2Text'] ?? '' ?>
                                     </div>
                                     <!--Address Line 3 -->
                                     <div class="thisFormTxt">
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormTxt">
-                                        cc
+                                        <?= $form_data['addrLine3Text'] ?? '' ?>
                                     </div>
                                     <!--Address Line 4 -->
                                     <div class="thisFormTxt">
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormTxt">
-                                        dd
+                                        <?= $form_data['addrLine4Text'] ?? '' ?>
                                     </div>
                                     <!--Postal Country -->
                                     <div class="thisFormTxt">
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormTxt">
-                                        Bangladesh
+                                        <?= $form_data['Country'] ?? '' ?>
                                     </div>
                                 </div><!--close form element -->
-                                <p><input type="hidden" name="from" value="aa" id="address1"></p><p><input type="hidden" name="from" value="bb" id="address2"></p><p><input type="hidden" name="from" value="cc" id="address3"></p><p><input type="hidden" name="from" value="dd" id="address4"></p><input type="submit" name="btnNext" value="dummy next button" style="position : absolute; top : -1000px; left : -1000px;">
+                                <p><input type="hidden" name="from" value="aa111" id="address1"></p><p><input type="hidden" name="from" value="bb" id="address2"></p><p><input type="hidden" name="from" value="cc" id="address3"></p><p><input type="hidden" name="from" value="dd" id="address4"></p><input type="hidden" name="btnNext" value="dummy next button" style="position : absolute; top : -1000px; left : -1000px;">
                                 <!--Change address button -->
                                 <div class="thisFormElem">
                                     <!--open form element -->
@@ -209,7 +209,7 @@
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="submit" name="btnChangeAddress" value="change address" class="floatLeft seeListBtn">
+                                        <input type="button" name="btnChangeAddress" value="change address" class="floatLeft seeListBtn">
 
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -222,7 +222,7 @@
                                         <span class="Req">*</span>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtHomePhone" value="" size="24" maxlength="24" class="floatLeft" id="txtHomePhone">
+                                        <input type="text" name="txtHomePhone" value="<?= $form_data['txtHomePhone'] ?? ''?>" size="24" maxlength="24" class="floatLeft" id="txtHomePhone">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.TELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -234,7 +234,7 @@
                                         <span class="Req">*</span>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtMobilePhone" value="" size="24" maxlength="24" class="floatLeft" id="txtMobilePhone">
+                                        <input type="text" name="txtMobilePhone" value="<?= $form_data['txtMobilePhone'] ?? ''?>" size="24" maxlength="24" class="floatLeft" id="txtMobilePhone">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.MOBILE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -245,7 +245,7 @@
                                         <label for="emailText">Email address<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="emailText" value="" size="35" maxlength="60" class="floatLeft" id="emailText">
+                                        <input type="text" name="emailText" value="<?= $form_data['emailText'] ?? ''?>" size="35" maxlength="60" class="floatLeft" id="emailText">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAIL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -256,7 +256,7 @@
                                         <label for="emailConfirmText">Confirm email address<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="emailConfirmText" value="" size="35" maxlength="60" class="floatLeft" id="emailConfirmText">
+                                        <input type="text" name="emailConfirmText" value="<?= $form_data['emailText'] ?? ''?>" size="35" maxlength="60" class="floatLeft" id="emailConfirmText">
                                         <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAILCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -498,7 +498,8 @@
 
     // 提交
     $('#save').click(function () {
-            window.location="register6"
+        $('form').submit()
+            // window.location="register6"
     })
 
 </script>
