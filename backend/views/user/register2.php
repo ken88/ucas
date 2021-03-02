@@ -545,7 +545,7 @@
         }
         else {
             // $('form').submit();
-            window.location="register";
+            window.location="register3";
         }
         $('.errorTxt').html(err);
         scrollTo(0,0);
