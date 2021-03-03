@@ -545,7 +545,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtCntryOfBirth" value="" size="32" maxlength="250" class="floatLeft" id="countryOfBirthTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="seelistOpen('/help/index6', '?functionname=coblist', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="seelistOpen('/help/index6', '?functionname=countryOfBirthTextEntry', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.COUNTRYOFBIRTH'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
@@ -652,7 +652,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtNatioality" value="" size="32" maxlength="250" class="floatLeft" id="nationalityTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList2" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=natlist', 'document.Form1.txtNatioality'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;
+                                            <input type="button" name="btnCountryList2" value="see list" onclick="seelistOpen('/help/index7', '?functionname=nationalityTextEntry', 'document.Form1.txtNatioality'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.NATIONALITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -665,7 +666,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtDualNatioality" value="" size="32" maxlength="250" class="floatLeft" id="dualNationalityTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList3" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=natlist', 'document.Form1.txtDualNatioality'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;
+                                            <input type="button" name="btnCountryList3" value="see list" onclick="seelistOpen('/help/index7', '?functionname=dualNationalityTextEntry', 'document.Form1.txtDualNatioality'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.DUALNATIONALITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -678,7 +680,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtResidenceArea" value="" size="32" maxlength="250" class="floatLeft" id="areaOfResidenceTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnAreaOfResidenceList" value="see list" onclick="openAPR(); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;
+                                            <input type="button" name="btnAreaOfResidenceList" value="see list" onclick="seelistOpen('/help/index8', '?functionname=areaOfResidenceTextEntry', 'document.Form1.areaOfResidenceTextEntry'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.AREAPERMANENTRESIDENCE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -691,7 +694,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtResidentialCategory" value="" size="32" maxlength="50" class="floatLeft" id="residentialCategoryTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnResCategoryList" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=rescatlist', 'document.Form1.txtResidentialCategory'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;
+                                            <input type="button" name="btnResCategoryList" value="see list" onclick="seelistOpen('/help/index9', '?functionname=residentialCategoryTextEntry', 'document.Form1.txtResidentialCategory'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.RESIDENTIALCATEGORY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>

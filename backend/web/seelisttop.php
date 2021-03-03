@@ -14,8 +14,9 @@
 
     <script type="text/javascript">
 
+        var inputName = '<?php echo $inputName;?>';
         function passToParent(msg) {
-            $("#countryOfBirthTextEntry",opener.document).val(msg); //给父窗口aaa中赋值
+            $("#"+inputName,opener.document).val(msg); //给父窗口aaa中赋值
             window.close();
         }
     </script>
