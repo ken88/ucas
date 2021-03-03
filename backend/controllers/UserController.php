@@ -25,7 +25,7 @@ class UserController extends BaseController
     public function actionRegister1()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            Yii::$app->session->set('form_data', Yii::$app->request->post());
             return $this->redirect(Url::to(['user/register2']));
         }
         return $this->renderPartial('register1', [
