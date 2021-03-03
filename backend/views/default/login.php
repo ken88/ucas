@@ -26,7 +26,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="login" method="post" autocomplete="off">
+        <form name="Form1" onsubmit="return sub()" action="" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -80,7 +80,7 @@
                                 <label for="submitButton">&nbsp;
                             </div>
                             <div class="thisFormField">
-                                <input type="submit" name="btnLogin" value="log in" tabindex="3" class="submitBtn"/>
+                                <input id="form-submit" type="submit" name="btnLogin" value="log in" tabindex="3" class="submitBtn"/>
 
                             </div>
                         </div><!--close form element -->
@@ -130,4 +130,25 @@
     </div> <!--wrapper internal ends here-->
 </div><!--outer wrapper ends here-->
 </body>
+<script>
+    function sub() {
+        var bt = $('#form-submit')
+        $.ajax({
+            type:'post',
+            data:$('form').serialize(),
+            beforeSend:function () {
+                $(bt).attr('disabled', 'disabled')
+            },
+            success:function (res) {
+                $(bt).attr('disabled', '')
+                if (res.code==200){
+                    window.location.href = '/site/login'
+                } else{
+                    alert(res.msg)
+                }
+            }
+        })
+        return false;
+    }
+</script>
 </html>

@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <a href="index">
+                                    <a href="/default/login">
                                         <input type="button" name="btnPrevious" value="previous"  class="submitBtn">
                                     </a>
                                     &nbsp;&nbsp;

@@ -44,7 +44,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'GET site/login' => 'default/login',
+                'site/login' => 'default/login',
             ]
         ],
     ],

@@ -5,11 +5,38 @@ namespace backend\controllers;
 
 use common\models\User;
 use Yii;
+use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
 
 class UserController extends Controller
 {
+    /**
+     * @return array
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return $this->redirect(Url::to(['useradmin/index']));
+                        }
+                    ],
+                ],
+            ],
+        ];
+    }
     # 注册
     public function actionRegister()
     {
@@ -87,7 +114,8 @@ class UserController extends Controller
         $model = new User();
         $model->attributes = Yii::$app->session->get('form_data');
         if (!$model->save()) {
-            return $this->redirect(Url::to(['user/register']));
+            var_dump($model->getErrors());
+            exit('注册失败');
         } else {
             Yii::$app->session->set('form_data', []);
             return $this->renderPartial('register7', [
