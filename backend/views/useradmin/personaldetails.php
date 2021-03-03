@@ -40,7 +40,7 @@
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="welcome">
+                    <a href="/useradmin/welcome">
                         Welcome
                     </a>&gt;
                     Personal details
@@ -545,9 +545,11 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtCntryOfBirth" value="" size="32" maxlength="250" class="floatLeft" id="countryOfBirthTextEntry">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=coblist', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="seelistOpen('/help/index6', '?functionname=coblist', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
 </span>
-                                        <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.COUNTRYOFBIRTH'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.COUNTRYOFBIRTH'); return false;">
+                                            <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
+                                        </a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Date of Entry to UK-->
@@ -1303,9 +1305,7 @@
                                 <div class="thisFormTxt">&nbsp;</div>
                                 <div class="thisFormField">
                                     <!--display &apos;save & cancel&apos; button clip -->
-                                    <input type="hidden" name="hidJavaScriptEnabled" value="false" id="hidJavaScriptEnabled">
                                     <input type="submit" name="btnSave" value="save" onclick="setJavaEnabled()" class="submitBtn">
-                                    &nbsp;&nbsp;<input type="submit" name="btnCancel" value="cancel" onclick="setJavaEnabled()" class="submitBtn">
 
                                 </div>
                                 <!-- ME110::Marketing preference Modal starts here -->
@@ -1409,10 +1409,7 @@
                 </div><!--gatewayContent ends here-->
             </div>
 
-
-
         </div>
-
 
         <div class="clearDiv">&nbsp;</div>
         <!--display 'Footer' clip -->
@@ -1429,6 +1426,17 @@
 </div>
 <!--outerWrapper end-->
 
-
 </body>
 </html>
+<script type="text/javascript">
+    function check() {
+        var list= $('#cboGroups').val();
+        if(list == ''){
+            err = '<p>Please select your tutor group/application group.</p>';
+            $('.errorTxt').html(err);
+        }
+        else {
+            window.location="register12"
+        }
+    }
+</script>

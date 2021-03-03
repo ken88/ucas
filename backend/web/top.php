@@ -81,6 +81,31 @@
             myPopup.focus();
             return false;
         }
+
+        function seelistOpen(page, args)
+        {
+            //presuming all help pop-ups are going to be the same dimensions...
+            openPopUp2(page, args, 506, 200, 'helpwindow');
+            return false;
+        }
+
+        function openPopUp2(page, args, xCoord, yCoord, winName)
+        {
+            //always centre the window, irrespective of size
+            var popX = xCoord;
+            var popY = yCoord;
+            posX = ((screen.availWidth/2)-(popX/2));
+            posY = ((screen.availHeight/2)-(popY/2));
+
+            page += args;
+            var myPopup = window.open(page,winName,'width='+popX+',height='+popY+'toolbar=0,menubar=0,directories=0,location=0,scrollbars=1,left='+posX+',top='+posY);
+            if (!myPopup.opener)
+                myPopup.opener = self;
+
+            myPopup.focus();
+            return false;
+        }
+
     </script>
 
     <noscript>

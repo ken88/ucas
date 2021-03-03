@@ -25,4 +25,8 @@ class HelpController extends BaseController
     public function actionIndex5() {
         return $this->renderPartial('index5');
     }
+
+    public function actionIndex6() {
+        return $this->renderPartial('index6');
+    }
 }
