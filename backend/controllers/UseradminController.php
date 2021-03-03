@@ -34,7 +34,7 @@ although you will be able to print these letters from the Track system if necess
 <br><br>Note: this is an automated email, so please do not reply to this address.";
         $mail->setHtmlBody($mes);    //发布可以带html标签的文本
 //        if($mail->send())
-//            echo "ok"
+//            echo "ok";
 //        else
 //            echo "failse";
         return $this->renderPartial('send');

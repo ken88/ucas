@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" media="print" href="/static/css/print.css" />
     <!-- Confirm CSS files -->
     <link type='text/css' href='/static/css/confirm.css' rel='stylesheet' media='screen' />
+    <link type='text/css' href='/static/css/popup.css' rel='stylesheet' media='screen' />
+    <link type='text/css' href='/static/css/jquery.checkbox.css' rel='stylesheet' media='screen' />
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Verify email:Enter code</title>
     <style type="text/css">
@@ -35,6 +38,11 @@
     <script type="text/javascript" src="/static/js/general.js"></script>
     <script type="text/javascript" src="/static/js/jquery.simplemodal.js"></script>
     <script type="text/javascript" src="/static/js/choicessummary.js" charset="utf-8"></script>
+    <script type='text/javascript' src='/static/js/jquery.removechars.js'></script>
+    <script type="text/javascript" src="/static/js/security.js" charset="utf-8"></script>
+    <script type='text/javascript' src='/static/js/jquery.removechars.js'></script>
+
+
     <script type="text/javascript">
         function setJavaEnabled()
         {

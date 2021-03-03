@@ -15,7 +15,7 @@
                 </ul>
             </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
-                <a href="http://www.ucas.com"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
+                <a href="#"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
             </div><!--logo ENDS here-->
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
@@ -45,7 +45,7 @@
                 <!-- gatewayContent starts here -->
                 <div id="gatewayContent">
                     <div id="breadcrumb">
-                        <a href="RegisterWelcome.jsp?id=cbf560f6369164a30e079b45d585&amp;ran=mhgp7qpjf2g2">Home</a> &gt;
+                        <a href="/user/register">Home</a> &gt;
                         Register
                     </div><!--breadcrumb ends here-->
                     <!-- progressBar div starts here -->

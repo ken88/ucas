@@ -1,70 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-    <style type="text/css" media="screen">
-        @import "/static/css/styles.css";
-    </style>
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/form.css" />
-    <!--[if lte IE 7]>
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/iefixes.css" />
-    <![endif]-->
-    <!--[if IE 7]>
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/ie7.css" />
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" media="print" href="/static/css/print.css" />
-    <link type='text/css' href='/static/css/confirm.css' rel='stylesheet' media='screen' />
-    <link type='text/css' href='/static/css/jquery.checkbox.css' rel='stylesheet' media='screen' />
-    <title>Register and log in</title>
-    <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src='/static/js/jquery.simplemodal.js'></script>
-    <script type='text/javascript' src='/static/js/jquery.removechars.js'></script>
-    <script type="text/javascript" src="/static/js/general.js"></script>
-    <script type="text/javascript" src="/static/js/security.js" charset="utf-8"></script>
-    <noscript>
-        <!--
-            meta-tag "refresh" is provided for those browsers that
-            do not support JavaScript.  Please note that the time
-            delay is greater than zero.
-
-            Notice that this is nested within a "noscript" block.
-            Which means that browsers that support JavaScript will
-            not "see" the refresh meta-tag.
-        -->
-        <meta http-equiv="refresh" content="0; URL=redirectiontarget.htm" />
-    </noscript>
-    <script language="JavaScript">
-        function setJavaEnabled()
-        {
-            // set Javascript Enabled hidden field value to true
-            $('#hidJavaScriptEnabled').val('true');
-        }
-
-        function popupForgotten()
-        {
-            /*
-            var url = "SecurityServlet?functionname=reminder&SK_LOGIN_REMINDER_PAGE=1&start=Y";
-            window.open(url,'lostPassword','toolbar=no,menubar=no,status=no,width=500,height=450,scrollbars=yes,resizable=yes');
-            return false;
-            */
-            var url = 'https://loginreminder.support.ucas.com/LoginReminder/loginReminder.do?start=true&service=UA&cycle=2021';
-            var lang = 1;
-            url += (lang == 2)
-                ? '&lang=cy'
-                : '&lang=en';
-
-            window.open(url,'loginReminder','menubar=no,toolbar=no,status=yes,scrollbars=yes,resizable=yes,width=800,height=400');
-            return false;
-        }
-        function launchPageHelp()
-        {
-            //openPopUp('HelpServicesServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');
-            var lang = 1;
-            openPopUp('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');
-            return false;
-        }
-    </script>
-</head>
+<?php include_once "top.php";?>
 <body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
 <div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
     <div id="wrapperInternal" class="floatLeft"><!-- Wrapper Internal starts here-->
@@ -73,7 +7,7 @@
             <div id="tools">
                 <ul>
                     <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
+                    <li class="help"><a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
                     <li><a href="javascript:onclick=window.print()">Print page</a></li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
@@ -81,7 +15,7 @@
                 </ul>
             </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
-                <a href="http://www.ucas.com"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
+                <a href="#"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
             </div><!--logo ENDS here-->
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
@@ -98,7 +32,7 @@
                 <!--menu starts-->
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
-                        <li><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;lang=1&amp;page=HELP.LOGIN.WHATISAPPLY.FIELD'); return false;">What is Apply?</a></li>
+                        <li><a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;lang=1&amp;page=HELP.LOGIN.WHATISAPPLY.FIELD'); return false;">What is Apply?</a></li>
                         <li><a href="#" onclick="javascript:if(window.launchPageHelp){launchPageHelp();}else{alert('Help has not been set up for this page');}; return false;">Help</a></li>
                         <li class="last"><a href="ServicesServlet?functionname=registeroptions&amp;id=cbf560f6369164a30e079b45d585&amp;ran=1kma4oqv2h5u0">Options/Opsiynau</a></li>
                     </ul><h3>Key</h3>
@@ -116,7 +50,7 @@
 
                 <div id="gatewayContent">
                     <div id="breadcrumb">
-                        <a href="RegisterWelcome.jsp?id=cbf560f6369164a30e079b45d585&amp;ran=1xjw4s6q3ow45">Home</a> &gt;
+                        <a href="/user/register">Home</a> &gt;
                         Register
                     </div>
                     <!--breadcrumb ends here-->
@@ -211,7 +145,7 @@
                                     <div class="thisFormField">
                                         <input type="button" name="btnChangeAddress" value="change address" class="floatLeft seeListBtn">
 
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Home Telephone Number -->
@@ -223,7 +157,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtHomePhone" value="<?= $form_data['txtHomePhone'] ?? ''?>" size="24" maxlength="24" class="floatLeft" id="txtHomePhone">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.TELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.TELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Mobile Telephone Number -->
@@ -235,7 +169,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtMobilePhone" value="<?= $form_data['txtMobilePhone'] ?? ''?>" size="24" maxlength="24" class="floatLeft" id="txtMobilePhone">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.MOBILE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.MOBILE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--email -->
@@ -246,7 +180,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="emailText" value="<?= $form_data['emailText'] ?? ''?>" size="35" maxlength="60" class="floatLeft" id="emailText">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAIL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAIL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--email confirm-->
@@ -257,7 +191,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="emailConfirmText" value="<?= $form_data['emailText'] ?? ''?>" size="35" maxlength="60" class="floatLeft" id="emailConfirmText">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAILCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAILCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <div class="clearDiv">&nbsp;</div>
@@ -339,8 +273,8 @@
 
 
 
-<div id="simplemodal-overlay" class="simplemodal-overlay" style="opacity: 0.5; height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 1001; display: none;"></div>
-<div id="confirm-container" class="simplemodal-container" style="position: fixed; z-index: 1002; height: auto; width: 480px; left: 35%; top: 2%; display: none;">
+<div id="simplemodal-overlay" class="simplemodal-overlay" style="opacity: 0.5; height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 1001; display: block;"></div>
+<div id="confirm-container" class="simplemodal-container" style="position: fixed; z-index: 1002; height: auto; width: 480px; left: 35%; top: 2%; display: block;">
     <a class="modalCloseImg simplemodal-close" title="Close"></a>
     <div tabindex="-1" class="simplemodal-wrap" style="height: 100%; outline: 0px; width: 100%; overflow: auto;">
         <div id="marketPref" class="simplemodal-data" style="display: block;">
