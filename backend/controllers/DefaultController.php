@@ -24,6 +24,9 @@ class DefaultController extends Controller
      */
     public function actionLogin()
     {
+        if (\Yii::$app->request->isPost){
+            exit('登录验证');
+        }
         return $this->renderPartial('login');
     }
 }

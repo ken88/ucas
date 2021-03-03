@@ -130,5 +130,4 @@
     </div> <!--wrapper internal ends here-->
 </div><!--outer wrapper ends here-->
 </body>
->>>>>>> 5f929dfeca6cd5b1f79451380f5b4ceb60d51e41:backend/views/user/index.php
 </html>
