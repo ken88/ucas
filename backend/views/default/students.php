@@ -463,7 +463,7 @@
 
                                 <p>Get your UCAS Hub.&nbsp;Your place to discover your options and research your future.</p>
                                 <div class="buttons-joined">
-                                    <a href="/user/index" role="button" class="button">Apply</a>
+                                    <a href="login" role="button" class="button">Apply</a>
                                     <a href="https://track.ucas.com/" role="button" class="button">Track</a>
                                     <a href="https://www.ucas.com/dashboard" role="button" class="button">Hub</a>
                                     <a href="https://www.ucas.com/account?m=login&amp;t=student&amp;returnUrl=/dashboard" role="button" class="button">Hub and Hub Live events</a>              </div>
