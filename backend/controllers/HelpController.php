@@ -4,7 +4,9 @@
 namespace backend\controllers;
 
 
-class HelpController extends BaseController
+use yii\web\Controller;
+
+class HelpController extends Controller
 {
     public function actionIndex1() {
         return $this->renderPartial('index1');

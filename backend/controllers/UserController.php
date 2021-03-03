@@ -4,18 +4,12 @@
 namespace backend\controllers;
 
 use common\models\User;
-use function Webmozart\Assert\Tests\StaticAnalysis\notNull;
 use Yii;
 use yii\helpers\Url;
+use yii\web\Controller;
 
-class UserController extends BaseController
+class UserController extends Controller
 {
-    # 登录首页
-    public function actionIndex()
-    {
-        return $this->renderPartial('index');
-    }
-
     # 注册
     public function actionRegister()
     {

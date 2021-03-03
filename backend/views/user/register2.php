@@ -470,4 +470,22 @@
         scrollTo(0,0);
 
     }
+
+    $(function() {
+        var title_selected = "<?= $form_data['title'] ?? ''?>"
+        $("#title").find("option[value='"+title_selected+"']").attr("selected",true);
+
+        var gender_selected = "<?= $form_data['gender'] ?? ''?>"
+        $("#gender").find("option[value='"+gender_selected+"']").attr("selected",true);
+
+        var cboDobDay_selected = "<?= $form_data['cboDobDay'] ?? ''?>"
+        $("#cboDobDay").find("option[value='"+cboDobDay_selected+"']").attr("selected",true);
+
+        var cboDobMonth_selected = "<?= $form_data['cboDobMonth'] ?? ''?>"
+        $("#cboDobMonth").find("option[value='"+cboDobMonth_selected+"']").attr("selected",true);
+
+        var cboDobYear_selected = "<?= $form_data['cboDobYear'] ?? ''?>"
+        $("#cboDobYear").find("option[value='"+cboDobYear_selected+"']").attr("selected",true);
+    });
+
 </script>
