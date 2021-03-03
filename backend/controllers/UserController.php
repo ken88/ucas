@@ -25,7 +25,7 @@ class UserController extends BaseController
     public function actionRegister1()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', Yii::$app->request->post());
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data', []), Yii::$app->request->post()));
             return $this->redirect(Url::to(['user/register2']));
         }
         return $this->renderPartial('register1', [
@@ -36,7 +36,7 @@ class UserController extends BaseController
     public function actionRegister2()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data', []), Yii::$app->request->post()));
             return $this->redirect(Url::to(['user/register3']));
         }
         return $this->renderPartial('register2', [
@@ -47,7 +47,7 @@ class UserController extends BaseController
     public function actionRegister3()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data', []), Yii::$app->request->post()));
             return $this->redirect(Url::to(['user/register4']));
         }
         return $this->renderPartial('register3');
@@ -56,7 +56,7 @@ class UserController extends BaseController
     public function actionRegister4()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data', []), Yii::$app->request->post()));
             return $this->redirect(Url::to(['user/register5']));
         }
         return $this->renderPartial('register4', [
@@ -67,7 +67,7 @@ class UserController extends BaseController
     public function actionRegister5()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data', []), Yii::$app->request->post()));
             return $this->redirect(Url::to(['user/register6']));
         }
         return $this->renderPartial('register5', [
@@ -78,7 +78,7 @@ class UserController extends BaseController
     public function actionRegister6()
     {
         if (Yii::$app->request->isPost) {
-            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data'), Yii::$app->request->post()));
+            Yii::$app->session->set('form_data', array_merge(Yii::$app->session->get('form_data', []), Yii::$app->request->post()));
             return $this->redirect(Url::to(['user/register7']));
         }
         return $this->renderPartial('register6');
