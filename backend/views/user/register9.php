@@ -7,7 +7,7 @@
             <div id="tools">
                 <ul>
                     <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
+                    <li class="help"><a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
                     <li><a href="javascript:onclick=window.print()">Print page</a></li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
@@ -33,8 +33,8 @@
                 <!--menu starts-->
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
-                        <li><a href="#" onclick="launchFieldHelp('apply1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">What is Apply?</a></li>
-                        <li class="last"><a href="#" onclick="launchFieldHelp('/help/index5', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');return false;">Help</a></li>
+                        <li><a href="#" onclick="helpOpen('apply1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">What is Apply?</a></li>
+                        <li class="last"><a href="#" onclick="helpOpen('/help/index5', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');return false;">Help</a></li>
                     </ul><h3>Key</h3>
                     <ul id="key">
                         <li style="display: none;" id="subCharacter">European characters allowed</li>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtBuzzword" value="" class="floatLeft" id="txtBuzzword">
-                                        <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.POSTREG.BUZZWORD.FIELD.BUZZWORD'); return false;">
+                                        <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.POSTREG.BUZZWORD.FIELD.BUZZWORD'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->

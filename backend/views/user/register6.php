@@ -7,7 +7,7 @@
             <div id="tools">
                 <ul>
                     <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
+                    <li class="help"><a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
                     <li><a href="javascript:onclick=window.print()">Print page</a></li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
@@ -32,8 +32,8 @@
                 <!--menu starts-->
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
-                        <li><a href="#" onclick="launchFieldHelp('apply1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">What is Apply?</a></li>
-                        <li class="last"><a href="#" onclick="launchFieldHelp('/help/index5', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');return false;">Help</a></li>
+                        <li><a href="#" onclick="helpOpen('apply1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">What is Apply?</a></li>
+                        <li class="last"><a href="#" onclick="helpOpen('/help/index5', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');return false;">Help</a></li>
                     </ul><h3>Key</h3>
                     <ul id="key">
                         <li style="display: none;" id="subCharacter">European characters allowed</li>
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="password" name="passwordText" value="" size="16" maxlength="14" class="floatLeft" id="passwordText">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.PASSWORD'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.PASSWORD'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Confirm Password -->
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="password" name="confirmPasswordText" value="" size="16" maxlength="14" class="floatLeft" id="confirmPasswordText">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.PASSWORDCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.PASSWORDCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <p class="warningTxt">It is important that you can remember the answers to your security questions and that they cannot be easily guessed by others. If you lose or forget your password you will be asked one or more of these security questions in order to identify you.</p><!--Security Question 1 -->
@@ -138,7 +138,7 @@
                                                 <option value="What is your favourite food?">What is your favourite food?</option>
                                             </select>
                                         </div>
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Reply 1 -->
@@ -149,7 +149,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="daan1" value="" size="20" maxlength="100" class="floatLeft" id="daan1">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Security Question 2 -->
@@ -173,7 +173,7 @@
                                                 <option value="What is your favourite food?">What is your favourite food?</option>
                                             </select>
                                         </div>
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Reply 2 -->
@@ -184,7 +184,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="daan2" value="" size="20" maxlength="100" class="floatLeft" id="daan2">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Security Question 3 -->
@@ -208,7 +208,7 @@
                                                 <option value="What is your favourite food?">What is your favourite food?</option>
                                             </select>
                                         </div>
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Reply 3 -->
@@ -219,7 +219,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="daan3" value="" size="20" maxlength="100" class="floatLeft" id="daan3">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Security Question 4 -->
@@ -243,7 +243,7 @@
                                                 <option value="What is your favourite food?">What is your favourite food?</option>
                                             </select>
                                         </div>
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYQUESTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Reply 4 -->
@@ -254,7 +254,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="daan4" value="" size="20" maxlength="100" class="floatLeft" id="daan4">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.SECURITY.FIELD.SECURITYRESPONSE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <br>

@@ -7,7 +7,7 @@
             <div id="tools">
                 <ul>
                     <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
+                    <li class="help"><a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&amp;lang=1&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
                     <li><a href="javascript:onclick=window.print()">Print page</a></li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
@@ -32,7 +32,7 @@
                 <!--menu starts-->
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
-                        <li><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;lang=1&amp;page=HELP.LOGIN.WHATISAPPLY.FIELD'); return false;">What is Apply?</a></li>
+                        <li><a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;lang=1&amp;page=HELP.LOGIN.WHATISAPPLY.FIELD'); return false;">What is Apply?</a></li>
                         <li><a href="#" onclick="javascript:if(window.launchPageHelp){launchPageHelp();}else{alert('Help has not been set up for this page');}; return false;">Help</a></li>
                         <li class="last"><a href="ServicesServlet?functionname=registeroptions&amp;id=cbf560f6369164a30e079b45d585&amp;ran=1kma4oqv2h5u0">Options/Opsiynau</a></li>
                     </ul><h3>Key</h3>
@@ -145,7 +145,7 @@
                                     <div class="thisFormField">
                                         <input type="button" name="btnChangeAddress" value="change address" class="floatLeft seeListBtn">
 
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Home Telephone Number -->
@@ -157,7 +157,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtHomePhone" value="<?= $form_data['txtHomePhone'] ?? ''?>" size="24" maxlength="24" class="floatLeft" id="txtHomePhone">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.TELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.TELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--Mobile Telephone Number -->
@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtMobilePhone" value="<?= $form_data['txtMobilePhone'] ?? ''?>" size="24" maxlength="24" class="floatLeft" id="txtMobilePhone">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.MOBILE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.MOBILE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--email -->
@@ -180,7 +180,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="emailText" value="<?= $form_data['emailText'] ?? ''?>" size="35" maxlength="60" class="floatLeft" id="emailText">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAIL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAIL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--email confirm-->
@@ -191,7 +191,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="emailConfirmText" value="<?= $form_data['emailText'] ?? ''?>" size="35" maxlength="60" class="floatLeft" id="emailConfirmText">
-                                        <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAILCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.EMAILCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
                                 <div class="clearDiv">&nbsp;</div>
@@ -273,8 +273,8 @@
 
 
 
-<div id="simplemodal-overlay" class="simplemodal-overlay" style="opacity: 0.5; height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 1001; display: none;"></div>
-<div id="confirm-container" class="simplemodal-container" style="position: fixed; z-index: 1002; height: auto; width: 480px; left: 35%; top: 2%; display: none;">
+<div id="simplemodal-overlay" class="simplemodal-overlay" style="opacity: 0.5; height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 1001; display: block;"></div>
+<div id="confirm-container" class="simplemodal-container" style="position: fixed; z-index: 1002; height: auto; width: 480px; left: 35%; top: 2%; display: block;">
     <a class="modalCloseImg simplemodal-close" title="Close"></a>
     <div tabindex="-1" class="simplemodal-wrap" style="height: 100%; outline: 0px; width: 100%; overflow: auto;">
         <div id="marketPref" class="simplemodal-data" style="display: block;">
