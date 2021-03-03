@@ -1,71 +1,4 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-    <style type="text/css" media="screen">
-        @import "/static/css/styles.css";
-    </style>
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/form.css" />
-    <!--[if lte IE 7]>
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/iefixes.css" />
-    <![endif]-->
-    <!--[if IE 7]>
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/ie7.css" />
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" media="print" href="/static/css/print.css" />
-    <link type='text/css' href='/static/css/popup.css' rel='stylesheet' media='screen' />
-
-    <title>Register and log in</title>
-    <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src='/static/js/jquery.simplemodal.js'></script>
-    <script type='text/javascript' src='/static/js/jquery.removechars.js'></script>
-    <script type="text/javascript" src="/static/js/general.js"></script>
-    <script type="text/javascript" src="/static/js/security.js" charset="utf-8"></script>
-    <noscript>
-        <!--
-            meta-tag "refresh" is provided for those browsers that
-            do not support JavaScript.  Please note that the time
-            delay is greater than zero.
-
-            Notice that this is nested within a "noscript" block.
-            Which means that browsers that support JavaScript will
-            not "see" the refresh meta-tag.
-        -->
-        <meta http-equiv="refresh" content="0; URL=redirectiontarget.htm" />
-    </noscript>
-    <script language="JavaScript">
-        function setJavaEnabled()
-        {
-            // set Javascript Enabled hidden field value to true
-            $('#hidJavaScriptEnabled').val('true');
-        }
-
-        function popupForgotten()
-        {
-            /*
-            var url = "SecurityServlet?functionname=reminder&SK_LOGIN_REMINDER_PAGE=1&start=Y";
-            window.open(url,'lostPassword','toolbar=no,menubar=no,status=no,width=500,height=450,scrollbars=yes,resizable=yes');
-            return false;
-            */
-            var url = 'https://loginreminder.support.ucas.com/LoginReminder/loginReminder.do?start=true&service=UA&cycle=2021';
-            var lang = 1;
-            url += (lang == 2)
-                ? '&lang=cy'
-                : '&lang=en';
-
-            window.open(url,'loginReminder','menubar=no,toolbar=no,status=yes,scrollbars=yes,resizable=yes,width=800,height=400');
-            return false;
-        }
-        function launchPageHelp()
-        {
-            //openPopUp('HelpServicesServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');
-            var lang = 1;
-            openPopUp('PopUpServlet;jsessionid=3acb7bb26c76eb3635cf937682c5', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');
-            return false;
-        }
-    </script>
-</head>
+<?php include_once "top.php";?>
 <body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
 <div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
     <div id="wrapperInternal" class="floatLeft"><!-- Wrapper Internal starts here-->
@@ -82,7 +15,7 @@
                 </ul>
             </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
-                <a href="http://www.ucas.com"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
+                <a href="#"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
             </div><!--logo ENDS here-->
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
@@ -191,10 +124,6 @@
         <div class="clearDiv">&nbsp;</div>
     </div> <!--wrapper internal ends here-->
 </div><!--outer wrapper ends here-->
-<input type="hidden" name="hidCharWarningMsg" id = "hidCharWarningMsgPassword" value="You cannot have a space in your password"/>
-
-
-<div id="backgroundPopup"></div>
 </body>
 </html>
 <script type="text/javascript">

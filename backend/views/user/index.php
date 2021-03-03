@@ -15,7 +15,7 @@
                 </ul>
             </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
-                <a href="http://www.ucas.com"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
+                <a href="#"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
             </div><!--logo ENDS here-->
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
@@ -33,7 +33,8 @@
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
                         <li><a href="#" onclick="launchFieldHelp('apply1', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">What is Apply?</a></li>
-                        <li class="last"><a href="#" onclick="launchFieldHelp('/help/index2', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">Help</a></li>
+                        <li class="last"><a href="#" onclick="launchFieldHelp('/help/index2', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow'); return false;">Help</a></li>                    <li class="help"><a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
+
                     </ul><h3>Key</h3>
                     <ul id="key">
                         <li id="help" class="last">Help</li>
@@ -43,7 +44,7 @@
                 <div id="gatewayContent">
                     <!--breadcrumb starts here-->
                     <div id="breadcrumb">
-                        <a href="Login.jsp;jsessionid=3acb7bb26c76eb3635cf937682c5?id=3acb7bb26c76eb3635cf937682c5&amp;ran=1rankh7ap4p8x">Home</a> &gt;
+                        <a href="/user/index">Home</a> &gt;
                         Register and log in
                     </div><!--breadcrumb ends here-->
                     <hr />
