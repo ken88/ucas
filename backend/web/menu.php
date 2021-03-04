@@ -42,7 +42,5 @@
 <!--leftNav ENDS here-->
 <script type="text/javascript">
     var viewName = '<?php echo $view?>';
-    $(function () {
-        $('#'+viewName).addClass('current');
-    })
+    $('#'+viewName).addClass('current');
 </script>

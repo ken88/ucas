@@ -74,6 +74,14 @@ class UseradminController extends BaseController
         return $this->renderPartial('choices',$data);
     }
 
+    # 新增选择项
+    public function actionAddChoice() {
+        $data = [
+            'view' => 'choices'
+        ];
+        return $this->renderPartial('add-choices',$data);
+    }
+
     # 教育
     public function actionEducation() {
         $data = [

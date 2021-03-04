@@ -60,15 +60,124 @@
 
 
                             <ul>
-                                <li><a href="ChoicesServlet?functionname=choicedetails&amp;mode=add&amp;choiceId=0&amp;id=e1836169083c2c1968b8b6f43643&amp;ran=urmueug9clxn">add a choice</a></li>
+                                <li><a href="/useradmin/add-choice">add a choice</a></li>
                             </ul>
 
                             <hr>
                             <!--//display data -->
+
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <!--//loop through choices collection and display -->
 
-                                <tbody><tr><td>No details entered.</td></tr>
+                                <tbody><tr><td>没有数据显示这个：No details entered.（中文文字不要显示，有数据显示下面那个table）</td></tr>
+
+                                </tbody></table>
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <!--//loop through choices collection and display -->
+
+                                <tbody><tr>
+                                    <td colspan="2" width="481" valign="top">
+
+                                        <p class="bold">Aberystwyth University (A40)</p>
+
+                                        <p class="bold">Accounting and Finance (N400)</p>
+                                    </td>
+                                    <td rowspan="2" valign="top">
+                                        <ul>
+                                            <li><a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=1&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=17d9uydk23b4">edit</a></li>
+                                            <li><a id="delChoice1" href="#">remove</a></li>
+                                            <li style="display:none;"><a id="chcLinkDel1" href="ChoicesServlet?functionname=delete&amp;choiceId=1&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=uxgbdf445xnp">remove</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <p>Campus: Main Site (Aberystwyth) (-)</p>
+                                        <p>Start date: September 2021</p>
+
+                                    </td>
+                                    <td valign="top">
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                            <tbody><tr><td colspan="2">&nbsp;</td></tr>
+                                            <tr><td>Live at home while studying?</td><td>Y</td></tr>
+                                            <tr><td colspan="2">&nbsp;</td></tr>
+                                            <tr><td>Deferred entry?</td><td>N</td></tr>
+                                            <tr><td colspan="2">&nbsp;</td></tr>
+                                            <tr><td nowrap="nowrap">Point of entry:&nbsp;&nbsp;</td><td> &nbsp;&nbsp;</td></tr>
+
+                                            </tbody></table>
+                                    </td>
+                                </tr>
+
+
+                                <tr><td colspan="3"><hr></td></tr>
+
+                                <tr>
+                                    <td colspan="2" width="481" valign="top">
+
+                                        <p class="bold">Birkbeck, University of London (B24)</p>
+
+                                        <p class="bold">Accounting and Management with Finance (N423)</p>
+                                    </td>
+                                    <td rowspan="2" valign="top">
+                                        <ul>
+                                            <li><a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=2&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=5end40alwhna">edit</a></li>
+                                            <li><a id="delChoice2" href="#">remove</a></li>
+                                            <li style="display:none;"><a id="chcLinkDel2" href="ChoicesServlet?functionname=delete&amp;choiceId=2&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=zxjffmuqxpkf">remove</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <p>Campus: Main Site (-)</p>
+                                        <p>Start date: October 2021</p>
+
+                                    </td>
+                                    <td valign="top">
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                            <tbody><tr><td colspan="2">&nbsp;</td></tr>
+                                            <tr><td>Live at home while studying?</td><td>Y</td></tr>
+                                            <tr><td colspan="2">&nbsp;</td></tr>
+                                            <tr><td>Deferred entry?</td><td>N</td></tr>
+                                            <tr><td colspan="2">&nbsp;</td></tr>
+                                            <tr><td nowrap="nowrap">Point of entry:&nbsp;&nbsp;</td><td> &nbsp;&nbsp;</td></tr>
+
+                                            </tbody></table>
+                                    </td>
+                                </tr>
+
+                                <tr><td colspan="2"><p class="warningTxt">NOTE:<br>The following admissions test may be required for entry on this course:<br>Institution's own test (IOT). </p></td><td>&nbsp;</td></tr>
+
+
+                                <tr><td colspan="3"><hr></td></tr>
+
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="thisForm">
+                                            <div class="thisFormElem">
+                                                <div class="thisFormTxt">&nbsp;</div>
+                                                <div class="thisFormField">
+                                                    <input type="checkbox" name="chkComplete">
+                                                    &nbsp;section completed
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="thisForm">
+                                            <div class="thisFormElem">
+                                                <div class="thisFormTxt">&nbsp;</div>
+                                                <div class="thisFormField">
+                                                    <input type="hidden" name="hidJavaScriptEnabled" value="true" id="hidJavaScriptEnabled">
+                                                    <input type="submit" name="btnSave" value="save" class="submitBtn">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
 
                                 </tbody></table>
                             <!-- Hidden field for use by servlet -->
