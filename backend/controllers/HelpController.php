@@ -64,4 +64,28 @@ class HelpController extends Controller
         $inputName = Yii::$app->request->get('functionname');
         return $this->renderPartial('index11',['inputName'=>$inputName]);
     }
+
+    # 机构代码 Institution code
+    public function actionIndex12() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index12',['inputName'=>$inputName]);
+    }
+
+    # 课程代码 Course code
+    public function actionIndex13() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index12',['inputName'=>$inputName]);
+    }
+
+    # 校园代码 Campus code
+    public function actionIndex14() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index12',['inputName'=>$inputName]);
+    }
+
+    # 开始日期 Start date
+    public function actionIndex15() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index12',['inputName'=>$inputName]);
+    }
 }
