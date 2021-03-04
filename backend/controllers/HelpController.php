@@ -52,4 +52,16 @@ class HelpController extends Controller
         $inputName = Yii::$app->request->get('functionname');
         return $this->renderPartial('index9',['inputName'=>$inputName]);
     }
+
+    # 残疾/特殊需要
+    public function actionIndex10() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index10',['inputName'=>$inputName]);
+    }
+
+    # （仅当您选择费用代码“ 02 UK，Chl，IoM或欧盟学生资助服务”时，此字段才可用）
+    public function actionIndex11() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index11',['inputName'=>$inputName]);
+    }
 }

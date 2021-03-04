@@ -17,7 +17,7 @@ class UseradminController extends BaseController
         $mail= Yii::$app->mailer->compose();
 //        $mail->setTo('yukai08621@163.com');
         $mail->setTo('176745155@qq.com');
-        $mail->setSubject("发布纯文字文本");
+        $mail->setSubject("发sdfsd布纯文字文本");
 
 //$mail->setTextBody('zheshisha ');   //发布纯文字文本
 //        $mes = "<br>Dear Miss qaz wsx
@@ -34,7 +34,7 @@ class UseradminController extends BaseController
 //For environmental reasons you will not receive a letter containing an individual decision,
 //although you will be able to print these letters from the Track system if necessary.
 //<br><br>Note: this is an automated email, so please do not reply to this address.";
-        $mes = '发布纯文字文本发布纯文字文本发布纯文字文本发布纯文字文本';
+        $mes = '发布纯文字文本发布纯文字文本123sfsf发布纯文字文本发布纯文字文本';
         $mail->setHtmlBody($mes);    //发布可以带html标签的文本
         if($mail->send())
             echo "ok";

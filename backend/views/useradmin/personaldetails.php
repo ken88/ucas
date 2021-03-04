@@ -120,6 +120,7 @@
                                     (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
                             </div>
                             <div class="clearDiv">&nbsp;</div>
+                            <div class="errorTxt"></div>
                             <h2 class="inPage">Personal</h2>
                             <!--Title-->
                             <div class="thisFormElem">
@@ -196,7 +197,7 @@
                                 </div>
                                 <div class="thisFormField">
                                     <div id="fullWidth"><select name="cboGender" size="1" class="floatLeft" id="genderCombo">
-                                            <option value="-">Please select...</option>
+                                            <option value="">Please select...</option>
                                             <option value="M">Male</option>
                                             <option value="F" selected="selected">Female</option>
                                         </select>
@@ -393,8 +394,8 @@
                                         <label for="dobCombo">Date of birth<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fullWidth"><select name="cboDobDay" size="1" class="floatLeft" id="dobCombo">
-                                                <option value="-">Day</option>
+                                        <div id="fullWidth"><select name="cboDobDay" size="1" class="floatLeft" id="dobCombo3">
+                                                <option value="">Day</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -427,8 +428,8 @@
                                                 <option value="30">30</option>
                                                 <option value="31">31</option>
                                             </select>
-                                            <select name="cboDobMonth" size="1" class="floatLeft" id="dobCombo">
-                                                <option value="-">Month</option>
+                                            <select name="cboDobMonth" size="1" class="floatLeft" id="dobCombo2">
+                                                <option value="">Month</option>
                                                 <option value="1" selected="selected">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
@@ -442,8 +443,8 @@
                                                 <option value="11">November</option>
                                                 <option value="12">December</option>
                                             </select>
-                                            <select name="cboDobyear" size="1" class="floatLeft" id="dobCombo">
-                                                <option value="-">Year</option>
+                                            <select name="cboDobyear" size="1" class="floatLeft" id="dobCombo1">
+                                                <option value="">Year</option>
                                                 <option value="2008">2008</option>
                                                 <option value="2007">2007</option>
                                                 <option value="2006">2006</option>
@@ -560,8 +561,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         (if not born in the UK<span class="Req">*</span>)
-                                        <div id="fullWidth"><select name="cboEntryUkDay" size="1" class="floatLeft" id="entryToUKCombo">
-                                                <option value="-">Day</option>
+                                        <div id="fullWidth"><select name="cboEntryUkDay" size="1" class="floatLeft" id="entryToUKCombo3">
+                                                <option value="">Day</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -594,8 +595,8 @@
                                                 <option value="30">30</option>
                                                 <option value="31">31</option>
                                             </select>
-                                            <select name="cboEntryUkMonth" size="1" class="floatLeft" id="entryToUKCombo">
-                                                <option value="-">Month</option>
+                                            <select name="cboEntryUkMonth" size="1" class="floatLeft" id="entryToUKCombo2">
+                                                <option value="">Month</option>
                                                 <option value="1">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
@@ -609,8 +610,8 @@
                                                 <option value="11">November</option>
                                                 <option value="12">December</option>
                                             </select>
-                                            <select name="cboEntryUKyear" size="1" class="floatLeft" id="entryToUKCombo">
-                                                <option value="-">Year</option>
+                                            <select name="cboEntryUKyear" size="1" class="floatLeft" id="entryToUKCombo1">
+                                                <option value="">Year</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2021">2021</option>
                                                 <option value="2020">2020</option>
@@ -750,8 +751,8 @@
                                     <div class="thisFormTxt">
                                         <label for="cboStudentVisa">Do you require a student visa?</label>
                                     </div>
-                                    <div class="thisFormField fullWidth"><select name="cboStudentVisa" size="1" class="floatLeft" onclick="checkVisaRequired()" id="cboStudentVisa" disabled="">
-                                            <option value="-">Please select ...</option>
+                                    <div class="thisFormField fullWidth"><select name="cboStudentVisa" size="1" class="floatLeft" onclick="checkVisaRequired()" id="cboStudentVisa" >
+                                            <option value="">Please select ...</option>
                                             <option value="Y">Yes</option>
                                             <option value="N">No</option>
                                         </select>
@@ -766,8 +767,8 @@
                                         <label for="cboStudentVisaQ1">Have you previously studied in the UK on a student visa?<span id="studiedRequired" class="Req"></span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div class="fullWidth"><select name="cboStudiedUK" size="1" disabled="" class="floatLeft" onclick="checkStudiedUK()" id="cboStudiedUK">
-                                                <option value="-">Please select ...</option>
+                                        <div class="fullWidth"><select name="cboStudiedUK" size="1"  class="floatLeft" onclick="checkStudiedUK()" id="cboStudiedUK">
+                                                <option value="">Please select ...</option>
                                                 <option value="Y">Yes</option>
                                                 <option value="N">No</option>
                                             </select>
@@ -787,7 +788,7 @@
                                         <label for="txtPassportNo">Passport number</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtPassportNo" value="" size="34" maxlength="35" class="floatLeft" id="txtPassportNo" disabled="">
+                                        <input type="text" name="txtPassportNo" value="" size="34" maxlength="35" class="floatLeft" id="txtPassportNo" >
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.PASSPORTNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -798,8 +799,8 @@
                                         <label for="cboIssueDay">Issue date</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fullWidth"><select name="cboIssueDay" size="1" class="floatLeft" id="cboIssueDay" disabled="">
-                                                <option value="-">Day</option>
+                                        <div id="fullWidth"><select name="cboIssueDay" size="1" class="floatLeft" id="cboIssueDay">
+                                                <option value="">Day</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -832,8 +833,8 @@
                                                 <option value="30">30</option>
                                                 <option value="31">31</option>
                                             </select>
-                                            <select name="cboIssueMonth" size="1" class="floatLeft" id="cboIssueMonth" disabled="">
-                                                <option value="-">Month</option>
+                                            <select name="cboIssueMonth" size="1" class="floatLeft" id="cboIssueMonth" >
+                                                <option value="">Month</option>
                                                 <option value="1">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
@@ -847,8 +848,8 @@
                                                 <option value="11">November</option>
                                                 <option value="12">December</option>
                                             </select>
-                                            <select name="cboIssueYear" size="1" class="floatLeft" id="cboIssueYear" disabled="">
-                                                <option value="-">Year</option>
+                                            <select name="cboIssueYear" size="1" class="floatLeft" id="cboIssueYear" >
+                                                <option value="">Year</option>
                                                 <option value="2021">2021</option>
                                                 <option value="2020">2020</option>
                                                 <option value="2019">2019</option>
@@ -962,8 +963,8 @@
                                         <label for="cboExpiryDay">Expiry date</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fullWidth"><select name="cboExpireDay" size="1" class="floatLeft" id="cboExpireDay" disabled="">
-                                                <option value="-">Day</option>
+                                        <div id="fullWidth"><select name="cboExpireDay" size="1" class="floatLeft" id="cboExpireDay" >
+                                                <option value="">Day</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -996,8 +997,8 @@
                                                 <option value="30">30</option>
                                                 <option value="31">31</option>
                                             </select>
-                                            <select name="cboExpireMonth" size="1" class="floatLeft" id="cboExpireMonth" disabled="">
-                                                <option value="-">Month</option>
+                                            <select name="cboExpireMonth" size="1" class="floatLeft" id="cboExpireMonth" >
+                                                <option value="">Month</option>
                                                 <option value="1">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
@@ -1011,8 +1012,8 @@
                                                 <option value="11">November</option>
                                                 <option value="12">December</option>
                                             </select>
-                                            <select name="cboExpireYear" size="1" class="floatLeft" id="cboExpireYear" disabled="">
-                                                <option value="-">Year</option>
+                                            <select name="cboExpireYear" size="1" class="floatLeft" id="cboExpireYear" >
+                                                <option value="">Year</option>
                                                 <option value="2019">2019</option>
                                                 <option value="2020">2020</option>
                                                 <option value="2021">2021</option>
@@ -1128,7 +1129,7 @@
                                         <label for="txtPlaceOfIssue">Place of issue</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtPlaceOfIssue" value="" size="29" maxlength="30" class="floatLeft" id="txtPlaceOfIssue" disabled="">
+                                        <input type="text" name="txtPlaceOfIssue" value="" size="29" maxlength="30" class="floatLeft" id="txtPlaceOfIssue" >
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.POI'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -1142,22 +1143,24 @@
                                         <label for="feeCodeCombo">Fee code<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField2">
-                                        <div id="fullWidth"><select name="cboFeeCode" size="1" onchange="checkStudentSupport();" class="floatLeft" id="feeCodeCombo">
-                                                <option value="-">Please select...</option>
-                                                <option value="1">01   Private finance</option>
-                                                <option value="2">02   UK, Chl, IoM or EU student finance services</option>
-                                                <option value="4">04   Research councils</option>
-                                                <option value="5">05   DH/Regional Health</option>
-                                                <option value="6">06   UK Govt international award</option>
-                                                <option value="7">07   Training agency</option>
-                                                <option value="8">08   Other UK Govt award</option>
-                                                <option value="9">09   International agency</option>
-                                                <option value="10">10   UK Industry/commerce</option>
-                                                <option value="90">90   Other source</option>
-                                                <option value="99">99   Not known</option>
+                                        <div id="fullWidth"><select name="cboFeeCode" size="1" class="floatLeft" id="feeCodeCombo">
+                                                <option value="">Please select...</option>
+                                                <option value="Private finance" val="1">01   Private finance</option>
+                                                <option value="UK, Chl, IoM or EU student finance services" val="2">02   UK, Chl, IoM or EU student finance services</option>
+                                                <option value="Research councils" val="4">04   Research councils</option>
+                                                <option value="DH/Regional Health" val="5">05   DH/Regional Health</option>
+                                                <option value="DH/Regional Health" val="6">06   UK Govt international award</option>
+                                                <option value="Training agency" val="7">07   Training agency</option>
+                                                <option value="Other UK Govt award" val="8">08   Other UK Govt award</option>
+                                                <option value="International agency" val="9">09   International agency</option>
+                                                <option value="UK Industry/commerce" val="10">10   UK Industry/commerce</option>
+                                                <option value="Other source" val="90">90   Other source</option>
+                                                <option value="Not known" val="99">99   Not known</option>
                                             </select>
                                         </div>
-                                        <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.FEECODE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                        <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.FEECODE'); return false;">
+                                            <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
+                                        </a>
                                     </div>
                                 </div><!--close form element -->
                                 <!--feeNameField-->
@@ -1168,8 +1171,22 @@
                                     </div>
                                     <div class="thisFormField">
                                         (This field is only available if you select fee code '02   UK, Chl, IoM or EU student finance services')
-                                        <br>    <input type="text" name="txtSSA_FeeName" value="" size="32" maxlength="30" disabled="" readonly="" class="floatLeft" id="StudentSupportArrangementsTextEntry" style="background-color: silver;">
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnLeaList" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=lealist', 'document.Form1.txtSSA_FeeName'); return false;" class="seeListBtn" disabled="">
+                                        <br>
+                                        <input type="text"
+                                               name="txtSSA_FeeName"
+                                               value=""
+                                               size="32" maxlength="30"
+                                               disabled="" readonly=""
+                                               class="floatLeft"
+                                               id="StudentSupportArrangementsTextEntry"
+                                               style="background-color: silver;">
+
+                                        <span class="floatLeft">&nbsp;
+                                            <input type="button" name="btnLeaList" value="see list"  id="see1"
+                                                   onclick="seelistOpen('/help/index11', '?functionname=StudentSupportArrangementsTextEntry', 'document.Form1.txtSSA_FeeName');
+                                                   return false;"
+                                                   class="seeListBtn"
+                                                   disabled="">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.STUDENTSUPPORTARRANGEMENTS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -1185,7 +1202,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <div id="fullWidth"><select name="euAnswers" size="1" class="floatLeft" id="euAnswers">
-                                                <option value="-">Please select ...</option>
+                                                <option value="">Please select ...</option>
                                                 <option value="Y">Yes</option>
                                                 <option value="N">No</option>
                                                 <option value="D">Don't know</option>
@@ -1203,7 +1220,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <div id="fullWidth"><select name="parentSpouse" size="1" class="floatLeft" id="parentSpouse">
-                                                <option value="-">Please select ...</option>
+                                                <option value="">Please select ...</option>
                                                 <option value="Y">Yes</option>
                                                 <option value="N">No</option>
                                                 <option value="D">Don't know</option>
@@ -1259,7 +1276,7 @@
                                     </div>
                                     <div class="thisFormField">
                                         <textarea name="txtDisabilitySplNeeds" rows="6" cols="10" readonly="true" class="floatLeft" id="disNeedsTextEntry"></textarea>
-                                        <span class="floatLeft">&nbsp;<input type="button" name="btnDisList1" value="see list" onclick="helpOpen('PopUpServlet', '?functionname=dislist', 'document.Form1.txtDisabilitySplNeeds'); return false;" class="seeListBtn">
+                                        <span class="floatLeft">&nbsp;<input type="button" name="btnDisList1" value="see list" onclick="seelistOpen('/help/index10', '?functionname=disNeedsTextEntry', 'document.Form1.txtDisabilitySplNeeds'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.DISABILITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -1309,7 +1326,7 @@
                                 <div class="thisFormTxt">&nbsp;</div>
                                 <div class="thisFormField">
                                     <!--display &apos;save & cancel&apos; button clip -->
-                                    <input type="submit" name="btnSave" value="save" onclick="setJavaEnabled()" class="submitBtn">
+                                    <input type="button" name="btnSave" value="save" onclick="check()" class="submitBtn">
 
                                 </div>
                                 <!-- ME110::Marketing preference Modal starts here -->
@@ -1434,13 +1451,101 @@
 </html>
 <script type="text/javascript">
     function check() {
-        var list= $('#cboGroups').val();
-        if(list == ''){
-            err = '<p>Please select your tutor group/application group.</p>';
-            $('.errorTxt').html(err);
-        }
-        else {
-            window.location="register12"
+       var titleCombo = $('#titleCombo').val();
+       var genderCombo = $('#genderCombo').val();
+       var foreNameTextEntry = $('#foreNameTextEntry').val();
+       var surNameTextEntry = $('#surNameTextEntry').val();
+       var rdPermUK = $('input:radio[name="rdPermUK"]:checked').val();
+       var emailTextEntry = $('#emailTextEntry').val();
+       var emailConfirmTextEntry = $('#emailConfirmTextEntry').val();
+       var dobCombo1 = $('#dobCombo1').val();
+       var dobCombo2 = $('#dobCombo2').val();
+       var dobCombo3 = $('#dobCombo3').val();
+       var countryOfBirthTextEntry = $('#countryOfBirthTextEntry').val();
+       var nationalityTextEntry = $('#nationalityTextEntry').val();
+       var residentialCategoryTextEntry = $('#residentialCategoryTextEntry').val();
+       var euAnswers = $('#euAnswers').val();
+       var parentSpouse = $('#parentSpouse').val();
+       var disNeedsTextEntry = $('#disNeedsTextEntry').val();
+       var feeCodeCombo = $('#feeCodeCombo').val();
+
+        if($('#chkComplete').is(':checked')) {
+            alert('部分保存，保存已填写的值！  是否部分保存的值要记录下来哦！！！！');
+        } else {
+            var err = '';
+
+            if (titleCombo == '') {
+                err += '<p>Please select title.</p>';
+            }
+            if (genderCombo == '') {
+                err += '<p>Please select gender.</p>';
+            }
+            if (foreNameTextEntry == '') {
+                err += '<p>Please enter forename.</p>';
+            }
+            if (surNameTextEntry == '') {
+                err += '<p>Please enter surname.</p>';
+            }
+            if (rdPermUK == null) {
+
+                err += '<p>Please select whether you live in UK permanently or not.</p>';
+            }
+            if (emailTextEntry == '') {
+                err += '<p>You must provide a valid email address</p>';
+            }
+            if (emailConfirmTextEntry == '') {
+                err += '<p>Please confirm your email address.</p>';
+            }
+            if (emailTextEntry != emailConfirmTextEntry) {
+                err += '<p>Email and confirmation address do not match.</p>';
+            }
+            if (dobCombo1 == '') {
+                err += '<p>Please select date of birth: year.</p>';
+            }
+            if (dobCombo2 == '') {
+                err += '<p>Please select date of birth: month.</p>';
+            }
+            if (dobCombo3 == '') {
+                err += '<p>Please select date of birth: day.</p>';
+            }
+            if (countryOfBirthTextEntry == '') {
+                err += '<p>Please select country of birth.</p>';
+            }
+            if (nationalityTextEntry == '') {
+                err += '<p>Please select nationality.</p>';
+            }
+            if (residentialCategoryTextEntry == '') {
+                err += '<p>Please select residential category.</p>';
+            }
+            if (euAnswers == '') {
+                err += '<p>Please select an answer to the residency question.</p>';
+            }
+            if (parentSpouse == '') {
+                err += '<p>Please select an answer to your family\'s nationality question.</p>';
+            }
+            if (disNeedsTextEntry == '') {
+                err += '<p>Please select disability or special needs.</p>';
+            }
+            if (feeCodeCombo == '') {
+                err += '<p>Please select fee code.</p>';
+            }
+            if (err != '') {
+                $('.errorTxt').html(err);
+                scrollTo(0,0);
+            }else{
+                alert(222)
+            }
         }
     }
+
+    $('#feeCodeCombo').change(function () {
+       if ( $(this).val() == 'UK, Chl, IoM or EU student finance services') {
+           $('#see1').attr('disabled',false);
+           $('#StudentSupportArrangementsTextEntry').attr('style','background-color:white;');
+       } else {
+           $('#see1').attr('disabled',true);
+           $('#StudentSupportArrangementsTextEntry').attr('style','background-color:silver;');
+           $('#StudentSupportArrangementsTextEntry').val('');
+       }
+    })
 </script>
