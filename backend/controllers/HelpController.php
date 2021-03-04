@@ -74,18 +74,28 @@ class HelpController extends Controller
     # 课程代码 Course code
     public function actionIndex13() {
         $inputName = Yii::$app->request->get('functionname');
-        return $this->renderPartial('index12',['inputName'=>$inputName]);
+        $instcode = Yii::$app->request->get('instcode');
+        $url = "https://2021.undergrad.apply.ucas.com/ucasapply/PopUpServlet?functionname=courselist&instcode={$instcode}";
+
+        $html = file_get_contents($url);
+
+        return $this->renderPartial('index13',[
+            'inputName' => $inputName,
+            'instcode' => $instcode,
+            'html' => $html
+        ]);
     }
+
 
     # 校园代码 Campus code
     public function actionIndex14() {
         $inputName = Yii::$app->request->get('functionname');
-        return $this->renderPartial('index12',['inputName'=>$inputName]);
+        return $this->renderPartial('index14',['inputName'=>$inputName]);
     }
 
     # 开始日期 Start date
     public function actionIndex15() {
         $inputName = Yii::$app->request->get('functionname');
-        return $this->renderPartial('index12',['inputName'=>$inputName]);
+        return $this->renderPartial('index15',['inputName'=>$inputName]);
     }
 }

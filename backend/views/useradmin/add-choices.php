@@ -72,7 +72,7 @@
                                     <input type="text" id="instcodeTextEntry" name="txtInstCode" style="text-transform: capitalize;" maxlength="3" size="5" value="" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" id="instButton" value="see list" class="seeListBtn" onclick="seelistOpen('/help/index12', '?functionname=instcodeTextEntry', 'document.Form1.txtInstCode'); return false;"></span>
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.INSTCODE'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.INSTCODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -86,9 +86,12 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft"><span class="floatLeft">&nbsp;
-            <input type="button" value="see list" class="seeListBtn" onclick="launchCoursePopUp('PopUpServlet', '?functionname=courselist', document.Form1.txtInstCode.value, 'document.Form1.txtCourseCode'); return false;"></span>
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.COURSECODE'); return false;">
+                                    <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft">
+                                    <span class="floatLeft">&nbsp;
+                                    <input type="button" value="see list" class="seeListBtn"
+                                           onclick="seelistOpen('/help/index13','?functionname=coursecodeTextEntry&instcode='+document.Form1.txtInstCode.value)">
+                                    </span>
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.COURSECODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -105,7 +108,7 @@
                                     <input type="text" id="campuscodeTextEntry" name="txtCampusCode" value="" style="text-transform: capitalize;" maxlength="1" size="2" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" value="see list" class="seeListBtn" onclick="launchCampusPopUp('PopUpServlet', '?functionname=campuslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, 'document.Form1.txtCampusCode'); return false;"></span>
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CAMPUSCODE'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CAMPUSCODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -122,7 +125,7 @@
                                     <input type="text" id="startdateTextEntry" name="txtStartDate" value="" maxlength="20" size="20" readonly="" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" value="see list" class="seeListBtn" onclick="launchPopUp('PopUpServlet', '?functionname=startslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, document.Form1.txtCampusCode.value, 'document.Form1.txtStartDate, document.Form1.hidStartDate, document.Form1.hidDefer'); return false;"></span>
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.STARTDATE'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.STARTDATE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -135,7 +138,7 @@
                                 </div>
                                 <div class="thisFormField">
                                     <input type="text" id="furtherTextEntry" name="txtFurtherDetails" value="" maxlength="20" size="20" class="floatLeft">
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.FURTHERDETAILS'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.FURTHERDETAILS'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -149,7 +152,7 @@
                                 <div class="thisFormField">
 
                                     <input type="radio" name="rdHome" value="Y" class="floatLeft" id="homeRadio"><span class="floatLeft">Yes&nbsp;&nbsp;</span><input type="radio" name="rdHome" value="N" class="floatLeft" id="homeRadio"><span class="floatLeft">No</span>
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.LIVEATHOME'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.LIVEATHOME'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -163,7 +166,7 @@
                                 <div class="thisFormField">
 
                                     <input type="text" id="entryPointTextEntry" name="txtPOE" value="" maxlength="1" size="2" class="floatLeft">
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.POINTOFENTRY'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.POINTOFENTRY'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
 
@@ -184,7 +187,7 @@
             </span>
 
 
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CRIMDECLARE'); return false;">
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CRIMDECLARE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
                                     </a>
                                 </div>

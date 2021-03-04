@@ -1,6 +1,6 @@
 <?php include_once "seelisttop.php";?>
 
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
+<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18" onload="init();">
 
 <div id="wrapperInternalPopUp" class="floatLeft">
 
@@ -14,32 +14,33 @@
             </ul>
         </div><!--tools ENDS here-->
         <div id="logo" class="floatLeft">
-            <img src="/static/images/apply_logo.gif" width="91" height="30" alt="UCAS">
+            <img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" />
         </div><!--logo ENDS here-->
         <div class="clearDiv">&nbsp;</div>
     </div><!--header ENDS here-->
 
+    <div class="clearDiv">&nbsp;</div>
     <div id="midBoxInternalWide">
 
 
-        <br>
+        </br>
 
         <!-- onkeyup is used to trigger the search function, so after each keystroke the search function is called. -->
-        Search: <input type="text" onkeyup="performSearch();" id="input">
+        Search: <input type="text" onkeyup="performSearch();" id="input"/>
         <p>&nbsp;</p>
         <div id="limit" style="display: none;padding-left:1px;">
-            <p>We have found more than 50 Providers. Please enter more characters in the 'Search' box to help you find your Provider.</p>
+            <p >We have found more than 50 Providers. Please enter more characters in the 'Search' box to help you find your Provider.</p>
             <p>&nbsp;</p>
         </div>
-        <p id="searchResults"></p><p>&nbsp;</p>
-
-        <p></p><div id="notlisted" style="display: none;"><a href="#" onclick="passToParent('|')">My Provider is not listed here.</a></div><p></p>
+        <p id="searchResults">
         <p>&nbsp;</p>
-        <p></p>
+
+        <p><div id="notlisted"><a href="#" onclick="passToParent('|')">My Provider is not listed here.</a></div></p>
+        <p>&nbsp;</p>
+        </p>
     </div>
 </div>
 </body>
-</html>
 <script>
     // search class instance
     var search;
@@ -123,3 +124,4 @@
     };
     document.getElementById('input').focus();
 </script>
+</html>

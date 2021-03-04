@@ -103,7 +103,9 @@ function openPopUp(page, args, xCoord, yCoord, winName)
 	posY = ((screen.availHeight/2)-(popY/2));
 
   page += args;
-	var myPopup = window.open(page,winName,'width='+popX+',height='+popY+'toolbar=0,menubar=0,directories=0,location=0,scrollbars=1,left='+posX+',top='+posY);
+  var url = "https://2021.undergrad.apply.ucas.com/ucasapply/"+page;
+
+	var myPopup = window.open(url,winName,'width='+popX+',height='+popY+'toolbar=0,menubar=0,directories=0,location=0,scrollbars=1,left='+posX+',top='+posY);
   if (!myPopup.opener)
        myPopup.opener = self;
 
