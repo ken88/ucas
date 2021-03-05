@@ -19,7 +19,8 @@ $(document).ready(function(){
   });*/ 
   
   function getCharWarningMsgPasswordValue(){
-  return $('#hidCharWarningMsgPassword')[0].value;}
+
+  }
   
   
   $("#popupOKOnly").click(function(){
