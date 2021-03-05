@@ -273,8 +273,8 @@
 
 
 
-<div id="simplemodal-overlay" class="simplemodal-overlay" style="opacity: 0.5; height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 1001; display: block;"></div>
-<div id="confirm-container" class="simplemodal-container" style="position: fixed; z-index: 1002; height: auto; width: 480px; left: 35%; top: 2%; display: block;">
+<div id="simplemodal-overlay" class="simplemodal-overlay" style="opacity: 0.5; height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 1001; display: none;"></div>
+<div id="confirm-container" class="simplemodal-container" style="position: fixed; z-index: 1002; height: auto; width: 480px; left: 35%; top: 2%; display: none;">
     <a class="modalCloseImg simplemodal-close" title="Close"></a>
     <div tabindex="-1" class="simplemodal-wrap" style="height: 100%; outline: 0px; width: 100%; overflow: auto;">
         <div id="marketPref" class="simplemodal-data" style="display: block;">
