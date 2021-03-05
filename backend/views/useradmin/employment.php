@@ -87,6 +87,22 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tbody><tr><td colspan="2" width="520">No details entered.</td></tr><tr><td colspan="2"><hr></td></tr>
                                 </tbody></table>
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody><tr><td width="481"><p class="bold">雇主名字</p><p>Address: 地址</p>
+                                        <p>Nature of work: 工作内容</p>
+                                        <p>From December 2001 to September 2006, full-time</p></td>
+                                    <td><ul><li><a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=2&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=1iambr5n4hlrh">edit</a></li>
+                                            <li><a id="delEmployer2" href="#">remove</a></li>
+                                            <li style="display:none;"><a id="empLinkDel2" href="EmploymentServlet?functionname=delete&amp;empId=2&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=zqb5leqfye7r">remove</a></li></ul></td></tr>
+                                <tr><td colspan="2"><hr></td></tr>
+                                <tr><td width="481"><p class="bold">1</p><p>Address: 2</p>
+                                        <p>Nature of work: 3</p>
+                                        <p>From December 2001 to November 2004, full-time</p></td>
+                                    <td><ul><li><a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=1&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=1azgstsseydi3">edit</a></li>
+                                            <li><a id="delEmployer1" href="#">remove</a></li>
+                                            <li style="display:none;"><a id="empLinkDel1" href="EmploymentServlet?functionname=delete&amp;empId=1&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=om5132p050vj">remove</a></li></ul></td></tr>
+                                <tr><td colspan="2"><hr></td></tr>
+                                </tbody></table>
                             <div class="thisForm">
                                 <div class="thisFormElem">
                                     <div class="thisFormTxt">

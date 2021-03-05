@@ -98,4 +98,10 @@ class HelpController extends Controller
         $inputName = Yii::$app->request->get('functionname');
         return $this->renderPartial('index15',['inputName'=>$inputName]);
     }
+
+    # 学校/学院/中心名称 School/college/centre name
+    public function actionIndex16() {
+        $inputName = Yii::$app->request->get('functionname');
+        return $this->renderPartial('index16',['inputName'=>$inputName]);
+    }
 }

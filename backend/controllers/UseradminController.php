@@ -89,6 +89,28 @@ class UseradminController extends BaseController
         ];
         return $this->renderPartial('education',$data);
     }
+    # 新增-教育
+    public function actionAddEducation() {
+        $data = [
+            'view' => 'education'
+        ];
+        return $this->renderPartial('add-education',$data);
+    }
+
+    # 新增-教育-资格
+    public function actionAddQualifications() {
+        $data = [
+            'view' => 'education'
+        ];
+        return $this->renderPartial('add-qualifications',$data);
+    }
+    # 新增-教育-资格-资格
+    public function actionAddFw() {
+        $data = [
+            'view' => 'education'
+        ];
+        return $this->renderPartial('add-fw',$data);
+    }
 
     # 就业机会
     public function actionEmployment() {

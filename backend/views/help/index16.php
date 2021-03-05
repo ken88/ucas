@@ -13,14 +13,15 @@
     <script type="text/javascript" src="/static/js/General.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/search.js" charset="utf-8"></script>
 
-    <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/ucas-prod/json/2021/searchData/assessInstitutionData_EN.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/ucas-prod/json/2021/searchData/assessCentreData_EN.js" charset="utf-8"></script>
     <script type="text/javascript">
 
         var inputName = '<?php echo $inputName;?>';
-        function passToParent(msg,code) {
+        function passToParent(passBackValue) {
+            var valueArray = passBackValue.split("|"); //can't use comma as might be in name
 
-            $("#"+inputName,opener.document).val(code); //给父窗口aaa中赋值
-            $("#"+inputName+"1",opener.document).val(msg); //给父窗口aaa中赋值
+            $("#"+inputName,opener.document).val(valueArray[0]); //给父窗口aaa中赋值
+            $("#centreNumberTextEntry",opener.document).val(valueArray[valueArray.length-1]); //给父窗口aaa中赋值
             window.close();
         }
     </script>
@@ -60,23 +61,20 @@
 
     <div class="clearDiv">&nbsp;</div>
     <div id="midBoxInternalWide">
-
-
-        </br>
+        <p>&nbsp;</p>
 
         <!-- onkeyup is used to trigger the search function, so after each keystroke the search function is called. -->
-        Search: <input type="text" onkeyup="performSearch();" id="input"/>
+        Search: <input type="text" onkeyup="performSearch();" id="input">
         <p>&nbsp;</p>
         <div id="limit" style="display: none;padding-left:1px;">
-            <p >We have found more than 50 Providers. Please enter more characters in the 'Search' box to help you find your Provider.</p>
+            <p>We have found more than 50 results, please enter more details such as the road name or town in the 'Search' box to help you find your school.</p>
             <p>&nbsp;</p>
         </div>
-        <p id="searchResults">
-        <p>&nbsp;</p>
+        <p id="searchResults"></p><p>&nbsp;</p>
 
-        <p><div id="notlisted"><a href="#" onclick="passToParent('|')">My Provider is not listed here.</a></div></p>
+        <p></p><div id="notlisted" style="display: none;"><a href="#" onclick="passToParent('|')">Click here to enter my school or centre details manually</a></div><p></p>
         <p>&nbsp;</p>
-        </p>
+        <p></p>
     </div>
 </div>
 </body>
@@ -84,9 +82,9 @@
     // search class instance
     var search;
     // field id or name being used to search - required by the search function
-    var searchField = 1;
+    var searchField = 4;
     // field id or name being used to present to the user - this is used by this page
-    var presentationField = 1;
+    var presentationField = 2;
 
     // This function is called 'onload' within the <body> tag.
     function init() {
@@ -109,7 +107,11 @@
                 var tbl = document.getElementById('tblResults');
                 var row = tbl.insertRow(0);
                 var cell0 = row.insertCell(0);
-                cell0.innerHTML = "<span style=\"font-family: Arial, sans-serif;font-size:0.7em;padding:0;font-weight:bold;float:left\">Choose an institution...</span>";
+                var cell1 = row.insertCell(1);
+                var cell2 = row.insertCell(2);
+                cell0.innerHTML = "<span style=\"font-family: Arial, sans-serif;	font-size:0.7em;padding:0;font-weight:bold;float:left\">School/college/centre name</span>";
+                cell1.innerHTML = "&nbsp;";
+                cell2.innerHTML = "<span style=\"font-family: Arial, sans-serif;	font-size:0.7em;padding:0;font-weight:bold;float:left\">Exam&nbsp;centre&nbsp;number</span>";
                 document.getElementById('notlisted').style.display = 'block';
             })
             //displays the top 10 results because no search has been entered... this event is handy as it
@@ -137,10 +139,11 @@
                 var row = tbl.insertRow(lastRow);
                 var cell0 = row.insertCell(0);
 
-                cell0.innerHTML = "<a href=\"#\" onclick='passToParent(\""+data[1]+"\",\""+data[0]+"\");return false;' " +
-                    "style=\"font-family: Arial, sans-serif;font-size:0.7em;padding:0;font-weight:normal;text-decoration:underline;color:#e31c18;\">"+data[1]+"("+data[0]+")</a>";
+                cell0.innerHTML = "<a href=\"#\" onclick='passToParent(\""+data[1].replace("'","&#39;")+"|"+data[0]+"|"+data[3]+"\");return false;' style=\"font-family: Arial, sans-serif;	font-size:0.7em;padding:0;font-weight:normal;text-decoration:underline;color:#e31c18;\">"+data[2]+"</a>";
                 var cell1 = row.insertCell(1);
                 cell1.innerHTML = "&nbsp;";
+                var cell2 = row.insertCell(2);
+                cell2.innerHTML = "<span style=\"font-family: Arial, sans-serif;	font-size:0.7em;padding:0;font-weight:normal;float:left\">"+data[0]+"</span>";
             });
         search.search('',searchField);
     };

@@ -68,7 +68,7 @@
                                     <label for="instcodeTextEntry">Institution code<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-
+                                    <input type="hidden" id="instcodeTextEntry1" name="txtInstCode1" style="text-transform: capitalize;" maxlength="3" size="5" value="" class="floatLeft">
                                     <input type="text" id="instcodeTextEntry" name="txtInstCode" style="text-transform: capitalize;" maxlength="3" size="5" value="" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" id="instButton" value="see list" class="seeListBtn" onclick="seelistOpen('/help/index12', '?functionname=instcodeTextEntry', 'document.Form1.txtInstCode'); return false;"></span>
@@ -95,6 +95,7 @@
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
+
 
 
                             <!--Campus code-->
