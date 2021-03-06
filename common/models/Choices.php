@@ -16,7 +16,7 @@ use Yii;
  * @property string $txtStartDate 开始日期
  * @property string|null $txtFurtherDetails 更多详细信息
  * @property string $rdHome 住在家里
- * @property int $txtPOE 入口点,填写的就是数字
+ * @property int|null $txtPOE 入口点,填写的就是数字
  *
  * @property User $user
  */
@@ -36,7 +36,7 @@ class Choices extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'txtInstCode', 'txtCourseCode', 'txtCampusCode', 'txtStartDate', 'rdHome', 'txtPOE'], 'required'],
+            [['user_id', 'txtInstCode', 'txtCourseCode', 'txtCampusCode', 'txtStartDate', 'rdHome'], 'required'],
             [['user_id', 'txtPOE'], 'integer'],
             [['txtInstCode', 'txtInstCode1', 'txtCourseCode', 'txtCampusCode', 'txtFurtherDetails'], 'string', 'max' => 255],
             [['txtStartDate'], 'string', 'max' => 50],
