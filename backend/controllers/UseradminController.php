@@ -9,6 +9,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\helpers\Url;
 
 class UseradminController extends BaseController
 {
@@ -120,7 +121,7 @@ although you will be able to print these letters from the Track system if necess
         return $this->renderPartial('employment',$data);
     }
 
-    # 就业机会
+    # 新增就业机会
     public function actionAddEmployment() {
         $data = [
             'view' => 'employment'
@@ -134,6 +135,42 @@ although you will be able to print these letters from the Track system if necess
             'view' => 'statement'
         ];
         return $this->renderPartial('statement',$data);
+    }
+
+    # 陈述保存
+    public function actionAddSaveStatement() {
+        $post_data = Yii::$app->request->post('taPersonalStatement','');
+        $flag = Yii::$app->request->post('flag',1); # 1 保存 2 保存后跳转到预览
+
+        $list_array = explode("\n",$post_data); # 分割回车并转为数组
+        $list = array();
+        foreach($list_array as $array){
+            array_push($list,$array); # 获取到数据加到$list数组里（每一行数据）
+        }
+//        dd($list); # 打印
+
+        # 这里保存数据表 start
+
+
+        # 这里保存数据表  end
+
+
+        # 1 跳转陈述页面
+        if ($flag == 1) {
+
+            return $this->redirect(Url::to(['useradmin/statement']));
+        } else {
+            #  2 保存后跳转到预览
+            return $this->redirect(Url::to(['useradmin/statement-see']));
+        }
+    }
+
+    # 陈述预览
+    public function actionStatementSee() {
+        $data = [
+            'view' => 'statement'
+        ];
+        return $this->renderPartial('statement-see',$data);
     }
 
     # 查看所有细节

@@ -50,7 +50,7 @@
                         <p class="bold">Our <a href="https://www.ucas.com/ucas/undergraduate/apply-track/writing-personal-statement" target="_blank">guide to writing your personal statement</a> (opens in a new window) should help you complete this section. <br><br>We strongly recommend you write the statement using a word-processing package and paste it in to Apply. <br><br>You can type your statement directly into the box or edit a statement you have pasted in.</p>
 
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="PersonalStatementServlet?id=e1836169083c2c1968b8b6f43643&amp;ran=lxkpyhuwht2c" onsubmit="return checkSubmit();">
+                        <form name="Form1" method="post" action="/useradmin/add-save-statement" >
 
                             <!--display 'PersonalStatement' clip -->
                             <p><input type="hidden" name="from" value="fromStatementStatement"></p><p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown"></p>
@@ -93,8 +93,32 @@
                             </div>
                             <br>
                             <h2 div="" style="display:inline;" class="inPage"><label for="statementTextEntry">Personal statement</label></h2>
-                            <p><strong>Make sure your personal statement is your own work.</strong></p><p>We'll carry out checks to verify your personal statement is your own work. Provided it is your own work, you can use your personal statement from your application last year. If it appears to have been copied from another source, we'll inform the universities and colleges to which you have applied. They will then take the action they consider appropriate. We'll also contact you by email to tell you this has happened.</p><p class="warningTxt">Click 'save' within <span id="timer">35 minutes </span> so that your work is not lost.</p><p class="warningTxt">You have used 0 of 47 lines based on the preview and 0 of 4000 characters.</p><p class="warningTxt">Your completed statement must be between 1,000 and 4,000 characters (maximum 47 lines) including spaces </p><!--Personal Statement-->
-                            <textarea name="taPersonalStatement" rows="20" cols="75"  class="floatLeft" onkeydown="forceSessionUpdate()" id="statementTextEntry"></textarea><span class="floatLeft">&nbsp;</span>    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.PERSONALSTATEMENT.STATEMENT.FIELD.STATEMENT'); return false;"><div id="statementHelpIcon"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></div></a>
+                            <p>
+                                <strong>
+                                    Make sure your personal statement is your own work.
+                                </strong>
+                            </p>
+                            <p>We'll carry out checks to verify your personal statement
+                                is your own work. Provided it is your own work, you can use
+                                your personal statement from your application last year.
+                                If it appears to have been copied from another source,
+                                we'll inform the universities and colleges to which you
+                                have applied. They will then take the action they consider
+                                appropriate. We'll also contact you by email to tell
+                                you this has happened.</p>
+                            <div class="errorTxt"></div>
+                            <p class="warningTxt">
+                                Click 'save' within
+                                <span id="timer">35 minutes </span>
+                                so that your work is not lost.
+                            </p>
+                            <p class="warningTxt">You have used 0 of 47 lines based on the preview and 0 of 4000 characters.</p>
+                            <p class="warningTxt">Your completed statement must be between
+                                1,000 and 4,000 characters (maximum 47 lines) including spaces
+                            </p><!--Personal Statement-->
+
+
+                            <textarea name="taPersonalStatement" rows="20" cols="75"  class="floatLeft"  id="statementTextEntry"></textarea><span class="floatLeft">&nbsp;</span>    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.PERSONALSTATEMENT.STATEMENT.FIELD.STATEMENT'); return false;"><div id="statementHelpIcon"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></div></a>
                             <div class="clearDiv">&nbsp;</div>
                             <div id="asciiStatement" style="display: none;">
                                 <p class="warningTxt">Text containing substituted characters</p>    <textarea name="taAsciiPersonalStatement" rows="20" cols="75" onmousedown="forceSessionUpdate()" readonly="true" onmouseup="forceSessionUpdate()" onchange="forceSessionUpdate()" onkeypress="forceSessionUpdate()" class="floatLeft" onkeydown="forceSessionUpdate()" id="taAsciiPersonalStatement"></textarea><span class="floatLeft">&nbsp;</span></div>
@@ -114,9 +138,9 @@
                                         &nbsp;
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="hidden" name="hidJavaScriptEnabled" value="false" id="hidJavaScriptEnabled">
-                                        <input type="submit" name="btnSave" value="save" onclick="setJavaEnabled()" class="submitBtn">
-                                        &nbsp;&nbsp;<input type="submit" name="btnPreview" value="preview" class="submitBtn">
+                                        <input type="hidden" name="flag" id="flag">
+                                        <input type="button" name="btnSave" value="save" onclick="check(1)" class="submitBtn">
+                                        &nbsp;&nbsp;<input type="button" name="btnPreview" value="preview" onclick="check(2)" class="submitBtn">
 
                                     </div>
                                 </div>
@@ -165,3 +189,19 @@
 
 </body>
 </html>
+<script type="text/javascript">
+    function check(flag) {
+        // flag==1 正常保存  flag==2  保存后跳转到预览页面（前提数据不能为空）
+        var statementTextEntry = $('#statementTextEntry').val();
+        var err = '';
+        if(statementTextEntry == ''){
+            err = '<p>Statement is blank. You must enter between 1,000 and 4000 characters (maximum 47 lines) including spaces.</p>';
+            $('.errorTxt').html(err);
+            scrollTo(0,0);
+        } else {
+            $('#flag').val(flag);
+            $(Form1).submit();
+        }
+    }
+
+</script>
