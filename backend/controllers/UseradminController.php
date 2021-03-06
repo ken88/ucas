@@ -8,7 +8,9 @@
 
 namespace backend\controllers;
 
+use common\models\Choices;
 use common\models\PersonalDetails;
+use DeepCopyTest\Matcher\Y;
 use Yii;
 use yii\helpers\Url;
 
@@ -86,19 +88,51 @@ although you will be able to print these letters from the Track system if necess
     # 选择项
     public function actionChoices()
     {
-        $data = [
-            'view' => 'choices'
-        ];
-        return $this->renderPartial('choices', $data);
+        $choices = Choices::find()
+            ->orderBy(['id' => SORT_DESC])
+            ->where(['user_id' => Yii::$app->user->identity->id])
+            ->all();
+        return $this->renderPartial('choices', [
+            'view' => 'choices',
+            'choices' => $choices
+        ]);
     }
 
-    # 新增选择项
+    /**
+     * 新增选择项
+     */
     public function actionAddChoice()
     {
-        $data = [
-            'view' => 'choices'
-        ];
-        return $this->renderPartial('add-choices', $data);
+        if (!Yii::$app->request->get('id') && Choices::find()->where(['user_id' => Yii::$app->user->identity->id])->count() >= 5) {
+            echo "<script>alert('You can make a maximum of 5 choices.')</script>";
+            echo "<script>window.location.href='/useradmin/choices'</script>";
+            exit();
+        }
+
+        $model = Yii::$app->request->get('id') ? Choices::findOne(Yii::$app->request->get('id')) : new Choices();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            if (!$model->save()) {
+//                var_dump($model->getErrors());
+                exit('create/edit error');
+            } else
+                return $this->redirect(Url::to(['useradmin/choices']));
+        }
+
+        return $this->renderPartial('add-choices', [
+            'view' => 'choices',
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * 选择项删除
+     */
+    public function actionDelChoice($id)
+    {
+        $model = Choices::findOne($id);
+        $model->delete();
+        $this->redirect(Url::to(['useradmin/choices']));
     }
 
     # 教育
@@ -147,11 +181,12 @@ although you will be able to print these letters from the Track system if necess
     }
 
     # 新增就业机会
-    public function actionAddEmployment() {
+    public function actionAddEmployment()
+    {
         $data = [
             'view' => 'employment'
         ];
-        return $this->renderPartial('add-employment',$data);
+        return $this->renderPartial('add-employment', $data);
     }
 
     # 陈述
@@ -164,14 +199,15 @@ although you will be able to print these letters from the Track system if necess
     }
 
     # 陈述保存
-    public function actionAddSaveStatement() {
-        $post_data = Yii::$app->request->post('taPersonalStatement','');
-        $flag = Yii::$app->request->post('flag',1); # 1 保存 2 保存后跳转到预览
+    public function actionAddSaveStatement()
+    {
+        $post_data = Yii::$app->request->post('taPersonalStatement', '');
+        $flag = Yii::$app->request->post('flag', 1); # 1 保存 2 保存后跳转到预览
 
-        $list_array = explode("\n",$post_data); # 分割回车并转为数组
+        $list_array = explode("\n", $post_data); # 分割回车并转为数组
         $list = array();
-        foreach($list_array as $array){
-            array_push($list,$array); # 获取到数据加到$list数组里（每一行数据）
+        foreach ($list_array as $array) {
+            array_push($list, $array); # 获取到数据加到$list数组里（每一行数据）
         }
 //        dd($list); # 打印
 
@@ -192,11 +228,12 @@ although you will be able to print these letters from the Track system if necess
     }
 
     # 陈述预览
-    public function actionStatementSee() {
+    public function actionStatementSee()
+    {
         $data = [
             'view' => 'statement'
         ];
-        return $this->renderPartial('statement-see',$data);
+        return $this->renderPartial('statement-see', $data);
     }
 
     # 查看所有细节
