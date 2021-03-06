@@ -2,6 +2,9 @@
 
 namespace common\models;
 
+use function Webmozart\Assert\Tests\StaticAnalysis\false;
+use function Webmozart\Assert\Tests\StaticAnalysis\null;
+use function Webmozart\Assert\Tests\StaticAnalysis\true;
 use Yii;
 
 /**
@@ -71,7 +74,7 @@ class PersonalDetails extends \yii\db\ActiveRecord
             [['rdPermUK', 'cboStudentVisa', 'cboStudiedUK'], 'string', 'max' => 10],
             [['cboCountryId', 'txtCntryOfBirth', 'txtNatioality', 'txtDualNatioality', 'txtResidenceArea', 'txtResidentialCategory'], 'string', 'max' => 100],
             [['cboEntryUkMonth', 'cboIssueMonth', 'cboExpireMonth', 'euAnswers', 'parentSpouse'], 'string', 'max' => 20],
-            [['txtUniqueLearnerNo', 'txtToeflNo', 'txtIeltsNo', 'cboFeeCode', 'txtSSA_FeeName', 'txtNominPerson', 'txtNominPersonRelation'], 'string', 'max' => 50],
+            [['txtUniqueLearnerNo', 'txtToeflNo', 'txtIeltsNo', 'cboFeeCode', 'txtSSA_FeeName', 'txtNominPerson', 'txtNominPersonRelation', 'txtPrefFName'], 'string', 'max' => 50],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -132,5 +135,22 @@ class PersonalDetails extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @param bool $insert
+     * @return bool
+     */
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($insert) {
+                $this->user_id = Yii::$app->user->identity->id;
+            }
+            if ($this->cboFeeCode != 'UK, Chl, IoM or EU student finance services')
+                $this->txtSSA_FeeName = null;
+            return true;
+        }
+        return false;
     }
 }

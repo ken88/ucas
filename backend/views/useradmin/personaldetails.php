@@ -53,7 +53,7 @@
                     <div class="thisForm">
                         <!--clip starts-->
 
-                        <form name="Form1" method="post" action="PersonalDetailsServlet?id=787d5c91c8b2e2a283531db7b805&amp;ran=135rcyz32p1n2">
+                        <form name="Form1" method="post" action="">
                             <!--display &apos;Employment&apos; clip -->
                             <script language="JavaScript">
                                 var tg = new Array();
@@ -132,7 +132,7 @@
                                     <div id="fullWidth">
                                         <select name="cboTitle" size="1"  class="floatLeft" id="titleCombo">
                                             <option value="">Please select...</option>
-                                            <option value="Miss" selected="selected">Miss</option>
+                                            <option value="Miss">Miss</option>
                                             <option value="Mr">Mr</option>
                                             <option value="Mrs">Mrs</option>
                                             <option value="Ms">Ms</option>
@@ -199,7 +199,7 @@
                                     <div id="fullWidth"><select name="cboGender" size="1" class="floatLeft" id="genderCombo">
                                             <option value="">Please select...</option>
                                             <option value="M">Male</option>
-                                            <option value="F" selected="selected">Female</option>
+                                            <option value="F">Female</option>
                                         </select>
                                     </div>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.GENDER'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -212,7 +212,7 @@
                                     <label for="foreNameTextEntry">First/given name(s)<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtFName" value="ken" size="39" maxlength="50" class="floatLeft" id="foreNameTextEntry">
+                                    <input type="text" name="txtFName" value="<?= $user->txtForename ?>" size="39" maxlength="50" class="floatLeft" id="foreNameTextEntry">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.FORENAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -223,7 +223,7 @@
                                     <label for="surNameTextEntry">Surname/family name<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtSName" value="yu" size="39" maxlength="30" class="floatLeft" id="surNameTextEntry">
+                                    <input type="text" name="txtSName" value="<?= $user->txtSurname ?>" size="39" maxlength="30" class="floatLeft" id="surNameTextEntry">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.SURNAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -234,7 +234,7 @@
                                     <label for="prefForeNameTextEntry">Preferred first name</label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtPrefFName" value="" size="39" maxlength="35" class="floatLeft" id="prefForeNameTextEntry">
+                                    <input type="text" name="txtPrefFName" value="<?= $model->txtPrefFName ?>" size="39" maxlength="35" class="floatLeft" id="prefForeNameTextEntry">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.PREFERREDFORENAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -245,7 +245,7 @@
                                     <label for="previousSurnameTextEntry">Previous surname at 16th birthday</label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtPrevSurn" value="" size="39" maxlength="30" class="floatLeft" id="previousSurnameTextEntry">
+                                    <input type="text" name="txtPrevSurn" value="<?= $model->txtPrevSurn ?>" size="39" maxlength="30" class="floatLeft" id="previousSurnameTextEntry">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.PREVIOUSSURNAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -258,35 +258,35 @@
                                     <label for="postalAddress">Postal address<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormTxt">
-                                    aaa
+                                    <?= $user->addrLine1Text ?>
                                 </div>
                                 <!--Address Line 2 -->
                                 <div class="thisFormTxt">
                                     <label>&nbsp;</label>
                                 </div>
                                 <div class="thisFormTxt">
-                                    bbb
+                                    <?= $user->addrLine2Text ?>
                                 </div>
                                 <!--Address Line 3 -->
                                 <div class="thisFormTxt">
                                     <label>&nbsp;</label>
                                 </div>
                                 <div class="thisFormTxt">
-                                    ccc
+                                    <?= $user->addrLine3Text ?>
                                 </div>
                                 <!--Address Line 4 -->
                                 <div class="thisFormTxt">
                                     <label>&nbsp;</label>
                                 </div>
                                 <div class="thisFormTxt">
-                                    ddd
+                                    <?= $user->addrLine4Text ?>
                                 </div>
                                 <!--Postal Country -->
                                 <div class="thisFormTxt">
                                     <label>&nbsp;</label>
                                 </div>
                                 <div class="thisFormTxt">
-                                    Algeria
+                                    <?= $user->Country ?>
                                 </div>
                             </div><!--close form element -->
                             <div class="clearDiv">&nbsp;</div>
@@ -311,7 +311,7 @@
                                     <label for="liveUKRadio">Is your permanent home in the UK?<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="radio" name="rdPermUK" value="Y" onclick="checkAPRLabel()" class="floatLeft" id="liveUKRadio"><span class="floatLeft">Yes&nbsp;&nbsp;</span><input type="radio" name="rdPermUK" value="N" onclick="checkAPRLabel()" class="floatLeft" id="liveUKRadio"><span class="floatLeft">No</span>
+                                    <input type="radio" name="rdPermUK" value="Y" <?php if($model->rdPermUK=='Y') echo 'checked' ?> onclick="checkAPRLabel()" class="floatLeft" id="liveUKRadio"><span class="floatLeft">Yes&nbsp;&nbsp;</span><input type="radio" name="rdPermUK" <?php if($model->rdPermUK=='N') echo 'checked' ?> value="N" onclick="checkAPRLabel()" class="floatLeft" id="liveUKRadio"><span class="floatLeft">No</span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.LIVEUK'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -349,7 +349,7 @@
                                         <label for="homeTelNoTextEntry">Home telephone number</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtHomeTelNo" value="13123456789" size="39" maxlength="24" class="floatLeft" id="homeTelNoTextEntry">
+                                        <input type="text" name="txtHomeTelNo" value="<?= $user->txtHomePhone ?>" size="39" maxlength="24" class="floatLeft" id="homeTelNoTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.HOMETELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -360,7 +360,7 @@
                                         <label for="mobileNoTextEntry">Mobile number </label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtMobileTelNo" value="13123456789" size="39" maxlength="24" class="floatLeft" id="mobileNoTextEntry">
+                                        <input type="text" name="txtMobileTelNo" value="<?= $user->txtMobilePhone ?>" size="39" maxlength="24" class="floatLeft" id="mobileNoTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.MOBILETELNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                         (Please do not include a dial-out code in your phone number (for example, +, or 00). Please enter the country calling code (e.g. 44 for UK phone numbers). For UK numbers, please remove the leading 0 before adding the country  code. We might use your mobile number to send you SMS reminders.)
                                     </div>
@@ -372,7 +372,7 @@
                                         <label for="emailTextEntry">Email address<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtEmail" value="176745155@qq.com" size="39" maxlength="60" class="floatLeft" id="emailTextEntry">
+                                        <input type="text" name="txtEmail" value="<?= $user->emailText?>" size="39" maxlength="60" class="floatLeft" id="emailTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.EMAIL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -383,7 +383,7 @@
                                         <label for="emailConfirmTextEntry">Confirm email address<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtEmailConfirm" value="176745155@qq.com" size="39" maxlength="60" class="floatLeft" id="emailConfirmTextEntry">
+                                        <input type="text" name="txtEmailConfirm" value="<?= $user->emailText ?>" size="39" maxlength="60" class="floatLeft" id="emailConfirmTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.EMAILCONFIRM'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -399,7 +399,7 @@
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
-                                                <option value="4" selected="selected">4</option>
+                                                <option value="4" >4</option>
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
                                                 <option value="7">7</option>
@@ -430,7 +430,6 @@
                                             </select>
                                             <select name="cboDobMonth" size="1" class="floatLeft" id="dobCombo2">
                                                 <option value="">Month</option>
-                                                <option value="1" selected="selected">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
                                                 <option value="4">April</option>
@@ -457,7 +456,6 @@
                                                 <option value="1999">1999</option>
                                                 <option value="1998">1998</option>
                                                 <option value="1997">1997</option>
-                                                <option value="1996" selected="selected">1996</option>
                                                 <option value="1995">1995</option>
                                                 <option value="1994">1994</option>
                                                 <option value="1993">1993</option>
@@ -545,7 +543,7 @@
                                         <label for="countryOfBirthTextEntry">Country of birth<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtCntryOfBirth" value="" size="32" maxlength="250" class="floatLeft" id="countryOfBirthTextEntry">
+                                        <input type="text" name="txtCntryOfBirth" value="<?= $model->txtCntryOfBirth ?>" size="32" maxlength="250" class="floatLeft" id="countryOfBirthTextEntry">
                                         <span class="floatLeft">&nbsp;<input type="button" name="btnCountryList1" value="see list" onclick="seelistOpen('/help/index6', '?functionname=countryOfBirthTextEntry', 'document.Form1.txtCntryOfBirth'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.COUNTRYOFBIRTH'); return false;">
@@ -610,7 +608,7 @@
                                                 <option value="11">November</option>
                                                 <option value="12">December</option>
                                             </select>
-                                            <select name="cboEntryUKyear" size="1" class="floatLeft" id="entryToUKCombo1">
+                                            <select name="cboEntryUkYear" size="1" class="floatLeft" id="entryToUKCombo1">
                                                 <option value="">Year</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2021">2021</option>
@@ -652,7 +650,7 @@
                                         <label for="nationalityTextEntry">Nationality<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtNatioality" value="" size="32" maxlength="250" class="floatLeft" id="nationalityTextEntry">
+                                        <input type="text" name="txtNatioality" value="<?= $model->txtNatioality ?>" size="32" maxlength="250" class="floatLeft" id="nationalityTextEntry">
                                         <span class="floatLeft">&nbsp;
                                             <input type="button" name="btnCountryList2" value="see list" onclick="seelistOpen('/help/index7', '?functionname=nationalityTextEntry', 'document.Form1.txtNatioality'); return false;" class="seeListBtn">
 </span>
@@ -666,7 +664,7 @@
                                         <label for="dualNationalityTextEntry">Dual nationality</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtDualNatioality" value="" size="32" maxlength="250" class="floatLeft" id="dualNationalityTextEntry">
+                                        <input type="text" name="txtDualNatioality" value="<?= $model->txtDualNatioality ?>" size="32" maxlength="250" class="floatLeft" id="dualNationalityTextEntry">
                                         <span class="floatLeft">&nbsp;
                                             <input type="button" name="btnCountryList3" value="see list" onclick="seelistOpen('/help/index7', '?functionname=dualNationalityTextEntry', 'document.Form1.txtDualNatioality'); return false;" class="seeListBtn">
 </span>
@@ -680,7 +678,7 @@
                                         <label for="areaOfResidenceTextEntry">Area of permanent residence<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtResidenceArea" value="" size="32" maxlength="250" class="floatLeft" id="areaOfResidenceTextEntry">
+                                        <input type="text" name="txtResidenceArea" value="<?= $model->txtResidenceArea ?>" size="32" maxlength="250" class="floatLeft" id="areaOfResidenceTextEntry">
                                         <span class="floatLeft">&nbsp;
                                             <input type="button" name="btnAreaOfResidenceList" value="see list" onclick="seelistOpen('/help/index8', '?functionname=areaOfResidenceTextEntry', 'document.Form1.areaOfResidenceTextEntry'); return false;" class="seeListBtn">
 </span>
@@ -694,7 +692,7 @@
                                         <label for="residentialCategoryTextEntry">Residential category<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtResidentialCategory" value="" size="32" maxlength="50" class="floatLeft" id="residentialCategoryTextEntry">
+                                        <input type="text" name="txtResidentialCategory" value="<?= $model->txtResidentialCategory ?>" size="32" maxlength="50" class="floatLeft" id="residentialCategoryTextEntry">
                                         <span class="floatLeft">&nbsp;
                                             <input type="button" name="btnResCategoryList" value="see list" onclick="seelistOpen('/help/index9', '?functionname=residentialCategoryTextEntry', 'document.Form1.txtResidentialCategory'); return false;" class="seeListBtn">
 </span>
@@ -712,7 +710,7 @@
                                         <label for="emailTextEntry">Unique Learner Number (ULN)</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtUniqueLearnerNo" value="" size="10" maxlength="10" class="floatLeft" id="uniqueLearnerNoTextEntry">
+                                        <input type="text" name="txtUniqueLearnerNo" value="<?= $model->txtUniqueLearnerNo ?>" size="10" maxlength="10" class="floatLeft" id="uniqueLearnerNoTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.ULN'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -723,7 +721,7 @@
                                         <label for="emailTextEntry">Test of English as a Foreign Language (TOEFL) Number</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtToeflNo" value="" size="25" maxlength="16" class="floatLeft" id="toeflNoTextEntry">
+                                        <input type="text" name="txtToeflNo" value="<?= $model->txtToeflNo ?>" size="25" maxlength="16" class="floatLeft" id="toeflNoTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.TOEFL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -734,7 +732,7 @@
                                         <label for="emailTextEntry">International English Language Testing System (IELTS) TRF Number</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtIeltsNo" value="" size="25" maxlength="20" class="floatLeft" id="ieltsNoTextEntry">
+                                        <input type="text" name="txtIeltsNo" value="<?= $model->txtIeltsNo ?>" size="25" maxlength="20" class="floatLeft" id="ieltsNoTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.IELTS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -753,8 +751,8 @@
                                     </div>
                                     <div class="thisFormField fullWidth"><select name="cboStudentVisa" size="1" class="floatLeft" onclick="checkVisaRequired()" id="cboStudentVisa" >
                                             <option value="">Please select ...</option>
-                                            <option value="Y">Yes</option>
-                                            <option value="N">No</option>
+                                            <option value="Y" <?php if($model->cboStudentVisa=='Y') echo 'selected' ?> >Yes</option>
+                                            <option value="N" <?php if($model->cboStudentVisa=='N') echo 'selected' ?> >No</option>
                                         </select>
 
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.STUDENTVISA'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -769,8 +767,8 @@
                                     <div class="thisFormField">
                                         <div class="fullWidth"><select name="cboStudiedUK" size="1"  class="floatLeft" onclick="checkStudiedUK()" id="cboStudiedUK">
                                                 <option value="">Please select ...</option>
-                                                <option value="Y">Yes</option>
-                                                <option value="N">No</option>
+                                                <option value="Y" <?php if($model->cboStudiedUK=='Y') echo 'selected'?> >Yes</option>
+                                                <option value="N" <?php if($model->cboStudiedUK=='N') echo 'selected'?>>No</option>
                                             </select>
 
                                             <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.VISAQ1'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -788,7 +786,7 @@
                                         <label for="txtPassportNo">Passport number</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtPassportNo" value="" size="34" maxlength="35" class="floatLeft" id="txtPassportNo" >
+                                        <input type="text" name="txtPassportNo" value="<?= $model->txtPassportNo ?>" size="34" maxlength="35" class="floatLeft" id="txtPassportNo" >
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.PASSPORTNO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -1129,7 +1127,7 @@
                                         <label for="txtPlaceOfIssue">Place of issue</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtPlaceOfIssue" value="" size="29" maxlength="30" class="floatLeft" id="txtPlaceOfIssue" >
+                                        <input type="text" name="txtPlaceOfIssue" value="<?= $model->txtPlaceOfIssue?>" size="29" maxlength="30" class="floatLeft" id="txtPlaceOfIssue" >
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.POI'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -1174,12 +1172,11 @@
                                         <br>
                                         <input type="text"
                                                name="txtSSA_FeeName"
-                                               value=""
+                                               value="<?= $model->txtSSA_FeeName?>"
                                                size="32" maxlength="30"
-                                               disabled="" readonly=""
                                                class="floatLeft"
                                                id="StudentSupportArrangementsTextEntry"
-                                               style="background-color: silver;">
+                                               style="background-color: <?= ($model->cboFeeCode!='UK, Chl, IoM or EU student finance services') ?' silver':'white'?>;">
 
                                         <span class="floatLeft">&nbsp;
                                             <input type="button" name="btnLeaList" value="see list"  id="see1"
@@ -1203,10 +1200,10 @@
                                     <div class="thisFormField">
                                         <div id="fullWidth"><select name="euAnswers" size="1" class="floatLeft" id="euAnswers">
                                                 <option value="">Please select ...</option>
-                                                <option value="Y">Yes</option>
-                                                <option value="N">No</option>
-                                                <option value="D">Don't know</option>
-                                                <option value="P">Prefer not to say</option>
+                                                <option  value="Y" <?php if ($model->euAnswers=='Y') echo 'selected'?> >Yes</option>
+                                                <option  value="N" <?php if ($model->euAnswers=='N') echo 'selected'?> >No</option>
+                                                <option value="D" <?php if ($model->euAnswers=='D') echo 'selected'?> >Don't know</option>
+                                                <option value="P" <?php if ($model->euAnswers=='P') echo 'selected'?>>Prefer not to say</option>
                                             </select>
 
                                             <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.LIVEWORKEU'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -1221,10 +1218,10 @@
                                     <div class="thisFormField">
                                         <div id="fullWidth"><select name="parentSpouse" size="1" class="floatLeft" id="parentSpouse">
                                                 <option value="">Please select ...</option>
-                                                <option value="Y">Yes</option>
-                                                <option value="N">No</option>
-                                                <option value="D">Don't know</option>
-                                                <option value="P">Prefer not to say</option>
+                                                <option value="Y" <?php if ($model->parentSpouse=='Y') echo 'selected'?> >Yes</option>
+                                                <option value="N" <?php if ($model->parentSpouse=='N') echo 'selected'?> >No</option>
+                                                <option value="D" <?php if ($model->parentSpouse=='D') echo 'selected'?> >Don't know</option>
+                                                <option value="P" <?php if ($model->parentSpouse=='P') echo 'selected'?> >Prefer not to say</option>
                                             </select>
 
                                             <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.PARENTSPOUSEEUNAT'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -1249,7 +1246,7 @@
                                         <label for="nominatedPersonTextEntry">Full name of nominee</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtNominPerson" value="" size="39" maxlength="50" class="floatLeft" id="nominatedPersonTextEntry">
+                                        <input type="text" name="txtNominPerson" value="<?= $model->txtNominPerson?>" size="39" maxlength="50" class="floatLeft" id="nominatedPersonTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.NOMINATEDPERSON'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -1260,7 +1257,7 @@
                                         <label for="nominatedPersonRelationTextEntry">Relationship to you</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtNominPersonRelation" value="" size="39" maxlength="50" class="floatLeft" id="nominatedPersonRelationTextEntry">
+                                        <input type="text" name="txtNominPersonRelation" value="<?= $model->txtNominPersonRelation?>" size="39" maxlength="50" class="floatLeft" id="nominatedPersonRelationTextEntry">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.NOMINATEDPERSON'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->
@@ -1275,7 +1272,7 @@
                                         <label for="disNeedsCombo">Category<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <textarea name="txtDisabilitySplNeeds" rows="6" cols="10" readonly="true" class="floatLeft" id="disNeedsTextEntry"></textarea>
+                                        <textarea name="txtDisabilitySplNeeds" rows="6" cols="10" readonly="true" class="floatLeft" id="disNeedsTextEntry"><?= $model->txtDisabilitySplNeeds ?></textarea>
                                         <span class="floatLeft">&nbsp;<input type="button" name="btnDisList1" value="see list" onclick="seelistOpen('/help/index10', '?functionname=disNeedsTextEntry', 'document.Form1.txtDisabilitySplNeeds'); return false;" class="seeListBtn">
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.DISABILITY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -1297,7 +1294,7 @@
                                         &nbsp;
                                     </div>
                                     <div class="thisFormField">
-                                        <textarea name="txtDisabilitySplNeedsText" rows="5" cols="15" class="floatLeft" id="splNeedsDetailsTextEntry"></textarea>
+                                        <textarea name="txtDisabilitySplNeedsText" rows="5" cols="15" class="floatLeft" id="splNeedsDetailsTextEntry"><?= $model->txtDisabilitySplNeedsText?></textarea>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.DISABILITYDETAILS'); return false;"><img id="splNeedsDetailshelpImage" src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                     <div class="thisFormTxt">
@@ -1316,7 +1313,8 @@
                                         &nbsp;
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="checkbox" name="chkComplete" id="chkComplete">&nbsp;section completed
+                                        <input type="hidden" name="chkComplete" value="0">
+                                        <input type="checkbox" value="1" <?php if ($model->chkComplete) echo 'checked' ?> name="chkComplete" id="chkComplete">&nbsp;section completed
                                     </div>
                                 </div><!--close form element -->
                                 <div class="clearDiv">&nbsp;</div>
@@ -1469,73 +1467,68 @@
        var disNeedsTextEntry = $('#disNeedsTextEntry').val();
        var feeCodeCombo = $('#feeCodeCombo').val();
 
-        if($('#chkComplete').is(':checked')) {
-            alert('部分保存，保存已填写的值！  是否部分保存的值要记录下来哦！！！！');
-        } else {
-            var err = '';
+        var err = '';
 
-            if (titleCombo == '') {
-                err += '<p>Please select title.</p>';
-            }
-            if (genderCombo == '') {
-                err += '<p>Please select gender.</p>';
-            }
-            if (foreNameTextEntry == '') {
-                err += '<p>Please enter forename.</p>';
-            }
-            if (surNameTextEntry == '') {
-                err += '<p>Please enter surname.</p>';
-            }
-            if (rdPermUK == null) {
-
-                err += '<p>Please select whether you live in UK permanently or not.</p>';
-            }
-            if (emailTextEntry == '') {
-                err += '<p>You must provide a valid email address</p>';
-            }
-            if (emailConfirmTextEntry == '') {
-                err += '<p>Please confirm your email address.</p>';
-            }
-            if (emailTextEntry != emailConfirmTextEntry) {
-                err += '<p>Email and confirmation address do not match.</p>';
-            }
-            if (dobCombo1 == '') {
-                err += '<p>Please select date of birth: year.</p>';
-            }
-            if (dobCombo2 == '') {
-                err += '<p>Please select date of birth: month.</p>';
-            }
-            if (dobCombo3 == '') {
-                err += '<p>Please select date of birth: day.</p>';
-            }
-            if (countryOfBirthTextEntry == '') {
-                err += '<p>Please select country of birth.</p>';
-            }
-            if (nationalityTextEntry == '') {
-                err += '<p>Please select nationality.</p>';
-            }
-            if (residentialCategoryTextEntry == '') {
-                err += '<p>Please select residential category.</p>';
-            }
-            if (euAnswers == '') {
-                err += '<p>Please select an answer to the residency question.</p>';
-            }
-            if (parentSpouse == '') {
-                err += '<p>Please select an answer to your family\'s nationality question.</p>';
-            }
-            if (disNeedsTextEntry == '') {
-                err += '<p>Please select disability or special needs.</p>';
-            }
-            if (feeCodeCombo == '') {
-                err += '<p>Please select fee code.</p>';
-            }
-            if (err != '') {
-                $('.errorTxt').html(err);
-                scrollTo(0,0);
-            }else{
-                alert(222)
-            }
+        if (titleCombo == '') {
+            err += '<p>Please select title.</p>';
         }
+        if (genderCombo == '') {
+            err += '<p>Please select gender.</p>';
+        }
+        if (foreNameTextEntry == '') {err += '<p>Please enter forename.</p>';
+        }
+        if (surNameTextEntry == '') {
+            err += '<p>Please enter surname.</p>';
+        }
+        if (rdPermUK == null) {
+                err += '<p>Please select whether you live in UK permanently or not.</p>';
+        }
+        if (emailTextEntry == '') {
+            err += '<p>You must provide a valid email address</p>';
+        }
+        if (emailConfirmTextEntry == '') {
+            err += '<p>Please confirm your email address.</p>';
+        }
+        if (emailTextEntry != emailConfirmTextEntry) {
+            err += '<p>Email and confirmation address do not match.</p>';
+        }
+        if (dobCombo1 == '') {
+            err += '<p>Please select date of birth: year.</p>';
+        }
+        if (dobCombo2 == '') {
+            err += '<p>Please select date of birth: month.</p>';
+        }
+        if (dobCombo3 == '') {
+            err += '<p>Please select date of birth: day.</p>';
+        }
+        if (countryOfBirthTextEntry == '') {
+            err += '<p>Please select country of birth.</p>';
+        }
+        if (nationalityTextEntry == '') {
+            err += '<p>Please select nationality.</p>';
+        }
+        if (residentialCategoryTextEntry == '') {
+            err += '<p>Please select residential category.</p>';
+        }
+        if (euAnswers == '') {
+            err += '<p>Please select an answer to the residency question.</p>';
+        }
+        if (parentSpouse == '') {
+            err += '<p>Please select an answer to your family\'s nationality question.</p>';
+        }
+        if (disNeedsTextEntry == '') {
+            err += '<p>Please select disability or special needs.</p>';
+        }
+        if (feeCodeCombo == '') {
+            err += '<p>Please select fee code.</p>';
+        }
+        if (err != '') {
+            $('.errorTxt').html(err);
+            scrollTo(0,0);
+        }else{
+            $('form').submit()
+        }
+
     }
 
     $('#feeCodeCombo').change(function () {
@@ -1548,4 +1541,51 @@
            $('#StudentSupportArrangementsTextEntry').val('');
        }
     })
+
+    $(function() {
+        var title_selected = "<?= $user->title ?>"
+        $("#titleCombo").find("option[value='"+title_selected+"']").attr("selected",true);
+
+        var gender_selected = "<?= $user->gender ?>"
+        $("#genderCombo").find("option[text='"+gender_selected+"']").attr("selected",true);
+
+        var cboDobDay_selected = "<?= $user->cboDobDay ?>"
+        $("#dobCombo3").find("option[value='"+cboDobDay_selected+"']").attr("selected",true);
+
+        var cboDobMonth_selected = "<?= $user->cboDobMonth ?>"
+        $("#dobCombo2").find("option[text='"+cboDobMonth_selected+"']").attr("selected",true);
+
+        var cboDobYear_selected = "<?= $user->cboDobYear ?>"
+        $("#dobCombo1").find("option[value='"+cboDobYear_selected+"']").attr("selected",true);
+
+        var cboEntryUkDay_selected = "<?= $model->cboEntryUkDay ?>"
+        $("#entryToUKCombo3").find("option[value='"+cboEntryUkDay_selected+"']").attr("selected",true);
+
+        var cboEntryUkMonth_selected = "<?= $model->cboEntryUkMonth ?>"
+        $("#entryToUKCombo2").find("option[value='"+cboEntryUkMonth_selected+"']").attr("selected",true);
+
+        var cboEntryUkYear_selected = "<?= $model->cboEntryUkYear ?>"
+        $("#entryToUKCombo1").find("option[value='"+cboEntryUkYear_selected+"']").attr("selected",true);
+
+        var cboFeeCode_selected = "<?= $model->cboFeeCode ?>"
+        $('#feeCodeCombo').find("option[value='"+cboFeeCode_selected+"']").attr("selected",true);
+
+        var cboIssueDay_selected = "<?= $model->cboIssueDay ?>"
+        $("#cboIssueDay").find("option[value='"+cboIssueDay_selected+"']").attr("selected",true);
+
+        var cboIssueMonth_selected = "<?= $model->cboIssueMonth ?>"
+        $("#cboIssueMonth").find("option[value='"+cboIssueMonth_selected+"']").attr("selected",true);
+
+        var cboIssueYear_selected = "<?= $model->cboIssueYear ?>"
+        $("#cboIssueYear").find("option[value='"+cboIssueYear_selected+"']").attr("selected",true);
+
+        var cboExpireDay_selected = "<?= $model->cboExpireDay ?>"
+        $("#cboExpireDay").find("option[value='"+cboExpireDay_selected+"']").attr("selected",true);
+
+        var cboExpireMonth_selected = "<?= $model->cboExpireMonth ?>"
+        $("#cboExpireMonth").find("option[value='"+cboExpireMonth_selected+"']").attr("selected",true);
+
+        var cboExpireYear_selected = "<?= $model->cboExpireYear ?>"
+        $("#cboExpireYear").find("option[value='"+cboExpireYear_selected+"']").attr("selected",true);
+    });
 </script>

@@ -8,13 +8,15 @@
 
 namespace backend\controllers;
 
+use common\models\PersonalDetails;
 use Yii;
 
 class UseradminController extends BaseController
 {
     # 邮件发送
-    public function actionSend() {
-        $mail= Yii::$app->mailer->compose();
+    public function actionSend()
+    {
+        $mail = Yii::$app->mailer->compose();
 //        $mail->setTo('yukai08621@163.com');
         $mail->setTo('176745155@qq.com');
         $mail->setSubject("发sdfsd布纯文字文本");
@@ -36,7 +38,7 @@ class UseradminController extends BaseController
 //<br><br>Note: this is an automated email, so please do not reply to this address.";
         $mes = '发布纯文字文本发布纯文字文本123sfsf发布纯文字文本发布纯文字文本';
         $mail->setHtmlBody($mes);    //发布可以带html标签的文本
-        if($mail->send())
+        if ($mail->send())
             echo "ok";
         else
             echo "failse";
@@ -44,96 +46,121 @@ class UseradminController extends BaseController
 
     }
 
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $data = [
             'view' => 'welcome'
         ];
-        return $this->renderPartial('index',$data);
+        return $this->renderPartial('index', $data);
     }
 
-    public function actionWelcome() {
+    public function actionWelcome()
+    {
         $data = [
-            'view' => 'welcome'
+            'view' => 'welcome',
+            'user' => Yii::$app->user->identity,
         ];
-        return $this->renderPartial('welcome',$data);
+        return $this->renderPartial('welcome', $data);
     }
 
-    # 个人资料
-    public function actionPersonaldetails() {
-        $data = [
-            'view' => 'personaldetails'
-        ];
-        return $this->renderPartial('personaldetails',$data);
+    /**
+     * 个人资料
+     * @return string
+     */
+    public function actionPersonaldetails()
+    {
+        $user = Yii::$app->user->identity;
+        $model = PersonalDetails::findOne(Yii::$app->user->identity->id) ?: new PersonalDetails();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            $model->save();
+        }
+        return $this->renderPartial('personaldetails', [
+            'view' => 'personaldetails',
+            'user' => $user,
+            'model' => $model,
+        ]);
     }
 
     # 选择项
-    public function actionChoices() {
+    public function actionChoices()
+    {
         $data = [
             'view' => 'choices'
         ];
-        return $this->renderPartial('choices',$data);
+        return $this->renderPartial('choices', $data);
     }
 
     # 新增选择项
-    public function actionAddChoice() {
+    public function actionAddChoice()
+    {
         $data = [
             'view' => 'choices'
         ];
-        return $this->renderPartial('add-choices',$data);
+        return $this->renderPartial('add-choices', $data);
     }
 
     # 教育
-    public function actionEducation() {
+    public function actionEducation()
+    {
         $data = [
             'view' => 'education'
         ];
-        return $this->renderPartial('education',$data);
+        return $this->renderPartial('education', $data);
     }
+
     # 新增-教育
-    public function actionAddEducation() {
+    public function actionAddEducation()
+    {
         $data = [
             'view' => 'education'
         ];
-        return $this->renderPartial('add-education',$data);
+        return $this->renderPartial('add-education', $data);
     }
 
     # 新增-教育-资格
-    public function actionAddQualifications() {
+    public function actionAddQualifications()
+    {
         $data = [
             'view' => 'education'
         ];
-        return $this->renderPartial('add-qualifications',$data);
+        return $this->renderPartial('add-qualifications', $data);
     }
+
     # 新增-教育-资格-资格
-    public function actionAddFw() {
+    public function actionAddFw()
+    {
         $data = [
             'view' => 'education'
         ];
-        return $this->renderPartial('add-fw',$data);
+        return $this->renderPartial('add-fw', $data);
     }
 
     # 就业机会
-    public function actionEmployment() {
+    public function actionEmployment()
+    {
         $data = [
             'view' => 'employment'
         ];
-        return $this->renderPartial('employment',$data);
+        return $this->renderPartial('employment', $data);
     }
 
     # 陈述
-    public function actionStatement() {
+    public function actionStatement()
+    {
         $data = [
             'view' => 'statement'
         ];
-        return $this->renderPartial('statement',$data);
+        return $this->renderPartial('statement', $data);
     }
 
     # 查看所有细节
-    public function actionViewalldetails() {
+    public function actionViewalldetails()
+    {
         $data = [
             'view' => 'viewalldetails'
         ];
-        return $this->renderPartial('viewalldetails',$data);
+        return $this->renderPartial('viewalldetails', $data);
     }
 
 }

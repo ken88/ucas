@@ -46,8 +46,8 @@
                         <!--<form name="Form1">-->
 
                         <!--display 'Welcome' clip -->
-                        <p>Welcome ken,</p>
-                        <p>Your Personal ID is: <font size="3"><strong>158-767-3502</strong></font>.<br><br><strong>Please make a note of this number and keep it handy. You will need to quote this number if you call our Customer Contact Centre.</strong></p>
+                        <p>Welcome <?= $user->txtForename ?>,</p>
+                        <p>Your Personal ID is: <font size="3"><strong><?= $user->personal_id ?></strong></font>.<br><br><strong>Please make a note of this number and keep it handy. You will need to quote this number if you call our Customer Contact Centre.</strong></p>
                         <script>
                             function setCookie(c_name,value,exdays)
                             {
