@@ -102,7 +102,20 @@
                                     (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
                             </div>
                             <div class="clearDiv">&nbsp;</div>
-                            <div class="errorTxt"></div>
+                            <div class="errorTxt" id="errorTxt"></div>
+                            <!-- 验证邮箱是否已经验证，没有验证显示下面错误 start -->
+                            <div class="errorTxt">
+                                <p>
+                                    <strong>Verify your email address</strong>
+                                    <br>
+                                    Your email address needs to be verified as valid before you send your application to us.
+                                    <br>
+                                    <a href="/useradmin/send">
+                                        Please click here to verify your email address
+                                    </a>
+                                </p>
+                            </div>
+                            <!-- 验证邮箱是否已经验证，没有验证显示下面错误 end -->
                             <h2 class="inPage">Personal</h2>
                             <!--Title-->
                             <div class="thisFormElem">
@@ -1501,7 +1514,7 @@
             err += '<p>Please select fee code.</p>';
         }
         if (err != '') {
-            $('.errorTxt').html(err);
+            $('#errorTxt').html(err);
             scrollTo(0,0);
         }else{
             $('form').submit()

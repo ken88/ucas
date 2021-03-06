@@ -11,36 +11,15 @@
 
         <div class="clearDiv">&nbsp;</div>
         <div id="mainContent">
-            <!--menu starts-->
-            <div id="leftNavInternal" class="floatLeft">
-                <ul>
-                    <li class="current notStarted"><a href="Welcome.jsp?id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=fhb6pjfu0udf">Welcome</a></li>
-                    <li class="notStarted"><a href="PersonalDetailsServlet?functionname=personaldetails&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=15otj4qrw76pk">Personal details</a></li>
-                    <li class="notStarted"><a href="ChoicesServlet?functionname=choicesummary&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=tk3neje9prxt">Choices</a></li>
-                    <li class="notStarted"><a href="EducationServlet?functionname=educationsummary&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=mvi4z9313tn1">Education</a></li>
-                    <li class="notStarted"><a href="EmploymentServlet?functionname=empsummary&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=1p705jgj51a08">Employment</a></li>
-                    <li class="notStarted"><a href="PersonalStatementServlet?functionname=perStatement&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=1jhtwem3t8axd">Statement</a></li>
-                    <li class="notStarted"><a href="ViewAllServlet?id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=174hksccuwvpn">View all details</a></li>
-                    <li class="notStarted">Pay/Send</li>
-                    <li><a href="#" onclick="javascript:if(window.launchPageHelp){launchPageHelp();}else{alert('Help has not been set up for this page');}; return false;">Help</a></li>
-                    <li class="last"><a href="ServicesServlet?functionname=options&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=9grky6hg0has">Options/Opsiynau</a></li>
-                </ul><h3>Key</h3>
-                <ul id="key">
-                    <li id="complete">Completed</li>
-                    <li id="inProgress">In progress</li>
-                    <li id="notStarted">Not started</li>
-                    <li style="display: none;" id="subCharacter">European characters allowed</li>
-                    <li id="help">Help</li>
-                </ul><!--key ENDS here-->
-            </div><!--leftNav ENDS here-->
-            <!--menu ends-->
-
+            <!--menu starts 左面菜单栏开始-->
+            <?php include_once "menu.php"; ?>
+            <!--menu ends 左面菜单栏结束-->
 
 
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="Welcome.jsp?id=37e7a685165f21aaf8a54412a0ef&amp;ran=hokuhpycwdir">Welcome</a> &gt;
+                    <a href="/useradmin/welcome">Welcome</a> &gt;
                     Verify email
                 </div><!--breadcrumb ENDS here-->
                 <hr>
@@ -54,23 +33,77 @@
                         <!--<p class="bold">The email verification code has been sent to <strong><<APPLICANT_EMAIL_ADDRESS>></strong>. To confirm that this address is valid please enter the code from the relevant email in the box below.<br /><br /> If this email is not in your inbox then there are three possible reasons for this:<br /><br /><ul class="display"><li>Your computer email filter settings or those maintained by your internet service provider may have diverted the message to a junk/spam mail folder. Please check this.<br />&nbsp;</li><li>Your internet service provider may be extremely busy, and therefore may not have been able to pass on our message. Please be patient and look again later.<br />&nbsp;</li><li>The email address recorded here as above may be incorrect. You can change the email address in the Personal details section of your application. If you do this you must click on 'save' to save the new details. You must then request that the verification code is reissued by clicking the relevant link below.</ul><br />If the email containing the code cannot be found as above then you should:<br /><br /><ol class="display"><li>add our sending address <a href= "mailto:enquiries@ucas.ac.uk" class="plain">enquiries@ucas.ac.uk</a> to your list of approved senders on your email system (this can usually be done by adding it to your address list), and<br />&nbsp;</li><li>request that the verification code is reissued by clicking the relevant link below. An email will then be sent containing a new code.</ol><br />If the code is not accepted please make sure that the email was sent <strong>after</strong> you requested a new code. If it was sent <strong>earlier</strong>, then the code will be invalid because you requested another verification code since that time. Make sure you use the code from the most recent email. <br /><br />Please enter your email verification code below to verify your address is <strong><<APPLICANT_EMAIL_ADDRESS>></strong>:</p>-->
 
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="index">
-
+                        <form name="Form1" method="post" action="/useradmin/index">
+                            <input type="hidden" id="code" value="<?= $code;?>">
+                            <input type="hidden" id="res" value="<?= $res;?>">
                             <!--display 'Verify Email Generate Code' clip -->
-                            <p><input type="hidden" name="from" value="fromVerifyEmailEnterCode"></p>
+
+                            <div class="errorTxt"></div>
                             <p>The email verification code has been sent to <strong>176745155@qq.com</strong>. To confirm that this address is valid please enter the code from the relevant email in the box below.<br><br> If this email is not in your inbox then there are three possible reasons for this:<br><br></p>
-                            <ul class="display"><li>Your computer email filter settings or those maintained by your internet service provider may have diverted the message to a junk/spam mail folder. Please check this.<br>&nbsp;</li><li>Your internet service provider may be extremely busy, and therefore may not have been able to pass on our message. Please be patient and look again later.<br>&nbsp;</li><li>The email address recorded here as above may be incorrect. You can change the email address in the Personal details section of your application. If you do this you must click on 'save' to save the new details. You must then request that the verification code is reissued by clicking the relevant link below.</li></ul><br>If the email containing the code cannot be found as above then you should:<br><br><ol class="display"><li>add our sending address <a href="mailto:enquiries@ucas.ac.uk" class="plain">enquiries@ucas.ac.uk</a> to your list of approved senders on your email system (this can usually be done by adding it to your address list), and<br>&nbsp;</li><li>request that the verification code is reissued by clicking the relevant link below. An email will then be sent containing a new code.</li></ol><br>If the code is not accepted please make sure that the email was sent <strong>after</strong> you requested a new code. If it was sent <strong>earlier</strong>, then the code will be invalid because you requested another verification code since that time. Make sure you use the code from the most recent email. <br><br>Please enter your email verification code below to verify your address is <strong>176745155@qq.com</strong>:<p></p>
+                            <ul class="display">
+                                <li>Your computer email filter settings or those maintained by your internet service provider may
+                                    have diverted the message to a junk/spam mail folder. Please check this.
+                                    <br>&nbsp;
+                                </li>
+                                <li>Your internet service provider may be extremely busy, and therefore may not
+                                    have been able to pass on our message. Please be patient and look again later.
+                                    <br>&nbsp;
+                                </li>
+                                <li>The email address recorded here as above may be incorrect. You can change the email
+                                    address in the Personal details section of your application.
+                                    If you do this you must click on 'save' to save the new details.
+                                    You must then request that the verification code is reissued by
+                                    clicking the relevant link below.
+                                </li>
+                            </ul>
+                            <br>
+                            If the email containing the code cannot be found as above then you should:
+                            <br>
+                            <br>
+                            <ol class="display">
+                                <li>
+                                    add our sending address
+                                    <a href="mailto:enquiries@ucas.ac.uk" class="plain">
+                                        enquiries@ucas.ac.uk
+                                    </a>
+                                    to your list of approved senders on your email system
+                                    (this can usually be done by adding it to your address list),
+                                    and
+                                    <br>&nbsp;
+                                </li>
+                                <li>request that the verification code is reissued by clicking the relevant link below.
+                                    An email will then be sent containing a new code.
+                                </li>
+                            </ol>
+                            <br>
+                            If the code is not accepted please make sure that the email was sent
+                            <strong>after</strong> you requested a new code. If it was sent
+                            <strong>earlier</strong>,
+                            then the code will be invalid because you requested another verification code
+                            since that time. Make sure you use the code from the most recent email.
+                            <br>
+                            <br>
+                            Please enter your email verification code below to verify your address is
+                            <strong>176745155@qq.com</strong>:
+                            <p></p>
                             <p>
-                                <input type="text" name="txtEnterCode" value="" size="8" maxlength="8" class="floatLeft" id="enterCodeTextEntry">
+                                <input type="text" name="txtEnterCode" value="" size="8" maxlength="20" class="floatLeft" id="enterCodeTextEntry">
                                 <span class="floatLeft">&nbsp;</span><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.WELCOME.VERIFYENTERCODE.FIELD.ENTERCODE'); return false;"></a>
                             </p>
                             <div id="cardIcon">
                                 <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.WELCOME.VERIFYENTERCODE.FIELD.ENTERCODE'); return false;">
                                     <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
                                 </a></div><p></p><div id="clearDiv"></div><p><br><br>
-                                <input type="submit" name="btnVerifyEmail" value="verify email " class="submitBtn">
+                                <input type="button" name="btnVerifyEmail" value="verify email " onclick="check()" class="submitBtn">
                             </p>
-                            <p><strong>No verification code</strong><br>If you have not received the verification email, please read through the possible reasons above, or <a href="VerifyEmailServlet?functionname=generatecode&amp;id=37e7a685165f21aaf8a54412a0ef&amp;ran=102xmnokn2cte">click here to reissue a code</a>.</p>
+                            <p>
+                                <strong>No verification code</strong>
+                                <br>
+                                If you have not received the verification email, please read through the possible reasons above, or
+                                <a href="/useradmin/send-cf">
+                                    click here to reissue a code
+                                </a>.
+                            </p>
 
                             <!--spacer -->
                             <div class="thisFormTxt">&nbsp;</div>
@@ -102,3 +135,16 @@
 
 </body>
 </html>
+<script type="text/javascript">
+    function check() {
+        var enterCodeTextEntry = $('#enterCodeTextEntry').val();
+        var code = $('#code').val();
+        if (enterCodeTextEntry != code) {
+            err = '<p>The code you have entered is incorrect.</p>';
+            $('.errorTxt').html(err);
+            scrollTo(0,0);
+        }else {
+            $(Form1).submit();
+        }
+    }
+</script>
