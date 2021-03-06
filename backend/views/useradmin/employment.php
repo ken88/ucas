@@ -30,7 +30,7 @@
                     <!--Form starts here-->
                     <div class="thisForm">
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="EmploymentServlet?id=e1836169083c2c1968b8b6f43643&amp;ran=wa0f3nuoyl7f">
+                        <form name="Form1" method="post" action="">
                             <!--display 'Employment' clip -->
                             <p><input type="hidden" name="from" value="fromEmploymentSummary"></p><p class="bold">Please give the names and addresses of your most recent employers. If you have not had any paid work experience, you can leave this section blank, but you will need to mark it as complete.</p><script>
                                 function setCookie(c_name,value,exdays)
@@ -66,32 +66,36 @@
                                 <li><a href="add-employment">add an employer</a></li>
                             </ul>
                             <hr>
+                            <?php if(!$employer){ ?>
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tbody><tr><td colspan="2" width="520">No details entered.</td></tr><tr><td colspan="2"><hr></td></tr>
                                 </tbody></table>
+                            <?php }else{ ?>
                             <table border="0" cellpadding="0" cellspacing="0">
-                                <tbody><tr><td width="481"><p class="bold">雇主名字</p><p>Address: 地址</p>
-                                        <p>Nature of work: 工作内容</p>
-                                        <p>From December 2001 to September 2006, full-time</p></td>
-                                    <td><ul><li><a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=2&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=1iambr5n4hlrh">edit</a></li>
-                                            <li><a id="delEmployer2" href="#">remove</a></li>
-                                            <li style="display:none;"><a id="empLinkDel2" href="EmploymentServlet?functionname=delete&amp;empId=2&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=zqb5leqfye7r">remove</a></li></ul></td></tr>
-                                <tr><td colspan="2"><hr></td></tr>
-                                <tr><td width="481"><p class="bold">1</p><p>Address: 2</p>
-                                        <p>Nature of work: 3</p>
-                                        <p>From December 2001 to November 2004, full-time</p></td>
-                                    <td><ul><li><a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=1&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=1azgstsseydi3">edit</a></li>
-                                            <li><a id="delEmployer1" href="#">remove</a></li>
-                                            <li style="display:none;"><a id="empLinkDel1" href="EmploymentServlet?functionname=delete&amp;empId=1&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=om5132p050vj">remove</a></li></ul></td></tr>
-                                <tr><td colspan="2"><hr></td></tr>
+                                <tbody>
+                                <?php foreach ($employer as $key=>$val){?>
+                                <tr>
+                                    <td width="481"><p class="bold"><?php $val->txtEmpName ?></p><p>Address: <?= $val->txtEmpAddress ?></p>
+                                        <p>Nature of work: <?= $val->txtEmpNature ?></p>
+                                        <p>From <?= $val->cboStartMonth?> <?= $val->cboStartYear ?> to <?= $val->cboEndMonth ?> <?= $val->cboEndYear ?>, <?= $val->radioEmpTypeStr ?></p></td>
+                                    <td><ul><li><a href="<?= \yii\helpers\Url::to(['useradmin/add-employment', 'id'=>$val->id])?>">edit</a></li>
+                                            <li><a id="delEmployer2" href="<?= \yii\helpers\Url::to(['useradmin/del-employment', 'id'=>$val->id])?>">remove</a></li>
+                                            <li style="display:none;"><a id="empLinkDel2" href="EmploymentServlet?functionname=delete&amp;empId=2&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=zqb5leqfye7r">remove</a></li></ul></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><hr></td>
+                                </tr>
+                                <?php }?>
                                 </tbody></table>
+                            <?php } ?>
                             <div class="thisForm">
                                 <div class="thisFormElem">
                                     <div class="thisFormTxt">
                                         &nbsp;
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="checkbox" name="chkComplete" id="chkComplete">&nbsp;section completed
+                                        <input type="hidden" name="chkComplete" value="0">
+                                        <input value="1" type="checkbox" name="chkComplete" <?php if ($model->chkComplete) echo 'checked' ?> id="chkComplete">&nbsp;section completed
                                     </div>
                                 </div>
                             </div>

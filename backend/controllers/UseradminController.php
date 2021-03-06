@@ -10,6 +10,8 @@ namespace backend\controllers;
 
 use common\models\Choice;
 use common\models\Choices;
+use common\models\Employer;
+use common\models\Employment;
 use common\models\PersonalDetails;
 use DeepCopyTest\Matcher\Y;
 use Yii;
@@ -191,22 +193,61 @@ although you will be able to print these letters from the Track system if necess
         return $this->renderPartial('add-fw', $data);
     }
 
-    # 就业机会
+    /**
+     * 就业机会
+     * @return string
+     */
     public function actionEmployment()
     {
-        $data = [
-            'view' => 'employment'
-        ];
-        return $this->renderPartial('employment', $data);
+        $model = Employment::findOne(Yii::$app->user->identity->id) ?: new Employment();
+        if (Yii::$app->request->isPost) {
+            $model->chkComplete = Yii::$app->request->post('chkComplete');
+            $model->save();
+        }
+        $employer = Employer::find()
+            ->orderBy(['id' => SORT_DESC])
+            ->all();
+        return $this->renderPartial('employment', [
+            'view' => 'employment',
+            'employer' => $employer,
+            'model' => $model,
+        ]);
     }
 
-    # 新增就业机会
+    /**
+     * 新增就业机会
+     */
     public function actionAddEmployment()
     {
-        $data = [
-            'view' => 'employment'
-        ];
-        return $this->renderPartial('add-employment', $data);
+        if (!Yii::$app->request->get('id') && Employer::find()->where(['user_id' => Yii::$app->user->identity->id])->count() >= 5) {
+            echo "<script>alert('You can add details of up to 5 employers.')</script>";
+            echo "<script>window.location.href='/useradmin/employment'</script>";
+            exit();
+        }
+
+        $model = Employer::findOne(Yii::$app->request->get('id')) ?: new Employer();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            if (!$model->save()) {
+//                var_dump($model->getErrors());
+                exit('create or edit error');
+            } else
+                return $this->redirect(Url::to(['useradmin/employment']));
+        }
+        return $this->renderPartial('add-employment', [
+            'view' => 'employment',
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * 就业机会删除
+     */
+    public function actionDelEmployment($id)
+    {
+        $model = Employer::findOne($id);
+        $model->delete();
+        return $this->redirect(Url::to(['useradmin/employment']));
     }
 
     # 陈述

@@ -34,7 +34,7 @@
 
                         <div class="errorTxt"></div>
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="EmploymentServlet?id=64e9ad6517fad857bee834ba7a13&amp;ran=12cwec3f0yeoz">
+                        <form name="Form1" method="post" action="">
 
                             <!--display 'Employment' clip -->
                             <p><input type="hidden" name="from" value="fromEmployment"></p><p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown"></p>
@@ -52,7 +52,7 @@
                                     <label for="employersNameTextEntry">Employer name<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtEmpName" value="" size="35" maxlength="35" class="floatLeft" id="employersNameTextEntry">
+                                    <input type="text" name="txtEmpName" value="<?= $model->txtEmpName ?>" size="35" maxlength="35" class="floatLeft" id="employersNameTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EMPLOYMENT.DETAILS.FIELD.EMPLOYERSNAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -63,7 +63,7 @@
                                     <label for="employersAddressTextEntry">Employer address<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtEmpAddress" value="" size="39" maxlength="50" class="floatLeft" id="employersAddressTextEntry">
+                                    <input type="text" name="txtEmpAddress" value="<?=  $model->txtEmpAddress ?>" size="39" maxlength="50" class="floatLeft" id="employersAddressTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EMPLOYMENT.DETAILS.FIELD.EMPLOYERSADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -74,7 +74,7 @@
                                     <label for="natureOfWorkTextEntry">Job description<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtEmpNature" value="" size="35" maxlength="35" class="floatLeft" id="natureOfWorkTextEntry">
+                                    <input type="text" name="txtEmpNature" value="<?= $model->txtEmpNature ?>" size="35" maxlength="35" class="floatLeft" id="natureOfWorkTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EMPLOYMENT.DETAILS.FIELD.JOBDESCRIPTION'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -189,7 +189,7 @@
                                     <label for="empTypeRadio">Type of work<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="radio" name="radioEmpType" value="FT" class="floatLeft" id="empTypeRadio"><span class="floatLeft">full-time&nbsp;&nbsp;</span><input type="radio" name="radioEmpType" value="PT" class="floatLeft" id="empTypeRadio"><span class="floatLeft">part-time</span>
+                                    <input type="radio" name="radioEmpType" value="FT" <?php if($model->radioEmpType=='FT') echo 'checked'?> class="floatLeft" id="empTypeRadio"><span class="floatLeft">full-time&nbsp;&nbsp;</span><input type="radio" name="radioEmpType" value="PT" <?php if($model->radioEmpType=='PT') echo 'checked'?> class="floatLeft" id="empTypeRadio"><span class="floatLeft">part-time</span>
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EMPLOYMENT.DETAILS.FIELD.WORKTYPE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -272,12 +272,22 @@
         }
         $('.errorTxt').html(err);
         if (err == '') {
-            alert('提交连接')
+            $('form').submit()
         } else {
             scrollTo(0,0);
         }
 
     }
+    $(function () {
+        var cboStartMonth_selected = "<?= $model->cboStartMonth ?>"
+        $('#startCombo2').find("option[value='"+cboStartMonth_selected+"']").attr("selected",true);
+        var cboStartYear_selected = "<?= $model->cboStartYear ?>"
+        $('#startCombo1').find("option[value='"+cboStartYear_selected+"']").attr("selected",true);
+        var startCombo2_selected = "<?= $model->cboEndMonth ?>"
+        $('#endCombo2').find("option[value='"+startCombo2_selected+"']").attr("selected",true);
+        var startCombo2_selected = "<?= $model->cboEndYear ?>"
+        $('#endCombo1').find("option[value='"+startCombo2_selected+"']").attr("selected",true);
+    })
 
 
 </script>
