@@ -107,6 +107,13 @@
         }
         
 
+        $(function () {
+            // 退出
+            $('#logOut').click(function () {
+                window.location.href="/site/logout";
+            })
+        })
+
 
     </script>
 

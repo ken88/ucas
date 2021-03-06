@@ -20,7 +20,7 @@
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
                 <h1 class="EN">Initial UCAS questions: How are you applying?</h1>
-                <div id="logOut"><a href="ServicesServlet;jsessionid=3641f9e2a10f3ad16b2596db7d3e?functionname=logout&amp;id=3641f9e2a10f3ad16b2596db7d3e&amp;ran=1psn0pfuvsfum">Log out</a></div>
+                <div id="logOut"><a href="#">Log out</a></div>
             </div><!--strapLineApply ENDS here-->
             <!--This 3 lines of code target the printed page only-->  <div id="strapLineApplyPrint">  <img src="/static/picture/apply_interactive_pagehead_print.jpg" alt="apply" />  </div><!--StrapLinePrint ENDS here--></div><!--header ENDS here-->
 

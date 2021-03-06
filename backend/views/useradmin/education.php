@@ -23,7 +23,7 @@
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
                 <h1 class="EN">Education</h1>
-                <div id="logOut"><a href="ServicesServlet?functionname=logout&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=1xyxbh65mtj08">Log out</a></div>
+                <div id="logOut"><a href="#">Log out</a></div>
             </div><!--strapLineApply ENDS here-->
             <div id="strapLineApplyPrint">
                 <img src="/static/picture/apply_interactive_pagehead_print.jpg" alt="apply" />

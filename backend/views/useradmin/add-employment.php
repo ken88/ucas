@@ -21,7 +21,7 @@
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
                 <h1 class="EN">Education</h1>
-                <div id="logOut"><a href="ServicesServlet?functionname=logout&amp;id=1283b4ca1a72201542c5f15b1df3&amp;ran=dnziq9m7hx4z">Log out</a></div>
+                <div id="logOut"><a href="#">Log out</a></div>
             </div><!--strapLineApply ENDS here-->
             <!--This 3 lines of code target the printed page only-->  <div id="strapLineApplyPrint">  <img src="/static/images/apply_interactive_pageHead_print.jpg" alt="apply" />  </div><!--StrapLinePrint ENDS here--></div><!--header ENDS here-->
 
