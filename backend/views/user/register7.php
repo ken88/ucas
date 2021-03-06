@@ -11,7 +11,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="register8" method="post" autocomplete="off">
+        <form name="Form1" action="<?= \yii\helpers\Url::to(['default/login'])?>" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
