@@ -81,7 +81,7 @@
                                     (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
                             </div>
                             <p class="bold"><span class="warningTxt">You can add details of up to 5 employers.</span></p><ul>
-                                <li><a href="EmploymentServlet?functionname=empdetails&amp;mode=add&amp;empId=0&amp;id=e1836169083c2c1968b8b6f43643&amp;ran=r7iuhuaee4ss">add an employer</a></li>
+                                <li><a href="add-employment">add an employer</a></li>
                             </ul>
                             <hr>
                             <table border="0" cellpadding="0" cellspacing="0">

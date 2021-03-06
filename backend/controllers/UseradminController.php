@@ -10,6 +10,7 @@ namespace backend\controllers;
 
 use common\models\PersonalDetails;
 use Yii;
+use yii\helpers\Url;
 
 class UseradminController extends BaseController
 {
@@ -22,21 +23,21 @@ class UseradminController extends BaseController
         $mail->setSubject("发sdfsd布纯文字文本");
 
 //$mail->setTextBody('zheshisha ');   //发布纯文字文本
-//        $mes = "<br>Dear Miss qaz wsx
-//<br><br>Before submitting your application, you need to verify that the email address you have provided is correct.
-//In order to verify this, please log in to the UCAS website (https://www.ucas.com/ucas/undergraduate/login)
-//and enter the verification code shown below:
-//<br><br>email address: 176745155@qq.com
-//<br><br>verification code: mkx61508
-//<br><br>This code is only valid for the address shown above. If you change your email address, you will need to obtain a new verification code.
-//<br><br>Once we have verified your email address, we can then send emails
-//alerting you to changes to your application, including decisions made by your chosen universities and colleges.
-//they will tell you to log in to the Track service to view any changes.
-//Track is available on the UCAS website for you to use once we have processed your application.
-//For environmental reasons you will not receive a letter containing an individual decision,
-//although you will be able to print these letters from the Track system if necessary.
-//<br><br>Note: this is an automated email, so please do not reply to this address.";
-        $mes = '发布纯文字文本发布纯文字文本123sfsf发布纯文字文本发布纯文字文本';
+        $mes = "<br>Dear Miss qaz wsx
+<br><br>Before submitting your application, you need to verify that the email address you have provided is correct.
+In order to verify this, please log in to the UCAS website (https://www.ucas.com/ucas/undergraduate/login)
+and enter the verification code shown below:
+<br><br>email address: 176745155@qq.com
+<br><br>verification code: mkx61508
+<br><br>This code is only valid for the address shown above. If you change your email address, you will need to obtain a new verification code.
+<br><br>Once we have verified your email address, we can then send emails
+alerting you to changes to your application, including decisions made by your chosen universities and colleges.
+they will tell you to log in to the Track service to view any changes.
+Track is available on the UCAS website for you to use once we have processed your application.
+For environmental reasons you will not receive a letter containing an individual decision,
+although you will be able to print these letters from the Track system if necessary.
+<br><br>Note: this is an automated email, so please do not reply to this address.";
+//        $mes = '发布纯文字文本发布纯文字文本123sfsf发布纯文字文本发布纯文字文本';
         $mail->setHtmlBody($mes);    //发布可以带html标签的文本
         if ($mail->send())
             echo "ok";
@@ -145,6 +146,14 @@ class UseradminController extends BaseController
         return $this->renderPartial('employment', $data);
     }
 
+    # 新增就业机会
+    public function actionAddEmployment() {
+        $data = [
+            'view' => 'employment'
+        ];
+        return $this->renderPartial('add-employment',$data);
+    }
+
     # 陈述
     public function actionStatement()
     {
@@ -152,6 +161,42 @@ class UseradminController extends BaseController
             'view' => 'statement'
         ];
         return $this->renderPartial('statement', $data);
+    }
+
+    # 陈述保存
+    public function actionAddSaveStatement() {
+        $post_data = Yii::$app->request->post('taPersonalStatement','');
+        $flag = Yii::$app->request->post('flag',1); # 1 保存 2 保存后跳转到预览
+
+        $list_array = explode("\n",$post_data); # 分割回车并转为数组
+        $list = array();
+        foreach($list_array as $array){
+            array_push($list,$array); # 获取到数据加到$list数组里（每一行数据）
+        }
+//        dd($list); # 打印
+
+        # 这里保存数据表 start
+
+
+        # 这里保存数据表  end
+
+
+        # 1 跳转陈述页面
+        if ($flag == 1) {
+
+            return $this->redirect(Url::to(['useradmin/statement']));
+        } else {
+            #  2 保存后跳转到预览
+            return $this->redirect(Url::to(['useradmin/statement-see']));
+        }
+    }
+
+    # 陈述预览
+    public function actionStatementSee() {
+        $data = [
+            'view' => 'statement'
+        ];
+        return $this->renderPartial('statement-see',$data);
     }
 
     # 查看所有细节
