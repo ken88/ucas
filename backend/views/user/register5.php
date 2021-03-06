@@ -17,9 +17,8 @@
                 <!--menu starts-->
                 <div id="leftNavInternal" class="floatLeft">
                     <ul>
-                        <li><a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;lang=1&amp;page=HELP.LOGIN.WHATISAPPLY.FIELD'); return false;">What is Apply?</a></li>
-                        <li><a href="#" onclick="javascript:if(window.launchPageHelp){launchPageHelp();}else{alert('Help has not been set up for this page');}; return false;">Help</a></li>
-                        <li class="last"><a href="ServicesServlet?functionname=registeroptions&amp;id=cbf560f6369164a30e079b45d585&amp;ran=1kma4oqv2h5u0">Options/Opsiynau</a></li>
+                        <li><a href="#" onclick="helpOpen3('appreg/PopUpServlet?functionname=help&lang=1&page=HELP.LOGIN.WHATISAPPLY.FIELD');">What is Apply?</a></li>
+                        <li class="last"><a href="#" onclick="helpOpen3('appreg/HelpServicesServlet?functionname=help&page=HELP.REGISTRATION.CONTACTDETAILS.PAGE')">Help</a></li>
                     </ul><h3>Key</h3>
                     <ul id="key">
                         <li style="display: none;" id="subCharacter">European characters allowed</li>

@@ -80,7 +80,6 @@ function launchPopUp(page, args, instCode, courseCode, campusCode, theField)
 function launchSchoolSearchPopUp(page, args, theField)
 {
   args += "&field="+theField;//should never be null/empty
-
   openPopUp(page, args, 750, 450, 'popupwindow');
   return false;
 }
@@ -104,7 +103,6 @@ function openPopUp(page, args, xCoord, yCoord, winName)
 
   page += args;
   var url = "https://2021.undergrad.apply.ucas.com/ucasapply/"+page;
-
 	var myPopup = window.open(url,winName,'width='+popX+',height='+popY+'toolbar=0,menubar=0,directories=0,location=0,scrollbars=1,left='+posX+',top='+posY);
   if (!myPopup.opener)
        myPopup.opener = self;
