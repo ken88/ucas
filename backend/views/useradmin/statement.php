@@ -172,13 +172,9 @@
 
 
         <div class="clearDiv">&nbsp;</div>
-        <!--display 'Footer' clip -->
-        <div id="footer">
-            <ul class="floatLeft">
-                <li><a href="https://www.ucas.com/corporate/about-us" onclick="window.open(this.href);return false;">About us</a> | </li> <li><a href="https://www.ucas.com/corporate/about-us/terms-and-conditions/terms-and-conditions-use-apply" onclick="window.open(this.href);return false;">Terms &amp; conditions</a> | </li><li><a href="https://www.ucas.com/corporate/about-us/privacy-policies-and-declarations/ucas-privacy-policy" onclick="window.open(this.href);return false;">Privacy policy</a> </li>
-            </ul>
-            <p id="copy" class="floatRight">&copy; UCAS 2021</p>
-        </div><!--footer ENDS here-->
+        <!-- 底部start  -->
+        <?php include_once "buttom.php"; ?>
+        <!-- 底部end  -->
 
         <div class="clearDiv">&nbsp;</div>
     </div>
