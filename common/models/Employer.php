@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "employer".
  *
  * @property int $id
- * @property int|null $user_id
+ * @property int $user_id
  * @property string $txtEmpName 雇主姓名
  * @property string $txtEmpAddress 雇主地址
  * @property string $txtEmpNature 职位描述
@@ -36,8 +36,8 @@ class Employer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['user_id', 'txtEmpName', 'txtEmpAddress', 'txtEmpNature', 'cboStartMonth', 'cboStartYear', 'radioEmpType'], 'required'],
             [['user_id', 'cboStartYear', 'cboEndYear'], 'integer'],
-            [['txtEmpName', 'txtEmpAddress', 'txtEmpNature', 'cboStartMonth', 'cboStartYear', 'radioEmpType'], 'required'],
             [['txtEmpName', 'txtEmpAddress', 'txtEmpNature'], 'string', 'max' => 255],
             [['cboStartMonth', 'cboEndMonth', 'radioEmpType'], 'string', 'max' => 20],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
@@ -72,4 +72,25 @@ class Employer extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
+
+    /**
+     * @return bool
+     */
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            $this->user_id = Yii::$app->user->identity->id;
+        }
+        return true;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRadioEmpTypeStr()
+    {
+        $data = ['FT' => 'full-time', 'PT' => 'part-time'];
+        return $data[$this->radioEmpType];
+    }
 }
+

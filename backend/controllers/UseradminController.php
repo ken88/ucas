@@ -10,6 +10,7 @@ namespace backend\controllers;
 
 use common\models\Choice;
 use common\models\Choices;
+use common\models\Employer;
 use common\models\PersonalDetails;
 use DeepCopyTest\Matcher\Y;
 use Yii;
@@ -181,19 +182,32 @@ although you will be able to print these letters from the Track system if necess
     # 就业机会
     public function actionEmployment()
     {
-        $data = [
-            'view' => 'employment'
-        ];
-        return $this->renderPartial('employment', $data);
+        $employer = Employer::find()
+            ->orderBy(['id' => SORT_DESC])
+            ->all();
+        return $this->renderPartial('employment', [
+            'view' => 'employment',
+            'employer' => $employer,
+        ]);
     }
 
     # 新增就业机会
     public function actionAddEmployment()
     {
-        $data = [
-            'view' => 'employment'
-        ];
-        return $this->renderPartial('add-employment', $data);
+        //最多5个
+        $model = Employer::findOne(Yii::$app->request->get('id')) ?: new Employer();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            if (!$model->save()) {
+                var_dump($model->getErrors());
+                exit('create or edit error');
+            } else
+                return $this->redirect(Url::to(['useradmin/employment']));
+        }
+        return $this->renderPartial('add-employment', [
+            'view' => 'employment',
+            'model' => $model,
+        ]);
     }
 
     # 陈述

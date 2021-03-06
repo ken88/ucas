@@ -53,7 +53,7 @@
 
                         <div class="errorTxt"></div>
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="EmploymentServlet?id=64e9ad6517fad857bee834ba7a13&amp;ran=12cwec3f0yeoz">
+                        <form name="Form1" method="post" action="">
 
                             <!--display 'Employment' clip -->
                             <p><input type="hidden" name="from" value="fromEmployment"></p><p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown"></p>
@@ -295,7 +295,7 @@
         }
         $('.errorTxt').html(err);
         if (err == '') {
-            alert('提交连接')
+            $('form').submit()
         } else {
             scrollTo(0,0);
         }
