@@ -20,21 +20,21 @@ class UseradminController extends BaseController
         $mail->setSubject("发sdfsd布纯文字文本");
 
 //$mail->setTextBody('zheshisha ');   //发布纯文字文本
-//        $mes = "<br>Dear Miss qaz wsx
-//<br><br>Before submitting your application, you need to verify that the email address you have provided is correct.
-//In order to verify this, please log in to the UCAS website (https://www.ucas.com/ucas/undergraduate/login)
-//and enter the verification code shown below:
-//<br><br>email address: 176745155@qq.com
-//<br><br>verification code: mkx61508
-//<br><br>This code is only valid for the address shown above. If you change your email address, you will need to obtain a new verification code.
-//<br><br>Once we have verified your email address, we can then send emails
-//alerting you to changes to your application, including decisions made by your chosen universities and colleges.
-//they will tell you to log in to the Track service to view any changes.
-//Track is available on the UCAS website for you to use once we have processed your application.
-//For environmental reasons you will not receive a letter containing an individual decision,
-//although you will be able to print these letters from the Track system if necessary.
-//<br><br>Note: this is an automated email, so please do not reply to this address.";
-        $mes = '发布纯文字文本发布纯文字文本123sfsf发布纯文字文本发布纯文字文本';
+        $mes = "<br>Dear Miss qaz wsx
+<br><br>Before submitting your application, you need to verify that the email address you have provided is correct.
+In order to verify this, please log in to the UCAS website (https://www.ucas.com/ucas/undergraduate/login)
+and enter the verification code shown below:
+<br><br>email address: 176745155@qq.com
+<br><br>verification code: mkx61508
+<br><br>This code is only valid for the address shown above. If you change your email address, you will need to obtain a new verification code.
+<br><br>Once we have verified your email address, we can then send emails
+alerting you to changes to your application, including decisions made by your chosen universities and colleges.
+they will tell you to log in to the Track service to view any changes.
+Track is available on the UCAS website for you to use once we have processed your application.
+For environmental reasons you will not receive a letter containing an individual decision,
+although you will be able to print these letters from the Track system if necessary.
+<br><br>Note: this is an automated email, so please do not reply to this address.";
+//        $mes = '发布纯文字文本发布纯文字文本123sfsf发布纯文字文本发布纯文字文本';
         $mail->setHtmlBody($mes);    //发布可以带html标签的文本
         if($mail->send())
             echo "ok";
@@ -118,6 +118,14 @@ class UseradminController extends BaseController
             'view' => 'employment'
         ];
         return $this->renderPartial('employment',$data);
+    }
+
+    # 就业机会
+    public function actionAddEmployment() {
+        $data = [
+            'view' => 'employment'
+        ];
+        return $this->renderPartial('add-employment',$data);
     }
 
     # 陈述

@@ -23,7 +23,14 @@ return [
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
-
+        # 数据库
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=47.116.137.216:23306;dbname=ucas',
+            'username' => 'root',
+            'password' => '8771cd!',
+            'charset' => 'utf8',
+        ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',

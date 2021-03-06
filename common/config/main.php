@@ -9,14 +9,6 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        # 数据库
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=47.116.137.216:23306;dbname=ucas',
-            'username' => 'root',
-            'password' => '8771cd!',
-            'charset' => 'utf8',
-        ],
 
         # redis
         'redis' => [
