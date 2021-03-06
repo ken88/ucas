@@ -144,11 +144,20 @@ class PersonalDetails extends \yii\db\ActiveRecord
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-            if ($insert) {
-                $this->user_id = Yii::$app->user->identity->id;
-            }
             if ($this->cboFeeCode != 'UK, Chl, IoM or EU student finance services')
                 $this->txtSSA_FeeName = null;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            $this->user_id = Yii::$app->user->identity->id;
             return true;
         }
         return false;
