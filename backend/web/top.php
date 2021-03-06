@@ -107,6 +107,13 @@
         }
         
 
+        $(function () {
+            // 退出
+            $('#logOut').click(function () {
+                window.location.href="/site/logout";
+            })
+        })
+
 
     </script>
 
@@ -123,3 +130,22 @@
         <meta http-equiv="refresh" content="0; URL=enableJavascript.jsp" />
     </noscript>
 </head>
+<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
+<div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
+    <div id="wrapperInternal" class="floatLeft"><!-- Wrapper Internal starts here-->
+        <!--header starts here-->
+        <div id="header">
+            <!--tools start here-->
+            <div id="tools">
+                <ul>
+                    <li><a href="#">Contact us</a> |</li>
+                    <li class="help">
+                        <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&page=HELP.HEADER.PAGE'); return false;">Help</a> |
+                    </li>
+                    <li><a href="javascript:onclick=window.print()">Print page</a></li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                </ul>
+            </div>
+            <!--tools ENDS here-->

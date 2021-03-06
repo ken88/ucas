@@ -1,25 +1,11 @@
 <?php include_once "top.php";?>
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
-<div id="outerWrapper" class="clearfix">
-    <div id="wrapperInternal" class="floatLeft">
-        <div id="header">
-            <div id="tools">
-                <ul>
-                    <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
-                    <li><a href="javascript:onclick=window.print()">Print page</a></li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                </ul>
-            </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
                 <img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" />
             </div><!--logo ENDS here-->
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
                 <h1 class="EN">Verify email: Enter code</h1>
-                <div id="logOut"><a href="ServicesServlet?functionname=logout&amp;id=3121fb9f52fc68db16bcdbb25ba0&amp;ran=1xyxbh65mtj08">Log out</a></div>
+                <div id="logOut"><a href="#">Log out</a></div>
             </div><!--strapLineApply ENDS here-->
             <!--This 3 lines of code target the printed page only-->  <div id="strapLineApplyPrint">  <img src="/static/picture/apply_interactive_pagehead_print.jpg" alt="apply" />  </div><!--StrapLinePrint ENDS here--></div><!--header ENDS here-->
 
@@ -105,13 +91,9 @@
 
         </div>
         <div class="clearDiv">&nbsp;</div>
-        <!--display 'Footer' clip -->
-        <div id="footer">
-            <ul class="floatLeft">
-                <li><a href="https://www.ucas.com/corporate/about-us" onclick="window.open(this.href);return false;">About us</a> | </li> <li><a href="https://www.ucas.com/corporate/about-us/terms-and-conditions/terms-and-conditions-use-apply" onclick="window.open(this.href);return false;">Terms &amp; conditions</a> | </li><li><a href="https://www.ucas.com/corporate/about-us/privacy-policies-and-declarations/ucas-privacy-policy" onclick="window.open(this.href);return false;">Privacy policy</a> </li>
-            </ul>
-            <p id="copy" class="floatRight">&copy; UCAS 2021</p>
-        </div><!--footer ENDS here-->
+        <!-- 底部start  -->
+        <?php include_once "buttom.php"; ?>
+        <!-- 底部end  -->
 
         <div class="clearDiv">&nbsp;</div>
     </div> <!--wrapper ENDS here-->

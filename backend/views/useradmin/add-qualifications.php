@@ -2,28 +2,13 @@
 
 <script type="text/javascript" src="/static/js/Search.js"></script>
 <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/ucas-prod/json/2021/searchData/qualSearchData_EN.js" charset="utf-8"></script>
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18" onload="init();">
-<div id="outerWrapper" class="clearfix">
-    <div id="wrapperInternal" class="floatLeft">
-
-        <div id="header">
-            <div id="tools">
-                <ul>
-                    <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
-                    <li><a href="/static/js:onclick=window.print()">Print page</a></li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                </ul>
-            </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
                 <img src="/static/images/apply_logo.gif" width="91" height="30" alt="UCAS" />
             </div><!--logo ENDS here-->
             <div class="clearDiv">&nbsp;</div>
             <div id="strapLineApply">
                 <h1 class="EN">Education</h1>
-                <div id="logOut"><a href="ServicesServlet?functionname=logout&amp;id=1283b4ca1a72201542c5f15b1df3&amp;ran=dnziq9m7hx4z">Log out</a></div>
+                <div id="logOut"><a href="#">Log out</a></div>
             </div><!--strapLineApply ENDS here-->
             <!--This 3 lines of code target the printed page only-->  <div id="strapLineApplyPrint">  <img src="/static/images/apply_interactive_pageHead_print.jpg" alt="apply" />  </div><!--StrapLinePrint ENDS here--></div><!--header ENDS here-->
 
@@ -97,13 +82,9 @@
 
         <div class="clearDiv">&nbsp;</div>
 
-        <!--display 'Footer' clip -->
-        <div id="footer">
-            <ul class="floatLeft">
-                <li><a href="https://www.ucas.com/corporate/about-us" onclick="window.open(this.href);return false;">About us</a> | </li> <li><a href="https://www.ucas.com/corporate/about-us/terms-and-conditions/terms-and-conditions-use-apply" onclick="window.open(this.href);return false;">Terms &amp; conditions</a> | </li><li><a href="https://www.ucas.com/corporate/about-us/privacy-policies-and-declarations/ucas-privacy-policy" onclick="window.open(this.href);return false;">Privacy policy</a> </li>
-            </ul>
-            <p id="copy" class="floatRight">&copy; UCAS 2021</p>
-        </div><!--footer ENDS here-->
+        <!-- 底部start  -->
+        <?php include_once "buttom.php"; ?>
+        <!-- 底部end  -->
 
 
         <div class="clearDiv">&nbsp;</div>
@@ -150,17 +131,9 @@
                 var row = tbl.insertRow(lastRow);
                 var cell = row.insertCell(0);
 
-                cell.innerHTML = "<a href='EducationServlet?functionname="+queryStringList[0]
-                    +"&amp;mode="+queryStringList[1]
-                    +"&amp;from=fromEducationQualShortList"
-                    +"&amp;edeId="+queryStringList[2]
-                    +"&amp;qualId=0"
-                    +"&amp;qualKey="+data[0]
-                    +"&amp;id="+queryStringList[4]
-                    +"&amp;ran="+queryStringList[5]+"'>"+data[1]+"</a>";
+                cell.innerHTML = "<a href='/useradmin/add-fw?qualKey="+data[0]+"&val="+data[1]+"'>"+data[1]+"</a>";
 
-
-            });
+            })
         search.search('',searchField);
     };
     function performSearch() {
