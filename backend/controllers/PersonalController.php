@@ -10,6 +10,8 @@ namespace backend\controllers;
 
 
 use common\models\User;
+use function Webmozart\Assert\Tests\StaticAnalysis\false;
+use function Webmozart\Assert\Tests\StaticAnalysis\true;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -29,6 +31,8 @@ class PersonalController extends Controller
                         'matchCallback' => function ($rule, $action) {
                             if (\Yii::$app->user->identity->personal_id)
                                 return $this->redirect(Url::to(['useradmin/welcome']));
+                            else
+                                return true;
                         }
                     ],
                 ],
