@@ -150,17 +150,9 @@
                 var row = tbl.insertRow(lastRow);
                 var cell = row.insertCell(0);
 
-                cell.innerHTML = "<a href='EducationServlet?functionname="+queryStringList[0]
-                    +"&amp;mode="+queryStringList[1]
-                    +"&amp;from=fromEducationQualShortList"
-                    +"&amp;edeId="+queryStringList[2]
-                    +"&amp;qualId=0"
-                    +"&amp;qualKey="+data[0]
-                    +"&amp;id="+queryStringList[4]
-                    +"&amp;ran="+queryStringList[5]+"'>"+data[1]+"</a>";
+                cell.innerHTML = "<a href='/useradmin/add-fw?qualKey="+data[0]+"&val="+data[1]+"'>"+data[1]+"</a>";
 
-
-            });
+            })
         search.search('',searchField);
     };
     function performSearch() {
