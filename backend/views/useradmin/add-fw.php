@@ -9,24 +9,6 @@
         background: url(../static/images/errorIco.gif) no-repeat top left #f1f0ee;
     }
 </style>
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
-<div id="outerWrapper" class="clearfix">
-
-    <!--wrapper start-->
-    <div id="wrapperInternal" class="floatLeft">
-
-        <!--header start -->
-        <div id="header">
-            <div id="tools">
-                <ul>
-                    <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
-                    <li><a href="javascript:onclick=window.print()">Print page</a></li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                </ul>
-            </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
                 <img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" />
             </div><!--logo ENDS here-->

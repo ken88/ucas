@@ -1,19 +1,5 @@
 <?php include_once "top.php";?>
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
-<div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
-    <div id="wrapperInternal" class="floatLeft"><!-- Wrapper Internal starts here-->
-        <!--header starts here-->
-        <div id="header">
-            <div id="tools">
-                <ul>
-                    <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('/help/index3', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');return false;">Help</a> |</li>
-                    <li><a href="javascript:onclick=window.print()">Print page</a></li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                </ul>
-            </div><!--tools ENDS here-->
+            <!--tools ENDS here-->
             <div id="logo" class="floatLeft">
                 <a href="#"><img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" /></a>
             </div><!--logo ENDS here-->

@@ -2,21 +2,6 @@
 
 <script type="text/javascript" src="/static/js/Search.js"></script>
 <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/ucas-prod/json/2021/searchData/qualSearchData_EN.js" charset="utf-8"></script>
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18" onload="init();">
-<div id="outerWrapper" class="clearfix">
-    <div id="wrapperInternal" class="floatLeft">
-
-        <div id="header">
-            <div id="tools">
-                <ul>
-                    <li><a href="https://www.ucas.com/corporate/about-us/contact-us" onclick="window.open(this.href);return false;">Contact us</a> |</li>
-                    <li class="help"><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.HEADER.PAGE'); return false;">Help</a> |</li>
-                    <li><a href="/static/js:onclick=window.print()">Print page</a></li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                </ul>
-            </div><!--tools ENDS here-->
             <div id="logo" class="floatLeft">
                 <img src="/static/images/apply_logo.gif" width="91" height="30" alt="UCAS" />
             </div><!--logo ENDS here-->
