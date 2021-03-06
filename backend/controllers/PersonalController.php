@@ -111,7 +111,6 @@ class PersonalController extends Controller
         $model = User::findOne(\Yii::$app->user->identity->id);
         if (!$model->personal_id)
             return $this->redirect(Url::to(['personal/register8']));
-
         return $this->renderPartial('/user/register12', [
             'model' => $model,
         ]);
