@@ -8,6 +8,7 @@
 
 namespace backend\controllers;
 
+use common\models\Choice;
 use common\models\Choices;
 use common\models\PersonalDetails;
 use DeepCopyTest\Matcher\Y;
@@ -88,13 +89,19 @@ although you will be able to print these letters from the Track system if necess
     # 选择项
     public function actionChoices()
     {
+        $model = Choice::findOne(Yii::$app->user->identity->id) ?: new Choice();
+        if (Yii::$app->request->isPost) {
+            $model->chkComplete = Yii::$app->request->post('chkComplete');
+            $model->save();
+        }
         $choices = Choices::find()
             ->orderBy(['id' => SORT_DESC])
             ->where(['user_id' => Yii::$app->user->identity->id])
             ->all();
         return $this->renderPartial('choices', [
             'view' => 'choices',
-            'choices' => $choices
+            'choices' => $choices,
+            'model' => $model,
         ]);
     }
 

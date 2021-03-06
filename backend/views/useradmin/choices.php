@@ -47,7 +47,7 @@
                 <div id="midBoxInternalWide">
 
                     <div class="thisForm"><!--Form starts here-->
-                        <form name="Form1" onsubmit="return setJavaEnabled()" method="post" action="ChoicesServlet?id=e1836169083c2c1968b8b6f43643&amp;ran=16km4zkhauw1r">
+                        <form name="Form1" onsubmit="return setJavaEnabled()" method="post" action="">
                             <p class="bold">Please make sure you have read the latest information about course fees on our <a href="https://www.ucas.com/ucas/undergraduate/finance-and-support/" target="_blank">student finance</a> pages (opens in a new window).</p>
 
                             <p class="bold"><span class="warningTxt">Please add a choice. You can make a maximum of 5 choices.</span> <br><br>Compulsory fields are marked with an asterisk (<span class="Req">*</span>).<br><br>Before leaving this section please click 'save' to avoid losing any information. When you have finished all the entries please click on 'section completed' and 'save'.</p>
@@ -127,7 +127,8 @@
                                             <div class="thisFormElem">
                                                 <div class="thisFormTxt">&nbsp;</div>
                                                 <div class="thisFormField">
-                                                    <input type="checkbox" name="chkComplete">
+                                                    <input type="hidden" name="chkComplete" value="0">
+                                                    <input type="checkbox" value="1" <?php if($model->chkComplete) echo 'checked'?> name="chkComplete">
                                                     &nbsp;section completed
                                                 </div>
                                             </div>
