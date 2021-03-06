@@ -22,17 +22,17 @@ class UseradminController extends BaseController
     # 邮件发送
     public function actionSend()
     {
+        $email = Yii::$app->user->identity->emailText;
+
         $code = mt_rand(1000,999999); # 验证码 随机
         $mail = Yii::$app->mailer->compose();
-//        $mail->setTo('yukai08621@163.com');
-        $mail->setTo('176745155@qq.com');
+
+        $mail->setTo($email); # 发送的邮件
         $mail->setSubject("hello your code checke");
 
 //$mail->setTextBody('zheshisha ');   //发布纯文字文本
-        $mes = "<br>Dear Miss qaz wsx
+        $mes = "<br>hello
 <br><br>Before submitting your application, you need to verify that the email address you have provided is correct.
-In order to verify this, please log in to the UCAS website (https://www.ucas.com/ucas/undergraduate/login)
-and enter the verification code shown below:
 <br><br>verification code: mkx{$code}
 <br><br>This code is only valid for the address shown above. If you change your email address, you will need to obtain a new verification code.
 <br><br>Once we have verified your email address, we can then send emails
@@ -52,6 +52,7 @@ although you will be able to print these letters from the Track system if necess
         $data = [
             'view' => 'welcome',
             'code' => 'mkx'.$code,
+            'email' => $email,
             'res' => $res
         ];
         return $this->renderPartial('send',$data);
@@ -59,8 +60,9 @@ although you will be able to print these letters from the Track system if necess
 
     # 重新发送验证码页面
     public function actionSendCf() {
+        $email = Yii::$app->user->identity->emailText;
         $data = [
-            'email' => '176745155@qq.com'
+            'email' => $email
         ];
         return $this->renderPartial('send-cf',$data);
     }
