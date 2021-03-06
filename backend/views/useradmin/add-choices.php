@@ -59,7 +59,7 @@
 
 
 
-                        <form name="Form1" method="post" onsubmit="return setJavaEnabled()" action="ChoicesServlet?id=c58898d4e06afa8944ded19eb46d&amp;ran=1qjrynamb3lg2">
+                        <form name="Form1" method="post" onsubmit="return setJavaEnabled()" action="">
 
                             <!--Inst code-->
                             <div class="thisFormElem"><!--open form element -->
@@ -68,8 +68,8 @@
                                     <label for="instcodeTextEntry">Institution code<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="hidden" id="instcodeTextEntry1" name="txtInstCode1" style="text-transform: capitalize;" maxlength="3" size="5" value="" class="floatLeft">
-                                    <input type="text" id="instcodeTextEntry" name="txtInstCode" style="text-transform: capitalize;" maxlength="3" size="5" value="" class="floatLeft">
+                                    <input type="hidden" id="instcodeTextEntry1" name="txtInstCode1" style="text-transform: capitalize;" maxlength="3" size="5" value="<?= $model->txtInstCode1 ?>" class="floatLeft">
+                                    <input type="text" id="instcodeTextEntry" name="txtInstCode" style="text-transform: capitalize;" maxlength="3" size="5" value="<?= $model->txtInstCode ?>" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" id="instButton" value="see list" class="seeListBtn" onclick="seelistOpen('/help/index12', '?functionname=instcodeTextEntry', 'document.Form1.txtInstCode'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.INSTCODE'); return false;">
@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft">
+                                    <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="<?= $model->txtCourseCode ?>" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
                                     <input type="button" value="see list" class="seeListBtn"
                                            onclick="seelistOpen('/help/index13','?functionname=coursecodeTextEntry&instcode='+document.Form1.txtInstCode.value)">
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="text" id="campuscodeTextEntry" name="txtCampusCode" value="" style="text-transform: capitalize;" maxlength="1" size="2" class="floatLeft">
+                                    <input type="text" id="campuscodeTextEntry" name="txtCampusCode" value="<?=     $model->txtCampusCode ?>" style="text-transform: capitalize;" maxlength="1" size="2" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" value="see list" class="seeListBtn" onclick="launchCampusPopUp('PopUpServlet', '?functionname=campuslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, 'document.Form1.txtCampusCode'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CAMPUSCODE'); return false;">
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="text" id="startdateTextEntry" name="txtStartDate" value="" maxlength="20" size="20" readonly="" class="floatLeft">
+                                    <input type="text" id="startdateTextEntry" name="txtStartDate" value="<?= $model->txtStartDate ?>" maxlength="20" size="20"  class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="button" value="see list" class="seeListBtn" onclick="launchPopUp('PopUpServlet', '?functionname=startslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, document.Form1.txtCampusCode.value, 'document.Form1.txtStartDate, document.Form1.hidStartDate, document.Form1.hidDefer'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.STARTDATE'); return false;">
@@ -138,7 +138,7 @@
                                     <label for="furtherTextEntry">Further details</label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" id="furtherTextEntry" name="txtFurtherDetails" value="" maxlength="20" size="20" class="floatLeft">
+                                    <input type="text" id="furtherTextEntry" name="txtFurtherDetails" value="<?= $model->txtFurtherDetails ?>" maxlength="20" size="20" class="floatLeft">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.FURTHERDETAILS'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="radio" name="rdHome" value="Y" class="floatLeft" id="homeRadio"><span class="floatLeft">Yes&nbsp;&nbsp;</span><input type="radio" name="rdHome" value="N" class="floatLeft" id="homeRadio"><span class="floatLeft">No</span>
+                                    <input type="radio" name="rdHome" value="Y" <?php if($model->rdHome=='Y') echo 'checked'?> class="floatLeft" id="homeRadio"><span class="floatLeft">Yes&nbsp;&nbsp;</span><input type="radio" name="rdHome" value="N" <?php if($model->rdHome=='N') echo 'checked'?> class="floatLeft" id="homeRadio"><span class="floatLeft">No</span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.LIVEATHOME'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="text" id="entryPointTextEntry" name="txtPOE" value="" maxlength="1" size="2" class="floatLeft">
+                                    <input type="text" id="entryPointTextEntry" name="txtPOE" value="<?= $model->txtPOE ?>" maxlength="1" size="2" class="floatLeft">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.POINTOFENTRY'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>

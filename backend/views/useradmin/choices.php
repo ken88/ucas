@@ -47,7 +47,7 @@
                 <div id="midBoxInternalWide">
 
                     <div class="thisForm"><!--Form starts here-->
-                        <form name="Form1" onsubmit="return setJavaEnabled()" method="post" action="ChoicesServlet?id=e1836169083c2c1968b8b6f43643&amp;ran=16km4zkhauw1r">
+                        <form name="Form1" onsubmit="return setJavaEnabled()" method="post" action="">
                             <p class="bold">Please make sure you have read the latest information about course fees on our <a href="https://www.ucas.com/ucas/undergraduate/finance-and-support/" target="_blank">student finance</a> pages (opens in a new window).</p>
 
                             <p class="bold"><span class="warningTxt">Please add a choice. You can make a maximum of 5 choices.</span> <br><br>Compulsory fields are marked with an asterisk (<span class="Req">*</span>).<br><br>Before leaving this section please click 'save' to avoid losing any information. When you have finished all the entries please click on 'section completed' and 'save'.</p>
@@ -65,86 +65,56 @@
 
                             <hr>
                             <!--//display data -->
-
+                            <?php if (!$choices){?>
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <!--//loop through choices collection and display -->
 
-                                <tbody><tr><td>没有数据显示这个：No details entered.（中文文字不要显示，有数据显示下面那个table）</td></tr>
+                                <tbody><tr><td>No details entered.</td></tr>
 
-                                </tbody></table>
+                                </tbody>
+                            </table>
+                            <?php }else{ ?>
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <!--//loop through choices collection and display -->
 
-                                <tbody><tr>
+                                <tbody>
+                                <?php foreach ($choices as $key=>$val){?>
+                                <tr>
                                     <td colspan="2" width="481" valign="top">
 
-                                        <p class="bold">Aberystwyth University (A40)</p>
+                                        <p class="bold"><?= $val->txtInstCode1.'('.$val->txtInstCode.')'?></p>
 
-                                        <p class="bold">Accounting and Finance (N400)</p>
+                                        <p class="bold"><?= $val->txtCourseCode?></p>
                                     </td>
                                     <td rowspan="2" valign="top">
                                         <ul>
-                                            <li><a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=1&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=17d9uydk23b4">edit</a></li>
-                                            <li><a id="delChoice1" href="#">remove</a></li>
+                                            <li><a href="<?= \yii\helpers\Url::to(['useradmin/add-choice','id'=>$val->id])?>">edit</a></li>
+                                            <li><a id="delChoice1" href="<?= \yii\helpers\Url::to(['useradmin/del-choice','id'=>$val->id])?>">remove</a></li>
                                             <li style="display:none;"><a id="chcLinkDel1" href="ChoicesServlet?functionname=delete&amp;choiceId=1&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=uxgbdf445xnp">remove</a></li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td valign="top">
-                                        <p>Campus: Main Site (Aberystwyth) (-)</p>
-                                        <p>Start date: September 2021</p>
+                                        <p>Campus: <?= $val->txtCampusCode?></p>
+                                        <p>Start date: <?= $val->txtStartDate?></p>
 
                                     </td>
                                     <td valign="top">
                                         <table border="0" cellpadding="0" cellspacing="0">
                                             <tbody><tr><td colspan="2">&nbsp;</td></tr>
-                                            <tr><td>Live at home while studying?</td><td>Y</td></tr>
+                                            <tr><td>Live at home while studying?</td><td><?= $val->rdHome?></td></tr>
                                             <tr><td colspan="2">&nbsp;</td></tr>
                                             <tr><td>Deferred entry?</td><td>N</td></tr>
                                             <tr><td colspan="2">&nbsp;</td></tr>
-                                            <tr><td nowrap="nowrap">Point of entry:&nbsp;&nbsp;</td><td> &nbsp;&nbsp;</td></tr>
+                                            <tr><td nowrap="nowrap">Point of entry:&nbsp;&nbsp;</td><td><?= $val->txtPOE?> &nbsp;&nbsp;</td></tr>
 
                                             </tbody></table>
                                     </td>
                                 </tr>
-
-
-                                <tr><td colspan="3"><hr></td></tr>
-
                                 <tr>
-                                    <td colspan="2" width="481" valign="top">
-
-                                        <p class="bold">Birkbeck, University of London (B24)</p>
-
-                                        <p class="bold">Accounting and Management with Finance (N423)</p>
-                                    </td>
-                                    <td rowspan="2" valign="top">
-                                        <ul>
-                                            <li><a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=2&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=5end40alwhna">edit</a></li>
-                                            <li><a id="delChoice2" href="#">remove</a></li>
-                                            <li style="display:none;"><a id="chcLinkDel2" href="ChoicesServlet?functionname=delete&amp;choiceId=2&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=zxjffmuqxpkf">remove</a></li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <p>Campus: Main Site (-)</p>
-                                        <p>Start date: October 2021</p>
-
-                                    </td>
-                                    <td valign="top">
-                                        <table border="0" cellpadding="0" cellspacing="0">
-                                            <tbody><tr><td colspan="2">&nbsp;</td></tr>
-                                            <tr><td>Live at home while studying?</td><td>Y</td></tr>
-                                            <tr><td colspan="2">&nbsp;</td></tr>
-                                            <tr><td>Deferred entry?</td><td>N</td></tr>
-                                            <tr><td colspan="2">&nbsp;</td></tr>
-                                            <tr><td nowrap="nowrap">Point of entry:&nbsp;&nbsp;</td><td> &nbsp;&nbsp;</td></tr>
-
-                                            </tbody></table>
-                                    </td>
-                                </tr>
+                                    <td colspan="3"><hr></td></tr>
+                                <?php }?>
 
                                 <tr><td colspan="2"><p class="warningTxt">NOTE:<br>The following admissions test may be required for entry on this course:<br>Institution's own test (IOT). </p></td><td>&nbsp;</td></tr>
 
@@ -157,7 +127,8 @@
                                             <div class="thisFormElem">
                                                 <div class="thisFormTxt">&nbsp;</div>
                                                 <div class="thisFormField">
-                                                    <input type="checkbox" name="chkComplete">
+                                                    <input type="hidden" name="chkComplete" value="0">
+                                                    <input type="checkbox" value="1" <?php if($model->chkComplete) echo 'checked'?> name="chkComplete">
                                                     &nbsp;section completed
                                                 </div>
                                             </div>
@@ -180,6 +151,7 @@
                                 </tr>
 
                                 </tbody></table>
+                            <?php } ?>
                             <!-- Hidden field for use by servlet -->
                             <input type="hidden" name="from" value="fromChoiceSummary">
                             <!--spacer -->

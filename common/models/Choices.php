@@ -8,11 +8,12 @@ use Yii;
  * This is the model class for table "choices".
  *
  * @property int $id
- * @property int|null $user_id 用户id
+ * @property int $user_id 用户id
  * @property string $txtInstCode 机构代码
+ * @property string|null $txtInstCode1 机构代码1
  * @property string $txtCourseCode 课程代码
  * @property string $txtCampusCode 校园代码
- * @property string $startdateTextEntry 开始日期
+ * @property string $txtStartDate 开始日期
  * @property string|null $txtFurtherDetails 更多详细信息
  * @property string $rdHome 住在家里
  * @property int $txtPOE 入口点,填写的就是数字
@@ -35,10 +36,10 @@ class Choices extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['user_id', 'txtInstCode', 'txtCourseCode', 'txtCampusCode', 'txtStartDate', 'rdHome', 'txtPOE'], 'required'],
             [['user_id', 'txtPOE'], 'integer'],
-            [['txtInstCode', 'txtCourseCode', 'txtCampusCode', 'startdateTextEntry', 'rdHome', 'txtPOE'], 'required'],
-            [['txtInstCode', 'txtCourseCode', 'txtCampusCode', 'txtFurtherDetails'], 'string', 'max' => 255],
-            [['startdateTextEntry'], 'string', 'max' => 50],
+            [['txtInstCode', 'txtInstCode1', 'txtCourseCode', 'txtCampusCode', 'txtFurtherDetails'], 'string', 'max' => 255],
+            [['txtStartDate'], 'string', 'max' => 50],
             [['rdHome'], 'string', 'max' => 4],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -53,9 +54,10 @@ class Choices extends \yii\db\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'txtInstCode' => 'Txt Inst Code',
+            'txtInstCode1' => 'Txt Inst Code1',
             'txtCourseCode' => 'Txt Course Code',
             'txtCampusCode' => 'Txt Campus Code',
-            'startdateTextEntry' => 'Startdate Text Entry',
+            'txtStartDate' => 'Txt Start Date',
             'txtFurtherDetails' => 'Txt Further Details',
             'rdHome' => 'Rd Home',
             'txtPOE' => 'Txt Poe',
@@ -71,4 +73,17 @@ class Choices extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
+
+    /**
+     * @return bool
+     */
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            $this->user_id = Yii::$app->user->identity->id;
+            return true;
+        }
+        return false;
+    }
 }
+

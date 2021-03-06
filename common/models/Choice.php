@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use function Webmozart\Assert\Tests\StaticAnalysis\true;
 use Yii;
 
 /**
@@ -54,5 +55,17 @@ class Choice extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return bool
+     */
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            $this->user_id = Yii::$app->user->identity->id;
+            return true;
+        }
+        return false;
     }
 }
