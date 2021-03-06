@@ -27,7 +27,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -72,9 +72,9 @@
                                         <label for="confirmYesRadio">...Is this correct?<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <span class="floatLeft">Yes</span><input type="radio" name="rdConfirm" value="Y" class="floatLeft" id="confirmYesRadio">
+                                        <span class="floatLeft">Yes</span><input type="radio" name="rdConfirm" value="Y" class="floatLeft" id="confirmYesRadio" <?php if ($model->rdConfirm=='Y') echo 'checked'?> >
                                         <span class="floatLeft">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                        <span class="floatLeft">No</span><input type="radio" name="rdConfirm" value="N" class="floatLeft" id="confirmNoRadio">
+                                        <span class="floatLeft">No</span><input type="radio" name="rdConfirm" value="N" class="floatLeft" id="confirmNoRadio" <?php if ($model->rdConfirm=='N') echo 'checked'?> >
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.POSTREG.CONFIRM.FIELD.CONFIRM'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -134,7 +134,8 @@
             $('.errorTxt').html(err);
         }
         else {
-            window.location="register11"
+            $('form').submit()
+            // window.location="register11"
         }
     }
 </script>

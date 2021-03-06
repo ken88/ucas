@@ -37,6 +37,7 @@ class UserController extends Controller
             ],
         ];
     }
+
     # 注册
     public function actionRegister()
     {
@@ -122,31 +123,6 @@ class UserController extends Controller
                 'model' => $model
             ]);
         }
-    }
-
-    public function actionRegister8()
-    {
-        return $this->renderPartial('register8');
-    }
-
-    public function actionRegister9()
-    {
-        return $this->renderPartial('register9');
-    }
-
-    public function actionRegister10()
-    {
-        return $this->renderPartial('register10');
-    }
-
-    public function actionRegister11()
-    {
-        return $this->renderPartial('register11');
-    }
-
-    public function actionRegister12()
-    {
-        return $this->renderPartial('register12');
     }
 
     public function actionApply1()

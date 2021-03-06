@@ -40,7 +40,7 @@ class DefaultController extends Controller
         }
 
         if (!Yii::$app->user->isGuest) {
-            return $this->redirect(Url::to(['useradmin/welcome']));
+            return $this->redirect(Url::to(['personal/register8']));
             //return $this->goHome(); //跳转register8 或者 welcome
         }
         return $this->renderPartial('login');

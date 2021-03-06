@@ -27,7 +27,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -72,7 +72,7 @@
                                         <label for="buzzwordTextbox">Buzzword<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="text" name="txtBuzzword" value="" class="floatLeft" id="txtBuzzword">
+                                        <input type="text" name="txtBuzzword" value="<?= $model->txtBuzzword ?>" class="floatLeft" id="txtBuzzword">
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.POSTREG.BUZZWORD.FIELD.BUZZWORD'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -146,7 +146,8 @@
             $('.errorTxt').html(err);
         }
         else {
-            window.location="register10"
+            $('form').submit()
+            //window.location="register10"
         }
     }
 </script>

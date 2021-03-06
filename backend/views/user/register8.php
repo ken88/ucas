@@ -27,7 +27,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="SecurityServlet;jsessionid=3acb7bb26c76eb3635cf937682c5" method="post" autocomplete="off">
+        <form name="Form1" action="" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -74,7 +74,7 @@
                                         <label for="routeSchoolRadio">Through my school/college</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="radio" name="rdRoute" value="S" class="floatLeft" id="routeSchoolRadio">
+                                        <input type="radio" name="rdRoute" value="S" class="floatLeft" id="routeSchoolRadio" <?php if($model->rdRoute=='S') echo 'checked'?> >
                                         <a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3641f9e2a10f3ad16b2596db7d3e', '?functionname=help&amp;page=HELP.POSTREG.APPLICATIONROUTE.FIELD.SCHOOL'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a></div>
                                 </div><!--close form element -->
@@ -86,7 +86,7 @@
                                         <label for="routeCareersOrgRadio">Through a careers organisation</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="radio" name="rdRoute" value="C" class="floatLeft" id="routeCareersOrgRadio">
+                                        <input type="radio" name="rdRoute" value="C" class="floatLeft" id="routeCareersOrgRadio" <?php if($model->rdRoute=='C') echo 'checked'?> >
                                         <a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3641f9e2a10f3ad16b2596db7d3e', '?functionname=help&amp;page=HELP.POSTREG.APPLICATIONROUTE.FIELD.CAREERSORG'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -99,7 +99,7 @@
                                         <label for="routeOtherOrgRadio">Through another organisation </label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="radio" name="rdRoute" value="O" class="floatLeft" id="routeOtherOrgRadio">
+                                        <input type="radio" name="rdRoute" value="O" class="floatLeft" id="routeOtherOrgRadio" <?php if($model->rdRoute=='O') echo 'checked'?> >
                                         <a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3641f9e2a10f3ad16b2596db7d3e', '?functionname=help&amp;page=HELP.POSTREG.APPLICATIONROUTE.FIELD.OTHERORG'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -112,7 +112,7 @@
                                         <label for="routeIndividualRadio">As an individual</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="radio" name="rdRoute" value="I" class="floatLeft" id="routeIndividualRadio">
+                                        <input type="radio" name="rdRoute" value="I" class="floatLeft" id="routeIndividualRadio" <?php if($model->rdRoute=='I') echo 'checked'?> >
                                         <a href="#" onclick="helpOpen('PopUpServlet;jsessionid=3641f9e2a10f3ad16b2596db7d3e', '?functionname=help&amp;page=HELP.POSTREG.APPLICATIONROUTE.FIELD.INDIVIDUAL'); return false;">
                                             <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -174,7 +174,8 @@
         }
 
         else {
-            window.location="register9"
+            // window.location="register9"
+            $('form').submit()
         }
 
 

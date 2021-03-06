@@ -62,7 +62,7 @@
 
                             <!--display 'Welcome' clip -->
                             <p>Welcome qaz,</p>
-                            <p>Your Personal ID is: <font size="3"><strong>158-766-3000</strong></font>.<br><br><strong>Please make a note of this number and keep it handy. You will need to quote this number if you call our Customer Contact Centre.</strong></p>
+                            <p>Your Personal ID is: <font size="3"><strong><?= $model->personal_id ?></strong></font>.<br><br><strong>Please make a note of this number and keep it handy. You will need to quote this number if you call our Customer Contact Centre.</strong></p>
                             <script>
                                 function setCookie(c_name,value,exdays)
                                 {

@@ -58,6 +58,7 @@ use yii\web\IdentityInterface;
 class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
     public $username;
+
     /**
      * {@inheritdoc}
      */
@@ -301,5 +302,13 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public function validatePassword($password)
     {
         return Yii::$app->security->validatePassword($password, $this->passwordText);
+    }
+
+    /**
+     * @return string
+     */
+    public function generatePersonalId()
+    {
+        return '1' . rand(10, 99) . '-' . rand(100, 999) . '-' . $this->id;
     }
 }
