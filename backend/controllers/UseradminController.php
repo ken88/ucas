@@ -14,6 +14,7 @@ use common\models\Employer;
 use common\models\Employment;
 use common\models\PersonalDetails;
 use common\models\Statement;
+use common\models\User;
 use Yii;
 use yii\helpers\Url;
 
@@ -86,6 +87,11 @@ although you will be able to print these letters from the Track system if necess
         return $this->renderPartial('welcome', $data);
     }
 
+    # 获取左侧菜单信息
+    public function actionAjaxGetMenu() {
+        $info = User::infoSelection();
+        res(200,'',$info);
+    }
     /**
      * 个人资料
      * @return string
