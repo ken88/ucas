@@ -318,7 +318,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
      * 对应值：'1'=Completed，'0'=In progress，false=Not started
      * @return array
      */
-    public static function InfoSelection()
+    public static function infoSelection()
     {
         $map = ['user_id' => Yii::$app->user->identity->id];
         $data = [
