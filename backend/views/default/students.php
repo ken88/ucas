@@ -74,16 +74,20 @@
 
 <div id="page" class="page-wrapper page page-has-sticky-ad" >
 
-    <section class="section section--upper-header global-header global-header--learners " id="section--upper-header" data-generated-at='{"version":"4.8.1","major_version":"4","ref":"4.8.1","processor":"v4","generated":"2021-02-12T14:43:25+00:00","parsed":"2021-02-24T10:43:06+00:00","framework_domain":"https:\/\/dfcdn.ucas.com","base_domain":"https:\/\/www.ucas.com","link_domain":"https:\/\/www.ucas.com","cached":"FALSE"}'>
+    <!-- 头部开始-->
+    <section class="section section--upper-header global-header global-header--learners " id="section--upper-header" data-generated-at='{"version":"4.8.1","major_version":"4","ref":"4.8.1","processor":"v4","generated":"2021-02-12T14:43:25+00:00","parsed":"2021-02-24T10:28:07+00:00","framework_domain":"https:\/\/dfcdn.ucas.com","base_domain":"https:\/\/www.ucas.com","link_domain":"https:\/\/www.ucas.com","cached":"FALSE"}'>
         <a href="#main-content" class="skip-navigation">Skip navigation</a>
         <div class="wrapper">
 
-            <a class="logo" href="https://www.ucas.com">  <div class="logo__image"><img alt="UCAS" src="/static/picture/logo.svg"></div>
+            <a class="logo" href="#">
+                <div class="logo__image">
+                    <img alt="UCAS" src="/static/picture/logo.svg">
+                </div>
             </a>
 
 
             <div class="meganav">
-                <a href="https://www.ucas.com/search/explore" class="meganav__toggle" id="meganav-toggle">
+                <a href="#" class="meganav__toggle" id="meganav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -94,304 +98,39 @@
                     <nav class="meganav__links-wrapper">
                         <ul class="meganav__links">
                             <li class="global-link">
-                                <a href="https://www.ucas.com/further-education" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Further education</span><span class="global-link__description">Your options after GCSEs or Nationals</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Further education panel">Open panel</button>
-                                <div class="link-panel">
-                                    <div class="wrapper">
-                                        <div class="link-panel__subject">
-                                            <h2 class="link-panel__subject-title">Finishing GCSEs  or Nationals?</h2>
-                                            <p class="link-panel__subject-description">Find out your options and start planning your next steps</p>
-                                            <a href="https://www.ucas.com/ucas/after-gcses/find-career-ideas/explore-jobs" role="button" data-placement="mega-nav" class="button button--rounded button--rounded--light-ghost">Explore subjects and careers</a>          </div>
+                                <a href="#" data-placement="mega-nav" class="global-link__link">
+                                    <span class="global-link__title">Further education</span>
+                                    <span class="global-link__description">Your options after GCSEs or Nationals</span>
+                                </a>
+                                <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Further education panel">Open panel</button>
 
-                                        <div class="link-panel__blocks">
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/further-education/post-16-qualifications" data-placement="mega-nav">Study options and qualifications</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-qualifications/qualifications-you-can-take/levels" data-placement="mega-nav">A levels</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-qualifications/qualifications-you-can-take/btec-diplomas" data-placement="mega-nav">BTEC diplomas</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-qualifications/qualifications-you-can-take/nvqs" data-placement="mega-nav">NVQs</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/find-career-ideas" data-placement="mega-nav">Career ideas</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-options" data-placement="mega-nav">Post-16 options</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/further-education/apprenticeships-traineeships" data-placement="mega-nav">Apprenticeships and traineeships</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/apprenticeships-and-traineeships/post-16-apprenticeships" data-placement="mega-nav">Apprenticeships for post-16</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/apprenticeships-and-traineeships/applying-apprenticeship" data-placement="mega-nav">Applying for apprenticeships</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/further-education/post-16-finance-support" data-placement="mega-nav">Finance and support</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-finance-and-support/funding" data-placement="mega-nav">Funding</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-finance-and-support/local-information" data-placement="mega-nav">Local support services</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/further-education/post-16-finance-and-support/parents-and-carers" data-placement="mega-nav">Info for parents and carers</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/further-education/thinking-about-university" data-placement="mega-nav">Thinking about university?</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-study/entry-requirements/ucas-tariff-points" data-placement="mega-nav">What are UCAS Tariff points?</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
                             </li>
                             <li class="global-link">
-                                <a href="https://www.ucas.com/undergraduate" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Undergraduate</span><span class="global-link__description">University and conservatoires</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Undergraduate panel">Open panel</button>
-                                <div class="link-panel">
-                                    <div class="wrapper">
-                                        <div class="link-panel__subject">
-                                            <h2 class="link-panel__subject-title">Not sure what to do?</h2>
-                                            <p class="link-panel__subject-description">Browse subject guides</p>
-                                            <a href="https://www.ucas.com/explore" role="button" data-placement="mega-nav" class="button button--rounded button--rounded--light-ghost">Explore subjects</a>          </div>
+                                <a href="#" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Undergraduate</span><span class="global-link__description">University and conservatoires</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Undergraduate panel">Open panel</button>
 
-                                        <div class="link-panel__blocks">
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/undergraduate/applying-to-university" data-placement="mega-nav">Applying to university</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/applying-university/ucas-undergraduate-when-apply" data-placement="mega-nav">When to apply</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/applying-university/filling-your-ucas-undergraduate-application" data-placement="mega-nav">How to apply</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-study/entry-requirements/ucas-tariff-points" data-placement="mega-nav">UCAS Tariff points</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/applying-university/how-write-ucas-undergraduate-personal-statement" data-placement="mega-nav">Personal statement</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/ucas/events/find/scheme/undergraduate/type/key-date" data-placement="mega-nav">Key dates</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/undergraduate/what-where-study" data-placement="mega-nav">What and where to study</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/explore/subjects" data-placement="mega-nav">Subjects</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-study/ucas-undergraduate-what-study" data-placement="mega-nav">Choosing a course</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-to-study/online-learning" data-placement="mega-nav">Online learning</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/conservatoires" data-placement="mega-nav">Conservatoires</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/ucas/events/find/scheme/virtual-and-digital/type/exhibition" data-placement="mega-nav">UCAS virtual exhibitions</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-study/events-and-open-days" data-placement="mega-nav">Open days and events</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/undergraduate/after-you-apply" data-placement="mega-nav">After applying</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/after-you-apply/undergraduate-interview-invitations" data-placement="mega-nav">Interviews</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/after-you-apply/track-your-ucas-application" data-placement="mega-nav">Track your application</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/after-you-apply/ucas-undergraduate-types-offer" data-placement="mega-nav">Decisions and offers</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/undergraduate/results-clearing" data-placement="mega-nav">Results and Clearing</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/results-confirmation-and-clearing/ucas-undergraduate-results" data-placement="mega-nav">Exam results</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/results-confirmation-and-clearing/what-clearing" data-placement="mega-nav">What is Clearing?</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/money" data-placement="mega-nav">Finance</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/finance/undergraduate-tuition-fees-and-student-loans" data-placement="mega-nav">Tuition fees</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/finance/undergraduate-tuition-fees-and-student-loans" data-placement="mega-nav">Student loans</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/finance/managing-money" data-placement="mega-nav">Managing money</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/undergraduate/student-life" data-placement="mega-nav">Student life</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/chat-to-students" data-placement="mega-nav">Chat to students</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/student-life/student-discounts" data-placement="mega-nav">UCAS student discounts</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/accommodation" data-placement="mega-nav">Find accommodation</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/student-life/getting-undergraduate-student-support" data-placement="mega-nav">Getting support</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/city-guides" data-placement="mega-nav">City guides</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
                             </li>
                             <li class="global-link">
-                                <a href="https://www.ucas.com/postgraduate" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Postgraduate</span><span class="global-link__description">Returning to university</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Postgraduate panel">Open panel</button>
-                                <div class="link-panel">
-                                    <div class="wrapper">
-                                        <div class="link-panel__subject">
-                                            <h2 class="link-panel__subject-title">Returning to uni?</h2>
-                                            <p class="link-panel__subject-description">All the information you need to take your education to the next level</p>
-                                            <a href="https://www.ucas.com/postgraduate/postgraduate-study" role="button" data-placement="mega-nav" class="button button--rounded button--rounded--light-ghost">Explore postgraduate options</a>          </div>
-
-                                        <div class="link-panel__blocks">
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/postgraduate/choosing-postgraduate-course" data-placement="mega-nav">Choosing a course</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/postgraduate-study/what-study" data-placement="mega-nav">Qualification types</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/choosing-course/choosing-between-similar-courses" data-placement="mega-nav">What's the right course for you?</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/conservatoires" data-placement="mega-nav">Studying at a conservatoire</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/postgraduate/how-to-apply" data-placement="mega-nav">How to apply through UCAS</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/how-apply-through-ucas/how-apply-postgraduate-courses/filling-your-ucas-postgraduate-application" data-placement="mega-nav">Starting your application</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/how-apply-through-ucas/after-you-send-your-postgraduate-application" data-placement="mega-nav">After you send your application</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/how-apply-through-ucas/ucas-postgraduate-decisions-and-replies" data-placement="mega-nav">Decisions and replies</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/postgraduate/postgraduate-study/postgraduate-international-students" data-placement="mega-nav">International students</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/postgraduate-study/international-students/benefits-studying-uk" data-placement="mega-nav">Benefits of studying in the UK</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/international-students/moving-and-living-uk" data-placement="mega-nav">Moving to and living in the UK</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/postgraduate/postgraduate-fees-and-funding" data-placement="mega-nav">Fees, loans, and funding</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/fees-and-funding/postgraduate-loans" data-placement="mega-nav">Postgraduate loans</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/fees-and-funding/ucas-conservatoires-postgraduate-tuition-fees-and-finance" data-placement="mega-nav">Conservatoire tuition fees and finance</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/teaching-in-the-uk" data-placement="mega-nav">Teacher training</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/teacher-training/choosing-career-teaching" data-placement="mega-nav">Choosing a career in teaching</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/teaching-in-england" data-placement="mega-nav">Training to teach in England</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/postgraduate/teacher-training/how-apply" data-placement="mega-nav">Apply through UCAS Teacher Training</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
+                                <a href="#" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Postgraduate</span><span class="global-link__description">Returning to university</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Postgraduate panel">Open panel</button>
                             </li>
                             <li class="global-link">
-                                <a href="https://www.ucas.com/alternatives-to-university" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Alternatives</span><span class="global-link__description">Apprenticeships, internships and gap years</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Alternatives panel">Open panel</button>
-                                <div class="link-panel">
-                                    <div class="wrapper">
-                                        <div class="link-panel__subject">
-                                            <h2 class="link-panel__subject-title">Alternatives to uni</h2>
-                                            <p class="link-panel__subject-description">Not sure if uni or college is for you? Find out what else you can do</p>
-                                            <a href="https://careerfinder.ucas.com/searchjobs/" role="button" data-placement="mega-nav" class="button button--rounded button--rounded--light-ghost">Search for apprenticeships and jobs</a>          </div>
+                                <a href="#" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Alternatives</span><span class="global-link__description">Apprenticeships, internships and gap years</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Alternatives panel">Open panel</button>
 
-                                        <div class="link-panel__blocks">
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/understanding-apprenticeships" data-placement="mega-nav">Apprenticeships in the UK</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/alternatives/apprenticeships/apprenticeships-england/whats-involved-apprenticeship-england" data-placement="mega-nav">What's involved?</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/alternatives/apprenticeships/apprenticeships-england/what-apprenticeships-are-available/degree-apprenticeships" data-placement="mega-nav">Degree apprenticeships</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://careerfinder.ucas.com/jobs/apprenticeship/" data-placement="mega-nav">Find an apprenticeship</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/alternatives/internships" data-placement="mega-nav">Internships</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/alternatives/internships/internships-and-volunteering" data-placement="mega-nav">Internships and volunteering</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/alternatives/gap-year" data-placement="mega-nav">Gap year</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/alternatives/gap-year/gap-years-ideas-and-things-think-about" data-placement="mega-nav">Gap year ideas</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/applying-university/when-apply/deferred-entry" data-placement="mega-nav">Deferred entry to uni</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/undergraduate/what-and-where-study/studying-overseas" data-placement="mega-nav">Studying overseas</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-study/studying-overseas/applying-study-abroad" data-placement="mega-nav">Applying to study abroad</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/undergraduate/what-and-where-study/studying-overseas/what-erasmus" data-placement="mega-nav">What is Erasmus?</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
                             </li>
                             <li class="global-link">
-                                <a href="https://www.ucas.com/careers-advice" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Careers</span><span class="global-link__description">Help with finding a job</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Careers panel">Open panel</button>
-                                <div class="link-panel">
-                                    <div class="wrapper">
-                                        <div class="link-panel__subject">
-                                            <h2 class="link-panel__subject-title">Help finding your career</h2>
-                                            <p class="link-panel__subject-description">Helping you find your dream career</p>
-                                            <a href="https://careerfinder.ucas.com/searchjobs/" role="button" data-placement="mega-nav" class="button button--rounded button--rounded--light-ghost">Search for careers and jobs</a>          </div>
-
-                                        <div class="link-panel__blocks">
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/further-education/find-career-ideas" data-placement="mega-nav">Finding a career</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/careers/buzz-quiz" data-placement="mega-nav">Career quiz</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/ucas/after-gcses/find-career-ideas/explore-jobs" data-placement="mega-nav">Explore job roles</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/careers-advice/getting-job" data-placement="mega-nav">Getting a job</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/careers/getting-job/how-get-work" data-placement="mega-nav">How to get into work</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/careers/getting-job/what-are-employers-looking" data-placement="mega-nav">What are employers looking for?</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/careers/getting-job/how-write-cv" data-placement="mega-nav">How to write a CV</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="link-panel__block">
-                                                <h3 class="link-panel__block-title"><a href="https://www.ucas.com/careers-advice/employment" data-placement="mega-nav">Employment</a></h3>
-                                                <ul>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/careers/employment/understanding-employment-contracts" data-placement="mega-nav">Understanding employment contracts</a></li>
-                                                    <li class="link-panel__block-link"><a href="https://www.ucas.com/careers/employment/your-first-payslip" data-placement="mega-nav">Your first payslip</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
+                                <a href="#" data-placement="mega-nav" class="global-link__link"><span class="global-link__title">Careers</span><span class="global-link__description">Help with finding a job</span></a>          <button class="button button--small button--secondary link-panel__toggle" style="display:none" title="Open Careers panel">Open panel</button>
                             </li>
                         </ul>
                     </nav>
                 </div>
 
+
+
                 <div class="meganav__search-widget">
-                    <a href="https://www.ucas.com/search/explore" class="search-widget__toggle" id="header-search-toggle">Search</a>
+                    <a href="#" class="search-widget__toggle" >Search</a>
                     <div class="search-widget__wrapper wrapper">
                         <div class="search-widget__inner">
-                            <form action="https://www.ucas.com/search/explore" method="get" class="search-widget__inner-content">
-                                <div class="v5-form-item v5-form-item--clear v5-form-item--oversized v5-form-pair v5-form-pair--search">
-                                    <label class="hide-element" for="keywords">Search field:</label>
-                                    <input type="search" id="keywords" name="keywords" value="" placeholder="Advice, courses and locations" class="v5-form-pair__input">
-                                    <input type="submit" value="Submit" title="Submit" class="v5-form-pair__submit">
-                                </div>
-                            </form>
                         </div>
                     </div>
-
-                    <div class="search-widget__extended">
-                        <div class="search-widget__extended-wrapper">
-                            <div class="wrapper">
-                                <div class="link-panel__block">
-                                    <h2>Not sure what to do?</h2>
-                                    <p>Browse subject guides</p>
-                                    <a href="https://www.ucas.com/explore/subjects" class="button button--rounded button--rounded--dark-ghost" data-placement="search-dropdown-menu" role="button" absolute="1">Explore subjects</a>          </div>
-
-                                <div class="link-panel__block">
-                                    <h3>Popular topics</h3>
-
-                                    <ul class="link-panel__block-list">
-                                        <li><a href="https://www.ucas.com/ucas/tariff-calculator" class="link" data-placement="search-dropdown-menu">Calculate your UCAS Tariff points</a></li>
-                                        <li><a href="https://www.ucas.com/undergraduate/applying-to-university" class="link" data-placement="search-dropdown-menu">Undergraduate - Applying to university</a></li>
-                                        <li><a href="https://www.ucas.com/postgraduate/teacher-training/apply-through-ucas-teacher-training/find-teacher-training-programmes" class="link" data-placement="search-dropdown-menu">Teacher Training - search for courses</a></li>
-                                        <li><a href="https://www.ucas.com/" class="link" data-placement="search-dropdown-menu"></a></li>
-                                    </ul>
-                                </div>
-                                <div class="link-panel__block">
-                                    <h3>Popular subjects</h3>
-
-                                    <ul class="link-panel__block-list">
-                                        <li><a href="https://digital.ucas.com/search/results?SearchText=medicine" class="link" data-placement="search-dropdown-menu">Medicine</a></li>
-                                        <li><a href="https://digital.ucas.com/search/results?SearchText=law" class="link" data-placement="search-dropdown-menu">Law</a></li>
-                                        <li><a href="https://digital.ucas.com/search/results?SearchText=psychology" class="link" data-placement="search-dropdown-menu">Psychology</a></li>
-                                        <li><a href="https://www.ucas.com/" class="link" data-placement="search-dropdown-menu"></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
 
@@ -402,7 +141,15 @@
                         <div class="meganav__user-menu-icon"></div>
                     </a>
                     <div class="meganav__user-menu" id="user-menu">
-                        <div class="meganav__user-menu-wrapper"></div>
+                        <div class="meganav__user-menu-wrapper1">
+                            <ul class="user-menu">
+                                <li class="user-menu__menu-item">
+                                    <a href="/default/students" class="user-menu__menu-link user-menu__menu-link--students">
+                                        Students
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -411,6 +158,8 @@
 
         </div>
     </section>
+    <!-- 头部结束-->
+
     <section class="section section--lower-header" id="section-lower-header">
 
 
@@ -426,12 +175,6 @@
 
                     <div class="header__subheading"><h2>Please select an education scheme.</h2>
                     </div>
-
-
-
-
-
-
 
                 </div>
 
@@ -464,15 +207,16 @@
                                 <p>Get your UCAS Hub.&nbsp;Your place to discover your options and research your future.</p>
                                 <div class="buttons-joined">
                                     <a href="login" role="button" class="button">Apply</a>
-                                    <a href="https://track.ucas.com/" role="button" class="button">Track</a>
-                                    <a href="https://www.ucas.com/dashboard" role="button" class="button">Hub</a>
-                                    <a href="https://www.ucas.com/account?m=login&amp;t=student&amp;returnUrl=/dashboard" role="button" class="button">Hub and Hub Live events</a>              </div>
+                                    <a href="#" role="button" class="button">Track</a>
+                                    <a href="#" role="button" class="button">Hub</a>
+                                    <a href="#" role="button" class="button">Hub and Hub Live events</a>              </div>
                                 <h4>2022 entry</h4>
                                 <p><span>Applications for 2022 entry open in May 2021 but you can start your research now with the UCAS Hub!</span><br>
                                     <br>
                                     <span>Whether you want to compare courses or apprenticeships, or get your head round the personal statement, the UCAS Hub has it covered.</span></p>
                                 <div class="buttons-joined">
-                                    <a href="https://www.ucas.com/account?m=login&amp;t=student&amp;returnUrl=/dashboard" role="button" class="button">Hub and Hub Live events</a>          <a href="https://www.ucas.com/dashboard" role="button" class="button">Go to your Hub</a>              </div>
+                                    <a href="#" role="button" class="button">Hub and Hub Live events</a>
+                                    <a href="#" role="button" class="button">Go to your Hub</a>              </div>
                                 <ul class="accordion--nested">
                                     <li class="accordion__child">
                                         <div accordion-trigger="" aria-expanded="false" class="accordion__toggle" tabindex="-1">What's this?</div>
@@ -495,7 +239,8 @@
                                                     <li>teacher training programmes in <strong>Scotland</strong></li>
                                                 </ul>
 
-                                                <p>Sign in to see your shortlisted courses in our search tool. <strong>You will need to register separately for UCAS Undergraduate Apply</strong>.</p>
+                                                <p>Sign in to see your shortlisted courses in our search tool. <strong>
+                                                        You will need to register separately for UCAS Undergraduate Apply</strong>.</p>
                                             </div>
                                         </div>
                                     </li>
@@ -511,8 +256,12 @@
                                 <div class="content-columns content-columns--one-columns content-columns--padding">
                                 </div>
                                 <h4>2021 entry</h4>
-                                <span>Use Track to check the progress of your submitted application.</span>              <div class="buttons-joined">
-                                    <a href="https://2021.conservatoires.apply.ucas.com/apply/Gateway.jsp" role="button" class="button">Apply</a>          <a href="https://conservatoires.track.ucas.com/cukastrack/CukasLogin.jsp" role="button" class="button">Track</a>          <a href="https://www.ucas.com/dashboard" role="button" class="button">Hub</a>              </div>
+                                <span>Use Track to check the progress of your submitted application.</span>
+                                <div class="buttons-joined">
+                                    <a href="#" role="button" class="button">Apply</a>
+                                    <a href="#" role="button" class="button">Track</a>
+                                    <a href="#">Hub</a>
+                                </div>
                                 <ul class="accordion--nested">
                                     <li class="accordion__child">
                                         <div accordion-trigger="" aria-expanded="false" class="accordion__toggle" tabindex="-1">What's this?</div>
@@ -523,15 +272,15 @@
                                                 <p>You can apply to the following conservatoires through UCAS Conservatoires:</p>
 
                                                 <ul>
-                                                    <li><a class="ext" href="http://www.bcu.ac.uk/conservatoire" target="_blank">Royal Birmingham Conservatoire</a></li>
-                                                    <li><a class="ext" href="http://www.oldvic.ac.uk/" target="_blank">Bristol Old Vic Theatre School</a></li>
-                                                    <li><a class="ext" href="http://www.lcm.ac.uk/" target="_blank">Leeds College of Music</a></li>
-                                                    <li><a class="ext" href="http://www.ram.ac.uk/" target="_blank">Royal Academy of Music</a></li>
-                                                    <li><a class="ext" href="http://www.rcm.ac.uk/" target="_blank">Royal College of Music</a></li>
-                                                    <li><a class="ext" href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a></li>
-                                                    <li><a class="ext" href="http://www.rncm.ac.uk/" target="_blank">Royal Northern College of Music</a></li>
-                                                    <li><a class="ext" href="http://www.rwcmd.ac.uk/" target="_blank">Royal Welsh College of Music and Drama</a></li>
-                                                    <li><a class="ext" href="http://www.trinitylaban.ac.uk/" target="_blank">Trinity Laban Conservatoire of Music and Dance</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Royal Birmingham Conservatoire</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Bristol Old Vic Theatre School</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Leeds College of Music</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Royal Academy of Music</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Royal College of Music</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Royal Conservatoire of Scotland</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Royal Northern College of Music</a></li>
+                                                    <li><a class="ext" href="#/" target="_blank">Royal Welsh College of Music and Drama</a></li>
+                                                    <li><a class="ext" href="#" target="_blank">Trinity Laban Conservatoire of Music and Dance</a></li>
                                                 </ul>
 
                                                 <p>Sign in to see your shortlisted courses in our search tool. <strong>You will need to register separately for UCAS Conservatoires Apply</strong>.</p>
@@ -551,7 +300,10 @@
                                 </div>
                                 <p><span>Sign in or register for apply to most research and taught postgraduate courses.</span></p>
                                 <div class="buttons-joined">
-                                    <a href="https://www.ucas.com/account?m=login&amp;t=student&amp;returnUrl=/dashboard" role="button" class="button">Sign in</a>          <a href="https://www.ucas.com/account?m=register&amp;t=student&amp;returnUrl=/dashboard" role="button" class="button">Register</a>          <a href="https://www.ucas.com/dashboard" role="button" class="button">View my Hub</a>          <a href="https://digital.ucas.com/search/dashboard" role="button" class="button">Apply/manage applications</a>              </div>
+                                    <a href="#" role="button" class="button">Sign in</a>
+                                    <a href="#" role="button" class="button">Register</a>
+                                    <a href="#" role="button" class="button">View my Hub</a>
+                                    <a href="#" role="button" class="button">Apply/manage applications</a>              </div>
                                 <ul class="accordion--nested">
                                     <li class="accordion__child">
                                         <div accordion-trigger="" aria-expanded="false" class="accordion__toggle" tabindex="-1">What's this?</div>
@@ -593,7 +345,9 @@
                                 <h4>2021 entry</h4>
                                 <p>Apply now for 2021 entry.</p>
                                 <div class="buttons-joined">
-                                    <a href="https://2021.teachertraining.apply.ucas.com/apply/student/login.do" role="button" class="button">Apply</a>          <a href="https://teachertraining.track.ucas.com/track/login" role="button" class="button">Track</a>              </div>
+                                    <a href="#" role="button" class="button">Apply</a>
+                                    <a href="#" role="button" class="button">Track</a>
+                                </div>
                                 <ul class="accordion--nested">
                                     <li class="accordion__child">
                                         <div accordion-trigger="" aria-expanded="false" class="accordion__toggle" tabindex="-1">What's this?</div>

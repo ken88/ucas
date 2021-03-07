@@ -47,7 +47,7 @@
 
     // 获取左侧菜单
     $.post('/useradmin/ajax-get-menu',null,function (data) {
-        console.log(data)
+//        console.log(data)
         var res = data.data;
         if (res['personal_details'] === false) {
             $('#personaldetails').addClass('notStarted');
