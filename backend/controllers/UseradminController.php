@@ -13,7 +13,9 @@ use common\models\Choices;
 use common\models\Employer;
 use common\models\Employment;
 use common\models\PersonalDetails;
+use common\models\Statement;
 use DeepCopyTest\Matcher\Y;
+use phpDocumentor\Reflection\Types\This;
 use Yii;
 use yii\helpers\Url;
 
@@ -22,7 +24,7 @@ class UseradminController extends BaseController
     # 邮件发送
     public function actionSend()
     {
-        $code = mt_rand(1000,999999); # 验证码 随机
+        $code = mt_rand(1000, 999999); # 验证码 随机
         $mail = Yii::$app->mailer->compose();
 //        $mail->setTo('yukai08621@163.com');
         $mail->setTo('176745155@qq.com');
@@ -48,21 +50,22 @@ although you will be able to print these letters from the Track system if necess
         if ($mail->send())
             $res = "ok";
         else
-            $res =  "false";
+            $res = "false";
         $data = [
             'view' => 'welcome',
-            'code' => 'mkx'.$code,
+            'code' => 'mkx' . $code,
             'res' => $res
         ];
-        return $this->renderPartial('send',$data);
+        return $this->renderPartial('send', $data);
     }
 
     # 重新发送验证码页面
-    public function actionSendCf() {
+    public function actionSendCf()
+    {
         $data = [
             'email' => '176745155@qq.com'
         ];
-        return $this->renderPartial('send-cf',$data);
+        return $this->renderPartial('send-cf', $data);
     }
 
     public function actionIndex()
@@ -250,51 +253,49 @@ although you will be able to print these letters from the Track system if necess
         return $this->redirect(Url::to(['useradmin/employment']));
     }
 
-    # 陈述
+    /**
+     * 陈述
+     */
     public function actionStatement()
     {
-        $data = [
-            'view' => 'statement'
-        ];
-        return $this->renderPartial('statement', $data);
+        $model = Statement::findOne(Yii::$app->user->identity->id) ?: new Statement();
+        if ($model->chkComplete)
+            return $this->redirect(['useradmin/statement-see']);
+        if (Yii::$app->request->isPost) {
+            $model->taPersonalStatement = Yii::$app->request->post('taPersonalStatement');
+            $model->save();
+        }
+        return $this->renderPartial('statement', [
+            'view' => 'statement',
+            'model' => $model,
+        ]);
     }
 
-    # 陈述保存
-    public function actionAddSaveStatement()
+    /**
+     * 陈述改为编辑模式
+     */
+    public function actionEditStatement()
     {
-        $post_data = Yii::$app->request->post('taPersonalStatement', '');
-        $flag = Yii::$app->request->post('flag', 1); # 1 保存 2 保存后跳转到预览
-
-        $list_array = explode("\n", $post_data); # 分割回车并转为数组
-        $list = array();
-        foreach ($list_array as $array) {
-            array_push($list, $array); # 获取到数据加到$list数组里（每一行数据）
-        }
-//        dd($list); # 打印
-
-        # 这里保存数据表 start
-
-
-        # 这里保存数据表  end
-
-
-        # 1 跳转陈述页面
-        if ($flag == 1) {
-
-            return $this->redirect(Url::to(['useradmin/statement']));
-        } else {
-            #  2 保存后跳转到预览
-            return $this->redirect(Url::to(['useradmin/statement-see']));
-        }
+        $model = Statement::findOne(Yii::$app->user->identity->id);
+        $model->chkComplete = 0;
+        $model->save();
+        return $this->redirect(['useradmin/statement']);
     }
 
-    # 陈述预览
+    /**
+     * 陈述预览
+     */
     public function actionStatementSee()
     {
-        $data = [
-            'view' => 'statement'
-        ];
-        return $this->renderPartial('statement-see', $data);
+        $model = Statement::findOne(Yii::$app->user->identity->id);
+        if (Yii::$app->request->isPost) {
+            $model->chkComplete = Yii::$app->request->post('chkComplete');
+            $model->save();
+        }
+        return $this->renderPartial('statement-see', [
+            'view' => 'statement',
+            'model' => $model,
+        ]);
     }
 
     # 查看所有细节

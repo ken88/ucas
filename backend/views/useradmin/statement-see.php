@@ -35,18 +35,22 @@
                         <p class="bold">To make changes to this section click 'edit' below. Before leaving this section please click 'save' to avoid losing any information. When you have finished, please tick the 'section completed' box and click 'save'. </p>
                         <div class="errorTxt"></div>
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="PersonalStatementServlet?id=64e9ad6517fad857bee834ba7a13&amp;ran=1fdzlq20zjiow">
+                        <form name="Form1" method="post" action="">
 
                             <!--display 'PersonalStatement' clip -->
                             <p><input type="hidden" name="from" value="fromStatementPreview"></p><p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown"></p>
-                            <p class="warningTxt">You have used 4 of 47 lines based on the preview and 104 of 4000 characters.</p><p class="warningTxt">Your completed statement must be between 1,000 and 4,000 characters (maximum 47 lines) including spaces </p><p class="warningTxt">Last saved date: 06 March 2021 08:24:04</p><table border="0" cellpadding="0" cellspacing="0">
-                                <tbody><tr><td>&nbsp;</td><td></td><td></td></tr>
-                                <tr><td class="warningTxt">1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>php php php php php php</td></tr>
-                                <tr><td class="warningTxt">2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>java java java java java jva</td></tr>
-                                <tr><td class="warningTxt">3</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>mysql mysql mysql</td></tr>
-                                <tr><td class="warningTxt">4</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>golang golanng golanng golang</td></tr>
+                            <p class="warningTxt">You have used <?= count($model->taPersonalStatementArr)?> of 47 lines based on the preview and <?= strlen($model->taPersonalStatement)?> of 4000 characters.</p><p class="warningTxt">Your completed statement must be between 1,000 and 4,000 characters (maximum 47 lines) including spaces </p><p class="warningTxt">Last saved date: <?= date('d M Y H:i:s',$model->update_time) ?></p><table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                <tr>
+                                    <td>&nbsp;</td><td></td><td></td>
+                                </tr>
+                                <?php foreach ($model->taPersonalStatementArr as $key=>$val){ ?>
+                                <tr>
+                                    <td class="warningTxt"><?= ++$key?></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><?= $val?></td>
+                                </tr>
+                                <?php } ?>
                                 </tbody></table>
-                            <ul><li><a href="/useradmin/statement">edit</a></li></ul>
+                            <ul><li><a href="<?= \yii\helpers\Url::to(['useradmin/edit-statement'])?>">edit</a></li></ul>
                             <hr>
                             <div class="clearDiv">&nbsp;</div><p><strong>Make sure your personal statement is your own work.</strong></p><p>We'll carry out checks to verify your personal statement is your own work. Provided it is your own work, you can use your personal statement from your application last year. If it appears to have been copied from another source, we'll inform the universities and colleges to which you have applied. They will then take the action they consider appropriate. We'll also contact you by email to tell you this has happened.</p><br>
                             <div style="display: none;" id="unicodeMsgWarningFooter">
@@ -58,7 +62,8 @@
                                         &nbsp;
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="checkbox" name="chkComplete" id="chkComplete">&nbsp;section completed
+                                        <input type="hidden" name="chkComplete" value="0">
+                                        <input type="checkbox" value="1" <?php if ($model->chkComplete) echo 'checked' ?> name="chkComplete" id="chkComplete">&nbsp;section completed
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +95,7 @@
 
                 </div><!--midBoxInternalWide ends here-->
             </div>
-
+            <input type="hidden" name="taPersonalStatement" value="<?= $model->taPersonalStatement ?>">
 
 
         </div>
@@ -111,21 +116,17 @@
 </body>
 </html>
 <script type="text/javascript">
+    //var mes = "<?//= $model->taPersonalStatement ?>//";
     function check() {
-        if($('#chkComplete').is(':checked')) {
-            var err = '';
-            var mes = 'php传过来的字符串';
-            if (mes.length < 1000) {
-                alert('勾选部分保存，要验证数据是否大于1000个字符')
-                alert('字符串长度：'+mes.length)
-                err = ' <p>Your personal statement is less than 1000 characters long.<br></p>';
-                $('.errorTxt').html(err);
-                scrollTo(0,0);
-            }
-
-        }else {
-            alert('没有勾选部分保存，正常保存')
-        }
+        var txt = $('input[name=taPersonalStatement]').val()
+        var err = '';
+           if (txt.length < 1000 || txt.length > 4000) {
+               err = ' <p>Your personal statement is less than 1000 characters long.<br></p>';
+               $('.errorTxt').html(err);
+               scrollTo(0,0);
+           }else {
+               $('form').submit()
+           }
     }
 
 </script>

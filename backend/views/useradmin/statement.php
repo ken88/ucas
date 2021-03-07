@@ -32,7 +32,7 @@
                         <p class="bold">Our <a href="https://www.ucas.com/ucas/undergraduate/apply-track/writing-personal-statement" target="_blank">guide to writing your personal statement</a> (opens in a new window) should help you complete this section. <br><br>We strongly recommend you write the statement using a word-processing package and paste it in to Apply. <br><br>You can type your statement directly into the box or edit a statement you have pasted in.</p>
 
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="/useradmin/add-save-statement" >
+                        <form name="Form1" method="post" action="" >
 
                             <!--display 'PersonalStatement' clip -->
                             <p><input type="hidden" name="from" value="fromStatementStatement"></p><p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown"></p>
@@ -100,7 +100,7 @@
                             </p><!--Personal Statement-->
 
 
-                            <textarea name="taPersonalStatement" rows="20" cols="75"  class="floatLeft"  id="statementTextEntry"></textarea><span class="floatLeft">&nbsp;</span>    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.PERSONALSTATEMENT.STATEMENT.FIELD.STATEMENT'); return false;"><div id="statementHelpIcon"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></div></a>
+                            <textarea name="taPersonalStatement" rows="20" cols="75"  class="floatLeft"  id="statementTextEntry"><?= $model->taPersonalStatement ?></textarea><span class="floatLeft">&nbsp;</span>    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.PERSONALSTATEMENT.STATEMENT.FIELD.STATEMENT'); return false;"><div id="statementHelpIcon"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></div></a>
                             <div class="clearDiv">&nbsp;</div>
                             <div id="asciiStatement" style="display: none;">
                                 <p class="warningTxt">Text containing substituted characters</p>    <textarea name="taAsciiPersonalStatement" rows="20" cols="75" onmousedown="forceSessionUpdate()" readonly="true" onmouseup="forceSessionUpdate()" onchange="forceSessionUpdate()" onkeypress="forceSessionUpdate()" class="floatLeft" onkeydown="forceSessionUpdate()" id="taAsciiPersonalStatement"></textarea><span class="floatLeft">&nbsp;</span></div>
@@ -121,8 +121,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="hidden" name="flag" id="flag">
-                                        <input type="button" name="btnSave" value="save" onclick="check(1)" class="submitBtn">
-                                        &nbsp;&nbsp;<input type="button" name="btnPreview" value="preview" onclick="check(2)" class="submitBtn">
+                                        <input type="button" name="btnSave" value="save" onclick="check()" class="submitBtn">
+                                        &nbsp;&nbsp;<input type="button" name="btnPreview" value="preview" onclick="preview()" class="submitBtn">
 
                                     </div>
                                 </div>
@@ -168,8 +168,7 @@
 </body>
 </html>
 <script type="text/javascript">
-    function check(flag) {
-        // flag==1 正常保存  flag==2  保存后跳转到预览页面（前提数据不能为空）
+    function check() {
         var statementTextEntry = $('#statementTextEntry').val();
         var err = '';
         if(statementTextEntry == ''){
@@ -177,9 +176,12 @@
             $('.errorTxt').html(err);
             scrollTo(0,0);
         } else {
-            $('#flag').val(flag);
-            $(Form1).submit();
+            $('form').submit();
         }
+    }
+
+    function preview() {
+        window.location.href = "<?= \yii\helpers\Url::to(['useradmin/statement-see']) ?>"
     }
 
 </script>
