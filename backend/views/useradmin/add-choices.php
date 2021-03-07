@@ -39,7 +39,7 @@
 
                         <p class="bold">To avoid losing information please click 'save' before leaving the page.<br><br>To find courses based on subject, provider and location, check entry requirements, and view course-specific fee information, please use <a href="https://digital.ucas.com/search" target="_blank">the UCAS search tool</a> (opens in a new window).<br><br>Compulsory fields are marked with an asterisk (<span class="Req">*</span>).</p>
 
-
+                        <div class="errorTxt"></div>
 
                         <form name="Form1" method="post" onsubmit="return setJavaEnabled()" action="">
 
@@ -71,7 +71,7 @@
                                     <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="<?= $model->txtCourseCode ?>" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
                                     <input type="button" value="see list" class="seeListBtn"
-                                           onclick="seelistOpen('/help/index13','?functionname=coursecodeTextEntry&instcode='+document.Form1.txtInstCode.value)">
+                                           onclick="seelistOpen('/help/index12','?functionname=coursecodeTextEntry&instcode='+document.Form1.txtInstCode.value)">
                                     </span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.COURSECODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -187,8 +187,10 @@
                             <div class="thisFormTxt">&nbsp;</div>
                             <div class="thisFormField">
                                 <!--display 'save & cancel' button clip -->
-                                <input type="submit" id="btnSave" name="btnSave" value="save" class="submitBtn" onclick="return courseRequiresCrimQuestionSave('Not presented');">&nbsp;&nbsp;
-                                <input type="submit" id="btnCancel" name="btnCancel" value="cancel" class="submitBtn">
+                                <input type="button" id="btnSave" name="btnSave" value="save" class="submitBtn" onclick="check()">&nbsp;&nbsp;
+                                <a href="/useradmin/choices">
+                                <input type="button" id="btnCancel" name="btnCancel" value="cancel" class="submitBtn">
+                                </a>
                             </div>
 
                             <!--hidden field holding choice number -->
@@ -238,3 +240,40 @@
 
 </body>
 </html>
+<script type="text/javascript">
+    function check() {
+        var instcodeTextEntry = $('#instcodeTextEntry').val();
+        var coursecodeTextEntry= $('#coursecodeTextEntry').val();
+        var campuscodeTextEntry= $('#campuscodeTextEntry').val();
+        var startdateTextEntry= $('#startdateTextEntry').val();
+
+        var rdHome= $('input:radio[name="rdHome"]:checked').val();
+        var err = '';
+
+        if (instcodeTextEntry == '') {
+            err += '<p>Invalid institution code</p>';
+        }
+        if (coursecodeTextEntry == '') {
+            err += '<p>Invalid course code</p>';
+        }
+//        if (campuscodeTextEntry == '') {
+//            err += '<p>Invalid start date</p>';
+//        }
+        if (campuscodeTextEntry == '') {
+            err += '<p>nvalid institution code</p>';
+        }
+        if (rdHome == null) {
+            err += "<p>Please complete 'Live at home while studying?' question.</p>";
+        }
+
+        if (err != '') {
+            $('.errorTxt').html(err);
+            scrollTo(0,0);
+        }else{
+            $('form').submit()
+        }
+
+    }
+
+
+</script>

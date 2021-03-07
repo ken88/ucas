@@ -39,7 +39,7 @@
                             <!--display 'Verify Email Generate Code' clip -->
 
                             <div class="errorTxt"></div>
-                            <p>The email verification code has been sent to <strong>176745155@qq.com</strong>. To confirm that this address is valid please enter the code from the relevant email in the box below.<br><br> If this email is not in your inbox then there are three possible reasons for this:<br><br></p>
+                            <p>The email verification code has been sent to <strong><?= $email;?></strong>. To confirm that this address is valid please enter the code from the relevant email in the box below.<br><br> If this email is not in your inbox then there are three possible reasons for this:<br><br></p>
                             <ul class="display">
                                 <li>Your computer email filter settings or those maintained by your internet service provider may
                                     have diverted the message to a junk/spam mail folder. Please check this.
@@ -84,7 +84,7 @@
                             <br>
                             <br>
                             Please enter your email verification code below to verify your address is
-                            <strong>176745155@qq.com</strong>:
+                            <strong><?= $email;?></strong>:
                             <p></p>
                             <p>
                                 <input type="text" name="txtEnterCode" value="" size="8" maxlength="20" class="floatLeft" id="enterCodeTextEntry">
