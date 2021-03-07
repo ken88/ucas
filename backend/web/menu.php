@@ -21,8 +21,8 @@
         <li class="" id="viewalldetails">
             <a href="viewalldetails">View all details</a>
         </li>
-        <li class="" id="Pay-Send">
-            Pay/Send
+        <li class="notStarted" id="paysend">
+            <a href="pay-send1">Pay/Send</a>
         </li>
         <li class="last">
             <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.OPTIONS.OPTIONS.PAGE'); return false;">Help</a>

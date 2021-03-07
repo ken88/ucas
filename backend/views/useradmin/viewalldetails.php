@@ -21,7 +21,7 @@
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="Welcome.jsp?id=badd6313331d813e48fb8c7a44b8&amp;ran=1drdo2bdrblnr">Welcome</a> &gt;
+                    <a href="/useradmin/welcome">Welcome</a> &gt;
                     View all
                 </div><!--breadcrumb ENDS here-->
                 <hr>

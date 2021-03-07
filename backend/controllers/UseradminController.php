@@ -328,4 +328,34 @@ although you will be able to print these letters from the Track system if necess
         return $this->renderPartial('viewalldetails', $data);
     }
 
+
+    # 支付页面1
+    public function actionPaySend1()
+    {
+        $data = [
+            'view' => 'paysend'
+        ];
+        return $this->renderPartial('pay-send1', $data);
+    }
+
+    # 支付页面2
+    public function actionPaySend2()
+    {
+        $data = [
+            'view' => 'paysend'
+        ];
+        return $this->renderPartial('pay-send2', $data);
+    }
+
+    # 支付页面3
+    public function actionPaySend3()
+    {
+        return $this->renderPartial('pay-send3');
+    }
+
+    # 支付页面4
+    public function actionPaySend4()
+    {
+        return $this->renderPartial('pay-send4');
+    }
 }
