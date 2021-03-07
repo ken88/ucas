@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use function Webmozart\Assert\Tests\StaticAnalysis\false;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
@@ -310,5 +311,24 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public function generatePersonalId()
     {
         return '1' . rand(10, 99) . '-' . rand(100, 999) . '-' . $this->id;
+    }
+
+    /**
+     * 资料选中
+     * 对应值：'1'=Completed，'0'=In progress，false=Not started
+     * @return array
+     */
+    public static function InfoSelection()
+    {
+        $map = ['user_id' => Yii::$app->user->identity->id];
+        $data = [
+            'personal_details' => PersonalDetails::find()->select('chkComplete')->where($map)->scalar(),
+            'choices' => Choice::find()->select('chkComplete')->where($map)->scalar(),
+            'education' => false,
+            'employment' => Employment::find()->select('chkComplete')->where($map)->scalar(),
+            'statement' => Statement::find()->select('chkComplete')->where($map)->scalar(),
+            'view_all_details' => false,
+        ];
+        return $data;
     }
 }
