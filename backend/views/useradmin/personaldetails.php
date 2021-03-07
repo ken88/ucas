@@ -293,8 +293,9 @@
                                     <label>&nbsp;</label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="submit" name="btnChangeAdd" value="change my address" class="seeListBtn floatLeft">
-
+                                    <a href="/useradmin/changeaddr">
+                                    <input type="button" name="btnChangeAdd" value="change my address" class="seeListBtn floatLeft">
+                                    </a>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.POSTALADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -331,8 +332,9 @@
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="submit" name="btnAddOrChangeAdd" value="add/edit home address" class="seeListBtn floatLeft">
-
+                                        <a href="/useradmin/changeaddr">
+                                        <input type="button" name="btnAddOrChangeAdd" value="add/edit home address" class="seeListBtn floatLeft">
+                                        </a>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.HOMEADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->

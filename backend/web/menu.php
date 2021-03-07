@@ -97,6 +97,6 @@
             $('#viewalldetails').addClass('complete');
         }
 
-      
+
     },'json');
 </script>

@@ -111,6 +111,20 @@ although you will be able to print these letters from the Track system if necess
         ]);
     }
 
+    # 地址修改
+    public function actionChangeaddr() {
+        return $this->renderPartial('changge-addr', [
+            'view' => 'personaldetails'
+        ]);
+    }
+
+    # 地址修改页面
+    public function actionAddAddr() {
+        return $this->renderPartial('add-addr', [
+            'view' => 'personaldetails'
+        ]);
+    }
+
     # 选择项
     public function actionChoices()
     {
