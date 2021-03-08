@@ -17,6 +17,7 @@ use common\models\PersonalDetails;
 use common\models\Qualifications;
 use common\models\School;
 use common\models\Statement;
+use common\models\User;
 use Yii;
 use yii\helpers\Url;
 
@@ -74,6 +75,9 @@ although you will be able to print these letters from the Track system if necess
 
     public function actionIndex()
     {
+        $model = User::find()->where(['id'=>Yii::$app->user->identity->id])->one();
+        $model->chkEmailOption = '1';
+        $model->save();
         $data = [
             'view' => 'welcome'
         ];
@@ -82,13 +86,21 @@ although you will be able to print these letters from the Track system if necess
 
     public function actionWelcome()
     {
+        $chkEmailOption = Yii::$app->user->identity->chkEmailOption ;
+
         $data = [
             'view' => 'welcome',
             'user' => Yii::$app->user->identity,
+            'chkEmailOption' => $chkEmailOption,
         ];
         return $this->renderPartial('welcome', $data);
     }
 
+    # 获取左侧菜单信息
+    public function actionAjaxGetMenu() {
+        $info = User::infoSelection();
+        res(200,'',$info);
+    }
     /**
      * 个人资料
      * @return string
@@ -96,6 +108,7 @@ although you will be able to print these letters from the Track system if necess
     public function actionPersonaldetails()
     {
         $user = Yii::$app->user->identity;
+        $chkEmailOption = Yii::$app->user->identity->chkEmailOption;
         $model = PersonalDetails::findOne(Yii::$app->user->identity->id) ?: new PersonalDetails();
         if (Yii::$app->request->isPost) {
             $model->attributes = Yii::$app->request->post();
@@ -105,6 +118,21 @@ although you will be able to print these letters from the Track system if necess
             'view' => 'personaldetails',
             'user' => $user,
             'model' => $model,
+            'chkEmailOption' => $chkEmailOption,
+        ]);
+    }
+
+    # 地址修改
+    public function actionChangeaddr() {
+        return $this->renderPartial('changge-addr', [
+            'view' => 'personaldetails'
+        ]);
+    }
+
+    # 地址修改页面
+    public function actionAddAddr() {
+        return $this->renderPartial('add-addr', [
+            'view' => 'personaldetails'
         ]);
     }
 
@@ -361,4 +389,34 @@ although you will be able to print these letters from the Track system if necess
         return $this->renderPartial('viewalldetails', $data);
     }
 
+
+    # 支付页面1
+    public function actionPaySend1()
+    {
+        $data = [
+            'view' => 'paysend'
+        ];
+        return $this->renderPartial('pay-send1', $data);
+    }
+
+    # 支付页面2
+    public function actionPaySend2()
+    {
+        $data = [
+            'view' => 'paysend'
+        ];
+        return $this->renderPartial('pay-send2', $data);
+    }
+
+    # 支付页面3
+    public function actionPaySend3()
+    {
+        return $this->renderPartial('pay-send3');
+    }
+
+    # 支付页面4
+    public function actionPaySend4()
+    {
+        return $this->renderPartial('pay-send4');
+    }
 }

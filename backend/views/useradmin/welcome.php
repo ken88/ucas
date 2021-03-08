@@ -65,6 +65,7 @@
                                 (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
                         </div>
                         <!-- 验证邮箱是否已经验证，没有验证显示下面错误 start -->
+                        <?php if($chkEmailOption != '1') {?>
                         <div class="errorTxt">
                             <p>
                                 <strong>Verify your email address</strong>
@@ -76,6 +77,7 @@
                                 </a>
                             </p>
                         </div>
+                        <?php }?>
                         <!-- 验证邮箱是否已经验证，没有验证显示下面错误 end -->
                         <p>Before starting your application, please read through the relevant information below regarding: </p><ul class="display"><li><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.WELCOME.WELCOME.COMPLETEAPP.LINK'); return false;" class="plain">completing your application</a></li><li><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.WELCOME.WELCOME.SCHOOLAPPLY.LINK'); return false;" class="plain">applicants applying through a school, college or organisation</a></li><li><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.WELCOME.WELCOME.INDIVIDUALAPPLY.LINK'); return false;" class="plain">applicants applying as an individual</a></li><li><a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.WELCOME.WELCOME.APPDEADLINES.LINK'); return false;" class="plain">deadlines for submitting your application.</a></li></ul><p></p>
 

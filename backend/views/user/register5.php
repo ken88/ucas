@@ -377,7 +377,7 @@
         var txtMobilePhone= $("#txtMobilePhone").val(); // 电话
         var myReg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
 
-        err = '<p>Some of the information you have provided is incorrect. Please check the details.</p>';
+        err = '';
         if(emailText == ''){
             err += '<p>You must provide a valid email address.</p>';
         }
@@ -395,8 +395,9 @@
         }
         else {
 
-            $('#simplemodal-overlay').show();
-            $('#confirm-container').show();
+//            $('#simplemodal-overlay').show();
+//            $('#confirm-container').show();
+            $('form').submit()
         }
         $('.errorTxt').html(err);
         scrollTo(0,0);
