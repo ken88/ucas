@@ -70,8 +70,8 @@
 
                                     <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="<?= $model->txtCourseCode ?>" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
-                                    <input type="button" value="see list" class="seeListBtn"
-                                           onclick="seelistOpen('/help/index12','?functionname=coursecodeTextEntry&instcode='+document.Form1.txtInstCode.value)">
+                                    <input type="hidden" value="see list" class="seeListBtn"
+                                           onclick="seelistOpen('/help/index12','?functionname=coursecodeTextEntry&instcode='+document.Form1.txtInstCode.value)" >
                                     </span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.COURSECODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -90,7 +90,7 @@
 
                                     <input type="text" id="campuscodeTextEntry" name="txtCampusCode" value="<?=     $model->txtCampusCode ?>" style="text-transform: capitalize;" maxlength="1" size="2" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
-            <input type="button" value="see list" class="seeListBtn" onclick="launchCampusPopUp('PopUpServlet', '?functionname=campuslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, 'document.Form1.txtCampusCode'); return false;"></span>
+            <input type="hidden" value="see list" class="seeListBtn" onclick="launchCampusPopUp('PopUpServlet', '?functionname=campuslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, 'document.Form1.txtCampusCode'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CAMPUSCODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
@@ -107,7 +107,7 @@
 
                                     <input type="text" id="startdateTextEntry" name="txtStartDate" value="<?= $model->txtStartDate ?>" maxlength="20" size="20"  class="floatLeft">
                                     <span class="floatLeft">&nbsp;
-            <input type="button" value="see list" class="seeListBtn" onclick="launchPopUp('PopUpServlet', '?functionname=startslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, document.Form1.txtCampusCode.value, 'document.Form1.txtStartDate, document.Form1.hidStartDate, document.Form1.hidDefer'); return false;"></span>
+            <input type="hidden" value="see list" class="seeListBtn" onclick="launchPopUp('PopUpServlet', '?functionname=startslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, document.Form1.txtCampusCode.value, 'document.Form1.txtStartDate, document.Form1.hidStartDate, document.Form1.hidDefer'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.STARTDATE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
