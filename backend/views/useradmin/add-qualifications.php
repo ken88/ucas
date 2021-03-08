@@ -1,6 +1,6 @@
 <?php include_once "top.php";?>
 
-<script type="text/javascript" src="/static/js/Search.js"></script>
+<script type="text/javascript" src="/static/js/search.js"></script>
 <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/ucas-prod/json/2021/searchData/qualSearchData_EN.js" charset="utf-8"></script>
             <div id="logo" class="floatLeft">
                 <img src="/static/images/apply_logo.gif" width="91" height="30" alt="UCAS" />
