@@ -156,7 +156,7 @@
         <meta http-equiv="refresh" content="0; URL=enableJavascript.jsp" />
     </noscript>
 </head>
-<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18">
+<body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18" onload="init();">
 <div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
     <div id="wrapperInternal" class="floatLeft"><!-- Wrapper Internal starts here-->
         <!--header starts here-->
