@@ -32,7 +32,7 @@
 
                     <div class="thisForm">
 
-                        <form name="Form1" method="post" action="/useradmin/pay-send1">
+                        <form name="Form1" method="post" action="">
 
                            <div style="font-size: 18px; font-weight: bold; margin-top: 10px;">
                                Payment Details
@@ -50,7 +50,7 @@
                                 <div style="font-weight: bold; size: 16px; ">Credit / Debit card</div>
                                 <div>
                                     <span>Card Number</span>
-                                    <input id="card_number" name="card_number" maxlength="23" size="26" type="text">
+                                    <input id="card_number" name="card_number" maxlength="23" size="26" type="text" value="<?= $model->card_number ?>" >
                                 </div>
                                 <div>
                                     <span>Expiry Date</span>
@@ -105,7 +105,7 @@
 
                                 <div>
                                     <span>Card Security Code</span>
-                                    <input id="cv2_number" name="cv2_number" size="6" type="text">
+                                    <input id="cv2_number" name="cv2_number" size="6" type="text" value="<?= $model->cv2_number ?>" >
                                     <span style="margin-left: 30px; ">
                                         <img alt="" src="/static/images/securityImg.jpg" width="107" height="27">
                                     </span>
@@ -114,7 +114,7 @@
 
                                 <div>
                                     <span>Issue Number</span>
-                                    <input id="issue_number" name="issue_number" size="6" type="text">
+                                    <input id="issue_number" name="issue_number" size="6" type="text" value="<?= $model->issue_number ?>" >
                                     (If Available)
                                 </div>
                             </div>

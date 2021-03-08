@@ -13,6 +13,7 @@ use common\models\Choices;
 use common\models\Education;
 use common\models\Employer;
 use common\models\Employment;
+use common\models\PaySend;
 use common\models\PersonalDetails;
 use common\models\Qualifications;
 use common\models\School;
@@ -470,13 +471,23 @@ although you will be able to print these letters from the Track system if necess
         return $this->renderPartial('pay-send1', $data);
     }
 
-    # 支付页面2
+    /**
+     * 支付页面2
+     */
     public function actionPaySend2()
     {
-        $data = [
-            'view' => 'paysend'
-        ];
-        return $this->renderPartial('pay-send2', $data);
+        $model = PaySend::findOne(Yii::$app->user->identity->id) ?: new PaySend();
+        if (Yii::$app->request->isPost) {
+            $model->scenario = 'one';
+            $model->attributes = Yii::$app->request->post();
+            if ($model->save()) {
+                return $this->redirect(Url::to(['useradmin/pay-send3']));
+            }
+        }
+        return $this->renderPartial('pay-send2', [
+            'view' => 'paysend',
+            'model' => $model,
+        ]);
     }
 
     # 支付页面3
@@ -485,15 +496,24 @@ although you will be able to print these letters from the Track system if necess
         $data = [
             'view' => 'paysend'
         ];
-        return $this->renderPartial('pay-send3',$data);
+        return $this->renderPartial('pay-send3', $data);
     }
 
-    # 支付页面4
+    /**
+     * 支付页面4
+     */
     public function actionPaySend4()
     {
-        $data = [
-            'view' => 'paysend'
-        ];
-        return $this->renderPartial('pay-send4',$data);
+        $model = PaySend::findOne(Yii::$app->user->identity->id) ?: new PaySend();
+        if (Yii::$app->request->isPost) {
+            $model->scenario = 'two';
+            $model->attributes = Yii::$app->request->post();
+            $model->chkComplete = 1;
+            $model->save();
+        }
+        return $this->renderPartial('pay-send4', [
+            'view' => 'paysend',
+            'model' => $model,
+        ]);
     }
 }
