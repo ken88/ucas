@@ -31,7 +31,7 @@
                     <!--Form starts here-->
                     <div class="thisForm">
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="EducationServlet?id=e1836169083c2c1968b8b6f43643&amp;ran=1a48fz03z4ame">
+                        <form name="Form1" method="post" action="">
                             <!--display 'Education' clip -->
                             <input type="hidden" name="hidCharWarningMsg" value="The following character is not permitted here" id="hidCharWarningMsg">
                             <p><input type="hidden" name="from" value="fromEducationSummary"></p>
@@ -74,68 +74,68 @@
                                 <li><a href="/useradmin/add-education">add new school/college/centre</a></li>
                             </ul>
                             <hr>
-
+                            <?php if (!$schools){ ?>
                             <table border="0" cellpadding="0" cellspacing="0" id="eduSummary">
-                                <tbody><tr><td colspan="7" width="520">（没有数据显示这个，中文不要展示）No schools/colleges/centres entered.</td></tr>
+                                <tbody><tr><td colspan="7" width="520">No schools/colleges/centres entered.</td></tr>
                                 <tr><td colspan="7"><hr></td></tr>
                                 </tbody></table>
-
+                            <?php }else{ ?>
                             <table border="0" cellpadding="0" cellspacing="0" id="eduSummary">
                                 <tbody>
-                                <tr><td colspan="7" width="481">
-                                        <p><span class="bold">ABBEY COMMUNITY COLLEGE , WICKLOW, IRELAND</span> (70820K, 04/2011 - 03/2015, PT)</p>
+                                <?php foreach ($schools as $key=>$val){?>
+                                <tr>
+
+                                    <td colspan="7" width="481">
+                                        <p><span class="bold"><?= $val->txtCentreName ?></span> (<?= $val->txtCentreNumber ?>, <?= $val->cboStartMonth.'/'.$val->cboStartYear?> - <?= $val->cboFinishMonth.'/'.$val->cboFinishYear?>, <?= $val->rdAttendance ?>)</p>
 
                                     </td>
-                                    <td><ul class="skinny"><li><a href="EducationServlet?functionname=educationcentre&amp;mode=edit&amp;edeId=1">edit</a></li>
-                                            <li><a id="delSchool1" href="#">remove</a></li>
-                                            <li style="display:none;"><a id="schLinkDel1" href="EducationServlet?functionname=delete&amp;edeId=1&amp;from=fromEducationSummary ">remove</a></li></ul></td></tr>
-                                <tr><td colspan="8">&nbsp;</td></tr>
-                                <tr>
-                                    <td colspan="7" class="bold">Access to HE Diploma (2014 onwards)</td><td>&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td class="eduCol"><a href="/useradmin/add-fw">资格的名字（点击跳转编辑页面）</a></td>
-                                    <td class="eduCol">2222</td>
-                                    <td class="eduCol">&nbsp;</td>
-                                    <td class="eduCol">01/2015</td>
-                                    <td class="eduCol">22</td>
-                                    <td class="eduCol"></td>
-                                    <td class="eduCol">(1 module)</td>
-                                </tr>
-                                <tr><td colspan="8">&nbsp;</td></tr>
-                                <tr><td colspan="7" class="bold">Access to HE Diploma (2014 onwards)</td><td>&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td class="eduCol"><a href="/useradmin/add-fw">资格的名字（点击跳转编辑页面）</a></td>
-                                    <td class="eduCol">2222</td>
-                                    <td class="eduCol">&nbsp;</td>
-                                    <td class="eduCol">01/2015</td>
-                                    <td class="eduCol">22</td>
-                                    <td class="eduCol"></td>
-                                    <td class="eduCol">(1 module)</td>
-                                </tr>
-                                <tr><td colspan="7">
-                                        <ul class="skinny">
-                                            <li><a href="/useradmin/add-qualifications">add qualifications</a></li>
-                                        </ul>
-                                    </td><td>&nbsp;</td></tr>
-                                <tr><td colspan="8"><hr></td></tr>
-                                <tr><td colspan="7" width="481">
-                                        <p><span class="bold">A3 Education &amp; Training</span> (02/2003 - 02/2012, FT)</p>
 
+                                    <td>
+                                        <ul class="skinny"><li><a href="<?= \yii\helpers\Url::to(['useradmin/add-education','id'=>$val->id])?>">edit</a></li>
+                                            <li><a id="delSchool1" href="<?= \yii\helpers\Url::to(['useradmin/del-education','id'=>$val->id])?>">remove</a></li>
+                                            <li style="display:none;"><a id="schLinkDel1" href="EducationServlet?functionname=delete&amp;edeId=1&amp;from=fromEducationSummary ">remove</a></li></ul>
                                     </td>
-                                    <td><ul class="skinny"><li><a href="EducationServlet?functionname=educationcentre&amp;mode=edit&amp;edeId=2">edit</a></li>
-                                            <li><a id="delSchool2" href="#">remove</a></li>
-                                            <li style="display:none;"><a id="schLinkDel2" href="EducationServlet?functionname=delete&amp;edeId=2&amp;from=fromEducationSummary ">remove</a></li></ul></td></tr>
+                                </tr>
+                                <tr><td colspan="8">&nbsp;</td></tr>
+
+                                <!-- 资格开始 -->
+                                <?php foreach ($val->qualifications as $k=>$v){ ?>
+<!--                                    <tr>-->
+<!--                                        <td colspan="7" class="bold">Access to HE Diploma (2014 onwards)</td><td>&nbsp;</td>-->
+<!--                                    </tr>-->
+                                <tr>
+                                    <td class="eduCol">
+                                        <a href="<?= \yii\helpers\Url::to(['useradmin/add-fw', 'id'=>$v->id])?>"><?= $v->cboTitle?></a></td>
+                                    <td class="eduCol">
+                                        <?= $v->txtTitle ?>
+                                    </td>
+                                    <td class="eduCol"><?= $v->cboAwardingBody ?></td>
+                                    <td class="eduCol"><?= $v->txtAwardingBody ?></td>
+                                    <td class="eduCol">
+                                        <?= $v->cboQualMonth.'/'.$v->cboQualYear?>
+                                    </td>
+                                    <td class="eduCol">
+                                        <?= $v->cboGrade ?>
+                                    </td>
+                                    <td class="eduCol">
+                                        <?= $v->txtGrade ?>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="8">&nbsp;</td></tr>
+                                <?php } ?>
+                                <!-- 资格结束 -->
+
                                 <tr><td colspan="8">&nbsp;</td></tr>
                                 <tr><td colspan="7">
                                         <ul class="skinny">
-                                            <li><a href="/useradmin/add-qualifications">add qualifications</a></li>
+                                            <li><a href="<?= \yii\helpers\Url::to(['useradmin/add-qualifications','school_id'=>$val->id])?>">add qualifications</a></li>
                                         </ul>
                                     </td><td>&nbsp;</td></tr>
-                                <tr><td colspan="8"><hr></td></tr>
+                                <tr><td colspan="8">
+                                        <?php }?>
+                                        <hr></td></tr>
                                 </tbody></table>
-
+                            <?php } ?>
 
                             <!--Hightest expected qualification-->
                             <div class="thisFormElem">
@@ -146,9 +146,9 @@
                                 <div class="thisFormField">
                                     <select name="cboHighestExpectedQual" size="1" class="floatLeft" id="highestExpectedQualCombo">
                                         <option value="">Please select...</option>
-                                        <option value="D">Honours degree level or above qualifications</option>
-                                        <option value="B">Below honours degree level qualifications</option>
-                                        <option value="N">I will have no qualifications</option>
+                                        <option <?php if ($model->cboHighestExpectedQual=='D') echo 'selected' ?> value="D">Honours degree level or above qualifications</option>
+                                        <option <?php if ($model->cboHighestExpectedQual=='B') echo 'selected' ?> value="B">Below honours degree level qualifications</option>
+                                        <option <?php if ($model->cboHighestExpectedQual=='N') echo 'selected' ?> value="N">I will have no qualifications</option>
                                     </select>
 
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.SUMMARY.FIELD.HIGHESTEXPTECTEDQUAL'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -160,7 +160,8 @@
                                         &nbsp;
                                     </div>
                                     <div class="thisFormField">
-                                        <input type="checkbox" name="chkComplete" id="chkComplete">&nbsp;section completed
+                                        <input type="hidden" name="chkComplete" value="0">
+                                        <input type="checkbox" name="chkComplete" value="1" <?php if ($model->chkComplete) echo 'checked' ?> id="chkComplete">&nbsp;section completed
                                     </div>
                                 </div>
                             </div>
@@ -209,9 +210,11 @@
         var err = '';
         if (highestExpectedQualCombo == '') {
             err += '<p>Please select the highest level of qualification you expect to have before you start your course.</p>';
+            $('.errorTxt').html(err);
+            scrollTo(0,0);
+        }else{
+            $('form').submit()
         }
-        $('.errorTxt').html(err);
-        scrollTo(0,0);
     }
 
 

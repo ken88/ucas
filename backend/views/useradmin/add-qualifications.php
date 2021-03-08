@@ -54,16 +54,16 @@
                             <!--display 'Short List' clip -->
                             <h2 class="inPage">Popular qualifications</h2>
                             <br><table border="0" cellpadding="0" cellspacing="0">
-                                <tr><td><a href="/useradmin/add-fw">GCE Advanced Subsidiary</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">BTEC Diploma</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">Access to HE Diploma (2014 onwards)</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">GCSE (Grade: A*-G)</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">GCE Advanced Level</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">Welsh Baccalaureate Advanced Skills Challenge Certificate</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">SQA Scottish Highers</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">SQA Advanced Highers</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">National 5</a></td></tr>
-                                <tr><td><a href="/useradmin/add-fw">BTEC Extended Diploma (QCF)</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">GCE Advanced Subsidiary</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">BTEC Diploma</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">Access to HE Diploma (2014 onwards)</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">GCSE (Grade: A*-G)</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">GCE Advanced Level</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">Welsh Baccalaureate Advanced Skills Challenge Certificate</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">SQA Scottish Highers</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">SQA Advanced Highers</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">National 5</a></td></tr>
+                                <tr><td><a href="<?= \yii\helpers\Url::to(['useradmin/add-fw','school_id'=>Yii::$app->request->get('school_id')])?>">BTEC Extended Diploma (QCF)</a></td></tr>
                                 <tr><td>&nbsp;</td></tr>
                             </table>
 

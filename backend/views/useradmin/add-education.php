@@ -37,7 +37,7 @@
                         <p class="bold">Compulsory fields are marked with an asterisk (<span class="Req">*</span>).<br>Before leaving this page click 'save' to avoid losing any of your information.</p>
                         <div class="errorTxt"></div>
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="EducationServlet?id=22f980025b84c4ea5995e325aa4b&amp;ran=1wwymbk7p00lr">
+                        <form name="Form1" method="post" action="">
 
                             <!--display 'Education: Centre details' clip -->
                             <input type="hidden" name="hidCharWarningMsg" value="The following character is not permitted here" id="hidCharWarningMsg">
@@ -48,7 +48,7 @@
                                     <label for="centreNameTextEntry">School/college/centre name<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtCentreName" value="" size="33" maxlength="50" class="floatLeft" id="centreNameTextEntry" readonly="" style="background-color: silver;">
+                                    <input type="text" name="txtCentreName" value="<?= $model->txtCentreName ?>" size="33" maxlength="50" class="floatLeft" id="centreNameTextEntry" readonly="" style="background-color: silver;">
                                     <span class="floatLeft">&nbsp;
                                         <input type="button" name="btnFind" value="find..."
                                                onclick="seelistOpen('/help/index16', '?functionname=centreNameTextEntry'); return false;" class="seeListBtn">
@@ -63,7 +63,7 @@
                                     <label for="centreNumberTextEntry">Exam centre number</label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtCentreNumber" value="" size="8" maxlength="7" class="floatLeft" id="centreNumberTextEntry" readonly="" style="background-color: silver;">
+                                    <input type="text" name="txtCentreNumber" value="<?= $model->txtCentreNumber ?>" size="8" maxlength="7" class="floatLeft" id="centreNumberTextEntry" readonly="" style="background-color: silver;">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.CENTRE.FIELD.CENTRENO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -178,7 +178,7 @@
                                     <label for="empTypeRadio">Attendance<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="radio" name="rdAttendance" value="FT" class="floatLeft" id="attendanceRadio"><span class="floatLeft">full-time&nbsp;&nbsp;</span><input type="radio" name="rdAttendance" value="PT" class="floatLeft" id="attendanceRadio"><span class="floatLeft">part-time&nbsp;&nbsp;</span><input type="radio" name="rdAttendance" value="SW" class="floatLeft" id="attendanceRadio"><span class="floatLeft">sandwich</span>
+                                    <input type="radio" name="rdAttendance" value="FT" class="floatLeft" id="attendanceRadio" <?php if ($model->rdAttendance=='FT') echo 'checked' ?> ><span class="floatLeft">full-time&nbsp;&nbsp;</span><input type="radio" name="rdAttendance" value="PT" class="floatLeft" id="attendanceRadio" <?php if ($model->rdAttendance=='PT') echo 'checked' ?> ><span class="floatLeft">part-time&nbsp;&nbsp;</span><input type="radio" name="rdAttendance" value="SW" class="floatLeft" id="attendanceRadio" <?php if ($model->rdAttendance=='SW') echo 'checked' ?> ><span class="floatLeft">sandwich</span>
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.CENTRE.FIELD.ATTENDANCE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -191,8 +191,8 @@
                                 <div class="thisFormField">
                                     <div id="fullWidth"><select name="cboFormalQuals" size="1" class="floatLeft" id="formalQualsCombo">
                                             <option value="">Please select...</option>
-                                            <option value="Y">Yes</option>
-                                            <option value="N">No</option>
+                                            <option value="Y" <?php if ($model->cboFormalQuals=='Y') echo 'selected' ?> >Yes</option>
+                                            <option value="N"<?php if ($model->cboFormalQuals=='N') echo 'selected' ?> >No</option>
                                         </select>
                                     </div>
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.CENTRE.FIELD.FORMALQUALS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -276,12 +276,22 @@
         }
         $('.errorTxt').html(err);
         if (err == '') {
-            alert('提交连接')
+            $('form').submit()
         } else {
             scrollTo(0,0);
         }
 
     }
+    $(function () {
+        var cboStartMonth_selected = "<?= $model->cboStartMonth ?>"
+        $('#startCombo2').find("option[value='"+cboStartMonth_selected+"']").attr("selected",true);
+        var cboStartYear_selected = "<?= $model->cboStartYear ?>"
+        $('#startCombo1').find("option[value='"+cboStartYear_selected+"']").attr("selected",true);
+        var cboFinishMonth_selected = "<?= $model->cboFinishMonth ?>"
+        $('#finishCombo2').find("option[value='"+cboFinishMonth_selected+"']").attr("selected",true);
+        var cboFinishYear_selected = "<?= $model->cboFinishYear ?>"
+        $('#finishCombo1').find("option[value='"+cboFinishYear_selected+"']").attr("selected",true);
+    })
 
 
 </script>

@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "school".
  *
  * @property int $id
- * @property int|null $user_id
+ * @property int $user_id
  * @property string $txtCentreName 学校/学院/中心名称
  * @property string|null $txtCentreNumber 考试中心号码
  * @property string $cboStartMonth 开始月
@@ -18,6 +18,7 @@ use Yii;
  * @property string $rdAttendance 出勤
  * @property string $cboFormalQuals 您/您是否会在该中心获得任何资格证书？*
  *
+ * @property Qualifications[] $qualifications
  * @property User $user
  */
 class School extends \yii\db\ActiveRecord
@@ -36,10 +37,9 @@ class School extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['user_id', 'txtCentreName', 'cboStartMonth', 'cboStartYear', 'cboFinishMonth', 'cboFinishYear', 'rdAttendance', 'cboFormalQuals'], 'required'],
             [['user_id', 'cboStartYear', 'cboFinishYear'], 'integer'],
-            [['txtCentreName', 'cboStartMonth', 'cboStartYear', 'cboFinishMonth', 'cboFinishYear', 'rdAttendance', 'cboFormalQuals'], 'required'],
-            [['txtCentreName'], 'string', 'max' => 100],
-            [['txtCentreNumber'], 'string', 'max' => 50],
+            [['txtCentreName', 'txtCentreNumber'], 'string', 'max' => 255],
             [['cboStartMonth', 'cboFinishMonth'], 'string', 'max' => 20],
             [['rdAttendance', 'cboFormalQuals'], 'string', 'max' => 10],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
@@ -66,6 +66,16 @@ class School extends \yii\db\ActiveRecord
     }
 
     /**
+     * Gets query for [[Qualifications]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getQualifications()
+    {
+        return $this->hasMany(Qualifications::className(), ['school_id' => 'id']);
+    }
+
+    /**
      * Gets query for [[User]].
      *
      * @return \yii\db\ActiveQuery
@@ -73,5 +83,17 @@ class School extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return bool
+     */
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            $this->user_id = Yii::$app->user->identity->id;
+            return true;
+        }
+        return false;
     }
 }

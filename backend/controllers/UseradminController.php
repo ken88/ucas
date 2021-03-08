@@ -10,9 +10,12 @@ namespace backend\controllers;
 
 use common\models\Choice;
 use common\models\Choices;
+use common\models\Education;
 use common\models\Employer;
 use common\models\Employment;
 use common\models\PersonalDetails;
+use common\models\Qualifications;
+use common\models\School;
 use common\models\Statement;
 use common\models\User;
 use Yii;
@@ -135,7 +138,9 @@ although you will be able to print these letters from the Track system if necess
         ]);
     }
 
-    # 选择项
+    /**
+     * 选择项
+     */
     public function actionChoices()
     {
         $model = Choice::findOne(Yii::$app->user->identity->id) ?: new Choice();
@@ -191,40 +196,88 @@ although you will be able to print these letters from the Track system if necess
         $this->redirect(Url::to(['useradmin/choices']));
     }
 
-    # 教育
+    /**
+     * 教育
+     */
     public function actionEducation()
     {
-        $data = [
-            'view' => 'education'
-        ];
-        return $this->renderPartial('education', $data);
+        $model = Education::findOne(Yii::$app->user->identity->id) ?: new Education();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            $model->save();
+        }
+        $schools = School::find()
+            ->where(['user_id' => Yii::$app->user->identity->id])
+            ->all();
+        return $this->renderPartial('education', [
+            'view' => 'education',
+            'schools' => $schools,
+            'model' => $model,
+        ]);
     }
 
-    # 新增-教育
+    /**
+     * 新增/编辑-教育
+     */
     public function actionAddEducation()
     {
-        $data = [
-            'view' => 'education'
-        ];
-        return $this->renderPartial('add-education', $data);
+        if (!Yii::$app->request->get('id') && School::find()->where(['user_id' => Yii::$app->user->identity->id])->count() >= 10) {
+            echo "<script>alert('You can add up to 10 schools/colleges/centres.')</script>";
+            echo "<script>window.location.href='/useradmin/education'</script>";
+            exit();
+        }
+        $model = School::findOne(Yii::$app->request->get('id')) ?: new School();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            if (!$model->save()) {
+                exit('create/edit error');
+            } else
+                return $this->redirect(['useradmin/education']);
+        }
+        return $this->renderPartial('add-education', [
+            'view' => 'education',
+            'model' => $model,
+        ]);
     }
 
-    # 新增-教育-资格
+    /**
+     * 删除教育
+     */
+    public function actionDelEducation($id)
+    {
+        $model = School::findOne($id);
+        $model->delete();
+        return $this->redirect(['useradmin/education']);
+    }
+
+    /**
+     * 新增-教育-资格
+     */
     public function actionAddQualifications()
     {
-        $data = [
+        return $this->renderPartial('add-qualifications', [
             'view' => 'education'
-        ];
-        return $this->renderPartial('add-qualifications', $data);
+        ]);
     }
 
-    # 新增-教育-资格-资格
+    /**
+     * 新增-教育-资格-资格
+     */
     public function actionAddFw()
     {
-        $data = [
-            'view' => 'education'
-        ];
-        return $this->renderPartial('add-fw', $data);
+        $model = Qualifications::findOne(Yii::$app->request->get('id')) ?: new Qualifications();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            $model->school_id = Yii::$app->request->get('school_id');
+            if (!$model->save()) {
+                exit('create/edit error');
+            } else
+                return $this->redirect(Url::to(['useradmin/education']));
+        }
+        return $this->renderPartial('add-fw', [
+            'view' => 'education',
+            'model' => $model,
+        ]);
     }
 
     /**
