@@ -5,23 +5,22 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "statement".
+ * This is the model class for table "view_all".
  *
  * @property int $user_id
- * @property string $taPersonalStatement 描述
+ * @property int|null $chkPDAgreed 是否同意
  * @property int|null $chkComplete 部分完成
- * @property int|null $update_time
  *
  * @property User $user
  */
-class Statement extends \yii\db\ActiveRecord
+class ViewAll extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'statement';
+        return 'view_all';
     }
 
     /**
@@ -30,9 +29,8 @@ class Statement extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'taPersonalStatement'], 'required'],
-            [['user_id', 'chkComplete', 'update_time'], 'integer'],
-            [['taPersonalStatement'], 'string'],
+            [['user_id'], 'required'],
+            [['user_id', 'chkPDAgreed', 'chkComplete'], 'integer'],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -45,9 +43,8 @@ class Statement extends \yii\db\ActiveRecord
     {
         return [
             'user_id' => 'User ID',
-            'taPersonalStatement' => 'Ta Personal Statement',
+            'chkPDAgreed' => 'Chk Pd Agreed',
             'chkComplete' => 'Chk Complete',
-            'update_time' => 'Update Time',
         ];
     }
 
@@ -72,34 +69,4 @@ class Statement extends \yii\db\ActiveRecord
         }
         return false;
     }
-
-    /**
-     * @param bool $insert
-     * @return bool
-     */
-    public function beforeSave($insert)
-    {
-        if (parent::beforeSave($insert)) {
-            $this->update_time = time();
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * @return array
-     */
-    public function getTaPersonalStatementArr()
-    {
-        return explode("\n", $this->taPersonalStatement);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTaPersonalStatementText()
-    {
-        return str_replace("\n", '<br>', $this->taPersonalStatement);
-    }
 }
-
