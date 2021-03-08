@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="thisFormField">
                                     <div id="fullWidth">
-                                        <select name="cboTitle" size="1"  class="floatLeft" id="titleCombo">
+                                        <select name="title" size="1"  class="floatLeft" id="titleCombo">
                                             <option value="">Please select...</option>
                                             <option value="Miss">Miss</option>
                                             <option value="Mr">Mr</option>
@@ -193,7 +193,7 @@
                                     <label for="genderRadio">Gender<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <div id="fullWidth"><select name="cboGender" size="1" class="floatLeft" id="genderCombo">
+                                    <div id="fullWidth"><select name="gender" size="1" class="floatLeft" id="genderCombo">
                                             <option value="">Please select...</option>
                                             <option value="M">Male</option>
                                             <option value="F">Female</option>
@@ -209,7 +209,7 @@
                                     <label for="foreNameTextEntry">First/given name(s)<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtFName" value="<?= $user->txtForename ?>" size="39" maxlength="50" class="floatLeft" id="foreNameTextEntry">
+                                    <input type="text" name="txtForename" value="<?= $user->txtForename ?>" size="39" maxlength="50" class="floatLeft" id="foreNameTextEntry">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.FORENAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -220,7 +220,7 @@
                                     <label for="surNameTextEntry">Surname/family name<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtSName" value="<?= $user->txtSurname ?>" size="39" maxlength="30" class="floatLeft" id="surNameTextEntry">
+                                    <input type="text" name="txtSurname" value="<?= $user->txtSurname ?>" size="39" maxlength="30" class="floatLeft" id="surNameTextEntry">
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.SURNAME'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -323,7 +323,12 @@
                                 </div>
                                 <div class="thisFormField">
                                     (if different from postal address)<br>
-
+                                    <p></p>
+                                    <div><?= $model->addrLine1Text?></div>
+                                    <div><?= $model->addrLine2Text?></div>
+                                    <div><?= $model->addrLine3Text?></div>
+                                    <div><?= $model->addrLine4Text?></div>
+                                    <div><?= $model->Country ?></div>
                                 </div>
                                 <!---close form element ---->
                                 <div class="clearDiv">&nbsp;</div>
@@ -334,7 +339,7 @@
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormField">
-                                        <a href="/useradmin/changeaddr">
+                                        <a href="<?= \yii\helpers\Url::to(['useradmin/change-home-addr'])?>">
                                         <input type="button" name="btnAddOrChangeAdd" value="add/edit home address" class="seeListBtn floatLeft">
                                         </a>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.HOMEADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -1359,7 +1364,7 @@
                                                     </div>
                                                     <div class="thisFormElem">
                                                         <div class="thisFormTxt">
-                                                            <input type="checkbox" id="chkCommercialOption" name="chkCommercialOption" class="checkSingleComms" checked="" style="display: none;"><span class="checkSingleComms tzCheckBox checked" name="chkCommercialOption" id="chkCommercialOption_Id"><span class="tzCBContent"></span><span class="tzCBPart"></span></span>
+                                                            <input type="checkbox" id="chkCommercialOption" name="" class="checkSingleComms" checked="" style="display: none;"><span class="checkSingleComms tzCheckBox checked" name="chkCommercialOption" id="chkCommercialOption_Id"><span class="tzCBContent"></span><span class="tzCBPart"></span></span>
                                                         </div>
                                                         <div class="thisFormField">
                                                             <label class="bold">Student essentials</label>
@@ -1391,7 +1396,7 @@
                                                     <div style="padding-left: 14%;">
                                                         <div class="thisFormElem">
                                                             <label for="chkEmailOption">
-                                                                <input type="checkbox" name="chkEmailOption" class="checkSingleOption" checked="" style="display: none;"><span class="checkSingleOption tzCheckBox checked" name="chkEmailOption" id="chkEmailOption_Id"><span class="tzCBContent"></span><span class="tzCBPart"></span></span><span>&nbsp;&nbsp;Email&nbsp;&nbsp;
+                                                                <input type="checkbox" name="" class="checkSingleOption" checked="" style="display: none;"><span class="checkSingleOption tzCheckBox checked" name="chkEmailOption" id="chkEmailOption_Id"><span class="tzCBContent"></span><span class="tzCBPart"></span></span><span>&nbsp;&nbsp;Email&nbsp;&nbsp;
 						</span>
                                                             </label>
                                                             <label for="chkTxtOption">
@@ -1542,13 +1547,13 @@
         $("#titleCombo").find("option[value='"+title_selected+"']").attr("selected",true);
 
         var gender_selected = "<?= $user->gender ?>"
-        $("#genderCombo").find("option[text='"+gender_selected+"']").attr("selected",true);
+        $("#genderCombo").find("option[value='"+gender_selected+"']").attr("selected",true);
 
         var cboDobDay_selected = "<?= $user->cboDobDay ?>"
         $("#dobCombo3").find("option[value='"+cboDobDay_selected+"']").attr("selected",true);
 
         var cboDobMonth_selected = "<?= $user->cboDobMonth ?>"
-        $("#dobCombo2").find("option[text='"+cboDobMonth_selected+"']").attr("selected",true);
+        $("#dobCombo2").find("option[value='"+cboDobMonth_selected+"']").attr("selected",true);
 
         var cboDobYear_selected = "<?= $user->cboDobYear ?>"
         $("#dobCombo1").find("option[value='"+cboDobYear_selected+"']").attr("selected",true);

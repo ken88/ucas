@@ -2,9 +2,6 @@
 
 namespace common\models;
 
-use function Webmozart\Assert\Tests\StaticAnalysis\false;
-use function Webmozart\Assert\Tests\StaticAnalysis\null;
-use function Webmozart\Assert\Tests\StaticAnalysis\true;
 use Yii;
 
 /**
@@ -13,11 +10,11 @@ use Yii;
  * @property int $user_id
  * @property string|null $txtPrevSurn 16岁生日的姓
  * @property string $rdPermUK 是在英国永久居住吗
- * @property string|null $txtAddrLine1 家庭住址1
- * @property string|null $txtAddrLine2 家庭住址2
- * @property string|null $txtAddrLine3 家庭住址3
- * @property string|null $txtAddrLine4 家庭住址4
- * @property string|null $cboCountryId 国家
+ * @property string|null $addrLine1Text 家庭住址1
+ * @property string|null $addrLine2Text 家庭住址2
+ * @property string|null $addrLine3Text 家庭住址3
+ * @property string|null $addrLine4Text 家庭住址4
+ * @property string|null $Country 国家
  * @property string $txtCntryOfBirth 出生国家
  * @property int|null $cboEntryUkDay 首次进入英国的时间
  * @property string|null $cboEntryUkMonth
@@ -48,6 +45,7 @@ use Yii;
  * @property string $txtDisabilitySplNeeds 残疾类别
  * @property string|null $txtDisabilitySplNeedsText 特殊需求详细信息
  * @property int|null $chkComplete 部分完成
+ * @property string|null $txtPrefFName 首选名字
  *
  * @property User $user
  */
@@ -70,9 +68,9 @@ class PersonalDetails extends \yii\db\ActiveRecord
             [['user_id', 'rdPermUK', 'txtCntryOfBirth', 'txtNatioality', 'txtResidenceArea', 'txtResidentialCategory', 'cboFeeCode', 'euAnswers', 'parentSpouse', 'txtDisabilitySplNeeds'], 'required'],
             [['user_id', 'cboEntryUkDay', 'cboEntryUkYear', 'cboIssueDay', 'cboIssueYear', 'cboExpireDay', 'cboExpireYear', 'chkComplete'], 'integer'],
             [['txtDisabilitySplNeeds', 'txtDisabilitySplNeedsText'], 'string'],
-            [['txtPrevSurn', 'txtAddrLine1', 'txtAddrLine2', 'txtAddrLine3', 'txtAddrLine4', 'txtPassportNo', 'txtPlaceOfIssue'], 'string', 'max' => 255],
+            [['txtPrevSurn', 'addrLine1Text', 'addrLine2Text', 'addrLine3Text', 'addrLine4Text', 'txtPassportNo', 'txtPlaceOfIssue'], 'string', 'max' => 255],
             [['rdPermUK', 'cboStudentVisa', 'cboStudiedUK'], 'string', 'max' => 10],
-            [['cboCountryId', 'txtCntryOfBirth', 'txtNatioality', 'txtDualNatioality', 'txtResidenceArea', 'txtResidentialCategory'], 'string', 'max' => 100],
+            [['Country', 'txtCntryOfBirth', 'txtNatioality', 'txtDualNatioality', 'txtResidenceArea', 'txtResidentialCategory'], 'string', 'max' => 100],
             [['cboEntryUkMonth', 'cboIssueMonth', 'cboExpireMonth', 'euAnswers', 'parentSpouse'], 'string', 'max' => 20],
             [['txtUniqueLearnerNo', 'txtToeflNo', 'txtIeltsNo', 'cboFeeCode', 'txtSSA_FeeName', 'txtNominPerson', 'txtNominPersonRelation', 'txtPrefFName'], 'string', 'max' => 50],
             [['user_id'], 'unique'],
@@ -89,11 +87,11 @@ class PersonalDetails extends \yii\db\ActiveRecord
             'user_id' => 'User ID',
             'txtPrevSurn' => 'Txt Prev Surn',
             'rdPermUK' => 'Rd Perm Uk',
-            'txtAddrLine1' => 'Txt Addr Line1',
-            'txtAddrLine2' => 'Txt Addr Line2',
-            'txtAddrLine3' => 'Txt Addr Line3',
-            'txtAddrLine4' => 'Txt Addr Line4',
-            'cboCountryId' => 'Cbo Country ID',
+            'addrLine1Text' => 'Addr Line1 Text',
+            'addrLine2Text' => 'Addr Line2 Text',
+            'addrLine3Text' => 'Addr Line3 Text',
+            'addrLine4Text' => 'Addr Line4 Text',
+            'Country' => 'Country',
             'txtCntryOfBirth' => 'Txt Cntry Of Birth',
             'cboEntryUkDay' => 'Cbo Entry Uk Day',
             'cboEntryUkMonth' => 'Cbo Entry Uk Month',
@@ -124,6 +122,7 @@ class PersonalDetails extends \yii\db\ActiveRecord
             'txtDisabilitySplNeeds' => 'Txt Disability Spl Needs',
             'txtDisabilitySplNeedsText' => 'Txt Disability Spl Needs Text',
             'chkComplete' => 'Chk Complete',
+            'txtPrefFName' => 'Txt Pref F Name',
         ];
     }
 
@@ -163,3 +162,4 @@ class PersonalDetails extends \yii\db\ActiveRecord
         return false;
     }
 }
+

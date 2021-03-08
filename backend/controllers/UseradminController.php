@@ -75,7 +75,7 @@ although you will be able to print these letters from the Track system if necess
 
     public function actionIndex()
     {
-        $model = User::find()->where(['id'=>Yii::$app->user->identity->id])->one();
+        $model = User::find()->where(['id' => Yii::$app->user->identity->id])->one();
         $model->chkEmailOption = '1';
         $model->save();
         $data = [
@@ -86,7 +86,7 @@ although you will be able to print these letters from the Track system if necess
 
     public function actionWelcome()
     {
-        $chkEmailOption = Yii::$app->user->identity->chkEmailOption ;
+        $chkEmailOption = Yii::$app->user->identity->chkEmailOption;
 
         $data = [
             'view' => 'welcome',
@@ -97,10 +97,12 @@ although you will be able to print these letters from the Track system if necess
     }
 
     # 获取左侧菜单信息
-    public function actionAjaxGetMenu() {
+    public function actionAjaxGetMenu()
+    {
         $info = User::infoSelection();
-        res(200,'',$info);
+        res(200, '', $info);
     }
+
     /**
      * 个人资料
      * @return string
@@ -111,8 +113,18 @@ although you will be able to print these letters from the Track system if necess
         $chkEmailOption = Yii::$app->user->identity->chkEmailOption;
         $model = PersonalDetails::findOne(Yii::$app->user->identity->id) ?: new PersonalDetails();
         if (Yii::$app->request->isPost) {
+            $sw = Yii::$app->db->beginTransaction();
             $model->attributes = Yii::$app->request->post();
-            $model->save();
+            if (!$model->save()) {
+                $sw->rollBack();
+                exit('create/edit err');
+            }
+            $user->attributes = Yii::$app->request->post();
+            if (!$user->save()) {
+                $sw->rollBack();
+                exit('create/edit err');
+            }
+            $sw->commit();
         }
         return $this->renderPartial('personaldetails', [
             'view' => 'personaldetails',
@@ -123,16 +135,60 @@ although you will be able to print these letters from the Track system if necess
     }
 
     # 地址修改
-    public function actionChangeaddr() {
+    public function actionChangeaddr()
+    {
+        if (Yii::$app->request->isPost)
+            return $this->redirect(['useradmin/add-addr']);
         return $this->renderPartial('changge-addr', [
             'view' => 'personaldetails'
         ]);
     }
 
     # 地址修改页面
-    public function actionAddAddr() {
+    public function actionAddAddr()
+    {
+        $user = Yii::$app->user->identity;
+        if (Yii::$app->request->isPost) {
+            $user->attributes = Yii::$app->request->post();
+            if (!$user->save()) {
+                exit('address save error');
+            } else
+                return $this->redirect(Url::to(['useradmin/personaldetails']));
+        }
         return $this->renderPartial('add-addr', [
+            'view' => 'personaldetails',
+            'model' => $user,
+        ]);
+    }
+
+    /**
+     * 修改家庭地址
+     */
+    public function actionChangeHomeAddr()
+    {
+        if (Yii::$app->request->isPost)
+            return $this->redirect(['useradmin/add-home-addr']);
+        return $this->renderPartial('/useradmin/changge-addr', [
             'view' => 'personaldetails'
+        ]);
+    }
+
+    /**
+     * 修改家庭地址
+     */
+    public function actionAddHomeAddr()
+    {
+        $model = PersonalDetails::findOne(Yii::$app->user->identity->id) ?: new PersonalDetails();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            if (!$model->save()) {
+                exit('address save error');
+            } else
+                return $this->redirect(Url::to(['useradmin/personaldetails']));
+        }
+        return $this->renderPartial('/useradmin/add-addr', [
+            'view' => 'personaldetails',
+            'model' => $model,
         ]);
     }
 

@@ -31,7 +31,7 @@
 
                         <!--clip starts-->
 
-                        <form name="Form1" method="post" action="PersonalDetailsServlet?id=b8f52d0b1ae76057626a396bf603&amp;ran=lxtnqbu4b7tx">
+                        <form name="Form1" method="post" action="">
                             <!-- Main area of page provided here by re-use of a registration servlet clip -->
                             <p><input type="hidden" name="from" value="15"></p><p><input type="hidden" name="functionname" value="register"></p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown">
                             <input type="hidden" name="hidCharWarningMsg" value="The following character is not permitted here " id="hidCharWarningMsg">
@@ -50,7 +50,7 @@
                                     <label for="addrLine1Text">Postal address<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="text" name="txtAddrLine1" value="" size="39" maxlength="50" class="floatLeft" id="addrLine1Text">
+                                    <input type="text" name="addrLine1Text" value="<?= $model->addrLine1Text ?>" size="39" maxlength="50" class="floatLeft" id="addrLine1Text">
                                     <a href="#" onclick="launchFieldHelp('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.OSEASADDRESS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -60,7 +60,7 @@
                                 <div class="thisFormTxt">
                                     <label for="addrLine2Text">&nbsp;</label>
                                 </div>
-                                <input type="text" name="txtAddrLine2" value="" size="39" maxlength="50" class="floatLeft" id="addrLine2Text">
+                                <input type="text" name="addrLine2Text" value="<?= $model->addrLine2Text ?>" size="39" maxlength="50" class="floatLeft" id="addrLine2Text">
                             </div><!--close form element -->
                             <!--Address Line 3 -->
                             <div class="thisFormElem">
@@ -68,7 +68,7 @@
                                 <div class="thisFormTxt">
                                     <label for="addrLine3Text">&nbsp;</label>
                                 </div>
-                                <input type="text" name="txtAddrLine3" value="" size="39" maxlength="50" class="floatLeft" id="addrLine3Text">
+                                <input type="text" name="addrLine3Text" value="<?= $model->addrLine3Text ?>" size="39" maxlength="50" class="floatLeft" id="addrLine3Text">
                             </div><!--close form element -->
                             <!--Address Line 4 -->
                             <div class="thisFormElem">
@@ -76,7 +76,7 @@
                                 <div class="thisFormTxt">
                                     <label for="addrLine4Text">&nbsp;</label>
                                 </div>
-                                <input type="text" name="txtAddrLine4" value="" size="39" maxlength="50" class="floatLeft" id="addrLine4Text">
+                                <input type="text" name="addrLine4Text" value="<?= $model->addrLine4Text ?>" size="39" maxlength="50" class="floatLeft" id="addrLine4Text">
                             </div><!--close form element -->
                             <!--Country-->
                             <div class="thisFormElem">
@@ -405,14 +405,13 @@
             scrollTo(0,0);
         }
         else {
-            alert('提交')
-
+            $('form').submit()
         }
 
 
     }
     $(function() {
-        var Country_selected = "<?= $form_data['Country'] ?? ''?>"
+        var Country_selected = "<?= $model->Country ?>"
         $("#Country").find("option[value='" + Country_selected + "']").attr("selected", true);
     })
 </script>

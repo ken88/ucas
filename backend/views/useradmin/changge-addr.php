@@ -32,7 +32,7 @@
 
                         <!--clip starts-->
 
-                        <form name="Form1" method="post" action="PersonalDetailsServlet?id=b8f52d0b1ae76057626a396bf603&amp;ran=1h1iqlp0cuxr">
+                        <form name="Form1" method="post" action="">
                             <!-- Main area of page provided here by re-use of a registration servlet clip -->
                             <p><input type="hidden" name="from" value="8"></p><p><input type="hidden" name="functionname" value="register"></p><!--Home location -->
 
@@ -59,9 +59,7 @@
                                             <input type="button" name="btnPrevious" value="previous" class="submitBtn">
                                             </a>
                                             &nbsp;&nbsp;
-                                            <a href="/useradmin/add-addr">
-                                            <input type="button" name="btnNext" value="next"  class="submitBtn">
-                                            </a>
+                                            <input type="submit" name="btnNext" value="next"  class="submitBtn">
 
 
                                         </td>
