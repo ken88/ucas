@@ -33,7 +33,7 @@
 
                         <!--clip starts-->
                         <form name="Form1" method="post" action="" >
-
+                            <input type="hidden" id="is_preview" name="is_preview" value="">
                             <!--display 'PersonalStatement' clip -->
                             <p><input type="hidden" name="from" value="fromStatementStatement"></p><p><input type="hidden" name="hidUnicodeMsgShown" value=" " id="hidUnicodeMsgShown"></p>
                             <input type="hidden" name="hidCharWarningMsg" value="The following character is not permitted here" id="hidCharWarningMsg">
@@ -121,8 +121,8 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="hidden" name="flag" id="flag">
-                                        <input type="button" name="btnSave" value="save" onclick="check()" class="submitBtn">
-                                        &nbsp;&nbsp;<input type="button" name="btnPreview" value="preview" onclick="preview()" class="submitBtn">
+                                        <input type="button" name="btnSave" value="save" onclick="handleSave()" class="submitBtn">
+                                        &nbsp;&nbsp;<input type="button" name="btnPreview" value="preview" onclick="handlePreview()" class="submitBtn">
 
                                     </div>
                                 </div>
@@ -171,17 +171,35 @@
     function check() {
         var statementTextEntry = $('#statementTextEntry').val();
         var err = '';
-        if(statementTextEntry == ''){
+        if(statementTextEntry == '' || statementTextEntry.length<1000 || statementTextEntry.length>4000){
             err = '<p>Statement is blank. You must enter between 1,000 and 4000 characters (maximum 47 lines) including spaces.</p>';
+        //     $('.errorTxt').html(err);
+        //     scrollTo(0,0);
+        // } else {
+        //     $('form').submit();
+        }
+        return err
+    }
+
+    function handleSave(){
+        err = check()
+        if (err){
             $('.errorTxt').html(err);
             scrollTo(0,0);
-        } else {
+        } else{
             $('form').submit();
         }
     }
 
-    function preview() {
-        window.location.href = "<?= \yii\helpers\Url::to(['useradmin/statement-see']) ?>"
+    function handlePreview() {
+        err = check()
+        if (err){
+            $('.errorTxt').html(err);
+            scrollTo(0,0);
+        } else{
+            $('#is_preview').val(1)
+            $('form').submit();
+        }
     }
 
 </script>

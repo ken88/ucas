@@ -20,6 +20,7 @@ use common\models\School;
 use common\models\Statement;
 use common\models\User;
 use common\models\ViewAll;
+use DeepCopyTest\Matcher\Y;
 use Yii;
 use yii\helpers\Url;
 
@@ -265,7 +266,7 @@ although you will be able to print these letters from the Track system if necess
             $model->save();
         }
         $schools = School::find()
-            ->orderBy(['id'=>SORT_DESC])
+            ->orderBy(['id' => SORT_DESC])
             ->where(['user_id' => Yii::$app->user->identity->id])
             ->all();
         return $this->renderPartial('education', [
@@ -407,7 +408,8 @@ although you will be able to print these letters from the Track system if necess
             return $this->redirect(['useradmin/statement-see']);
         if (Yii::$app->request->isPost) {
             $model->taPersonalStatement = Yii::$app->request->post('taPersonalStatement');
-            $model->save();
+            if ($model->save() && Yii::$app->request->post('is_preview'))
+                return $this->redirect(['useradmin/statement-see']);
         }
         return $this->renderPartial('statement', [
             'view' => 'statement',
