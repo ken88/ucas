@@ -104,6 +104,7 @@
                             <div class="clearDiv">&nbsp;</div>
                             <div class="errorTxt" id="errorTxt"></div>
                             <!-- 验证邮箱是否已经验证，没有验证显示下面错误 start -->
+                            <?php if($chkEmailOption != '1') {?>
                             <div class="errorTxt">
                                 <p>
                                     <strong>Verify your email address</strong>
@@ -115,6 +116,7 @@
                                     </a>
                                 </p>
                             </div>
+                            <?php }?>
                             <!-- 验证邮箱是否已经验证，没有验证显示下面错误 end -->
                             <h2 class="inPage">Personal</h2>
                             <!--Title-->

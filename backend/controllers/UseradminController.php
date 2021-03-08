@@ -72,6 +72,9 @@ although you will be able to print these letters from the Track system if necess
 
     public function actionIndex()
     {
+        $model = User::find()->where(['id'=>Yii::$app->user->identity->id])->one();
+        $model->chkEmailOption = '1';
+        $model->save();
         $data = [
             'view' => 'welcome'
         ];
@@ -80,9 +83,12 @@ although you will be able to print these letters from the Track system if necess
 
     public function actionWelcome()
     {
+        $chkEmailOption = Yii::$app->user->identity->chkEmailOption ;
+
         $data = [
             'view' => 'welcome',
             'user' => Yii::$app->user->identity,
+            'chkEmailOption' => $chkEmailOption,
         ];
         return $this->renderPartial('welcome', $data);
     }
@@ -99,6 +105,7 @@ although you will be able to print these letters from the Track system if necess
     public function actionPersonaldetails()
     {
         $user = Yii::$app->user->identity;
+        $chkEmailOption = Yii::$app->user->identity->chkEmailOption;
         $model = PersonalDetails::findOne(Yii::$app->user->identity->id) ?: new PersonalDetails();
         if (Yii::$app->request->isPost) {
             $model->attributes = Yii::$app->request->post();
@@ -108,6 +115,7 @@ although you will be able to print these letters from the Track system if necess
             'view' => 'personaldetails',
             'user' => $user,
             'model' => $model,
+            'chkEmailOption' => $chkEmailOption,
         ]);
     }
 
