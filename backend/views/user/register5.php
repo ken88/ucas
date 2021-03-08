@@ -127,8 +127,9 @@
                                         <label>&nbsp;</label>
                                     </div>
                                     <div class="thisFormField">
+                                        <a href="<?= \yii\helpers\Url::to(['user/register4'])?>">
                                         <input type="button" name="btnChangeAddress" value="change address" class="floatLeft seeListBtn">
-
+                                        </a>
                                         <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.CONTACTDETAILS.FIELD.ADDRESS'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
                                 </div><!--close form element -->

@@ -274,6 +274,7 @@
     var searchField = 2;
     var presentationField = 1;
     var refField = 0
+    var school_id = "<?= Yii::$app->request->get('school_id') ?>"
 
     function init() {
         ucasInit();
@@ -307,7 +308,7 @@
                 var row = tbl.insertRow(lastRow);
                 var cell = row.insertCell(0);
 
-                cell.innerHTML = "<a href='/useradmin/add-fw?qualKey="+data[0]+"&val="+data[1]+"'>"+data[1]+"</a>";
+                cell.innerHTML = "<a href='/useradmin/add-fw?school_id="+school_id+"&qualKey="+data[0]+"&val="+data[1]+"'>"+data[1]+"</a>";
 
             })
         search.search('',searchField);
