@@ -21,7 +21,7 @@
         <li class="" id="viewalldetails">
             <a href="viewalldetails">View all details</a>
         </li>
-        <li class="notStarted" id="paysend">
+        <li class="" id="paysend">
             <a href="pay-send1">Pay/Send</a>
         </li>
         <li class="last">
@@ -47,7 +47,7 @@
 
     // 获取左侧菜单
     $.post('/useradmin/ajax-get-menu',null,function (data) {
-//        console.log(data)
+       console.log(data)
         var res = data.data;
         if (res['personal_details'] === false) {
             $('#personaldetails').addClass('notStarted');
@@ -97,6 +97,13 @@
             $('#viewalldetails').addClass('complete');
         }
 
+        if (res['pay_send'] === false) {
+            $('#paysend').addClass('notStarted');
+        } else if (res['pay_send'] === '0') {
+            $('#paysend').addClass('inProgress');
+        }else if (res['pay_send'] === '1') {
+            $('#paysend').addClass('complete');
+        }
 
     },'json');
 </script>
