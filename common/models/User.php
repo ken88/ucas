@@ -342,10 +342,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         $data = [
             'personal_details' => PersonalDetails::find()->select('chkComplete')->where($map)->scalar(),
             'choices' => Choice::find()->select('chkComplete')->where($map)->scalar(),
-            'education' => false,
+            'education' => Education::find()->select('chkComplete')->where($map)->scalar(),
             'employment' => Employment::find()->select('chkComplete')->where($map)->scalar(),
             'statement' => Statement::find()->select('chkComplete')->where($map)->scalar(),
-            'view_all_details' => false,
+            'view_all_details' => ViewAll::find()->select('chkComplete')->where($map)->scalar(),
+            'pay_send' => PaySend::find()->select('chkComplete')->where($map)->scalar(),
         ];
         return $data;
     }
