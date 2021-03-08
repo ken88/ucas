@@ -469,12 +469,18 @@ although you will be able to print these letters from the Track system if necess
     # 支付页面3
     public function actionPaySend3()
     {
-        return $this->renderPartial('pay-send3');
+        $data = [
+            'view' => 'paysend'
+        ];
+        return $this->renderPartial('pay-send3',$data);
     }
 
     # 支付页面4
     public function actionPaySend4()
     {
-        return $this->renderPartial('pay-send4');
+        $data = [
+            'view' => 'paysend'
+        ];
+        return $this->renderPartial('pay-send4',$data);
     }
 }
