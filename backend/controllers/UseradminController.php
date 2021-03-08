@@ -33,6 +33,7 @@ class UseradminController extends BaseController
         $mail = Yii::$app->mailer->compose();
 
         $mail->setTo($email); # 发送的邮件
+
         $mail->setSubject("hello your code checke");
 
 //$mail->setTextBody('zheshisha ');   //发布纯文字文本
@@ -68,6 +69,7 @@ although you will be able to print these letters from the Track system if necess
     {
         $email = Yii::$app->user->identity->emailText;
         $data = [
+            'view' => 'welcome',
             'email' => $email
         ];
         return $this->renderPartial('send-cf', $data);
