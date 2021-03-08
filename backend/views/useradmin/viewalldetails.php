@@ -31,7 +31,7 @@
 
                     <div class="thisForm">
 
-                        <form name="Form1" method="post" action="ViewAllServlet?id=badd6313331d813e48fb8c7a44b8&amp;ran=z9i9pxrsma1o">
+                        <form name="Form1" method="post" action="">
 
                             <div id="ViewAll">
                                 <div class="inPage"><p>Please review your application below to ensure that the details you have provided are both correct and reflect your preferences. Please confirm your preferences to receive further information from UCAS and UCAS Media about courses or products and services by ticking "Section completed" at the bottom of this screen.<br><br>If the details below are either incorrect, or do not reflect your preferences, please change your application.</p></div>
@@ -44,7 +44,9 @@
                                 <h2 class="inPage">
                                     Personal&nbsp;&nbsp;
                                 </h2>
-                                <div class="warningTxt"><p>Please tick this box if you agree with all the substituted characters in your Personal details section. If you want to make any changes, click 'edit'.&nbsp;<input type="checkbox" name="chkPDAgreed" checked="" id="chkPDAgreed"></p></div>
+                                <div class="warningTxt"><p>Please tick this box if you agree with all the substituted characters in your Personal details section. If you want to make any changes, click 'edit'.&nbsp;
+                                        <input type="hidden" name="=chkPDAgreed" value="0">
+                                        <input type="checkbox" value="1" <?php if ($model->chkPDAgreed) echo 'checked' ?> name="chkPDAgreed" id="chkPDAgreed"></p></div>
                                 <table width="100%">
                                     <tbody><tr style="width:100%;">
                                         <th style="width:33%; border-top:none;">&nbsp;</th>
@@ -56,7 +58,7 @@
                                             Title
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            Mr&nbsp;</td>
+                                            <?= $user->title?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -64,7 +66,7 @@
                                             Gender
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            Male&nbsp;</td>
+                                            <?= $user->gender?>&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -72,25 +74,25 @@
                                             First/given name(s)
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            贝勒</td>
+                                            <?= $user->txtForename ?></td>
                                         <td style="width:33%;" class="value value Dotted">
-                                            贝勒&nbsp;</td>
+                                            <?= $user->txtForename ?></td>
                                     </tr>
                                     <tr>
                                         <th style="width:33%;">
                                             Surname/family name
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            白</td>
+                                            <?= $user->txtSurname ?></td>
                                         <td style="width:33%;" class="value value Dotted">
-                                            白&nbsp;</td>
+                                            <?= $user->txtSurname ?></td>
                                     </tr>
                                     <tr>
                                         <th style="width:33%;">
                                             Preferred first name
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            bai&nbsp;</td>
+                                            <?= $personal['txtPrefFName']?>&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -98,7 +100,7 @@
                                             Previous surname at 16th birthday
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtPrevSurn']?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -106,7 +108,12 @@
                                             Postal address
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            150010    China &nbsp;</td>
+                                            <div><?= $user->addrLine1Text ?></div>
+                                            <div><?= $user->addrLine2Text ?></div>
+                                            <div><?= $user->addrLine3Text ?></div>
+                                            <div><?= $user->addrLine4Text ?></div>
+                                            <div><?= $user->Country ?></div>
+                                        </td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -114,7 +121,7 @@
                                             Is your permanent home in the UK?
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            Yes&nbsp;</td>
+                                            <?= $personal['rdPermUK'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -122,7 +129,12 @@
                                             Home address
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            3333, Angola&nbsp;</td>
+                                            <div><?= $personal['addrLine1Text']?></div>
+                                            <div><?= $personal['addrLine2Text']?></div>
+                                            <div><?= $personal['addrLine3Text']?></div>
+                                            <div><?= $personal['addrLine4Text']?></div>
+                                            <div><?= $personal['Country']?></div>
+                                        </td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -130,7 +142,7 @@
                                             Home telephone number
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            18545006848&nbsp;</td>
+                                            <?= $user->txtHomePhone ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -138,7 +150,7 @@
                                             Mobile number
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            18545006848&nbsp;</td>
+                                            <?= $user->txtMobilePhone ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -146,7 +158,7 @@
                                             Email address
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            645447172@qq.com&nbsp;</td>
+                                            <?= $user->emailText ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -154,7 +166,7 @@
                                             Date of birth
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            1 January 1992&nbsp;</td>
+                                            <?= $user->cboDobDay.'/'.$user->cboDobMonth.'/'.$user->cboDobYear ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -162,7 +174,7 @@
                                             Country of birth
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            United Kingdom&nbsp;</td>
+                                            <?= $personal['txtCntryOfBirth'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -170,7 +182,7 @@
                                             Date of first entry to UK
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['cboEntryUkDay'].'/'.$personal['cboEntryUkMonth'].'/'.$personal['cboEntryUkYear']?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -178,7 +190,7 @@
                                             Nationality
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            Chinese&nbsp;</td>
+                                            <?= $personal['txtNatioality'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -186,7 +198,7 @@
                                             Dual nationality
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtDualNatioality'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -194,7 +206,7 @@
                                             Area of permanent residence
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            Aberdeen&nbsp;</td>
+                                            <?= $personal['txtResidenceArea'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -202,10 +214,12 @@
                                             Residential category
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            UK Citizen - Northern Ireland&nbsp;</td>
+                                            <?= $personal['txtResidentialCategory'] ?></td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
+
+
                                 <h2 class="inPage">
                                     Reference numbers&nbsp;&nbsp;
                                 </h2>
@@ -215,7 +229,7 @@
                                             Unique Learner Number (ULN)
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtUniqueLearnerNo'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -223,7 +237,7 @@
                                             Test of English as a Foreign Language (TOEFL) Number
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtToeflNo'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -231,7 +245,7 @@
                                             International English Language Testing System (IELTS) TRF Number
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtIeltsNo'] ?></td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
@@ -244,7 +258,7 @@
                                             Do you require a student visa?
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            <?= $personal['cboStudentVisa'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -252,7 +266,7 @@
                                             Have you previously studied in the UK on a student visa?
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            No&nbsp;</td>
+                                            <?= $personal['cboStudiedUK'] ?></td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
@@ -265,7 +279,7 @@
                                             Fee code
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            90   Other source&nbsp;</td>
+                                            <?= $personal['cboFeeCode'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -273,7 +287,7 @@
                                             Student support arrangements
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtSSA_FeeName']?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -281,7 +295,7 @@
                                             Have you ever lived or worked in the EU (excluding the UK), European Economic Area (EEA) or Switzerland?
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            <?= $personal['euAnswers'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -289,7 +303,7 @@
                                             Do you have a parent, step parent, spouse or civil partner who is an EU (excluding the UK), EEA or Swiss national?
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            No&nbsp;</td>
+                                            <?= $personal['parentSpouse'] ?></td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
@@ -310,7 +324,7 @@
                                             I want to receive information about health, careers and study opportunities by email
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            Yes&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -318,7 +332,7 @@
                                             I want to receive information about commercial products and services by email
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            Yes&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -326,7 +340,7 @@
                                             I want to receive information about health, careers and study opportunities by text/SMS
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            Yes&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -334,7 +348,7 @@
                                             I want to receive information about commercial products and services by text/SMS
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            Yes&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -342,7 +356,7 @@
                                             I want to receive information about health, careers and study opportunities by post
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No&nbsp;</td>
+                                            Yes&nbsp;</td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -350,7 +364,7 @@
                                             I want to receive information about commercial products and services by post
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            No&nbsp;</td>
+                                            Yes&nbsp;</td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
@@ -363,7 +377,7 @@
                                             Full name of nominee
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtNominPerson'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -371,7 +385,7 @@
                                             Relationship to you
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtNominPersonRelation'] ?></td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
@@ -384,7 +398,7 @@
                                             Category
                                         </th>
                                         <td style="width:33%;" class="value">
-                                            No disability&nbsp;</td>
+                                            <?= $personal['txtDisabilitySplNeeds'] ?></td>
                                         <td style="width:33%;" class="value"></td>
                                     </tr>
                                     <tr>
@@ -392,250 +406,41 @@
                                             Please give details of any special needs
                                         </th>
                                         <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
+                                            <?= $personal['txtDisabilitySplNeedsText'] ?></td>
                                         <td style="width:33%;" class="value last"></td>
                                     </tr>
                                     </tbody></table>
                                 <p>&nbsp;</p>
-                                <br>
+
                                 <table>
-                                    <tbody><tr>
-                                        <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Additional information</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="FurtherDetailsServlet?functionname=furtherdetails&amp;from=fromViewAll&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=7k36zee2tjnx">edit</a></li></ul></td>
-                                    </tr>
-                                    </tbody></table>
-                                <h2 class="inPage">
-                                    &nbsp;&nbsp;&nbsp;
-                                </h2>
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <th style="width:33%;">
-                                            Ethnic origin
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            Asian - Chinese&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
+                                    <tbody>
                                     <tr>
-                                        <th style="width:33%;">
-                                            What is your religion or belief?
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            No religion or belief&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            What is your sexual orientation?
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            I prefer not to say&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Do you identify as transgender?
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            I prefer not to say&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            National identity
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            I prefer not to say&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="last">
-                                            Dual national identity
-                                        </th>
-                                        <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value last"></td>
-                                    </tr>
-                                    </tbody></table>
-                                <h2 class="inPage">
-                                    Activities in preparation for higher education: 1&nbsp;&nbsp;
-                                </h2>
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <th style="width:33%;">
-                                            Sponsor
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Start date
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Duration (days)
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            School year
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="last">
-                                            Location
-                                        </th>
-                                        <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value last"></td>
-                                    </tr>
-                                    </tbody></table>
-                                <h2 class="inPage">
-                                    Activities in preparation for higher education: 2&nbsp;&nbsp;
-                                </h2>
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <th style="width:33%;">
-                                            Sponsor
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Start date
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Duration (days)
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            School year
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="last">
-                                            Location
-                                        </th>
-                                        <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value last"></td>
-                                    </tr>
-                                    </tbody></table>
-                                <h2 class="inPage">
-                                    &nbsp;&nbsp;&nbsp;
-                                </h2>
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <th style="width:33%;">
-                                            Have you been in care?
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Duration in care
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Parental education
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Occupational background
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            Application Developer (Computing)&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="last">
-                                            I would like correspondence from Welsh universities, colleges and UCAS to be in Welsh
-                                        </th>
-                                        <td style="width:33%;" class="value last">
-                                            No&nbsp;</td>
-                                        <td style="width:33%;" class="value last"></td>
-                                    </tr>
-                                    </tbody></table>
-                                <p>&nbsp;</p>
-                                <table>
-                                    <tbody><tr>
-                                        <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Student finance</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="StudentFinanceServlet?functionname=studentfinance&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=4oi301wp70qy">edit</a></li></ul></td>
-                                    </tr>
-                                    </tbody></table>
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <th class="last">
-                                            I have read these details
-                                        </th>
-                                        <td style="width:33%;" class="value last">
-                                            Yes&nbsp;</td>
-                                        <td style="width:33%;" class="value last"></td>
-                                    </tr>
-                                    </tbody></table>
-                                <p>&nbsp;</p>
-                                <table>
-                                    <tbody><tr>
                                         <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Choices</td>
                                         <td class="sectionStatus"><ul class="skinny"><li><a href="ChoicesServlet?functionname=choicesummary&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1v7a2r9eykkau">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
+                                <?php foreach ($choices as $key=>$val){ ?>
                                 <h2 class="inPage">
-                                    <a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1dbjz4fintemt">UCEN Manchester (M10)</a>
+                                    <a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1dbjz4fintemt"><?= $val->txtInstCode1?> (<?= $val->txtInstCode?>)</a>
                                 </h2>
                                 <h2 class="inPage">
-                                    3D Modelling and Animation for Games and Media (W213)&nbsp;&nbsp;
+                                    <?= $val->txtCourseCode ?>&nbsp;
                                 </h2>
                                 <table>
                                     <tbody><tr>
-                                        <td class="choiceCol1">Campus: Fielden Campus (F)</td>
-                                        <td class="choiceCol2">Live at home while studying?: No</td>
+                                        <td class="choiceCol1">Campus: <?= $val->txtCampusCode ?></td>
+                                        <td class="choiceCol2">Live at home while studying?: <?= $val->rdHome ?></td>
                                     </tr>
                                     <tr>
-                                        <td class="choiceCol1">Start date: September 2021</td>
+                                        <td class="choiceCol1">Start date: <?= $val->txtStartDate  ?></td>
                                         <td class="choiceCol2">Deferred entry?: No</td>
                                     </tr>
                                     <tr>
                                         <td class="choiceCol1">&nbsp;</td>
-                                        <td class="choiceCol2">Point of entry:  </td>
+                                        <td class="choiceCol2">Point of entry: <?= $val->txtPOE ?> </td>
                                     </tr>
                                     </tbody></table>
+                                <?php } ?>
                                 <div class="warningTxt"><p>If you apply for this course you may be invited to attend an interview or audition or provide a portfolio, essay or other piece of work.</p></div>
                                 <table width="100%">
                                 </table>
@@ -646,9 +451,11 @@
                                         <td class="sectionStatus"><ul class="skinny"><li><a href="EducationServlet?functionname=educationsummary&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=nr03pfvizacg">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
+                                <?php foreach($schools as $key=>$val){ ?>
                                 <h2 class="inPage">
-                                    <a href="EducationServlet?functionname=educationcentre&amp;mode=edit&amp;edeId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=x07657vy6zh4">AECC University College (09/2015 - 06/2018, FT)</a>
+                                    <a href="EducationServlet?functionname=educationcentre&amp;mode=edit&amp;edeId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=x07657vy6zh4"><?= $val->txtCentreName ?> (<?= $val->cboStartMonth.'/'.$val->cboStartYear.' - '.$val->cboFinishMonth.'/'.$val->cboFinishYear?>, <?= $val->rdAttendance ?>)</a>
                                 </h2>
+                                <?php } ?>
                                 <table border="0" width="100%">
                                 </table>
                                 <table width="100%">
@@ -670,14 +477,17 @@
                                         <td class="sectionStatus"><ul class="skinny"><li><a href="EmploymentServlet?functionname=empsummary&amp;from=fromViewAll&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=qskykqpt9nra">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
+                                <?php foreach($employers as $key=>$val){ ?>
                                 <h2 class="inPage">
-                                    <a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=utatf7mkzf2r">yuehan</a>
+                                    <a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=utatf7mkzf2r"><?= $val->txtEmpName ?></a>
                                 </h2>
                                 <table border="0" cellpadding="0" cellspacing="0" valign="top">
-                                    <tbody><tr><td class="employment">Address: dfdfd 123&nbsp;&nbsp;&nbsp;</td></tr>
-                                    <tr><td class="employment">Nature of work: devve&nbsp;&nbsp;&nbsp;</td></tr>
-                                    <tr><td class="employment">From June 2019 to present, part-time</td></tr>
-                                    </tbody></table>
+                                    <tbody><tr><td class="employment">Address: <?= $val->txtEmpAddress ?></td></tr>
+                                    <tr><td class="employment">Nature of work: <?= $val->txtEmpNature ?>&nbsp;&nbsp;&nbsp;</td></tr>
+                                    <tr><td class="employment">From <?= $val->cboStartMonth.'/'.$val->cboStartYear?> to <?= $val->cboEndMonth.'/'.$val->cboEndYear?>, <?= $val->radioEmpType ?></td></tr>
+                                    </tbody>
+                                </table>
+                                <?php }?>
                                 <p>&nbsp;</p>
                                 <table>
                                     <tbody><tr>
@@ -686,105 +496,10 @@
                                     </tr>
                                     </tbody></table>
                                 <p>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
-                                    a word or phrase, often sounding authoritative or technical, that is a vogue term in a<br>
-                                    particular profession, field of study, popular culture, etc.<br>
+                                    <?= $statement['taPersonalStatementText']?>
                                 </p>
-                                <p>&nbsp;</p>
-                                <table>
-                                    <tbody><tr>
-                                        <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Reference</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="ReferenceServlet?functionname=reference&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1drp9gxkdc9ck">edit</a></li></ul></td>
-                                    </tr>
-                                    </tbody></table>
-                                <h2 class="inPage">
-                                    Referee details&nbsp;&nbsp;
-                                </h2>
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <th style="width:33%;">
-                                            Full title and name of referee
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            not required&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Post/occupation/relationship
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            not required&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Organisation name
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            not required&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Address
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            not required, not required&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Telephone number
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th style="width:33%;">
-                                            Fax number
-                                        </th>
-                                        <td style="width:33%;" class="value">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value"></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="last">
-                                            Email address
-                                        </th>
-                                        <td style="width:33%;" class="value last">
-                                            &nbsp;&nbsp;</td>
-                                        <td style="width:33%;" class="value last"></td>
-                                    </tr>
-                                    </tbody></table>
-                                <h2 class="inPage">
-                                    Date(s) when applicant is unavailable for interview&nbsp;&nbsp;
-                                </h2>
-                                <p>
-                                    NOT COMPLETED
-                                </p>
+
+
                                 <p>&nbsp;</p>
                                 <div class="thisForm">
                                     <div class="thisFormElem">
@@ -795,7 +510,8 @@
                                             &nbsp;
                                         </div>
                                         <div class="thisFormField">
-                                            <input type="checkbox" name="chkComplete" checked="" id="chkComplete">&nbsp;section completed
+                                            <input type="hidden" name="chkComplete" value="0">
+                                            <input type="checkbox" name="chkComplete" <?php if ($model->chkComplete) echo 'checked' ?> value="1"  id="chkComplete">&nbsp;section completed
                                         </div>
                                     </div>
                                 </div>

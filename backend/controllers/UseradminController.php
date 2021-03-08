@@ -18,6 +18,7 @@ use common\models\Qualifications;
 use common\models\School;
 use common\models\Statement;
 use common\models\User;
+use common\models\ViewAll;
 use Yii;
 use yii\helpers\Url;
 
@@ -441,10 +442,22 @@ although you will be able to print these letters from the Track system if necess
     # 查看所有细节
     public function actionViewalldetails()
     {
-        $data = [
-            'view' => 'viewalldetails'
-        ];
-        return $this->renderPartial('viewalldetails', $data);
+        $model = ViewAll::findOne(Yii::$app->user->identity->id) ?: new ViewAll();
+        if (Yii::$app->request->isPost) {
+            $model->attributes = Yii::$app->request->post();
+            $model->save();
+        }
+        $user = Yii::$app->user->identity;
+        return $this->renderPartial('viewalldetails', [
+            'view' => 'viewalldetails',
+            'model' => $model,
+            'user' => $user,
+            'personal' => $user->personalDetails,
+            'choices' => $user->choices,
+            'schools' => $user->schools,
+            'employers' => $user->employers,
+            'statement' => $user->statement,
+        ]);
     }
 
 
