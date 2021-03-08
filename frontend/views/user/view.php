@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'chkEmailOption:email',
                 'chkTxtOption',
                 'chkMailingsOption',
-                'passwordText',
+//                'passwordText',
                 'wenti1',
                 'daan1',
                 'wenti2',
