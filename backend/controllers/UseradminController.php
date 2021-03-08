@@ -265,6 +265,7 @@ although you will be able to print these letters from the Track system if necess
             $model->save();
         }
         $schools = School::find()
+            ->orderBy(['id'=>SORT_DESC])
             ->where(['user_id' => Yii::$app->user->identity->id])
             ->all();
         return $this->renderPartial('education', [
@@ -351,6 +352,7 @@ although you will be able to print these letters from the Track system if necess
         }
         $employer = Employer::find()
             ->orderBy(['id' => SORT_DESC])
+            ->where(['user_id' => Yii::$app->user->identity->id])
             ->all();
         return $this->renderPartial('employment', [
             'view' => 'employment',
