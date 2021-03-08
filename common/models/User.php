@@ -328,6 +328,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
      */
     public function generatePersonalId()
     {
+        if ($this->personal_id)
+            return $this->personal_id;
         return '1' . rand(10, 99) . '-' . rand(100, 999) . '-' . $this->id;
     }
 

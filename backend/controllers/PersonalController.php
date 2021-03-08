@@ -10,8 +10,6 @@ namespace backend\controllers;
 
 
 use common\models\User;
-use function Webmozart\Assert\Tests\StaticAnalysis\false;
-use function Webmozart\Assert\Tests\StaticAnalysis\true;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -96,7 +94,6 @@ class PersonalController extends Controller
         $model = User::findOne(\Yii::$app->user->identity->id);
         if (\Yii::$app->request->isPost) {
             $model->cboGroups = \Yii::$app->request->post('cboGroups');
-            $model->personal_id = $model->generatePersonalId();
             $model->save();
             return $this->redirect(Url::to(['/personal/register12']));
         }
@@ -109,8 +106,9 @@ class PersonalController extends Controller
     public function actionRegister12()
     {
         $model = User::findOne(\Yii::$app->user->identity->id);
-        if (!$model->personal_id)
-            return $this->redirect(Url::to(['personal/register8']));
+        $model->personal_id = $model->generatePersonalId();
+        $model->save();
+
         return $this->renderPartial('/user/register12', [
             'model' => $model,
         ]);
