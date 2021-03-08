@@ -2,7 +2,6 @@
 
 namespace common\models;
 
-use function Webmozart\Assert\Tests\StaticAnalysis\false;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
@@ -44,6 +43,10 @@ use yii\web\IdentityInterface;
  * @property string $daan4 回答4
  * @property int|null $create_time 创建时间
  * @property string|null $personal_id 个人id
+ * @property string|null $rdRoute 申请方式
+ * @property string|null $txtBuzzword 流行语
+ * @property string|null $rdConfirm 注册确认
+ * @property string|null $cboGroups 导师/申请组
  *
  * @property AdditionalInformation $additionalInformation
  * @property Choice $choice
@@ -52,6 +55,7 @@ use yii\web\IdentityInterface;
  * @property Employer[] $employers
  * @property Employment $employment
  * @property PersonalDetails $personalDetails
+ * @property Qualifications[] $qualifications
  * @property Reference $reference
  * @property School[] $schools
  * @property Statement $statement
@@ -76,11 +80,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             [['title', 'gender', 'txtForename', 'txtSurname', 'cboDobDay', 'cboDobMonth', 'cboDobYear', 'radioLocation', 'addrLine1Text', 'Country', 'emailText', 'passwordText', 'wenti1', 'daan1', 'wenti2', 'daan2', 'wenti3', 'daan3', 'wenti4', 'daan4'], 'required'],
             [['cboDobDay', 'cboDobYear', 'chkEducationalOption', 'chkCommercialOption', 'chkUnplacedCommsFlag', 'chkEmailOption', 'chkTxtOption', 'chkMailingsOption', 'create_time'], 'integer'],
-            [['title', 'gender'], 'string', 'max' => 10],
+            [['title', 'gender', 'rdRoute', 'rdConfirm'], 'string', 'max' => 10],
             [['txtForename', 'txtSurname', 'Country', 'txtHomePhone', 'txtMobilePhone'], 'string', 'max' => 50],
-            [['cboDobMonth', 'personal_id'], 'string', 'max' => 20],
+            [['cboDobMonth', 'personal_id', 'cboGroups'], 'string', 'max' => 20],
             [['radioLocation', 'addrLine1Text', 'addrLine2Text', 'addrLine3Text', 'addrLine4Text', 'passwordText', 'daan1', 'daan2', 'daan3', 'daan4'], 'string', 'max' => 255],
-            [['emailText', 'wenti1', 'wenti2', 'wenti3', 'wenti4'], 'string', 'max' => 100],
+            [['emailText', 'wenti1', 'wenti2', 'wenti3', 'wenti4', 'txtBuzzword'], 'string', 'max' => 100],
         ];
     }
 
@@ -124,6 +128,10 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'daan4' => 'Daan4',
             'create_time' => 'Create Time',
             'personal_id' => 'Personal ID',
+            'rdRoute' => 'Rd Route',
+            'txtBuzzword' => 'Txt Buzzword',
+            'rdConfirm' => 'Rd Confirm',
+            'cboGroups' => 'Cbo Groups',
         ];
     }
 
@@ -195,6 +203,16 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public function getPersonalDetails()
     {
         return $this->hasOne(PersonalDetails::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Qualifications]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getQualifications()
+    {
+        return $this->hasMany(Qualifications::className(), ['user_id' => 'id']);
     }
 
     /**
@@ -332,3 +350,4 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return $data;
     }
 }
+

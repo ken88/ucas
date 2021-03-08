@@ -44,7 +44,7 @@
                     <div class="thisForm">
 
                         <!--clip starts-->
-                        <form name="Form1" method="post" action="EducationServlet?id=16b456d9812f48ee415bba4cd4e5&amp;ran=1j4owxworye44">
+                        <form name="Form1" method="post" action="">
 
                             <h2 class="inPage">GCE Advanced Subsidiary</h2>
                             <p class="bold">Please enter details below, using the 'other' boxes only where the applicable option cannot be found in the lists provided.</p>
@@ -279,7 +279,7 @@
                                     <div class="clearDiv">&nbsp;</div>
                                     (other)
                                     <div class="clearDiv">&nbsp;</div>
-                                    <input type="text" name="txtTitle" value="" size="39" maxlength="50"  class="floatLeft" id="titleTextEntry">
+                                    <input type="text" name="txtTitle" value="<?= $model->txtTitle?>" size="39" maxlength="50"  class="floatLeft" id="titleTextEntry">
                                 </div>
                             </div><!--close form element -->
                             <!--Start date-->
@@ -338,7 +338,7 @@
                                         </select>
                                     </div>
                                     <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
-                                    <input type="text" name="txtAwardingBody" value="" size="7" maxlength="7" class="floatLeft" id="awardingBodyTextEntry">
+                                    <input type="text" name="txtAwardingBody" value="<?= $model->txtAwardingBody ?>" size="7" maxlength="7" class="floatLeft" id="awardingBodyTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.AWARDINGBODY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -361,7 +361,7 @@
                                         </select>
                                     </div>
                                     <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
-                                    <input type="text" name="txtGrade" value="" size="16" maxlength="20" onchange="if(document.forms[0].gradeCombo){document.forms[0].gradeCombo.selectedIndex=0;}" class="floatLeft" id="gradeTextEntry">
+                                    <input type="text" name="txtGrade" value="<?= $model->txtGrade ?>" size="16" maxlength="20" onchange="if(document.forms[0].gradeCombo){document.forms[0].gradeCombo.selectedIndex=0;}" class="floatLeft" id="gradeTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.GRADE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -448,12 +448,25 @@
         }
         $('.errorTxt').html(err);
         if (err == '') {
-            alert('提交连接')
+            $('form').submit()
         } else {
             scrollTo(0,0);
         }
 
     }
+    $(function () {
+        var cboQualMonth_selected = "<?= $model->cboQualMonth ?>"
+        $('#yue').find("option[value='"+cboQualMonth_selected+"']").attr("selected",true);
+        var cboQualYear_selected = "<?= $model->cboQualYear ?>"
+        $('#nian').find("option[value='"+cboQualYear_selected+"']").attr("selected",true);
+        var cboTitle_selected = "<?= $model->cboTitle ?>"
+        $('#titleCombo').find("option[value='"+cboTitle_selected+"']").attr("selected",true);
 
+        var cboAwardingBody_selected = "<?= $model->cboAwardingBody ?>"
+        $('#awardingBodyCombo').find("option[value='"+cboAwardingBody_selected+"']").attr("selected",true);
+        var cboGrade_selected = "<?= $model->cboGrade ?>"
+        $('#gradeCombo').find("option[value='"+cboGrade_selected+"']").attr("selected",true);
+
+    })
 
 </script>
