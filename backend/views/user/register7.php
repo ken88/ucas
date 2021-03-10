@@ -11,7 +11,7 @@
         <!--header ends here-->
         <div class="clearDiv">&nbsp;</div>
         <!-- Form starts here -->
-        <form name="Form1" action="<?= \yii\helpers\Url::to(['default/login'])?>" method="post" autocomplete="off">
+        <form name="Form1" action="<?= \yii\helpers\Url::to(['site/logout'])?>" method="post" autocomplete="off">
             <!-- main content starts here -->
             <div id="mainContent">
                 <!--menu starts-->
@@ -60,7 +60,7 @@
                     <div class="clearDiv">&nbsp;</div><br>
 
                     <!-- Print username near top of page -->
-                    <div class="body">Your username is&nbsp;:&nbsp;<strong><?= $model->id ?></strong></div><br>
+                    <div class="body">Your username is&nbsp;:&nbsp;<strong><?= $username ?></strong></div><br>
 
                     <!-- Print 'please make a note of your username' warning (always shown on this page) -->
                     <div class="warningTxt"><strong>Please make a note of your username now, as it will not be displayed at a later stage.</strong></div><br>

@@ -30,7 +30,9 @@ class UserController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            return $this->redirect(Url::to(['useradmin/index']));
+                            if ($action->id != 'register7')
+                                return $this->redirect(Url::to(['useradmin/index']));
+                            return true;
                         }
                     ],
                 ],
@@ -112,16 +114,25 @@ class UserController extends Controller
      */
     public function actionRegister7()
     {
-        $model = new User();
-        $model->attributes = Yii::$app->session->get('form_data');
-        if (!$model->save()) {
-            exit('注册失败');
+        if (isset(Yii::$app->user->identity->id)) {
+            $username = Yii::$app->user->identity->id;
         } else {
-            Yii::$app->session->set('form_data', []);
-            return $this->renderPartial('register7', [
-                'model' => $model
-            ]);
+            $model = new User();
+            $model->attributes = Yii::$app->session->get('form_data');
+            if (!$model->save()) {
+                var_dump($model->getErrors());
+                exit('注册失败');
+            } else {
+                Yii::$app->session->set('form_data', []);
+                //登录
+                Yii::$app->user->login(User::findOne($model->id));
+                $username = $model->id;
+            }
         }
+        return $this->renderPartial('register7', [
+            'username' => $username
+        ]);
+
     }
 
     public function actionApply1()
