@@ -376,7 +376,7 @@
         var emailConfirmText= $("#emailConfirmText").val(); // 确认电子邮件地址
         var txtHomePhone= $("#txtHomePhone").val(); // 手机号
         var txtMobilePhone= $("#txtMobilePhone").val(); // 电话
-        var myReg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+        var myReg=/^[A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/;
 
         err = '';
         if(emailText == ''){
@@ -387,10 +387,10 @@
             err += '<p>The email addresses you have entered do not match.</p>';
         }
 
-        else if(!myReg.test(emailText) || !myReg.test(emailConfirmText)){
-            err += '<p>Your email address does not appear to have the correct format.</p>';
-            err += '<p>The email addresses you have entered do not match.</p>';
-        }
+        // else if(!myReg.test(emailText) || !myReg.test(emailConfirmText)){
+        //     err += '<p>Your email address does not appear to have the correct format.</p>';
+        //     err += '<p>The email addresses you have entered do not match.</p>';
+        // }
         else if (txtHomePhone == '' || txtMobilePhone == '') {
             err += '<p>Please enter your full mobile or cell phone number, if any, including the area or international code(s).</p>';
         }
