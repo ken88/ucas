@@ -373,7 +373,7 @@
                             <!-- //print the "Back to summary" link on the screen -->
                             <ul class="skinny">
                                 <li>
-                                    <a href="/useradmin/educstion">back to summary</a>
+                                    <a href="/useradmin/education">back to summary</a>
                                 </li>
                             </ul>
                             <br>&nbsp;
