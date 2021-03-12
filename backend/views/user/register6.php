@@ -326,7 +326,7 @@
             for (var i = 1 ; i <= 4; i++) {
                 for (var k = i+1 ; k <= 4; k++) {
                     if ($("#wenti"+i).val() == $("#wenti"+k).val()) {
-                        err += '<p>错误You must provide answers to four different security questions.</p>';
+                        err += '<p>You must provide answers to four different security questions.</p>';
                         flag = true;
                         break ;
                     }
