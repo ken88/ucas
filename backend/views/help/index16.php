@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" media="print" href="/static/css/print.css" />
 
     <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/static/js/General.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/js/general.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/search.js" charset="utf-8"></script>
 
     <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/ucas-prod/json/2021/searchData/assessCentreData_EN.js" charset="utf-8"></script>
