@@ -157,6 +157,22 @@
     </noscript>
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18" >
+<div style="background-color: yellow; height: 50px;">
+    <marquee behavior="scroll">
+        <span style="font-weight: bolder; line-height:25px;font-size: 20px;color: red;">
+            本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
+        </span>
+
+    </marquee>
+    <marquee behavior="scroll">
+        <span style="font-weight: bolder; line-height:20px;font-size: 20px;color: red;">
+            This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).
+            It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
+            right of final explanation.
+        </span>
+
+    </marquee>
+</div>
 <div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
     <div id="wrapperInternal" class="floatLeft"><!-- Wrapper Internal starts here-->
         <!--header starts here-->

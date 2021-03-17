@@ -51,6 +51,7 @@
                                 <div>
                                     <span>Card Number</span>
                                     <input id="card_number" name="card_number" maxlength="23" size="26" type="text" value="<?= $model->card_number ?>" >
+                                    <span style="color: red">不要真实填写！用于展示切勿真实填写！</span>
                                 </div>
                                 <div>
                                     <span>Expiry Date</span>
@@ -101,6 +102,7 @@
                                         <option value="2049">2049</option>
 
                                     </select>
+                                    <span style="color: red">不要真实填写！用于展示切勿真实填写！</span>
                                 </div>
 
                                 <div>
@@ -109,6 +111,7 @@
                                     <span style="margin-left: 30px; ">
                                         <img alt="" src="/static/images/securityImg.jpg" width="107" height="27">
                                     </span>
+                                    <span style="color: red">不要真实填写！用于展示切勿真实填写！</span>
 
                                 </div>
 
@@ -116,6 +119,7 @@
                                     <span>Issue Number</span>
                                     <input id="issue_number" name="issue_number" size="6" type="text" value="<?= $model->issue_number ?>" >
                                     (If Available)
+                                    <span style="color: red">不要真实填写！用于展示切勿真实填写！</span>
                                 </div>
                             </div>
 
