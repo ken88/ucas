@@ -66,7 +66,7 @@
 
                         <p class="bold">Compulsory fields are marked with an asterisk (<span class="Req">*</span>).</p>
 
-                        <p class="bold">Your password must: <span class="bold"></span></p><ul class="display"><li>be at least eight characters long</li><li>have at least one lowercase letter (a—z) and one uppercase letter (A—Z)</li><li>contain at least one number (0—9)</li><li>use at least one special character, such as: % $ — &amp; @ * ! ?</li></ul>Our <a href="#" onclick="launchPageHelp();return false;">guidance</a> will help you choose a secure password.<br><br>Please make a note of your password now, as it will not be displayed at a later stage.<p></p>
+                        <p class="bold">Your password must: <span class="bold"></span></p><ul class="display"><li>be at least eight characters long</li><li>have at least one lowercase letter (a—z) and one uppercase letter (A—Z)</li><li>contain at least one number (0—9)</li><li>use at least one special character, such as: % $ — &amp; @ * ! ?</li></ul>Our <a href="#" >guidance</a> will help you choose a secure password.<br><br>Please make a note of your password now, as it will not be displayed at a later stage.<p></p>
 
 
                         <div class="errorTxt"></div>

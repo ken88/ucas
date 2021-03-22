@@ -69,7 +69,7 @@
                                 <p>You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them.<br><br>Please check the substituted characters version for <b>each section</b> in which you have entered European characters. To do this, click 'View all details' in the left-hand navigation and tick the boxes <b>in each section</b> to show your agreement. Click 'edit' if you need to make any changes. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'.</p>
                             </div>
                             <div style="display: none;" id="unicodeMsgWarning">
-                                <span class="warningTxt">Warning:  You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them. <a href="https://www.ucas.com/sites/default/files/extended-character-sets-substitutions_0.pdf" target="_blank">View the list of European characters we allow.</a><br><br>Please check the substituted characters version <b>for each</b> section in which you have entered European characters. To do this, click 'View all details' in the left-hand navigation and tick the boxes <b>in each section</b> to show your agreement. Click 'edit' if you need to make any changes. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'.</span><br><br>
+                                <span class="warningTxt">Warning:  You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them. <a>View the list of European characters we allow.</a><br><br>Please check the substituted characters version <b>for each</b> section in which you have entered European characters. To do this, click 'View all details' in the left-hand navigation and tick the boxes <b>in each section</b> to show your agreement. Click 'edit' if you need to make any changes. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'.</span><br><br>
                             </div>
                             <script>
                                 function setCookie(c_name,value,exdays)
@@ -99,7 +99,7 @@
                             <div class="video">
                                 <strong>Need guidance?</strong> Watch the video advice below [<a href="#" onclick="showHideVideo(); return false;" id="showHideVideo">Hide video</a>].<br>
                                 <p id="ucastv"><iframe class="videoIFrame" src="https://players.brightcove.net/4824244714001/default_default/index.html?playlistId=1661050660362105212" scrolling="no"></iframe><br>
-                                    (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
+                                    (Unable to view videos here? You can watch them at <a>www.ucas.com/connect/videos</a> instead)</p>
                             </div>
                             <div class="clearDiv">&nbsp;</div>
                             <div class="errorTxt" id="errorTxt"></div>
@@ -745,7 +745,7 @@
                                 <h2 class="inPage">Passport details</h2>
                                 <p>(This section applies if you have selected a nationality for a country outside the UK)</p>
                                 <div class="clearDiv">&nbsp;</div>
-                                <p>Where relevant, UCAS collects applicants' passport information on behalf of universities and colleges, who need it for purposes of visa application and checks with the UK Visas and Immigration (UKVI). For further details about UK Visas and Immigration please visit the <a href="https://www.gov.uk/visas-immigration" target="_blank">UKVI website</a>.</p>
+                                <p>Where relevant, UCAS collects applicants' passport information on behalf of universities and colleges, who need it for purposes of visa application and checks with the UK Visas and Immigration (UKVI). For further details about UK Visas and Immigration please visit the <a target="_blank">UKVI website</a>.</p>
                                 <div class="clearDiv">&nbsp;</div>
                                 <!--student visa Field-->
                                 <div class="thisFormElem">
@@ -1238,7 +1238,8 @@
                                 </p><p><input type="button" name="btnUpdate" value="Update your preferences" onclick="displayMarketingPreference()" class="submitBtn">
                                 </p><div class="clearDiv">&nbsp;</div>
                                 <h2 class="inPage">We won't pass on your details...</h2>
-                                <p>We'll keep your data safe, and won't pass it on to third parties. For more information, take a look at our <a href="https://www.ucas.com/corporate/about-us/privacy-policies-and-declarations/ucas-privacy-policy" target="_blank">privacy policy</a>.</p>
+                                <p>We'll keep your data safe, and won't pass it on to third parties. For more information, take a look at our
+                                    <a target="_blank">privacy policy</a>.</p>
                                 <div class="clearDiv">&nbsp;</div>
                                 <hr>
                                 <h2 class="inPage">Nominated access</h2>

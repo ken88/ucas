@@ -29,7 +29,7 @@
 
                     <!--Form starts here-->
                     <div class="thisForm">
-                        <p class="bold">Our <a href="https://www.ucas.com/ucas/undergraduate/apply-track/writing-personal-statement" target="_blank">guide to writing your personal statement</a> (opens in a new window) should help you complete this section. <br><br>We strongly recommend you write the statement using a word-processing package and paste it in to Apply. <br><br>You can type your statement directly into the box or edit a statement you have pasted in.</p>
+                        <p class="bold">Our <a>guide to writing your personal statement</a> (opens in a new window) should help you complete this section. <br><br>We strongly recommend you write the statement using a word-processing package and paste it in to Apply. <br><br>You can type your statement directly into the box or edit a statement you have pasted in.</p>
 
                         <!--clip starts-->
                         <form name="Form1" method="post" action="" >
@@ -41,7 +41,7 @@
                                 <p>You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them.<br><br>Please check the substituted characters version for <b>each section</b> in which you have entered European characters. To do this, click 'View all details' in the left-hand navigation and tick the boxes <b>in each section</b> to show your agreement. Click 'edit' if you need to make any changes. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'.</p>
                             </div>
                             <div style="display: none;" id="unicodeMsgWarning">
-                                <span class="warningTxt">Warning:  You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them. <a href="https://www.ucas.com/sites/default/files/extended-character-sets-substitutions_0.pdf" target="_blank">View the list of European characters we allow.</a><br><br>Please check the substituted characters version <b>for each</b> section in which you have entered European characters. To do this, click 'View all details' in the left-hand navigation and tick the boxes <b>in each section</b> to show your agreement. Click 'edit' if you need to make any changes. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'.</span><br>
+                                <span class="warningTxt">Warning:  You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them. <a>View the list of European characters we allow.</a><br><br>Please check the substituted characters version <b>for each</b> section in which you have entered European characters. To do this, click 'View all details' in the left-hand navigation and tick the boxes <b>in each section</b> to show your agreement. Click 'edit' if you need to make any changes. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'.</span><br>
                             </div>
                             <script>
                                 function setCookie(c_name,value,exdays)
@@ -71,7 +71,7 @@
                             <div class="video">
                                 <strong>Need guidance?</strong> Watch the video advice below [<a href="#" onclick="showHideVideo(); return false;" id="showHideVideo">Hide video</a>].<br>
                                 <p id="ucastv"><iframe class="videoIFrame" src="https://players.brightcove.net/4824244714001/default_default/index.html?playlistId=1661051871827046563" scrolling="no"></iframe><br>
-                                    (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
+                                    (Unable to view videos here? You can watch them at <a>www.ucas.com/connect/videos</a> instead)</p>
                             </div>
                             <br>
                             <h2 div="" style="display:inline;" class="inPage"><label for="statementTextEntry">Personal statement</label></h2>

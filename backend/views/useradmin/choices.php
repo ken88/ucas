@@ -30,14 +30,14 @@
 
                     <div class="thisForm"><!--Form starts here-->
                         <form name="Form1" onsubmit="return setJavaEnabled()" method="post" action="">
-                            <p class="bold">Please make sure you have read the latest information about course fees on our <a href="https://www.ucas.com/ucas/undergraduate/finance-and-support/" target="_blank">student finance</a> pages (opens in a new window).</p>
+                            <p class="bold">Please make sure you have read the latest information about course fees on our <a>student finance</a> pages (opens in a new window).</p>
 
                             <p class="bold"><span class="warningTxt">Please add a choice. You can make a maximum of 5 choices.</span> <br><br>Compulsory fields are marked with an asterisk (<span class="Req">*</span>).<br><br>Before leaving this section please click 'save' to avoid losing any information. When you have finished all the entries please click on 'section completed' and 'save'.</p>
 
                             <div class="video">
                                 <strong>Need guidance?</strong> Watch the video advice below [<a href="#" onclick="showHideVideo(); return false;" id="showHideVideo">Hide video</a>].<br>
                                 <p id="ucastv"><iframe class="videoIFrame" src="https://players.brightcove.net/4824244714001/default_default/index.html?playlistId=1661051070344701874" scrolling="no"></iframe><br>
-                                    (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
+                                    (Unable to view videos here? You can watch them at <a>www.ucas.com/connect/videos</a> instead)</p>
                             </div>
 
 

@@ -55,7 +55,8 @@
                                 <label for="passwordTextEntry">Password
                             </div>
                             <div class="thisFormField">
-                                <input type="password" name="txtPassword" value="" size="20" maxlength="14"  style="width: 150px" tabindex="2" id="txtPassword"/>&nbsp;&nbsp;<a href="#" onclick="popupForgotten();">Forgotten login?</a>
+                                <input type="password" name="txtPassword" value="" size="20" maxlength="14"  style="width: 150px" tabindex="2" id="txtPassword"/>&nbsp;&nbsp;
+<!--                                <a href="#" onclick="popupForgotten();">Forgotten login?</a>-->
                             </div>
                         </div><!--close form element -->
                         <div class="thisFormElem">

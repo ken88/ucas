@@ -48,6 +48,25 @@
     <script src="/static/js/adverts.js"></script>
 </head>
 <body class="html not-front not-logged-in one-sidebar sidebar-second page-students sign-in v4" >
+
+<div style="background-color: yellow; height: 60px;">
+    <marquee behavior="scroll">
+        <span style="font-weight: bolder; line-height:25px;font-size: 20px;color: red;">
+            本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
+        </span>
+
+    </marquee>
+    <marquee behavior="scroll">
+        <span style="font-weight: bolder; line-height:20px;font-size: 20px;color: red;">
+            This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).
+            It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
+            right of final explanation.
+        </span>
+
+    </marquee>
+</div>
+
+
 <script type="text/javascript">
     if (localStorage) {
         if (localStorage.UcasGigyaSessionInfo) {
@@ -136,7 +155,7 @@
 
 
                 <div class="meganav__users">
-                    <a href="/students" class="meganav__user-menu-toggle meganav__user-menu-toggle--loading" id="user-menu-toggle">
+                    <a class="meganav__user-menu-toggle meganav__user-menu-toggle--loading" id="user-menu-toggle">
                         <div class="meganav__user-menu-text"><span>&nbsp;</span></div>
                         <div class="meganav__user-menu-icon"></div>
                     </a>
@@ -366,14 +385,6 @@
                     <div class="brick brick--6">
                         <div class="brick__wrapper clearfix">
 
-                            <div class="brick__content clearfix prose">
-                                <style>
-                                    <!--/*--><![CDATA[/* ><!--*/
-
-
-
-                                    /*--><!]]>*/
-                                </style>    </div>
                         </div>
                     </div>
                 </div>
@@ -385,14 +396,13 @@
                         <div class="brick__wrapper clearfix">
 
                             <div class="brick__content clearfix prose">
-                                <div id='article_mpu_first' style='width: 300px; height: 250px' data-google-target-values='{"page_id":"students","audience":"","scheme":"All schemes","topic":""}' data-google-slot-id='/1217421/UCAS/UCAS_ContentPages_300x250' data-google-size='{"size":"custom", "width": 300, "height": 250, "min": 720, "max": 9999}'></div><div class="mpu__description">Advertisement. <a href="/why-the-ads">Why the ads?</a></div>    </div>
+
                         </div>
                     </div>
                     <div class="brick brick--article-mpu-second brick--vertical">
                         <div class="brick__wrapper clearfix">
 
                             <div class="brick__content clearfix prose">
-                                <div id='article_mpu_second' style='width: 300px; height: 250px' data-google-target-values='{"page_id":"students","audience":"","scheme":"All schemes","topic":""}' data-google-slot-id='/1217421/UCAS/UCAS_ContentPages_Bottom_300x250' data-google-size='{"size":"custom", "width": 300, "height": 250, "min": 720, "max": 9999}'></div><div class="mpu__description">Advertisement. <a href="/why-the-ads">Why the ads?</a></div>    </div>
                         </div>
                     </div>
                 </aside>
@@ -412,24 +422,24 @@
                     <article id="article-308511" class="node node-article article-type--sponsored article--horizontal article--teaser article article--article article--view-sponsored article-type--article prose">
 
                         <div class="article__image">
-                            <a href="/article/how-save-money-uni"><span alt="Green piggy bank" style="width:100px;height:100px;" data-lazy-image="https://www.ucas.com/sites/default/files/styles/square_thumbnail/public/landing/md-2994-mse-1-boss-of-your-budget.png?itok=Lc4jYgNQ" class="lazy-load img"><span style="padding-bottom: 100%;"></span></span></a>      </div>
-                        <h3 class="article__title"><a rel="nofollow" href="/article/how-save-money-uni">How to save money at uni</a></h3>
+                            <a href="#"><span alt="Green piggy bank" style="width:100px;height:100px;" data-lazy-image="https://www.ucas.com/sites/default/files/styles/square_thumbnail/public/landing/md-2994-mse-1-boss-of-your-budget.png?itok=Lc4jYgNQ" class="lazy-load img"><span style="padding-bottom: 100%;"></span></span></a>      </div>
+                        <h3 class="article__title"><a rel="nofollow" >How to save money at uni</a></h3>
                         <span class="article--sponsored-by">UCAS article</span>
 
                     </article>
                     <article id="article-388511" class="node node-article article-type--sponsored article--horizontal article--teaser article article--article article--view-sponsored article-type--article prose">
 
                         <div class="article__image">
-                            <a href="/article/want-it-all-youll-find-it-here-0"><span alt="The University of the West of England" style="width:100px;height:100px;" data-lazy-image="https://www.ucas.com/sites/default/files/styles/square_thumbnail/public/article-images/logo_-_100px_x_100px2_1.gif?itok=28D78wUP" class="lazy-load img"><span style="padding-bottom: 100%;"></span></span></a>      </div>
-                        <h3 class="article__title"><a rel="nofollow" href="/article/want-it-all-youll-find-it-here-0">Want it all? You&#039;ll find it here.</a></h3>
+                            <a href=""><span alt="The University of the West of England" style="width:100px;height:100px;" data-lazy-image="https://www.ucas.com/sites/default/files/styles/square_thumbnail/public/article-images/logo_-_100px_x_100px2_1.gif?itok=28D78wUP" class="lazy-load img"><span style="padding-bottom: 100%;"></span></span></a>      </div>
+                        <h3 class="article__title"><a rel="nofollow">Want it all? You&#039;ll find it here.</a></h3>
                         <span class="article--sponsored-by">Sponsored by The University of the West of England</span>
 
                     </article>
                     <article id="article-384571" class="node node-article article-type--sponsored article--horizontal article--teaser article article--article article--view-sponsored article-type--article prose">
 
                         <div class="article__image">
-                            <a href="/article/can-learning-online-work-book-taster"><span alt="University of Chester" style="width:100px;height:100px;" data-lazy-image="https://www.ucas.com/sites/default/files/styles/square_thumbnail/public/article-images/standard_uoc_logo_1_1.gif?itok=725OOo50" class="lazy-load img"><span style="padding-bottom: 100%;"></span></span></a>      </div>
-                        <h3 class="article__title"><a rel="nofollow" href="/article/can-learning-online-work-book-taster">Can learning online work? Book a taster</a></h3>
+                            <a href=""><span alt="University of Chester" style="width:100px;height:100px;" data-lazy-image="https://www.ucas.com/sites/default/files/styles/square_thumbnail/public/article-images/standard_uoc_logo_1_1.gif?itok=725OOo50" class="lazy-load img"><span style="padding-bottom: 100%;"></span></span></a>      </div>
+                        <h3 class="article__title"><a rel="nofollow" >Can learning online work? Book a taster</a></h3>
                         <span class="article--sponsored-by">Sponsored by University of Chester</span>
 
                     </article>
@@ -444,26 +454,26 @@
             <div class="wrapper wrapper--padding">
                 <nav class="footer__social-contact" aria-label="contact and social media links">
                     <div class="footer__contact-links">
-                        <a href="https://www.ucas.com/contact-us" class="contact-link">Contact us</a>
-                        <a href="https://www.ucas.com/feedback" class="contact-link" id="udf-feedback-link">Give feedback</a>
+                        <a href="#" class="contact-link">Contact us</a>
+                        <a href="#k" class="contact-link" id="udf-feedback-link">Give feedback</a>
                     </div>
 
                     <div class="footer__icon-links">
-                        <a href="https://www.facebook.com/ucasonline" target="_blank" rel="noopener" class="icon-link">Facebook<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44" class="menu__svg">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">Facebook<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44" class="menu__svg">
                                 <g id="facebook" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path class="cls-2" d="M24 36V23h4.2l.8-5h-5v-2.9c0-1.4.5-2.4 2.5-2.4H29V8.2c-1.2-.1-2.5-.2-3.7-.2-3.7 0-6.3 2.3-6.3 6.6V18h-4v5h4v13h5z" fill="#fff"></path>
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.twitter.com/UCAS_online" target="_blank" rel="noopener" class="icon-link">Twitter<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">Twitter<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="twitter" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path class="cls-2" d="M17.2 33c8.3 0 15.1-6.9 15.2-15.6v-.9c1-.8 1.9-1.8 2.7-2.9-1 .5-2 .7-3.1.9 1.1-.7 1.9-1.8 2.3-3.1-1 .6-2.2 1.1-3.4 1.3-2-2.2-5.4-2.4-7.5-.3-1.1 1.1-1.7 2.5-1.7 4.1 0 .4 0 .9.1 1.3-4.3-.2-8.3-2.3-11-5.8-1.4 2.5-.7 5.8 1.7 7.4-.8-.1-1.7-.3-2.4-.7v.1c0 2.6 1.8 4.9 4.3 5.4-.8.2-1.6.3-2.4.1.7 2.3 2.7 3.8 5 3.9-1.9 1.5-4.2 2.4-6.6 2.4-.4 0-.8 0-1.3-.1 2.3 1.6 5.2 2.5 8.1 2.5"></path>
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/ucas" target="_blank" rel="noopener" class="icon-link">LinkedIn<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">LinkedIn<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="linked_in" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path id="Rectangle_336" class="cls-2" d="M11 18h5v15h-5V18z"></path>
@@ -472,7 +482,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/user/UCASonline" target="_blank" rel="noopener" class="icon-link">YouTube<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a  target="_blank" rel="noopener" class="icon-link">YouTube<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="youtube" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path d="M35.4 15.1c-.3-1.2-1.3-2.2-2.5-2.5C30.7 12 22 12 22 12s-8.8 0-11 .6c-1.2.3-2.1 1.3-2.5 2.5-.3 2.3-.5 4.6-.5 6.9s.2 4.6.6 6.9c.3 1.2 1.3 2.2 2.5 2.5 2.2.6 10.9.6 10.9.6s8.7-.1 10.9-.7c1.2-.3 2.1-1.3 2.5-2.5.4-2.3.6-4.6.6-6.9 0-2.2-.2-4.5-.6-6.8zM20 25.6v-8l7.4 4-7.4 4z"></path>
@@ -480,7 +490,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/ucas_online" target="_blank" rel="noopener" class="icon-link">Instagram<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a target="_blank" rel="noopener" class="icon-link">Instagram<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="instagram" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path class="cls-2" d="M22 16c1.1 0 2.1.3 3 .8s1.7 1.3 2.2 2.2c1.1 1.9 1.1 4.1 0 6-.5.9-1.3 1.7-2.2 2.2-1.9 1.1-4.1 1.1-6 0-.9-.5-1.7-1.3-2.2-2.2-1.1-1.9-1.1-4.1 0-6 .5-.9 1.3-1.7 2.2-2.2.9-.5 1.9-.8 3-.8zm0 10c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm8-10.5c0 .4-.2.8-.5 1.1-.3.3-.6.5-1 .4-.8 0-1.5-.7-1.5-1.5 0-.4.2-.8.4-1.1.6-.6 1.5-.6 2.1 0 .3.3.5.7.5 1.1zm3.9 1.5c0 1 .1 2.7.1 5s0 4-.1 5c0 .9-.2 1.8-.5 2.7-.6 1.8-2 3.2-3.8 3.8-.9.3-1.8.4-2.7.5H22c-2.3 0-4 0-5-.1-.9 0-1.8-.2-2.7-.5s-1.7-.8-2.3-1.4c-.7-.7-1.2-1.5-1.5-2.3-.3-.9-.4-1.8-.5-2.7v-5c0-2.3 0-4 .1-5 0-.9.2-1.8.5-2.7.6-1.8 2-3.2 3.8-3.8.9-.3 1.8-.4 2.7-.5 1-.1 2.7-.1 5-.1s4 0 5 .1c.9 0 1.8.2 2.7.5 1.8.6 3.2 2 3.8 3.8.1.9.3 1.8.3 2.7zm-2.4 12.2c.3-1 .4-1.9.4-2.9 0-.8.1-1.9.1-3.4v-1.7c0-1.5 0-2.6-.1-3.4 0-1-.2-2-.4-2.9-.4-1.1-1.3-1.9-2.3-2.3-1-.3-1.9-.4-2.9-.4-.8 0-1.9-.1-3.4-.1h-1.7c-1.4 0-2.6 0-3.4.1-1 0-2 .2-2.9.4-1.1.4-1.9 1.3-2.3 2.3-.3 1-.4 1.9-.4 2.9 0 .8-.1 1.9-.1 3.4v1.7c0 1.4 0 2.6.1 3.4 0 1 .2 2 .4 2.9.4 1.1 1.3 1.9 2.3 2.3 1 .3 1.9.4 2.9.4.8 0 1.9.1 3.4.1h1.7c1.5 0 2.6 0 3.4-.1 1 0 2-.2 2.9-.4 1-.4 1.9-1.3 2.3-2.3z"></path>
@@ -492,23 +502,23 @@
 
                 <nav class="footer__page-links" aria-label="information links">
                     <div class="footer__links-group">
-                        <a href="https://www.ucas.com/advisers">Advisers</a>
-                        <a href="https://www.ucas.com/providers">Providers</a>
-                        <a href="https://www.ucas.com/data-and-analysis">Data</a>
+                        <a >Advisers</a>
+                        <a >Providers</a>
+                        <a >Data</a>
                     </div>
 
                     <div class="footer__links-group">
-                        <a href="https://www.ucas.com/about-us">About us</a>
-                        <a href="https://www.ucas.com/about-us/join-our-team">Join our team</a>
-                        <a href="https://www.ucas.com/about-us/policies/accessibility">Accessibility</a>
-                        <a href="https://www.ucas.com/about-us/advertising-opportunities">Ad opportunities</a>
+                        <a >About us</a>
+                        <a >Join our team</a>
+                        <a >Accessibility</a>
+                        <a >Ad opportunities</a>
                     </div>
 
                     <div class="footer__links-group">
-                        <a href="https://www.ucas.com/ucas-terms-explained">Glossary</a>
-                        <a href="https://www.ucas.com/about-us/policies/terms-and-conditions-use-ucas-network">Terms and conditions</a>
-                        <a href="https://www.ucas.com/about-us/policies/privacy-policies-and-declarations">Privacy and cookies</a>
-                        <a href="https://www.ucas.com/corporate/about-us/slavery-and-human-trafficking-statement-financial-year-ending-31-july-2019">Modern slavery statement</a>
+                        <a >Glossary</a>
+                        <a>Terms and conditions</a>
+                        <a >Privacy and cookies</a>
+                        <a>Modern slavery statement</a>
                     </div>
                 </nav>
             </div>
@@ -516,7 +526,7 @@
         <div class="wrapper-container">
             <div class="wrapper wrapper--padding">
                 <div class="footer__copyright">
-                    <a href="https://www.ucas.com"><img alt="UCAS" src="/static/picture/logo.svg"></a>
+                    <a ><img alt="UCAS" src="/static/picture/logo.svg"></a>
                     <p>&copy; UCAS 2021</p>
                 </div>
             </div>

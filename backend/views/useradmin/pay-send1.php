@@ -37,12 +37,12 @@
 
                             <strong>Course fees</strong><br><br>
                             Going to university or college is one of the biggest investments you can make. Have you checked how much it is going to cost you?<br><br>
-                            You can find out about <a href="https://www.ucas.com/ucas/undergraduate/finance-and-support" target="_blank">student finance</a> and course fee information in the <a href="https://digital.ucas.com/search" target="_blank">UCAS search tool</a> for the courses you are applying for.<br><br>
+                            You can find out about <a>student finance</a> and course fee information in the <a>UCAS search tool</a> for the courses you are applying for.<br><br>
 
                             <strong>Choices</strong><br><br>
                             Check your choices.  Have you checked the course specific entry requirements and minimum entry criteria in the UCAS search tool?  <br><br>
 
-                            Within seven days of the date on your welcome email you can swap the choice in Track. After seven days, and up to 14 days,&nbsp;<a href="https://www.ucas.com/corporate/about-us/contact-us" target="_blank">call us</a>&nbsp;to swap the choice for you. Remember universities and colleges will already have your application and it is much better practice to submit a correct application from the start. <br><br>
+                            Within seven days of the date on your welcome email you can swap the choice in Track. After seven days, and up to 14 days,&nbsp;<a >call us</a>&nbsp;to swap the choice for you. Remember universities and colleges will already have your application and it is much better practice to submit a correct application from the start. <br><br>
 
                             <strong>Qualifications and education history</strong><br><br>
                             Don't forget that <strong>all</strong> subjects for which you have received a result must be entered, including those you have failed. Similarly, if you are waiting to take the final examinations or you are waiting for the final results, they still need to be entered. It is also important that you declare your full education history, including the most recent school, college or university you have attended or are currently attending. <strong>Failure to declare this information could result in your application being cancelled</strong>.

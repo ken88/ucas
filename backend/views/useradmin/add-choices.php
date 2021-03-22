@@ -37,7 +37,7 @@
                     <div class="thisForm">
 
 
-                        <p class="bold">To avoid losing information please click 'save' before leaving the page.<br><br>To find courses based on subject, provider and location, check entry requirements, and view course-specific fee information, please use <a href="https://digital.ucas.com/search" target="_blank">the UCAS search tool</a> (opens in a new window).<br><br>Compulsory fields are marked with an asterisk (<span class="Req">*</span>).</p>
+                        <p class="bold">To avoid losing information please click 'save' before leaving the page.<br><br>To find courses based on subject, provider and location, check entry requirements, and view course-specific fee information, please use <a>the UCAS search tool</a> (opens in a new window).<br><br>Compulsory fields are marked with an asterisk (<span class="Req">*</span>).</p>
 
                         <div class="errorTxt"></div>
 

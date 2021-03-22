@@ -31,29 +31,26 @@
     <script src="static/js/adverts.js"></script>
 </head>
 <body class="html front not-logged-in no-sidebars page-node page-node- page-node-333441 node-type-landing-page v4" >
-<script type="text/javascript">
-    if (localStorage) {
-        if (localStorage.UcasGigyaSessionInfo) {
-            var UCASGigyaSessionInfo = JSON.parse(localStorage.UcasGigyaSessionInfo);
-            window.dataLayer = window.dataLayer || [];
-            if (UCASGigyaSessionInfo.UID) {
-                window.dataLayer.push({
-                    userId: UCASGigyaSessionInfo.UID,
-                    userType: UCASGigyaSessionInfo.userType,
-                    gigyaLoggedIn: true
-                });
-            } else {
-                window.dataLayer.push({
-                    gigyaLoggedIn: false
-                });
-            }
-        }
-    }
-</script>
-<!-- Google Tag Manager -->
-<!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M5NQNX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
-<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M5NQNX');</script>
-<!-- End Google Tag Manager -->
+
+<div style="background-color: yellow; height: 60px;">
+    <marquee behavior="scroll">
+        <span style="font-weight: bolder; line-height:25px;font-size: 20px;color: red;">
+            本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
+        </span>
+
+    </marquee>
+    <marquee behavior="scroll">
+        <span style="font-weight: bolder; line-height:20px;font-size: 20px;color: red;">
+            This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).
+            It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
+            right of final explanation.
+        </span>
+
+    </marquee>
+</div>
+
+
+
 
 <div id="page" class="page-wrapper page page-has-sticky-ad grid-page-layout--01" >
 
@@ -119,7 +116,7 @@
 
 
                 <div class="meganav__users">
-                    <a href="/students" class="meganav__user-menu-toggle meganav__user-menu-toggle--loading" id="user-menu-toggle">
+                    <a href="#" class="meganav__user-menu-toggle meganav__user-menu-toggle--loading" id="user-menu-toggle">
                         <div class="meganav__user-menu-text"><span>&nbsp;</span></div>
                         <div class="meganav__user-menu-icon"></div>
                     </a>
@@ -202,7 +199,7 @@
 
                         <div class="wrapper wrapper--padding">
                             <div class="landing-grid--single landing-grid landing-grid--01">
-                                <div class="brick brick--ncw2021 grid__item brick--default"data-container-link="https://www.ucas.com/ncw2021">
+                                <div class="brick brick--ncw2021 grid__item brick--default" data-container-link="#">
 
                                     <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -223,14 +220,15 @@
 
                                 <div class="brick brick--ad brick--heavy prose brick--fourth-width brick--advertisement">
                                     <div class="brick__wrapper clearfix">
-                                        <div id="LandingMPUPlacement1" style="width: 300px; height: 250px;" data-google-slot-id="/1217421/UCAS/UCAS_HP_300x250_Slot1" data-google-target-values='{"type":"landing_page","page_id":"333441","audience":"","scheme":"All schemes","topic":""}' data-google-size="{'size':'mpu', 'min': 700}"></div>
-                                        <div class="mpu__description">Advertisement. <a href="/why-the-ads">Why the ads?</a></div>
+                                        <div id="LandingMPUPlacement2" style="width: 300px; height: 250px;"  data-google-target-values='{"type":"landing_page","page_id":"333441","audience":"","scheme":"All schemes","topic":""}' data-google-size="{'size':'mpu', 'min': 700}">
+                                        </div>
+                                        <div class="mpu__description">Advertisement. <a href="#">Why the ads?</a></div>
                                     </div>
                                 </div>
                                 <div class="brick brick--ad brick--heavy prose brick--fourth-width brick--advertisement">
                                     <div class="brick__wrapper clearfix">
-                                        <div id="LandingMPUPlacement2" style="width: 300px; height: 250px;" data-google-slot-id="/1217421/UCAS/UCAS_HP_300x250_Slot2" data-google-target-values='{"type":"landing_page","page_id":"333441","audience":"","scheme":"All schemes","topic":""}' data-google-size="{'size':'mpu', 'min': 700}"></div>
-                                        <div class="mpu__description">Advertisement. <a href="/why-the-ads">Why the ads?</a></div>
+                                        <div id="LandingMPUPlacement2" style="width: 300px; height: 250px;"  data-google-target-values='{"type":"landing_page","page_id":"333441","audience":"","scheme":"All schemes","topic":""}' data-google-size="{'size':'mpu', 'min': 700}"></div>
+                                        <div class="mpu__description">Advertisement. <a href="#">Why the ads?</a></div>
                                     </div>
                                 </div>
 
@@ -248,7 +246,7 @@
 
                                     <div class="wrapper wrapper--padding">
                                         <div class="landing-grid landing-grid--04 grid grid--padding-wide grid--padding-extra-wide grid--equal-height grid--max-h3">
-                                            <div class="brick brick--home---explore-your-options grid__item brick--default"data-container-link="https://www.ucas.com/explore">
+                                            <div class="brick brick--home---explore-your-options grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -269,7 +267,7 @@
 
 
 
-                                            <div class="brick brick--home---explore-uni-and-colleges grid__item brick--default"data-container-link="https://www.ucas.com/explore/unis">
+                                            <div class="brick brick--home---explore-uni-and-colleges grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -290,7 +288,7 @@
 
 
 
-                                            <div class="brick brick--home---explore-regions grid__item brick--default"data-container-link="https://www.ucas.com/explore/locations">
+                                            <div class="brick brick--home---explore-regions grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -323,10 +321,10 @@
 
                             <div class="entity entity-paragraphs-item paragraphs-item-hero-banner entity-paragraphs-item--full paragraphs-item-hero-banner paragraphs-item-hero-banner--image paragraphs-item-hero-banner--link ext-exclude link-container" data-background-image="https://www.ucas.com/sites/default/files/styles/leaderboard/public/structure-content-images/page-bg-pattern-3.png?itok=r-A1Wy2e">
                                 <div class="wrapper wrapper--padding">
-                                    <a class="link-container__link paragraphs_item__title" href="https://www.ucas.com/introducing-ucasdiscovery">Discovery Days</a>    <div class="paragraphs_item__body prose">
+                                    <a class="link-container__link paragraphs_item__title" href="#">Discovery Days</a>    <div class="paragraphs_item__body prose">
                                         <h6>Meet universities and colleges, apprenticeships, and more. Be inspired. Get advice. Find your path. Watch live and on-demand. Explore a world of possibilities…</h6>
 
-                                        <h6><a class="button button--primary" href="https://www.ucas.com/events/introducing-ucasdiscovery-389416" role="button">Find out more</a></h6>
+                                        <h6><a class="button button--primary" href="#" role="button">Find out more</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +339,7 @@
 
                                     <div class="wrapper wrapper--padding">
                                         <div class="landing-grid landing-grid--05 grid grid--padding-wide grid--padding-extra-wide grid--equal-height grid--max-h4">
-                                            <div class="brick brick--home---unibuddy-cta grid__item brick--default"data-container-link="https://www.ucas.com/chat-to-students">
+                                            <div class="brick brick--home---unibuddy-cta grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -362,7 +360,7 @@
 
 
 
-                                            <div class="brick brick--home---apprenticeships-cta grid__item brick--default"data-container-link="https://www.ucas.com/understanding-apprenticeships">
+                                            <div class="brick brick--home---apprenticeships-cta grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -383,13 +381,13 @@
 
 
 
-                                            <div class="brick brick--home---accommodation-cta grid__item brick--default"data-container-link="https://accommodation.ucas.com/">
+                                            <div class="brick brick--home---accommodation-cta grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
                                                     <div class="brick__image" data-background-image="https://www.ucas.com/sites/default/files/styles/landing_tile/public/landing/accommodation.png?itok=Z46a0svW"></div>
 
-                                                    <h2 class="brick__title"><a href="https://accommodation.ucas.com/">Accommodation</a></h2>
+                                                    <h2 class="brick__title"><a href="#">Accommodation</a></h2>
 
                                                     <div class="brick__content">
                                                         <div class="bean__body prose">
@@ -397,14 +395,14 @@
                                                     </div>
 
                                                     <div class="brick__footer">
-                                                        <a href="https://accommodation.ucas.com/">Explore <strong>more ›</strong></a>  </div>
+                                                        <a href="#">Explore <strong>more ›</strong></a>  </div>
                                                 </div>
 
                                             </div>
 
 
 
-                                            <div class="brick brick--home---get-updates-from-ucas grid__item brick--default"data-container-link="https://www.ucas.com/get-updates-ucas">
+                                            <div class="brick brick--home---get-updates-from-ucas grid__item brick--default"data-container-link="#">
 
                                                 <div class="brick__wrapper clearfix contextual-links-region">
 
@@ -440,13 +438,13 @@
                                 <div class="wrapper wrapper--padding">
                                     <div class="paragraphs-item-hero-banner__content link-container">
                                         <div class="paragraphs-item-hero-banner__left">
-                                            <a class="link-container__link paragraphs_item__title" href="https://www.ucas.com/dashboard">Don't miss out!</a>        <div class="paragraphs_item__body prose">
+                                            <a class="link-container__link paragraphs_item__title" href="#">Don't miss out!</a>        <div class="paragraphs_item__body prose">
                                                 <span>Get the personalised experience</span>      </div>
                                         </div>
                                         <div class="paragraphs_item__icon">
                                             <span alt="Home dashboard CTA icons" title="Home dashboard CTA icons" style="width:304px;height:96px;" data-lazy-image="https://www.ucas.com/sites/default/files/hub-icons.png" class="lazy-load img"><span style="padding-bottom: 31.578947368421%;"></span></span>      </div>
                                         <div class="paragraphs-item-hero-banner__right">
-                                            <a class="button button--primary" href="https://www.ucas.com/dashboard">Create your account now</a>      </div>
+                                            <a class="button button--primary" href="#">Create your account now</a>      </div>
                                     </div>
                                 </div>
                             </div>
@@ -554,7 +552,7 @@
 
                 <div class="brick__content clearfix prose">
                     <div class="article__related_content">
-                        <article id="article-333451" class="article article--horizontal article--related-teaser clearfix" data-container-link="/advisers" data-card-info='{"type": "pages", "id": "333451", "title": "Advisers"}'>
+                        <article id="article-333451" class="article article--horizontal article--related-teaser clearfix" data-container-link="#" data-card-info='{"type": "pages", "id": "333451", "title": "Advisers"}'>
                             <button class="button button--favourite inverse" disabled="disabled">Favourite</button>
 
                             <div class="article__image article__image--placeholder" data-background-image="https://www.ucas.com/sites/default/files/adviser_1.jpg"></div>
@@ -566,7 +564,7 @@
                             </div>
 
                         </article>
-                        <article id="article-333456" class="article article--horizontal article--related-teaser clearfix" data-container-link="/providers-anonymous" data-card-info='{"type": "pages", "id": "333456", "title": "Providers"}'>
+                        <article id="article-333456" class="article article--horizontal article--related-teaser clearfix" data-container-link="#" data-card-info='{"type": "pages", "id": "333456", "title": "Providers"}'>
                             <button class="button button--favourite inverse" disabled="disabled">Favourite</button>
 
                             <div class="article__image article__image--placeholder" data-background-image="https://www.ucas.com/sites/default/files/provider-c-and-c-hub-banner.png"></div>
@@ -578,7 +576,7 @@
                             </div>
 
                         </article>
-                        <article id="article-336991" class="article article--horizontal article--related-teaser clearfix" data-container-link="/data-and-analysis" data-card-info='{"type": "pages", "id": "336991", "title": "Data and analysis"}'>
+                        <article id="article-336991" class="article article--horizontal article--related-teaser clearfix" data-container-link="#" data-card-info='{"type": "pages", "id": "336991", "title": "Data and analysis"}'>
                             <button class="button button--favourite inverse" disabled="disabled">Favourite</button>
 
                             <div class="article__image article__image--placeholder" data-background-image="https://www.ucas.com/sites/default/files/data_and_analysis.jpg"></div>
@@ -590,7 +588,7 @@
                             </div>
 
                         </article>
-                        <article id="article-333471" class="article article--horizontal article--related-teaser clearfix" data-container-link="/about-us" data-card-info='{"type": "pages", "id": "333471", "title": "About us "}'>
+                        <article id="article-333471" class="article article--horizontal article--related-teaser clearfix" data-container-link="#" data-card-info='{"type": "pages", "id": "333471", "title": "About us "}'>
                             <button class="button button--favourite inverse" disabled="disabled">Favourite</button>
 
                             <div class="article__image article__image--placeholder" data-background-image="https://www.ucas.com/sites/default/files/about_us_1.jpg"></div>
@@ -619,21 +617,21 @@
                     </div>
 
                     <div class="footer__icon-links">
-                        <a href="https://www.facebook.com/ucasonline" target="_blank" rel="noopener" class="icon-link">Facebook<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44" class="menu__svg">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">Facebook<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44" class="menu__svg">
                                 <g id="facebook" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path class="cls-2" d="M24 36V23h4.2l.8-5h-5v-2.9c0-1.4.5-2.4 2.5-2.4H29V8.2c-1.2-.1-2.5-.2-3.7-.2-3.7 0-6.3 2.3-6.3 6.6V18h-4v5h4v13h5z" fill="#fff"></path>
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.twitter.com/UCAS_online" target="_blank" rel="noopener" class="icon-link">Twitter<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">Twitter<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="twitter" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path class="cls-2" d="M17.2 33c8.3 0 15.1-6.9 15.2-15.6v-.9c1-.8 1.9-1.8 2.7-2.9-1 .5-2 .7-3.1.9 1.1-.7 1.9-1.8 2.3-3.1-1 .6-2.2 1.1-3.4 1.3-2-2.2-5.4-2.4-7.5-.3-1.1 1.1-1.7 2.5-1.7 4.1 0 .4 0 .9.1 1.3-4.3-.2-8.3-2.3-11-5.8-1.4 2.5-.7 5.8 1.7 7.4-.8-.1-1.7-.3-2.4-.7v.1c0 2.6 1.8 4.9 4.3 5.4-.8.2-1.6.3-2.4.1.7 2.3 2.7 3.8 5 3.9-1.9 1.5-4.2 2.4-6.6 2.4-.4 0-.8 0-1.3-.1 2.3 1.6 5.2 2.5 8.1 2.5"></path>
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/ucas" target="_blank" rel="noopener" class="icon-link">LinkedIn<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">LinkedIn<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="linked_in" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path id="Rectangle_336" class="cls-2" d="M11 18h5v15h-5V18z"></path>
@@ -642,7 +640,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/user/UCASonline" target="_blank" rel="noopener" class="icon-link">YouTube<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">YouTube<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="youtube" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path d="M35.4 15.1c-.3-1.2-1.3-2.2-2.5-2.5C30.7 12 22 12 22 12s-8.8 0-11 .6c-1.2.3-2.1 1.3-2.5 2.5-.3 2.3-.5 4.6-.5 6.9s.2 4.6.6 6.9c.3 1.2 1.3 2.2 2.5 2.5 2.2.6 10.9.6 10.9.6s8.7-.1 10.9-.7c1.2-.3 2.1-1.3 2.5-2.5.4-2.3.6-4.6.6-6.9 0-2.2-.2-4.5-.6-6.8zM20 25.6v-8l7.4 4-7.4 4z"></path>
@@ -650,7 +648,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/ucas_online" target="_blank" rel="noopener" class="icon-link">Instagram<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
+                        <a href="#" target="_blank" rel="noopener" class="icon-link">Instagram<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 44 44">
                                 <g id="instagram" transform="translate(0 0)">
                                     <circle class="cls-1" cx="22" cy="22" r="21"></circle>
                                     <path class="cls-2" d="M22 16c1.1 0 2.1.3 3 .8s1.7 1.3 2.2 2.2c1.1 1.9 1.1 4.1 0 6-.5.9-1.3 1.7-2.2 2.2-1.9 1.1-4.1 1.1-6 0-.9-.5-1.7-1.3-2.2-2.2-1.1-1.9-1.1-4.1 0-6 .5-.9 1.3-1.7 2.2-2.2.9-.5 1.9-.8 3-.8zm0 10c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm8-10.5c0 .4-.2.8-.5 1.1-.3.3-.6.5-1 .4-.8 0-1.5-.7-1.5-1.5 0-.4.2-.8.4-1.1.6-.6 1.5-.6 2.1 0 .3.3.5.7.5 1.1zm3.9 1.5c0 1 .1 2.7.1 5s0 4-.1 5c0 .9-.2 1.8-.5 2.7-.6 1.8-2 3.2-3.8 3.8-.9.3-1.8.4-2.7.5H22c-2.3 0-4 0-5-.1-.9 0-1.8-.2-2.7-.5s-1.7-.8-2.3-1.4c-.7-.7-1.2-1.5-1.5-2.3-.3-.9-.4-1.8-.5-2.7v-5c0-2.3 0-4 .1-5 0-.9.2-1.8.5-2.7.6-1.8 2-3.2 3.8-3.8.9-.3 1.8-.4 2.7-.5 1-.1 2.7-.1 5-.1s4 0 5 .1c.9 0 1.8.2 2.7.5 1.8.6 3.2 2 3.8 3.8.1.9.3 1.8.3 2.7zm-2.4 12.2c.3-1 .4-1.9.4-2.9 0-.8.1-1.9.1-3.4v-1.7c0-1.5 0-2.6-.1-3.4 0-1-.2-2-.4-2.9-.4-1.1-1.3-1.9-2.3-2.3-1-.3-1.9-.4-2.9-.4-.8 0-1.9-.1-3.4-.1h-1.7c-1.4 0-2.6 0-3.4.1-1 0-2 .2-2.9.4-1.1.4-1.9 1.3-2.3 2.3-.3 1-.4 1.9-.4 2.9 0 .8-.1 1.9-.1 3.4v1.7c0 1.4 0 2.6.1 3.4 0 1 .2 2 .4 2.9.4 1.1 1.3 1.9 2.3 2.3 1 .3 1.9.4 2.9.4.8 0 1.9.1 3.4.1h1.7c1.5 0 2.6 0 3.4-.1 1 0 2-.2 2.9-.4 1-.4 1.9-1.3 2.3-2.3z"></path>
@@ -675,10 +673,7 @@
                     </div>
 
                     <div class="footer__links-group">
-                        #/ucas-terms-explained">Glossary</a>
-                        #/about-us/policies/terms-and-conditions-use-ucas-network">Terms and conditions</a>
-                        #/about-us/policies/privacy-policies-and-declarations">Privacy and cookies</a>
-                        #/corporate/about-us/slavery-and-human-trafficking-statement-financial-year-ending-31-july-2019">Modern slavery statement</a>
+
                     </div>
                 </nav>
             </div>
@@ -686,7 +681,7 @@
         <div class="wrapper-container">
             <div class="wrapper wrapper--padding">
                 <div class="footer__copyright">
-                    #"><img alt="UCAS" src="static/picture/logo.svg"></a>
+                    <img alt="UCAS" src="static/picture/logo.svg"></a>
                     <p>&copy; UCAS 2021</p>
                 </div>
             </div>
@@ -730,7 +725,10 @@
             function(src){var s=document.createElement('script');if (src.indexOf('{') !== -1 || src.indexOf('|') !== -1) {var script=src.replace('\\', '');var c=document.createTextNode(script);s.appendChild(c);s.async=false;}else{s.src=src;s.async=false;}document.head.appendChild(s);}
         );
     }
-</script><!-- Usability tracking -->
+
+
+</script>
+<!-- Usability tracking -->
 <div class="usability-pixels" style="position:absolute;">
     <img alt="Single-pixel transparent image" style="display: none;" src="static/picture/pixel-all.png">
     <noscript>

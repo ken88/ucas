@@ -39,7 +39,7 @@
                                 <p>You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them.</p>
                             </div>
                             <div style="display: none;" id="unicodeMsgWarning">
-                                <span class="warningTxt">Warning:  You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'. <a href="https://www.ucas.com/sites/default/files/extended-character-sets-substitutions_0.pdf" target="_blank">View the list of European characters we allow.</a></span><br><br>
+                                <span class="warningTxt">Warning:  You have entered some European characters that are not in the English alphabet. Not all universities and colleges can view these characters correctly, so a version with substituted English characters is also made available to them. Fields that allow European characters are marked with an '<span class="ReqPlus">Æ</span>'. <a>View the list of European characters we allow.</a></span><br><br>
                             </div>
                             <p class="bold">Compulsory fields are marked with an asterisk (<span class="Req">*</span>).</p><!--Address Line 1 -->
                             <div class="errorTxt"></div>

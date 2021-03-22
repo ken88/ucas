@@ -58,7 +58,7 @@
                         <p>If you apply more than once for the same year of entry, your application fee will not be refunded.
                             If you have already registered but cannot remember your details,
                             please use the 'forgotten login' link on the
-                            <a href="index">sign in</a>
+                            <a href="#">sign in</a>
                             screen.</p>
                         <p>If you are applying through a school, college or centre, you will be asked to enter their  buzzword  provided by them,
                             so please have this available. This will allow your school, college or centre to support you through the UCAS application process.
@@ -73,7 +73,7 @@
                                 sign in to your application later.</strong></p>
                         <p>You can find more information about applying on ucas.com.
                         </p>
-                        <p><a href="#" onclick="launchFieldHelp('/help/index3', '?functionname=help&lang='+lang+'&page=HELP.LOGIN.LOGIN.PAGE', 506, 200, 'helpwindow');return false;">Help</a>
+                        <p><a href="#" >Help</a>
                             text is available throughout each section.</p><p></p>
                         <!--Form style starts here-->
                         <div class="thisForm">

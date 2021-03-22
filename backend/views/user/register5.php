@@ -185,7 +185,8 @@
                                 <p>To make sure you've got everything you need for your journey to higher education, we'll ask you to tell us how you'd like to get your updates.<br><br>We'll keep you updated on the progress of your application — from deadline reminders to Track updates — by email and post.</p>
                                 <div class="clearDiv">&nbsp;</div>
                                 <h2 class="inPage">We won't pass on your details...</h2>
-                                <p>We'll keep your data safe, and won't pass it on to third parties, but you can update your preferences at any time in the 'Your details' section of Track. For more information, take a look at our <a href="https://www.ucas.com/corporate/about-us/privacy-policies-and-declarations/ucas-privacy-policy" target="_blank">privacy policy</a>.</p>
+                                <p>We'll keep your data safe, and won't pass it on to third parties, but you can update your preferences at any time in the 'Your details' section of Track. For more information, take a look at our
+                                    <a target="_blank">privacy policy</a>.</p>
 
 
                                 <!-- Previous and Next  Buttons starts here -->

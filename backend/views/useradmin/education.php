@@ -66,7 +66,7 @@
                             <div class="video">
                                 <strong>Need guidance?</strong> Watch the video advice below [<a href="#" onclick="showHideVideo(); return false;" id="showHideVideo">Hide video</a>].<br>
                                 <p id="ucastv"><iframe class="videoIFrame" src="https://players.brightcove.net/4824244714001/default_default/index.html?playlistId=1661051151150093841" scrolling="no"></iframe><br>
-                                    (Unable to view videos here? You can watch them at <a onclick="window.open(this.href);return false;" href="https://www.ucas.com/connect/videos">www.ucas.com/connect/videos</a> instead)</p>
+                                    (Unable to view videos here? You can watch them at <a >www.ucas.com/connect/videos</a> instead)</p>
                             </div>
                             <div class="errorTxt"></div>
                             <p class="bold"><span class="warningTxt">You can add up to 10 schools/colleges/centres.</span></p>
