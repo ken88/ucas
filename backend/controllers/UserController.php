@@ -140,4 +140,33 @@ class UserController extends Controller
         return $this->renderPartial('/apply/index1');
     }
 
+    public function actionTest() {
+        $str = "We\'ll carry out checks to verify your personal statement is your own work. Provided it is your own work, you can use your personal statement from your application last year.If it appears to have been copied from another source, we\'ll inform the universities and colleges to which you have applied. They will then take the action they consider appropriate. We\'ll also contact you by email to tell you this has happened.";
+
+        $data = [];
+
+        while (true) {
+            $str1 = $str;
+//            dd1(strlen($str1));
+            if (strlen($str1) >= 90) {
+
+                for ($i = 80; $i < 100; $i++) {
+                    if ($str[$i] == ' ') {
+
+                        $data[] = substr($str1,0, $i);
+
+                        $str = substr($str1, $i);
+                        break;
+//
+                    }
+                }
+            } else {
+                $data[] = $str1;
+                break;
+            }
+
+        }
+        dd($data);
+    }
+
 }
