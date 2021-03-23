@@ -91,13 +91,37 @@ class Statement extends \yii\db\ActiveRecord
      */
     public function getTaPersonalStatementArr()
     {
-        return explode("\n", $this->taPersonalStatement);
+        $data = [];
+        $arr = explode("\n", $this->taPersonalStatement);
+        foreach ($arr as $k => $v) {
+            $str = $v;
+
+            while (true) {
+                $str1 = $str;
+                if (strlen($str1) >= 90) {
+                    for ($i = 80; $i < 100; $i++) {
+                        if ($str[$i] == ' ') {
+                            $data[] = substr($str1, 0, $i);
+                            $str = substr($str1, $i);
+                            break;
+                        }
+                    }
+                } else {
+                    $data[] = $str1;
+                    break;
+                }
+            }
+
+        }
+
+        return $data;
     }
 
     /**
      * @return mixed
      */
-    public function getTaPersonalStatementText()
+    public
+    function getTaPersonalStatementText()
     {
         return str_replace("\n", '<br>', $this->taPersonalStatement);
     }
