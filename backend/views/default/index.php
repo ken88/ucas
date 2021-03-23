@@ -14,7 +14,7 @@
 
     <link rel="shortcut icon" href="https://www.ucas.com/sites/all/themes/ucas/favicon.ico" type="image/vnd.microsoft.icon" />
 
-    <title>UCAS | At the heart of connecting people to higher education</title>
+    <title>镜台Mirror牛剑模拟报名系统</title>
     <link type="text/css" rel="stylesheet" href="https://dfcdn.ucas.com/4.8.1/stylesheets/optional/schemes--optional--base.css" media="all" />
     <link type="text/css" rel="stylesheet" href="static/css/css_504dphvm3awltayvrrhhql6r9wkxwencoh5c_dfwgeo.css" media="all" />
     <link type="text/css" rel="stylesheet" href="static/css/owl.carousel.min.css" media="all" />
@@ -33,23 +33,23 @@
     <script type="text/javascript">
         $(function(){
 
-            debugger;
+            // debugger;
             //默认设置
             var defaultSettings = {
                 watermark_txt: "Mirror Education",
-                watermark_x: 20,//水印起始位置x轴坐标
-                watermark_y: 20,//水印起始位置Y轴坐标
-                watermark_rows: 20,//水印行数
-                watermark_cols: 20,//水印列数
-                watermark_x_space: 100,//水印x轴间隔
-                watermark_y_space: 50,//水印y轴间隔
+                watermark_x: 10,//水印起始位置x轴坐标
+                watermark_y: 10,//水印起始位置Y轴坐标
+                watermark_rows: 50,//水印行数
+                watermark_cols: 50,//水印列数
+                watermark_x_space: 10,//水印x轴间隔
+                watermark_y_space: 10,//水印y轴间隔
                 watermark_color: '#aaa',//水印字体颜色
                 watermark_alpha: 0.4,//水印透明度
-                watermark_fontsize: '15px',//水印字体大小
+                watermark_fontsize: '25px',//水印字体大小
                 watermark_font: '微软雅黑',//水印字体
-                watermark_width: 210,//水印宽度
-                watermark_height: 180,//水印长度
-                watermark_angle: 15//水印倾斜度数
+                watermark_width: 260,//水印宽度
+                watermark_height: 80,//水印长度
+                watermark_angle: 50//水印倾斜度数
             };
             //采用配置项替换默认值，作用类似jquery.extend
             if (arguments.length === 1 && typeof arguments[0] === "object") {
@@ -126,21 +126,15 @@
 </head>
 <body class="html front not-logged-in no-sidebars page-node page-node- page-node-333441 node-type-landing-page v4" >
 
-<div style="background-color: yellow; height: 60px;">
-    <marquee behavior="scroll">
-        <span style="font-weight: bolder; line-height:25px;font-size: 20px;color: red;">
-            本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
-        </span>
-
-    </marquee>
-    <marquee behavior="scroll">
-        <span style="font-weight: bolder; line-height:20px;font-size: 20px;color: red;">
-            This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).
-            It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
-            right of final explanation.
-        </span>
-
-    </marquee>
+<div style="background-color: yellow; height: 100px; ">
+    <div style="color: red; text-align: center; padding-top: 10px;">
+        本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
+    </div>
+    <div style="color: red; text-align: center;">
+        This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).<br>
+        It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
+        right of final explanation.
+    </div>
 </div>
 
 

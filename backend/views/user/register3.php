@@ -72,16 +72,16 @@
 
                                 <!-- Main area of page provided here by a servlet clip -->
                                 <p><input type="hidden" name="from" value="8"></p><p><input type="hidden" name="functionname" value="register"></p><!--Home location -->
-<!--                                <div class="thisFormElem">-->
-<!--                                   -->
-<!--                                    <div class="thisFormTxt">-->
-<!--                                        <label for="locationRadioHome">UK</label>-->
-<!--                                    </div>-->
-<!--                                    <div class="thisFormField">-->
-<!--                                        <input type="radio" name="radioLocation" value="UK" class="floatLeft" id="locationRadioHome">-->
-<!--                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.POSTALADDRESS.FIELD.UK'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                                <div class="thisFormElem">
+
+                                    <div class="thisFormTxt">
+                                        <label for="locationRadioHome">UK</label>
+                                    </div>
+                                    <div class="thisFormField">
+                                        <input type="radio" name="radioLocation" value="UK" class="floatLeft" id="locationRadioHome">
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.POSTALADDRESS.FIELD.UK'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    </div>
+                                </div>
                                 <!--close form element -->
                                 <!--Ucascard Already Held -->
                                 <div class="thisFormElem">
@@ -95,16 +95,16 @@
                                     </div>
                                 </div><!--close form element -->
                                 <!--Neither Already Held -->
-<!--                                <div class="thisFormElem">-->
-<!--                                   -->
-<!--                                    <div class="thisFormTxt">-->
-<!--                                        <label for="locationRadioBFPO">British Forces Post Office (BFPO)</label>-->
-<!--                                    </div>-->
-<!--                                    <div class="thisFormField">-->
-<!--                                        <input type="radio" name="radioLocation" value="British Forces Post Office (BFPO)" class="floatLeft" id="locationRadioBFPO">-->
-<!--                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.POSTALADDRESS.FIELD.BFPO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                                <div class="thisFormElem">
+
+                                    <div class="thisFormTxt">
+                                        <label for="locationRadioBFPO">British Forces Post Office (BFPO)</label>
+                                    </div>
+                                    <div class="thisFormField">
+                                        <input type="radio" name="radioLocation" value="British Forces Post Office (BFPO)" class="floatLeft" id="locationRadioBFPO">
+                                        <a href="#" onclick="helpOpen('HelpServicesServlet', '?functionname=help&amp;page=HELP.REGISTRATION.POSTALADDRESS.FIELD.BFPO'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    </div>
+                                </div>
                                 <!--close form element -->
                                 <br>
 
