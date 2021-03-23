@@ -280,10 +280,9 @@
                                 </div>
                                 <!--Postal Country -->
                                 <div class="thisFormTxt">
-                                    <label>&nbsp;</label>
+                                    <?= $user->Country ?>
                                 </div>
                                 <div class="thisFormTxt">
-                                    <?= $user->Country ?>
                                 </div>
                             </div><!--close form element -->
                             <div class="clearDiv">&nbsp;</div>

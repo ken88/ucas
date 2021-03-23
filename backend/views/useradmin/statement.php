@@ -171,7 +171,7 @@
     function check() {
         var statementTextEntry = $('#statementTextEntry').val();
         var err = '';
-        if(statementTextEntry == '' || statementTextEntry.length<1000 || statementTextEntry.length>4000){
+        if(statementTextEntry == ''){
             err = '<p>Statement is blank. You must enter between 1,000 and 4000 characters (maximum 47 lines) including spaces.</p>';
         //     $('.errorTxt').html(err);
         //     scrollTo(0,0);

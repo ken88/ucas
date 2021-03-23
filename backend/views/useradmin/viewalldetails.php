@@ -38,7 +38,7 @@
                                 <table>
                                     <tbody><tr>
                                         <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Personal details</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="PersonalDetailsServlet?functionname=personaldetails&amp;from=fromViewAll&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=kokbj5bglevo">edit</a></li></ul></td>
+                                        <td class="sectionStatus"><ul class="skinny"><li><a href="<?= \yii\helpers\Url::to(['useradmin/personaldetails'])?>">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
                                 <h2 class="inPage">
@@ -416,12 +416,12 @@
                                     <tbody>
                                     <tr>
                                         <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Choices</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="ChoicesServlet?functionname=choicesummary&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1v7a2r9eykkau">edit</a></li></ul></td>
+                                        <td class="sectionStatus"><ul class="skinny"><li><a href="<?= \yii\helpers\Url::to(['useradmin/choices'])?>">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
                                 <?php foreach ($choices as $key=>$val){ ?>
                                 <h2 class="inPage">
-                                    <a href="ChoicesServlet?functionname=choicedetails&amp;mode=edit&amp;choiceId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1dbjz4fintemt"><?= $val->txtInstCode1?> (<?= $val->txtInstCode?>)</a>
+                                    <a href="#"><?= $val->txtInstCode1?> (<?= $val->txtInstCode?>)</a>
                                 </h2>
                                 <h2 class="inPage">
                                     <?= $val->txtCourseCode ?>&nbsp;
@@ -448,12 +448,12 @@
                                 <table>
                                     <tbody><tr>
                                         <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Education</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="EducationServlet?functionname=educationsummary&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=nr03pfvizacg">edit</a></li></ul></td>
+                                        <td class="sectionStatus"><ul class="skinny"><li><a href="<?= \yii\helpers\Url::to(['useradmin/education'])?>">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
                                 <?php foreach($schools as $key=>$val){ ?>
                                 <h2 class="inPage">
-                                    <a href="EducationServlet?functionname=educationcentre&amp;mode=edit&amp;edeId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=x07657vy6zh4"><?= $val->txtCentreName ?> (<?= $val->cboStartMonth.'/'.$val->cboStartYear.' - '.$val->cboFinishMonth.'/'.$val->cboFinishYear?>, <?= $val->rdAttendance ?>)</a>
+                                    <a href="#"><?= $val->txtCentreName ?> (<?= $val->cboStartMonth.'/'.$val->cboStartYear.' - '.$val->cboFinishMonth.'/'.$val->cboFinishYear?>, <?= $val->rdAttendance ?>)</a>
                                 </h2>
                                 <?php } ?>
                                 <table border="0" width="100%">
@@ -474,12 +474,12 @@
                                 <table>
                                     <tbody><tr>
                                         <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Employment</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="EmploymentServlet?functionname=empsummary&amp;from=fromViewAll&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=qskykqpt9nra">edit</a></li></ul></td>
+                                        <td class="sectionStatus"><ul class="skinny"><li><a href="<?= \yii\helpers\Url::to(['useradmin/employment'])?>">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
                                 <?php foreach($employers as $key=>$val){ ?>
                                 <h2 class="inPage">
-                                    <a href="EmploymentServlet?functionname=empdetails&amp;mode=edit&amp;empId=1&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=utatf7mkzf2r"><?= $val->txtEmpName ?></a>
+                                    <a href="#"><?= $val->txtEmpName ?></a>
                                 </h2>
                                 <table border="0" cellpadding="0" cellspacing="0" valign="top">
                                     <tbody><tr><td class="employment">Address: <?= $val->txtEmpAddress ?></td></tr>
@@ -492,7 +492,7 @@
                                 <table>
                                     <tbody><tr>
                                         <td class="sectionHeading" valign="bottom"><div class="cardIcon"><img valign="bottom" src="/static/images/complete.gif" width="14" height="14" class="floatLeft" alt="Completed"></div>&nbsp;Personal statement</td>
-                                        <td class="sectionStatus"><ul class="skinny"><li><a href="PersonalStatementServlet?functionname=perStatement&amp;from=fromViewAll&amp;id=badd6313331d813e48fb8c7a44b8&amp;ran=1kpcrnyqcio7t">edit</a></li></ul></td>
+                                        <td class="sectionStatus"><ul class="skinny"><li><a href="<?= \yii\helpers\Url::to(['useradmin/statement'])?>">edit</a></li></ul></td>
                                     </tr>
                                     </tbody></table>
                                 <p>
