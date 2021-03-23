@@ -120,8 +120,7 @@ class UserController extends Controller
             $model = new User();
             $model->attributes = Yii::$app->session->get('form_data');
             if (!$model->save()) {
-                var_dump($model->getErrors());
-                exit('注册失败');
+                exit('register error');
             } else {
                 Yii::$app->session->set('form_data', []);
                 //登录

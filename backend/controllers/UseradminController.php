@@ -233,7 +233,6 @@ although you will be able to print these letters from the Track system if necess
         if (Yii::$app->request->isPost) {
             $model->attributes = Yii::$app->request->post();
             if (!$model->save()) {
-//                var_dump($model->getErrors());
                 exit('create/edit error');
             } else
                 return $this->redirect(Url::to(['useradmin/choices']));
@@ -377,7 +376,6 @@ although you will be able to print these letters from the Track system if necess
         if (Yii::$app->request->isPost) {
             $model->attributes = Yii::$app->request->post();
             if (!$model->save()) {
-//                var_dump($model->getErrors());
                 exit('create or edit error');
             } else
                 return $this->redirect(Url::to(['useradmin/employment']));
