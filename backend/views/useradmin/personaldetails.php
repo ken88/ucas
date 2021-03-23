@@ -195,8 +195,8 @@
                                 <div class="thisFormField">
                                     <div id="fullWidth"><select name="gender" size="1" class="floatLeft" id="genderCombo">
                                             <option value="">Please select...</option>
-                                            <option value="M">Male</option>
-                                            <option value="F">Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
                                         </select>
                                     </div>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.GENDER'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -433,17 +433,17 @@
                                             </select>
                                             <select name="cboDobMonth" size="1" class="floatLeft" id="dobCombo2">
                                                 <option value="">Month</option>
-                                                <option value="2">February</option>
-                                                <option value="3">March</option>
-                                                <option value="4">April</option>
-                                                <option value="5">May</option>
-                                                <option value="6">June</option>
-                                                <option value="7">July</option>
-                                                <option value="8">August</option>
-                                                <option value="9">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April">April</option>
+                                                <option value="May">May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                                <option value="August">August</option>
+                                                <option value="September">September</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
                                             </select>
                                             <select name="cboDobyear" size="1" class="floatLeft" id="dobCombo1">
                                                 <option value="">Year</option>
