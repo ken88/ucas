@@ -17,7 +17,7 @@
     <link type='text/css' href='/static/css/jquery.checkbox.css' rel='stylesheet' media='screen' />
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Verify email:Enter code</title>
+    <title></title>
     <style type="text/css">
         .confirm_box{display: none;}
         #gatewayContent{width: 70%;float: left;}
@@ -142,7 +142,7 @@
 
 
         $(function(){
-            debugger;
+//            debugger;
             //默认设置
             var defaultSettings = {
                 watermark_txt: "Mirror Education",
