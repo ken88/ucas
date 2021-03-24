@@ -29,7 +29,7 @@
                 <hr>
 
 
-                <div id="midBoxInternalWide">
+                <div id="midBoxInternalWide" style="float: left;">
 
 
                     <!--Form starts here-->
@@ -66,7 +66,7 @@
                                 <div class="thisFormTxt">
                                     <label for="coursecodeTextEntry">Course code<span class="Req">*</span></label>
                                 </div>
-                                <div class="thisFormField">
+                                <div class="thisFormField" style="position: relative;">
 
                                     <input type="text" id="coursecodeTextEntry" name="txtCourseCode" value="<?= $model->txtCourseCode ?>" style="text-transform: capitalize;" maxlength="4" size="5" class="floatLeft">
                                     <span class="floatLeft">&nbsp;
@@ -75,9 +75,19 @@
                                     </span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.COURSECODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    <span style="color: red; margin-left: 15px;">所报专业英文名</span>
+                                    <div style=" position: absolute; left: 350px; top: -10px; ">
+                                        <div style="width: 350px;">
+                                            真实官方UCAS网站中，<span style="color: red;">Course code、Campus code、Start date</span>三个项目可搜索获得（如图），或以官网Courses页面获得。本模拟网站填写方式为手动填写，
+                                            <span style="color: red;">与官网有一定差异。正式申请时务必以官网为准。</span>
+                                        </div>
+                                        <div style="border: red 2px solid; z-index: 100;">
+                                            <img src="/static/images/aaa.png" width="500" >
+                                        </div>
+                                    </div>
                                 </div>
-                            </div><!--close form element -->
 
+                            </div><!--close form element -->
 
 
                             <!--Campus code-->
@@ -93,6 +103,7 @@
             <input type="hidden" value="see list" class="seeListBtn" onclick="launchCampusPopUp('PopUpServlet', '?functionname=campuslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, 'document.Form1.txtCampusCode'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CAMPUSCODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    <span style="color: red; margin-left: 15px;">牛剑学院英文名</span>
                                 </div>
                             </div><!--close form element -->
 
@@ -110,6 +121,7 @@
             <input type="hidden" value="see list" class="seeListBtn" onclick="launchPopUp('PopUpServlet', '?functionname=startslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, document.Form1.txtCampusCode.value, 'document.Form1.txtStartDate, document.Form1.hidStartDate, document.Form1.hidDefer'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.STARTDATE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    <span style="color: red; margin-left: 15px;">申请大学入学的年月</span>
                                 </div>
                             </div><!--close form element -->
 
@@ -219,6 +231,8 @@
 
                     <!--Form ends here-->
 
+
+
                 </div><!--midBoxInternalWide ends here-->
             </div>
 
@@ -226,12 +240,12 @@
         </div>
 
 
-        <div class="clearDiv">&nbsp;</div>
+        <div class="clearDiv" style="padding-top: 200px;">&nbsp;</div>
         <!-- 底部start  -->
         <?php include_once "buttom.php"; ?>
         <!-- 底部end  -->
 
-        <div class="clearDiv">&nbsp;</div>
+
     </div>
     <!--wrapper end-->
 </div>
