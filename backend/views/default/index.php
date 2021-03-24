@@ -121,12 +121,29 @@
             document.body.appendChild(oTemp);
         })
 
+        $('#erweima').mousemove(function () {
+            $('#erweima-img').show();
+        })
+        $('#erweima').mouseout(function () {
+            $('#erweima-img').hide();
+        })
     </script>
 
+
+<style type="text/css">
+
+
+    #erweima-img{
+        position: absolute;
+        right: 40%;
+        z-index: 9999;
+        display: none;
+    }
+</style>
 </head>
 <body class="html front not-logged-in no-sidebars page-node page-node- page-node-333441 node-type-landing-page v4" >
 
-<div style="background-color: yellow; height: 100px; ">
+<div style="background-color: yellow; height: 130px; ">
     <div style="color: red; text-align: center; padding-top: 10px;">
         本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
     </div>
@@ -134,6 +151,15 @@
         This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).<br>
         It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
         right of final explanation.
+    </div>
+
+    <div style="color: red; font-weight: bold; text-align: center; margin-top: 10px; ">
+       <span style="color: red; text-decoration:underline; " id="erweima">
+            扫码关注Mirror公众号免费获取UCAS申请分步指南（真实网站填写同样适用）
+            <span style="color: red; text-decoration:underline; position: absolute" id="erweima-img">
+                <img src="/static/images/erweima.jpg" width="150">
+            </span>
+        </span>
     </div>
 </div>
 

@@ -45,6 +45,16 @@
 
 
     <script type="text/javascript">
+        function f1() {
+
+            $('#erweima-img').show();
+        }
+
+        function f2() {
+            $('#erweima-img').hide();
+        }
+
+
         function setJavaEnabled()
         {
             // set Javascript Enabled hidden field value to true
@@ -213,7 +223,7 @@
                     mask_div.style.left = x + 'px';
                     mask_div.style.top = y + 'px';
                     mask_div.style.overflow = "hidden";
-                    mask_div.style.zIndex = "9999";
+                    mask_div.style.zIndex = "-100";
                     mask_div.style.pointerEvents = 'none';//pointer-events:none  让水印不遮挡页面的点击事件
                     //mask_div.style.border="solid #eee 1px";
                     mask_div.style.opacity = defaultSettings.watermark_alpha;
@@ -224,6 +234,7 @@
                     mask_div.style.width = defaultSettings.watermark_width + 'px';
                     mask_div.style.height = defaultSettings.watermark_height + 'px';
                     mask_div.style.display = "block";
+
                     oTemp.appendChild(mask_div);
                 }
                 ;
@@ -234,21 +245,17 @@
 
     </script>
 
-    <noscript>
-        <!--
-            meta-tag "refresh" is provided for those browsers that
-            do not support JavaScript.  Please note that the time
-            delay is greater than zero.
-
-            Notice that this is nested within a "noscript" block.
-            Which means that browsers that support JavaScript will
-            not "see" the refresh meta-tag.
-        -->
-        <meta http-equiv="refresh" content="0; URL=enableJavascript.jsp" />
-    </noscript>
+    <style type="text/css">
+        #erweima-img{
+            position: absolute;
+            right: 40%;
+            z-index: 9998;
+            display: none;
+        }
+    </style>
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#e31c18" vlink="#e31c18" alink="#e31c18" >
-<div style="background-color: yellow; height: 80px; font-size: 14px; ">
+<div style="background-color: yellow; height: 110px; font-size: 14px; ">
     <div style="color: red; text-align: center; padding-top: 10px;">
         本网站仅作为学生模拟报名使用！(Mirror Education 镜台教育牛剑模拟赛）不支持官方真实报名！如需真实报名请前往UCAS官网！最终解释权归Mirror镜台教育。
     </div>
@@ -256,6 +263,14 @@
         This website intends to simulate the registration and application process for students（Mirror Education Oxford & Cambridge Application Simulation).<br>
         It is NOT used for official registration or application. For official application, please go to UCAS official website. Mirror Education reserves the
         right of final explanation.
+    </div>
+    <div style="color: red; font-weight: bold; text-align: center; margin-top: 10px; ">
+       <span style="color: red; text-decoration:underline;" id="erweima" onmousemove="f1()" onmouseout="f2()">
+            扫码关注Mirror公众号免费获取UCAS申请分步指南（真实网站填写同样适用）
+            <span id="erweima-img">
+                <img src="/static/images/erweima.jpg" width="150">
+            </span>
+        </span>
     </div>
 </div>
 <div id="outerWrapper" class="clearfix"><!-- Outer  Wrapper starts here-->
