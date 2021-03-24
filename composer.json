@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "yiisoft/yii2-redis": "~2.0.0",
         "yiisoft/yii2-elasticsearch": "~2.1.0",
-        "dmstr/yii2-adminlte-asset": "2.6.2"
+        "dmstr/yii2-adminlte-asset": "2.6.2",
+        "phpoffice/phpspreadsheet": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

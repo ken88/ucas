@@ -11,6 +11,9 @@ $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index box box-primary">
+    <div class="box-header with-border">
+        <?= Html::a('数据导出', \yii\helpers\Url::to(['user/export']), ['class' => 'btn btn-flat btn-xs btn-success', 'target' => '_blank']) ?>
+    </div>
     <div class="box-body table-responsive no-padding">
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
         <?= GridView::widget([
@@ -25,39 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'gender',
                 'txtForename',
                 'txtSurname',
-                // 'cboDobDay',
-                // 'cboDobMonth',
-                // 'cboDobYear',
-                // 'radioLocation',
-                // 'addrLine1Text',
-                // 'addrLine2Text',
-                // 'addrLine3Text',
-                // 'addrLine4Text',
-                // 'Country',
-                 'txtHomePhone',
-                 'txtMobilePhone',
-                 'emailText:email',
-                // 'chkEducationalOption',
-                // 'chkCommercialOption',
-                // 'chkUnplacedCommsFlag',
-                // 'chkEmailOption:email',
-                // 'chkTxtOption',
-                // 'chkMailingsOption',
-                // 'passwordText',
-                // 'wenti1',
-                // 'daan1',
-                // 'wenti2',
-                // 'daan2',
-                // 'wenti3',
-                // 'daan3',
-                // 'wenti4',
-                // 'daan4',
-                // 'create_time:datetime',
-                // 'personal_id',
-                // 'rdRoute',
-                // 'txtBuzzword',
-                // 'rdConfirm',
-                // 'cboGroups',
+                'txtHomePhone',
+                'txtMobilePhone',
+                'emailText:email',
 
                 [
                     'class' => 'yii\grid\ActionColumn',
