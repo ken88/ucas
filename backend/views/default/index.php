@@ -12,7 +12,7 @@
 
     <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.ucas.com\/","name":"Home"}}]}</script>
 
-    <link rel="shortcut icon" href="https://www.ucas.com/sites/all/themes/ucas/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="/static/images/icon.jpg" type="image/vnd.microsoft.icon" />
 
     <title>镜台Mirror牛剑模拟报名系统</title>
     <link type="text/css" rel="stylesheet" href="https://dfcdn.ucas.com/4.8.1/stylesheets/optional/schemes--optional--base.css" media="all" />

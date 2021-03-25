@@ -15,7 +15,7 @@
     <link type='text/css' href='/static/css/confirm.css' rel='stylesheet' media='screen' />
     <link type='text/css' href='/static/css/popup.css' rel='stylesheet' media='screen' />
     <link type='text/css' href='/static/css/jquery.checkbox.css' rel='stylesheet' media='screen' />
-
+    <link rel="shortcut icon" href="/static/images/icon.jpg" type="image/vnd.microsoft.icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>镜台Mirror牛剑模拟报名系统</title>
     <style type="text/css">
