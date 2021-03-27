@@ -697,12 +697,7 @@
                                         <input type="text" name="txtResidenceArea" value="<?= $model->txtResidenceArea ?>" size="32" maxlength="250" class="floatLeft" id="areaOfResidenceTextEntry">
                                         <span class="floatLeft" >&nbsp;
                                             <span id="see1">
-                                                <input type="button"
-                                                       name="btnAreaOfResidenceList"
-                                                       value="see list"
-                                                       id="see1"
-                                                       onclick="seelistOpen('/help/index8', '?functionname=areaOfResidenceTextEntry', 'document.Form1.areaOfResidenceTextEntry'); return false";
-                                                       class="seeListBtn">
+
                                             </span>
 
 </span>
@@ -1551,7 +1546,13 @@
         }
 
     }
+    var rdPermUK = $('input:radio[name="rdPermUK"]:checked').val();
 
+    if (rdPermUK == 'Y') {
+        $('#see1').html('<input type="button" name="btnAreaOfResidenceList" value="see list" id="see1" onclick="seelistOpen(\'/help/index8\', \'?functionname=areaOfResidenceTextEntry\', \'document.Form1.areaOfResidenceTextEntry\'); return false"; class="seeListBtn">')
+    }else {
+        $('#see1').html('<input type="button" name="btnAreaOfResidenceList" value="see list" id="see1" onclick="seelistOpen(\'/help/index6\', \'?functionname=areaOfResidenceTextEntry\', \'document.Form1.areaOfResidenceTextEntry\'); return false"; class="seeListBtn">')
+    }
     $('input[type=radio][name=rdPermUK]').change(function() {
         if ($(this).val() == 'Y') {
             $('#see1').html('<input type="button" name="btnAreaOfResidenceList" value="see list" id="see1" onclick="seelistOpen(\'/help/index8\', \'?functionname=areaOfResidenceTextEntry\', \'document.Form1.areaOfResidenceTextEntry\'); return false"; class="seeListBtn">')
