@@ -308,8 +308,21 @@
                                     <label for="liveUKRadio">Is your permanent home in the UK?<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <input type="radio" name="rdPermUK" value="Y" <?php if($model->rdPermUK=='Y') echo 'checked' ?> onclick="checkAPRLabel()" class="floatLeft" id="liveUKRadio"><span class="floatLeft">Yes&nbsp;&nbsp;</span><input type="radio" name="rdPermUK" <?php if($model->rdPermUK=='N') echo 'checked' ?> value="N" onclick="checkAPRLabel()" class="floatLeft" id="liveUKRadio"><span class="floatLeft">No</span>
-                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.LIVEUK'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    <input type="radio" name="rdPermUK" value="Y" <?php if($model->rdPermUK=='Y') echo 'checked' ?>
+                                           onclick="checkAPRLabel()"
+                                           class="floatLeft"
+                                           id="liveUKRadio" checked>
+                                    <span class="floatLeft">Yes&nbsp;&nbsp;</span>
+                                    <input type="radio"
+                                           name="rdPermUK" <?php if($model->rdPermUK=='N') echo 'checked' ?>
+                                           value="N"
+                                           onclick="checkAPRLabel()"
+                                           class="floatLeft"
+                                           id="liveUKRadio">
+                                    <span class="floatLeft">No</span>
+                                    <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.LIVEUK'); return false;">
+                                        <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
+                                    </a>
                                 </div>
                             </div><!--close form element -->
                             <div class="clearDiv">&nbsp;</div>
@@ -682,8 +695,16 @@
                                     </div>
                                     <div class="thisFormField">
                                         <input type="text" name="txtResidenceArea" value="<?= $model->txtResidenceArea ?>" size="32" maxlength="250" class="floatLeft" id="areaOfResidenceTextEntry">
-                                        <span class="floatLeft">&nbsp;
-                                            <input type="button" name="btnAreaOfResidenceList" value="see list" onclick="seelistOpen('/help/index8', '?functionname=areaOfResidenceTextEntry', 'document.Form1.areaOfResidenceTextEntry'); return false;" class="seeListBtn">
+                                        <span class="floatLeft" >&nbsp;
+                                            <span id="see1">
+                                                <input type="button"
+                                                       name="btnAreaOfResidenceList"
+                                                       value="see list"
+                                                       id="see1"
+                                                       onclick="seelistOpen('/help/index8', '?functionname=areaOfResidenceTextEntry', 'document.Form1.areaOfResidenceTextEntry'); return false";
+                                                       class="seeListBtn">
+                                            </span>
+
 </span>
                                         <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.YOURDETAILS.FIELD.AREAPERMANENTRESIDENCE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                     </div>
@@ -1530,6 +1551,14 @@
         }
 
     }
+
+    $('input[type=radio][name=rdPermUK]').change(function() {
+        if ($(this).val() == 'Y') {
+            $('#see1').html('<input type="button" name="btnAreaOfResidenceList" value="see list" id="see1" onclick="seelistOpen(\'/help/index8\', \'?functionname=areaOfResidenceTextEntry\', \'document.Form1.areaOfResidenceTextEntry\'); return false"; class="seeListBtn">')
+        }else {
+            $('#see1').html('<input type="button" name="btnAreaOfResidenceList" value="see list" id="see1" onclick="seelistOpen(\'/help/index6\', \'?functionname=areaOfResidenceTextEntry\', \'document.Form1.areaOfResidenceTextEntry\'); return false"; class="seeListBtn">')
+        }
+    });
 
     $('#feeCodeCombo').change(function () {
        if ( $(this).val() == 'UK, Chl, IoM or EU student finance services') {
