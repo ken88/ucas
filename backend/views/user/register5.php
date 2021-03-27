@@ -476,9 +476,6 @@
         // window.location="register6"
     })
 
-    //chkAllCommsFlag
-    //tzCheckBox
-    // console.log($('.tzCheckBox'))
     $('.tzCheckBox').click(function () {
         console.log('click')
         if ($(this).hasClass('checked') == true) {
