@@ -31,8 +31,8 @@
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="Welcome.jsp?id=16b456d9812f48ee415bba4cd4e5&amp;ran=289zt1m50ayk">Welcome</a> &gt;
-                    <a href="EducationServlet?functionname=educationsummary&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=ovouvnbvmxt9">Education</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/welcome'])?>">Welcome</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/education'])?>">Education</a> &gt;
                     Enter GCE Advanced Subsidiary
                 </div><!--breadcrumb ENDS here-->
                 <hr>
