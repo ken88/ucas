@@ -397,9 +397,9 @@
         }
         else {
 
-//            $('#simplemodal-overlay').show();
-//            $('#confirm-container').show();
-            $('form').submit()
+            $('#simplemodal-overlay').show();
+            $('#confirm-container').show();
+//            $('form').submit()
         }
         $('.errorTxt').html(err);
         scrollTo(0,0);
