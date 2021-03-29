@@ -35,12 +35,12 @@
                             Please wait for the update through your email and telephone number. Or
                             <br>you can directly
                             contect us by the
-                            <span style="color: red;">wechat ID :<?= $data->personal_id;?></span>.
+                            <span style="color: red;">wechat ID :ningningls666</span>.
                             Thank you so
                             <br> much for
                             your participation and we are happy to hear any suggestion
                             <br>through the
-                            <span style="color: red;">email ：<?= $data->emailText;?></span>
+                            <span style="color: red;">email ：flora@mirror-edu.com</span>
                         </div>
                         <div style="margin-top: 40px; background-color: rgb(240,240,240) ; width: 300px;" >
                             <span style="margin-left: 15px;">
