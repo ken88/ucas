@@ -324,17 +324,50 @@ although you will be able to print these letters from the Track system if necess
      */
     public function actionAddFw()
     {
-        $model = Qualifications::findOne(Yii::$app->request->get('id')) ?: new Qualifications();
-        if (Yii::$app->request->isPost) {
-            $model->attributes = Yii::$app->request->post();
-            if (Yii::$app->request->get('school_id'))
-                $model->school_id = Yii::$app->request->get('school_id');
-            if (!$model->save()) {
-                exit('create/edit error');
-            } else
-                return $this->redirect(Url::to(['useradmin/education']));
+//        $model = Qualifications::findOne(Yii::$app->request->get('id')) ?: new Qualifications();
+
+//        if (Yii::$app->request->isPost) {
+//            $model->attributes = Yii::$app->request->post();
+//            if (Yii::$app->request->get('school_id')) {
+//                $model->school_id = Yii::$app->request->get('school_id');
+//            }
+//            if (!$model->save()) {
+//                exit('create/edit error');
+//            } else
+//                return $this->redirect(Url::to(['useradmin/education']));
+//        }
+
+        $view = 'add-fw';
+        $val = Yii::$app->request->get('val');
+        switch ($val) {
+            case  'International A Level' :
+                $view = 'add-fw1';
+                break;
+            case  'International GCSE' :
+                $view = 'add-fw2';
+                break;
+            case  'International Advanced Subsidiary' :
+                $view = 'add-fw3';
+                break;
+            case  'International Computer Driving Licence' :
+                $view = 'add-fw4';
+                break;
+            case  'EPQ' :
+                $view = 'add-fw5';
+                break;
+            case  'Cambridge International Project Qualification (Cambridge IPQ)' :
+                $view = 'add-fw6';
+                break;
+            case  'OxfordAQA Exams International Independent Project Qualification (IPQ)' :
+                $view = 'add-fw7';
+                break;
+            case  'OxfordAQA International IPQ' :
+                $view = 'add-fw7';
+                break;
         }
-        return $this->renderPartial('add-fw', [
+
+//        dd($view);
+        return $this->renderPartial($view, [
             'view' => 'education',
             'model' => $model,
         ]);
