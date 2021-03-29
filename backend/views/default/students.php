@@ -32,7 +32,7 @@
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="630" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Student sign in | UCAS</title>
+    <title>镜台Mirror牛剑模拟报名系统</title>
     <link type="text/css" rel="stylesheet" href="https://dfcdn.ucas.com/4.8.1/stylesheets/optional/schemes--optional--base.css" media="all" />
     <link type="text/css" rel="stylesheet" href="/static/css/css_jf3ka9uef7z9zvakaw4xgmcwwgbordhujv6tqw2udqo.css" media="all" />
     <link type="text/css" rel="stylesheet" href="/static/css/owl.carousel.min.css" media="all" />
@@ -329,8 +329,8 @@
                             <div class="accordion__inner-wrapper">
                                 <div class="content-columns content-columns--two-columns content-columns--padding">
                                 </div>
-                                <h4>2021 entry</h4>
-                                <p>Apply now for 2021 entry.</p>
+                                <h4>202x entry</h4>
+                                <p>Apply now for 202x entry.</p>
 
                                 <p>Get your UCAS Hub.&nbsp;Your place to discover your options and research your future.</p>
                                 <div class="buttons-joined">
@@ -338,8 +338,8 @@
                                     <a href="#" role="button" class="button">Track</a>
                                     <a href="#" role="button" class="button">Hub</a>
                                     <a href="#" role="button" class="button">Hub and Hub Live events</a>              </div>
-                                <h4>2022 entry</h4>
-                                <p><span>Applications for 2022 entry open in May 2021 but you can start your research now with the UCAS Hub!</span><br>
+                                <h4>202(x+1) entry</h4>
+                                <p><span>Applications for 202(x+1) entry open in May 202x but you can start your research now with the UCAS Hub!</span><br>
                                     <br>
                                     <span>Whether you want to compare courses or apprenticeships, or get your head round the personal statement, the UCAS Hub has it covered.</span></p>
                                 <div class="buttons-joined">

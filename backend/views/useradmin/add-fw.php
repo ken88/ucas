@@ -31,9 +31,9 @@
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="Welcome.jsp?id=16b456d9812f48ee415bba4cd4e5&amp;ran=289zt1m50ayk">Welcome</a> &gt;
-                    <a href="EducationServlet?functionname=educationsummary&amp;id=16b456d9812f48ee415bba4cd4e5&amp;ran=ovouvnbvmxt9">Education</a> &gt;
-                    Enter GCE Advanced Subsidiary
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/welcome'])?>">Welcome</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/education'])?>">Education</a> &gt;
+                    <?= Yii::$app->request->get('val')?>
                 </div><!--breadcrumb ENDS here-->
                 <hr>
                 <div class="errorTxt"></div>
@@ -46,7 +46,7 @@
                         <!--clip starts-->
                         <form name="Form1" method="post" action="">
 
-                            <h2 class="inPage">GCE Advanced Subsidiary</h2>
+                            <h2 class="inPage"><?= Yii::$app->request->get('val')?></h2>
                             <p class="bold">Please enter details below, using the 'other' boxes only where the applicable option cannot be found in the lists provided.</p>
                             <p></p><p>For AS subjects please enter when you plan to 'certificate' your AS. If you are in any doubt about this you should check with your school or college, or whoever is helping you with your application. Or you can contact our Customer Service Unit. Click on the 'contact us' link at the top of the page for our contact details. Entering unit details for AS levels is optional.</p><p>
 

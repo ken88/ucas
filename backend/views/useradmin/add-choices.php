@@ -22,8 +22,8 @@
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="Welcome.jsp?id=c58898d4e06afa8944ded19eb46d&amp;ran=70fiuzzmb59v">Welcome</a> &gt;
-                    <a href="ChoicesServlet?functionname=choicesummary&amp;id=c58898d4e06afa8944ded19eb46d&amp;ran=1jcmboryrsz9l">Choice summary</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/welcome'])?>">Welcome</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/choices'])?>">Choice summary</a> &gt;
                     Choice details
                 </div><!--breadcrumb ENDS here-->
                 <hr>

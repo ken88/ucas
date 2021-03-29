@@ -22,8 +22,8 @@
 
             <div id="gatewayContent">
                 <div id="breadcrumb">
-                    <a href="Welcome.jsp?id=22f980025b84c4ea5995e325aa4b&amp;ran=1nff639zv2pom">Welcome</a> &gt;
-                    <a href="EducationServlet?functionname=educationsummary&amp;id=22f980025b84c4ea5995e325aa4b&amp;ran=e3t93raqfrf8">Education</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/welcome'])?>">Welcome</a> &gt;
+                    <a href="<?= \yii\helpers\Url::to(['useradmin/education'])?>">Education</a> &gt;
                     Where have you studied?
                 </div><!--breadcrumb ENDS here-->
                 <hr>
