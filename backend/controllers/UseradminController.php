@@ -517,4 +517,17 @@ although you will be able to print these letters from the Track system if necess
             'model' => $model,
         ]);
     }
+
+    /**
+     * 支付页面5
+     */
+    public function actionPaySend5()
+    {
+        $model = PaySend::findOne(Yii::$app->user->identity->id) ?: new PaySend();
+
+        return $this->renderPartial('pay-send5', [
+            'view' => 'paysend',
+            'data' => Yii::$app->user->identity
+        ]);
+    }
 }

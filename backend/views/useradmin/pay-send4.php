@@ -32,7 +32,7 @@
 
                     <div class="thisForm">
 
-                        <form name="Form1" method="post" action="">
+                        <form name="Form1" method="post" action="/useradmin/pay-send5">
 
                            <div style="font-size: 18px; font-weight: bold; margin-top: 10px;">
                                Payment Details
