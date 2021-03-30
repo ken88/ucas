@@ -50,17 +50,6 @@
 
                         <form name="Form1" method="post" action="EducationServlet?id=cee5ad2d4e49b1d23bfa995de0f2&amp;ran=1xqcdeok7xr0f">
 
-                            <!--display 'Qual Details' clip -->
-                            <p><input type="hidden" name="currentMonth" value="3"></p>
-                            <p><input type="hidden" name="currentYear" value="2021"></p>
-                            <p><input type="hidden" name="invalidGradeValues" value="Please select...,Pending"></p>
-                            <p><input type="hidden" name="from" value="fromEducationQualDetails"></p>
-                            <p><input type="hidden" name="qualKey" value="IGCSE"></p>
-                            <p><input type="hidden" name="qualId" value="0"></p>
-                            <p><input type="hidden" name="edeId" value="1"></p>
-                            <p><input type="hidden" name="mode" value="add"></p>
-                            <p><input type="hidden" name="functionname" value=""></p>
-                            <input type="hidden" name="hidCharWarningMsg" value="The following character is not permitted here" id="hidCharWarningMsg">
                             <h2 class="inPage">International GCSE</h2>
                             <p class="bold">Please enter details below, using the 'other' boxes only where the applicable option cannot be found in the lists provided.</p>
                             <p></p><p>Please enter details below using the other boxes only where the applicable option cannot be found in the lists provided.</p><p>
@@ -373,52 +362,6 @@
 </body>
 </html>
 <script type="text/javascript">
-    function check() {
-        var titleCombo = $('#titleCombo').val();
-        var titleTextEntry = $('#titleTextEntry').val();
 
-        var yue = $('#yue').val();
-        var nian = $('#nian').val();
-
-        var awardingBodyCombo = $('#awardingBodyCombo').val();
-        var awardingBodyTextEntry = $('#awardingBodyTextEntry').val();
-
-        var gradeCombo= $('#gradeCombo').val();
-        var gradeTextEntry= $('#gradeTextEntry').val();
-        var err = '';
-        if (titleCombo == '' && titleTextEntry == '' ) {
-            err += '<p>Qualification and/or module(s) could not be saved.</p>';
-        }
-        if (nian == '' || yue == '') {
-            err += '<p>You must enter the qualification date.</p>';
-        }
-        if (awardingBodyCombo == '' && awardingBodyTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        if (gradeCombo == '?' && gradeTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        $('.errorTxt').html(err);
-        if (err == '') {
-            $('form').submit()
-        } else {
-            scrollTo(0,0);
-        }
-
-    }
-    $(function () {
-        var cboQualMonth_selected = "<?= $model->cboQualMonth ?>"
-        $('#yue').find("option[value='"+cboQualMonth_selected+"']").attr("selected",true);
-        var cboQualYear_selected = "<?= $model->cboQualYear ?>"
-        $('#nian').find("option[value='"+cboQualYear_selected+"']").attr("selected",true);
-        var cboTitle_selected = "<?= $model->cboTitle ?>"
-        $('#titleCombo').find("option[value='"+cboTitle_selected+"']").attr("selected",true);
-
-        var cboAwardingBody_selected = "<?= $model->cboAwardingBody ?>"
-        $('#awardingBodyCombo').find("option[value='"+cboAwardingBody_selected+"']").attr("selected",true);
-        var cboGrade_selected = "<?= $model->cboGrade ?>"
-        $('#gradeCombo').find("option[value='"+cboGrade_selected+"']").attr("selected",true);
-
-    })
 
 </script>

@@ -446,6 +446,7 @@
                                             </select>
                                             <select name="cboDobMonth" size="1" class="floatLeft" id="dobCombo2">
                                                 <option value="">Month</option>
+                                                <option value="January">January</option>
                                                 <option value="February">February</option>
                                                 <option value="March">March</option>
                                                 <option value="April">April</option>

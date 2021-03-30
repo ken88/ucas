@@ -214,52 +214,5 @@
 </body>
 </html>
 <script type="text/javascript">
-    function check() {
-        var titleCombo = $('#titleCombo').val();
-        var titleTextEntry = $('#titleTextEntry').val();
-
-        var yue = $('#yue').val();
-        var nian = $('#nian').val();
-
-        var awardingBodyCombo = $('#awardingBodyCombo').val();
-        var awardingBodyTextEntry = $('#awardingBodyTextEntry').val();
-
-        var gradeCombo= $('#gradeCombo').val();
-        var gradeTextEntry= $('#gradeTextEntry').val();
-        var err = '';
-        if (titleCombo == '' && titleTextEntry == '' ) {
-            err += '<p>Qualification and/or module(s) could not be saved.</p>';
-        }
-        if (nian == '' || yue == '') {
-            err += '<p>You must enter the qualification date.</p>';
-        }
-        if (awardingBodyCombo == '' && awardingBodyTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        if (gradeCombo == '?' && gradeTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        $('.errorTxt').html(err);
-        if (err == '') {
-            $('form').submit()
-        } else {
-            scrollTo(0,0);
-        }
-
-    }
-    $(function () {
-        var cboQualMonth_selected = "<?= $model->cboQualMonth ?>"
-        $('#yue').find("option[value='"+cboQualMonth_selected+"']").attr("selected",true);
-        var cboQualYear_selected = "<?= $model->cboQualYear ?>"
-        $('#nian').find("option[value='"+cboQualYear_selected+"']").attr("selected",true);
-        var cboTitle_selected = "<?= $model->cboTitle ?>"
-        $('#titleCombo').find("option[value='"+cboTitle_selected+"']").attr("selected",true);
-
-        var cboAwardingBody_selected = "<?= $model->cboAwardingBody ?>"
-        $('#awardingBodyCombo').find("option[value='"+cboAwardingBody_selected+"']").attr("selected",true);
-        var cboGrade_selected = "<?= $model->cboGrade ?>"
-        $('#gradeCombo').find("option[value='"+cboGrade_selected+"']").attr("selected",true);
-
-    })
 
 </script>

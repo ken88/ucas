@@ -49,17 +49,6 @@
 
                         <form name="Form1" method="post" action="EducationServlet?id=cee5ad2d4e49b1d23bfa995de0f2&amp;ran=14uw8704y0hqk">
 
-                            <!--display 'Qual Details' clip -->
-                            <p><input type="hidden" name="currentMonth" value="3"></p>
-                            <p><input type="hidden" name="currentYear" value="2021"></p>
-                            <p><input type="hidden" name="invalidGradeValues" value="Please select...,Pending"></p>
-                            <p><input type="hidden" name="from" value="fromEducationQualDetails"></p>
-                            <p><input type="hidden" name="qualKey" value="8E"></p>
-                            <p><input type="hidden" name="qualId" value="0"></p>
-                            <p><input type="hidden" name="edeId" value="1"></p>
-                            <p><input type="hidden" name="mode" value="add"></p>
-                            <p><input type="hidden" name="functionname" value=""></p>
-                            <input type="hidden" name="hidCharWarningMsg" value="The following character is not permitted here" id="hidCharWarningMsg">
                             <h2 class="inPage">Cambridge International Project Qualification (Cambridge IPQ)</h2>
                             <p class="bold">Please enter details below, using the 'other' boxes only where the applicable option cannot be found in the lists provided.</p>
                             <p></p>
@@ -155,8 +144,15 @@
                             </div><!--close form element -->
                             <br><br>
                             <div class="clearDiv">&nbsp;</div>
+
+
+
+
+
+
+                            <div id="unit" class="unit">
                             <hr>
-                            <h2 class="inPage">Module / unit 1</h2>
+                            <h2 class="inPage">Module / unit <span class="num">1</span></h2>
                             <!--Module Title-->
                             <div class="thisFormElem"><!--open form element -->
                                 <div class="thisFormTxt">
@@ -230,9 +226,16 @@
                                 </div>
                             </div><!--close form element -->
                             <div class="clearDiv">&nbsp;</div>
+                    </div>
+                    <div id="parent"></div>
+
+
+
+
+
                             <hr>
                             <br>
-                            <input type="submit" name="btnAddModule" value="add another module" onclick="document.forms[0].functionname.value='addanothermodule';document.forms[0].submit();" class="seeListBtn">
+                            <input type="button" name="btnAddModule" value="add another module" onclick="addDiv();" class="seeListBtn">
 
                             <div class="clearDiv">&nbsp;</div>
                             <hr>
@@ -247,12 +250,7 @@
                             <br>&nbsp;
 
                             <!--display 'save' button clip -->
-                            <input type="hidden" name="hidJavaScriptEnabled" value="true" id="hidJavaScriptEnabled">
                             <input type="submit" name="btnSave" value="save" class="submitBtn">
-
-
-
-
 
 
                             <!--spacer -->
@@ -293,52 +291,54 @@
 </body>
 </html>
 <script type="text/javascript">
-    function check() {
-        var titleCombo = $('#titleCombo').val();
-        var titleTextEntry = $('#titleTextEntry').val();
-
-        var yue = $('#yue').val();
-        var nian = $('#nian').val();
-
-        var awardingBodyCombo = $('#awardingBodyCombo').val();
-        var awardingBodyTextEntry = $('#awardingBodyTextEntry').val();
-
-        var gradeCombo= $('#gradeCombo').val();
-        var gradeTextEntry= $('#gradeTextEntry').val();
-        var err = '';
-        if (titleCombo == '' && titleTextEntry == '' ) {
-            err += '<p>Qualification and/or module(s) could not be saved.</p>';
-        }
-        if (nian == '' || yue == '') {
-            err += '<p>You must enter the qualification date.</p>';
-        }
-        if (awardingBodyCombo == '' && awardingBodyTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        if (gradeCombo == '?' && gradeTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        $('.errorTxt').html(err);
-        if (err == '') {
-            $('form').submit()
+    var arr = '<?= $arr;?>';
+    var obj = eval('(' + arr + ')');
+    $('#titleCombo').change(function () {
+        var val = $(this).val()
+        var strHtml = '';
+        if (val != '') {
+            var len = obj[val].length;
+            strHtml = "<option value=''>Please select ...</option>"
+            for(var i = 0 ; i < len; i++) {
+                strHtml += "<option value='"+obj[val][i]+"'>"+obj[val][i]+"</option>"
+            }
         } else {
-            scrollTo(0,0);
+            strHtml = "<option value=''>Please select ...</option>"
         }
 
-    }
-    $(function () {
-        var cboQualMonth_selected = "<?= $model->cboQualMonth ?>"
-        $('#yue').find("option[value='"+cboQualMonth_selected+"']").attr("selected",true);
-        var cboQualYear_selected = "<?= $model->cboQualYear ?>"
-        $('#nian').find("option[value='"+cboQualYear_selected+"']").attr("selected",true);
-        var cboTitle_selected = "<?= $model->cboTitle ?>"
-        $('#titleCombo').find("option[value='"+cboTitle_selected+"']").attr("selected",true);
-
-        var cboAwardingBody_selected = "<?= $model->cboAwardingBody ?>"
-        $('#awardingBodyCombo').find("option[value='"+cboAwardingBody_selected+"']").attr("selected",true);
-        var cboGrade_selected = "<?= $model->cboGrade ?>"
-        $('#gradeCombo').find("option[value='"+cboGrade_selected+"']").attr("selected",true);
-
+        // console.log(obj[val])
+        $('.sub-x').html(strHtml);
     })
+
+
+
+    //divs是创建各个控件时赋值变量ID所用，number是计数用
+    var number = document.getElementsByClassName('unit').length;
+    var divs = 0;
+    var addDiv = function () {
+        if (number == 10) return;//最多添加5个div
+        var oDiv = document.createElement("div");
+        document.getElementById("parent").appendChild(oDiv);
+        oDiv.id = "div_" + divs;
+        oDiv.className = 'unit';
+        oDiv.style.width = "100%";
+        oDiv.style.height = "auto";
+        oDiv.style.marginTop = "30px";
+        var _div = document.getElementById("unit").innerHTML;
+        document.getElementById(oDiv.id).innerHTML = _div;
+        //添加按钮
+        // var commit = document.createElement("input");
+        // commit.type = "button";
+        // commit.value = "提交";
+        // commit.id = "com_" + divs;
+        // commit.className = "btn btn-success";
+        // commit.style.marginTop = "10px";
+        // commit.style.marginLeft = "220px";
+        // oDiv.appendChild(commit);
+
+        divs++;
+        number++;
+        $('#'+oDiv.id).find('.num').text(number)
+    }
 
 </script>

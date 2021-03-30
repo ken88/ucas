@@ -75,7 +75,7 @@
                                     </span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.COURSECODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
-                                    <span style="color: red; margin-left: 15px;">所报专业英文名</span>
+                                    <span style="color: red; margin-left: 15px;">不要填代码，填专业全称</span>
                                     <div style=" position: absolute; left: 350px; top: -10px; ">
                                         <div style="width: 350px;">
                                             真实官方UCAS网站中，<span style="color: red;">Course code、Campus code、Start date</span>三个项目可搜索获得（如图），或以官网Courses页面获得。本模拟网站填写方式为手动填写，
@@ -103,7 +103,7 @@
             <input type="hidden" value="see list" class="seeListBtn" onclick="launchCampusPopUp('PopUpServlet', '?functionname=campuslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, 'document.Form1.txtCampusCode'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.CAMPUSCODE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
-                                    <span style="color: red; margin-left: 15px;">牛剑学院英文名</span>
+                                    <span style="color: red; margin-left: 15px;">不要填代码，填学院全称</span>
                                 </div>
                             </div><!--close form element -->
 
@@ -116,12 +116,12 @@
                                 </div>
                                 <div class="thisFormField">
 
-                                    <input type="text" id="startdateTextEntry" name="txtStartDate" value="<?= $model->txtStartDate ?>"  size="20"  class="floatLeft">
+                                    <input type="text" id="startdateTextEntry" name="txtStartDate" value="<?= $model->txtStartDate ?>"  size="10"  class="floatLeft">
                                     <span class="floatLeft">&nbsp;
             <input type="hidden" value="see list" class="seeListBtn" onclick="launchPopUp('PopUpServlet', '?functionname=startslist', document.Form1.txtInstCode.value, document.Form1.txtCourseCode.value, document.Form1.txtCampusCode.value, 'document.Form1.txtStartDate, document.Form1.hidStartDate, document.Form1.hidDefer'); return false;"></span>
                                     <a href="#" onclick="helpOpen('PopUpServlet', '?functionname=help&amp;page=HELP.CHOICES.DETAILS.FIELD.STARTDATE'); return false;">
                                         <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
-                                    <span style="color: red; margin-left: 15px;">申请大学入学的年月</span>
+                                    <span style="color: red; margin-left: 15px;">不要填代码，填申请大学入学的年月</span>
                                 </div>
                             </div><!--close form element -->
 

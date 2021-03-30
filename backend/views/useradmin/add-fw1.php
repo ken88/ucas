@@ -8,6 +8,7 @@
         padding-left: 17px;
         background: url(../static/images/errorIco.gif) no-repeat top left #f1f0ee;
     }
+
 </style>
             <div id="logo" class="floatLeft">
                 <img src="/static/picture/apply_logo.gif" width="91" height="30" alt="UCAS" />
@@ -58,7 +59,8 @@
                                     <label for="title">Title<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <div id="fitWidth"><select name="cboTitle" size="1" onchange="document.forms[0].titleTextEntry.value='';document.forms[0].functionname.value='reloadtitles';document.forms[0].submit();" class="floatLeft" id="titleCombo">
+                                    <div id="fitWidth">
+                                        <select name="cboTitle" size="1" class="floatLeft" id="titleCombo">
                                             <option value="">Please select...</option>
                                             <option value="Biology">Biology</option>
                                             <option value="Chemistry">Chemistry</option>
@@ -73,7 +75,7 @@
                                     <div class="clearDiv">&nbsp;</div>
                                     (other)
                                     <div class="clearDiv">&nbsp;</div>
-                                    <input type="text" name="txtTitle" value="" size="39" maxlength="50" onchange="if(document.forms[0].titleCombo){document.forms[0].titleCombo.selectedIndex=0;}" class="floatLeft" id="titleTextEntry">
+                                    <input type="text" name="txtTitle" value="" size="39" maxlength="50"  class="floatLeft" id="titleTextEntry">
                                 </div>
                             </div><!--close form element -->
                             <!--Start date-->
@@ -83,7 +85,8 @@
                                     <label for="qualDateCombo">Qualification date<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <div id="fullWidth"><select name="cboQualMonth" size="1" class="floatLeft" id="qualDateCombo">
+                                    <div id="fullWidth">
+                                        <select name="cboQualMonth" size="1" class="floatLeft" id="qualDateCombo">
                                             <option value="-">Month</option>
                                             <option value="1">January</option>
                                             <option value="2">February</option>
@@ -167,16 +170,17 @@
 
 
 
-                            <div id="unit">
+                            <div id="unit" class="unit">
                                 <hr>
-                                <h2 class="inPage">Module / unit 1<span class="Req">*</span></h2>
+                                <h2 class="inPage">Module / unit <span class="num">1</span><span class="Req">*</span></h2>
                                 <!--Module Title-->
                                 <div class="thisFormElem"><!--open form element -->
                                     <div class="thisFormTxt">
                                         <label for="module title">Subject<span class="Req">*</span></label>
                                     </div>
                                     <div class="thisFormField">
-                                        <div id="fitWidth"><select name="cboModTitle0" size="1" onchange="document.forms[0].modTitleTextEntry0.value='';" class="floatLeft" id="modTitleCombo0">
+                                        <div id="fitWidth">
+                                            <select name="cboModTitle0" size="1"  class="floatLeft sub-x" id="modTitleCombo0">
                                                 <option value="">Please select...</option>
                                             </select>
                                         </div>
@@ -248,10 +252,8 @@
                                     </div>
                                 </div><!--close form element -->
                                 <div class="clearDiv">&nbsp;</div>
-
                             </div>
-
-
+                            <div id="parent"></div>
 
 
 
@@ -259,7 +261,7 @@
 
                             <hr>
                             <br>
-                            <input type="button"  value="add another module" class="seeListBtn">
+                            <input type="button"  onclick="addDiv();"  value="add another module" class="seeListBtn">
 
                             <div class="clearDiv">&nbsp;</div>
                             <hr>
@@ -277,8 +279,6 @@
                             <input type="hidden" name="hidJavaScriptEnabled" value="true" id="hidJavaScriptEnabled">
                             <input type="submit" name="btnSave" value="save" class="submitBtn">
 
-
-
                             <!--spacer -->
                             &nbsp;&nbsp;
                             <!--end spacer-->
@@ -286,23 +286,12 @@
                             <!--display 'save and add similar' button clip -->
                             <input type="submit" name="btnSaveAndAdd" value="save and add similar" class="submitBtn">
 
-
-
-
-
-
                             <!--spacer -->
                             <div class="thisFormTxt">&nbsp;</div>
                             <div class="thisFormField">&nbsp;</div>
                             <!--end spacer-->
 
                         </form>
-
-
-
-
-
-
 
                         <!--clip ends-->
                     </div><!--close thisForm div-->
@@ -329,52 +318,55 @@
 </body>
 </html>
 <script type="text/javascript">
-    function check() {
-        var titleCombo = $('#titleCombo').val();
-        var titleTextEntry = $('#titleTextEntry').val();
-
-        var yue = $('#yue').val();
-        var nian = $('#nian').val();
-
-        var awardingBodyCombo = $('#awardingBodyCombo').val();
-        var awardingBodyTextEntry = $('#awardingBodyTextEntry').val();
-
-        var gradeCombo= $('#gradeCombo').val();
-        var gradeTextEntry= $('#gradeTextEntry').val();
-        var err = '';
-        if (titleCombo == '' && titleTextEntry == '' ) {
-            err += '<p>Qualification and/or module(s) could not be saved.</p>';
-        }
-        if (nian == '' || yue == '') {
-            err += '<p>You must enter the qualification date.</p>';
-        }
-        if (awardingBodyCombo == '' && awardingBodyTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        if (gradeCombo == '?' && gradeTextEntry == '') {
-            err += '<p>One or more mandatory fields have not been filled.</p>';
-        }
-        $('.errorTxt').html(err);
-        if (err == '') {
-            $('form').submit()
+    var arr = '<?= $arr;?>';
+    var obj = eval('(' + arr + ')');
+    $('#titleCombo').change(function () {
+        var val = $(this).val()
+        var strHtml = '';
+        if (val != '') {
+            var len = obj[val].length;
+            strHtml = "<option value=''>Please select ...</option>"
+            for(var i = 0 ; i < len; i++) {
+                strHtml += "<option value='"+obj[val][i]+"'>"+obj[val][i]+"</option>"
+            }
         } else {
-            scrollTo(0,0);
+            strHtml = "<option value=''>Please select ...</option>"
         }
 
-    }
-    $(function () {
-        var cboQualMonth_selected = "<?= $model->cboQualMonth ?>"
-        $('#yue').find("option[value='"+cboQualMonth_selected+"']").attr("selected",true);
-        var cboQualYear_selected = "<?= $model->cboQualYear ?>"
-        $('#nian').find("option[value='"+cboQualYear_selected+"']").attr("selected",true);
-        var cboTitle_selected = "<?= $model->cboTitle ?>"
-        $('#titleCombo').find("option[value='"+cboTitle_selected+"']").attr("selected",true);
-
-        var cboAwardingBody_selected = "<?= $model->cboAwardingBody ?>"
-        $('#awardingBodyCombo').find("option[value='"+cboAwardingBody_selected+"']").attr("selected",true);
-        var cboGrade_selected = "<?= $model->cboGrade ?>"
-        $('#gradeCombo').find("option[value='"+cboGrade_selected+"']").attr("selected",true);
-
+        // console.log(obj[val])
+        $('.sub-x').html(strHtml);
     })
+
+
+
+    //divs是创建各个控件时赋值变量ID所用，number是计数用
+    var number = document.getElementsByClassName('unit').length;
+    var divs = 0;
+    var addDiv = function () {
+        if (number == 10) return;//最多添加5个div
+        var oDiv = document.createElement("div");
+        document.getElementById("parent").appendChild(oDiv);
+        oDiv.id = "div_" + divs;
+        oDiv.className = 'unit';
+        oDiv.style.width = "100%";
+        oDiv.style.height = "auto";
+        oDiv.style.marginTop = "30px";
+        var _div = document.getElementById("unit").innerHTML;
+        document.getElementById(oDiv.id).innerHTML = _div;
+        //添加按钮
+        // var commit = document.createElement("input");
+        // commit.type = "button";
+        // commit.value = "提交";
+        // commit.id = "com_" + divs;
+        // commit.className = "btn btn-success";
+        // commit.style.marginTop = "10px";
+        // commit.style.marginLeft = "220px";
+        // oDiv.appendChild(commit);
+
+        divs++;
+        number++;
+        $('#'+oDiv.id).find('.num').text(number)
+        $('#parent').find('.Req').text('')
+    }
 
 </script>

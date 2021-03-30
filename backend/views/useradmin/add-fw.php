@@ -379,13 +379,128 @@
                                         </select>
                                     </div>
                                     <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
-                                    <input type="text" name="txtGrade" value="<?= $model->txtGrade ?>" size="16" maxlength="20" onchange="if(document.forms[0].gradeCombo){document.forms[0].gradeCombo.selectedIndex=0;}" class="floatLeft" id="gradeTextEntry">
+                                    <input type="text" name="txtGrade" value="<?= $model->txtGrade ?>" size="16" maxlength="20"  class="floatLeft" id="gradeTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.GRADE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
                             <br><br>
                             <div class="clearDiv">&nbsp;</div>
 
+
+
+
+
+
+                            <div id="unit" class="unit">
+                                <hr>
+                                <h2 class="inPage">Module / unit <span class="num">1</span></h2>
+                                <!--Module Title-->
+                                <div class="thisFormElem"><!--open form element -->
+                                    <div class="thisFormTxt">
+                                        <label for="module title">Subject</label>
+                                    </div>
+                                    <div class="thisFormField">
+                                        <input type="text" name="txtModTitle0" value="" size="39" maxlength="50" class="floatLeft" id="modTitleTextEntry0">
+                                        <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.MODTITLE'); return false;">
+                                            <img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help">
+                                        </a>
+                                        <div class="clearDiv">&nbsp;</div>
+
+                                    </div>
+                                </div><!--close form element -->
+                                <!--Module Start date-->
+                                <div class="thisFormElem">
+                                    <!--open form element -->
+                                    <div class="thisFormTxt">
+                                        <label for="modDateCombo">Qualification date</label>
+                                    </div>
+                                    <div class="thisFormField">
+                                        <div id="fullWidth"><select name="cboModMonth0" size="1" class="floatLeft" id="modDateCombo0">
+                                                <option value="-">Month</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                            <select name="cboModYear0" size="1" class="floatLeft" id="modDateCombo0">
+                                                <option value="">Year</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                                <option value="1999">1999</option>
+                                            </select>
+                                        </div>
+                                        <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.MODDATE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    </div>
+                                </div><!--close form element -->
+                                <!--Module Grade-->
+                                <div class="thisFormElem"><!--open form element -->
+
+                                    <div class="thisFormTxt">
+                                        <label for="module grade">Grade</label>
+                                    </div>
+
+                                    <div class="thisFormField">
+                                        <div id="fullWidth">
+                                            <select name="cboGrade" size="1"  class="floatLeft" id="gradeCombo">
+                                                <option value="?" selected="selected">Please select...</option>
+                                                <option value="">Pending</option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="U">U</option>
+                                            </select>
+                                        </div>
+                                        <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
+                                        <input type="text" name="txtGrade"  size="16" maxlength="20"  class="floatLeft" id="gradeTextEntry">
+                                        <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.GRADE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    </div>
+                                </div><!--close form element -->
+                                <div class="clearDiv">&nbsp;</div>
+                            </div>
+                            <div id="parent"></div>
+
+
+
+
+
+
+
+
+                            <hr>
+                            <br>
+                            <input type="button"  onclick="addDiv();"  value="add another module" class="seeListBtn">
+
+                            <div class="clearDiv">&nbsp;</div>
                             <hr>
 
                             <!-- //print the "Back to summary" link on the screen -->
@@ -487,4 +602,56 @@
 
     })
 
+
+
+    var arr = '<?= $arr;?>';
+    var obj = eval('(' + arr + ')');
+    $('#titleCombo').change(function () {
+        var val = $(this).val()
+        var strHtml = '';
+        if (val != '') {
+            var len = obj[val].length;
+            strHtml = "<option value=''>Please select ...</option>"
+            for(var i = 0 ; i < len; i++) {
+                strHtml += "<option value='"+obj[val][i]+"'>"+obj[val][i]+"</option>"
+            }
+        } else {
+            strHtml = "<option value=''>Please select ...</option>"
+        }
+
+        // console.log(obj[val])
+        $('.sub-x').html(strHtml);
+    })
+
+
+
+    //divs是创建各个控件时赋值变量ID所用，number是计数用
+    var number = document.getElementsByClassName('unit').length;
+    var divs = 0;
+    var addDiv = function () {
+        if (number == 10) return;//最多添加5个div
+        var oDiv = document.createElement("div");
+        document.getElementById("parent").appendChild(oDiv);
+        oDiv.id = "div_" + divs;
+        oDiv.className = 'unit';
+        oDiv.style.width = "100%";
+        oDiv.style.height = "auto";
+        oDiv.style.marginTop = "30px";
+        var _div = document.getElementById("unit").innerHTML;
+        document.getElementById(oDiv.id).innerHTML = _div;
+        //添加按钮
+        // var commit = document.createElement("input");
+        // commit.type = "button";
+        // commit.value = "提交";
+        // commit.id = "com_" + divs;
+        // commit.className = "btn btn-success";
+        // commit.style.marginTop = "10px";
+        // commit.style.marginLeft = "220px";
+        // oDiv.appendChild(commit);
+
+        divs++;
+        number++;
+        $('#'+oDiv.id).find('.num').text(number)
+        $('#parent').find('.Req').text('')
+    }
 </script>

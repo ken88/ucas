@@ -337,17 +337,97 @@ although you will be able to print these letters from the Track system if necess
 //                return $this->redirect(Url::to(['useradmin/education']));
 //        }
 
+        $arr = [];
         $view = 'add-fw';
         $val = Yii::$app->request->get('val');
         switch ($val) {
             case  'International A Level' :
                 $view = 'add-fw1';
+                $arr = [
+                    'Biology' => [
+                        'Biological Systems and disease (AS)',
+                        'Control (A2)',
+                        'Populations and genes (A2)',
+                        'Synoptic paper (A2)',
+                        'The delivery of living organisms (AS)'
+                    ],
+                    'Chemistry' => [
+                        'Inorganic 1 and Physical 1 (AS)',
+                        'Inorganic 2 and Physical 2 (A2)',
+                        'Organic 1 and Physical 1 (AS)',
+                        'Organic 2 and Physical 2 (A2)',
+                        'Practical and synoptic (A2)'
+                    ],
+                    'English Language' => [
+                        'Language Variation (A2)',
+                        'Language and context  (AS)',
+                        'Language and society (AS)',
+                        'Language exploration (A2)'
+                    ],
+                    'English Literature' => [
+                        'Aspects of dramatic tragedy (AS)',
+                        'Elements of crime and mystery (A2)',
+                        'Literary representations (A2)',
+                        'Place in literary text (AS)'
+                    ],
+                    'Further Mathematics' => [
+                        'Further Mechanics (A2)',
+                        'Further Pure Maths (A2)',
+                        'Further Pure Maths (AS)',
+                        'Further Pure Maths,Stats and Mechanics (AS)',
+                        'Further Statistics (A2)'
+                    ],
+                    'Mathematics' => [
+                        'Mechanics (A2)',
+                        'Pure Maths (A2)',
+                        'Pure Maths (AS)',
+                        'Pure Maths, Statistics, Mechanics (AS)',
+                        'Statistics (A2)'
+                    ],
+                    'Physics' => [
+                        'Electricity, waves and particles (AS)',
+                        'Energy and energy resources (A2)',
+                        'Fields and their consequences (A2)',
+                        'Mechanics, materials and atoms (AS)',
+                        'Physics in practice and multiple choice (A2)'
+                    ]
+                ];
                 break;
             case  'International GCSE' :
                 $view = 'add-fw2';
                 break;
             case  'International Advanced Subsidiary' :
                 $view = 'add-fw3';
+                $arr = [
+                    'Biology' => [
+                        'Biological systems and disease',
+                        'The diversity of living organisms'
+                    ],
+                    'Chemistry' => [
+                        'Inorganic 1 and Physical 1',
+                        'Organic 1 and Physical 1'
+                    ],
+                    'English Language' => [
+                        'Language and Context',
+                        'Language and society'
+                    ],
+                    'English Literature' => [
+                        'Aspects of Dramatic Tragedy',
+                        'Place in literary texts'
+                    ],
+                    'Further Mathematics' => [
+                        'Pure Maths',
+                        'Pure, Statistics and Mechanics'
+                    ],
+                    'Mathematics' => [
+                        'Pure Maths',
+                        'Pure Maths, Statistics and mechanics'
+                    ],
+                    'Physics' => [
+                        'Electricity, waves and particles',
+                        'Mechanics, materials and atoms'
+                    ]
+                ];
                 break;
             case  'International Computer Driving Licence' :
                 $view = 'add-fw4';
@@ -364,12 +444,19 @@ although you will be able to print these letters from the Track system if necess
             case  'OxfordAQA International IPQ' :
                 $view = 'add-fw7';
                 break;
+            case  'Cambridge International A Level' :
+                $view = 'add-fw8';
+                break;
+            case  'Cambridge International AS Level' :
+                $view = 'add-fw9';
+                break;
         }
 
-//        dd($view);
+
+
         return $this->renderPartial($view, [
             'view' => 'education',
-            'model' => $model,
+            'arr' => json_encode($arr)
         ]);
     }
 

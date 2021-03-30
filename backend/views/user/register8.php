@@ -52,7 +52,7 @@
 
 
                             <div class="errorTxt"></div>
-                            <form name="Form1" method="post" action="PostRegistrationServlet;jsessionid=3641f9e2a10f3ad16b2596db7d3e?id=3641f9e2a10f3ad16b2596db7d3e&amp;ran=1ji33vg3oejga">
+                            <form name="Form1" method="post" >
 
                                 <!--School option-->
                                 <div class="thisFormElem"><!--open form element -->
@@ -150,6 +150,7 @@
 
 
         var list= $('input:radio[name="rdRoute"]:checked').val();
+
         if(list == null){
             err = '<p>Please select an option.</p>';
             $('.errorTxt').html(err);
@@ -157,7 +158,12 @@
 
         else {
             // window.location="register9"
-            $('form').submit()
+            if (list == 'I') { // 选择第4个跳转到11部
+                window.location.href = "/personal/register11";
+            } else {
+                $('form').submit()
+            }
+
         }
 
 

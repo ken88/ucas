@@ -49,12 +49,98 @@
 
 
 
+                        <form name="Form1" method="post" action="EducationServlet?id=26e02525cc9d846fbb82de653d4e&amp;ran=6qyfajmd1dfd">
 
-                        <form name="Form1" method="post" action="EducationServlet?id=cee5ad2d4e49b1d23bfa995de0f2&amp;ran=12mpa10b98yrt">
-
-                            <h2 class="inPage">European/International Computer Driving Licence</h2>
+                            <h2 class="inPage">Cambridge International A Level</h2>
                             <p class="bold">Please enter details below, using the 'other' boxes only where the applicable option cannot be found in the lists provided.</p>
                             <p></p>
+                            <!--Title-->
+                            <div class="thisFormElem"><!--open form element -->
+                                <div class="thisFormTxt">
+                                    <label for="title">Title<span class="Req">*</span></label>
+                                </div>
+                                <div class="thisFormField">
+                                    <div id="fitWidth">
+                                        <select name="cboTitle" size="1" onchange="document.forms[0].titleTextEntry.value='';" class="floatLeft" id="titleCombo">
+                                            <option value="">Please select...</option>
+                                            <option value="Accounting - 9706">Accounting - 9706</option>
+                                            <option value="Afrikaans - 9679">Afrikaans - 9679</option>
+                                            <option value="Afrikaans - Language - 8679">Afrikaans - Language - 8679</option>
+                                            <option value="Arabic - 9680">Arabic - 9680</option>
+                                            <option value="Arabic - Language - 8680">Arabic - Language - 8680</option>
+                                            <option value="Art and Design - 9479&nbsp;New">Art and Design - 9479&nbsp;New</option>
+                                            <option value="Art and Design - 9704">Art and Design - 9704</option>
+                                            <option value="Biology - 9700">Biology - 9700</option>
+                                            <option value="Business - 9609">Business - 9609</option>
+                                            <option value="Chemistry - 9701">Chemistry - 9701</option>
+                                            <option value="Chinese - Language - 8681">Chinese - Language - 8681</option>
+                                            <option value="Classical Studies - 9274">Classical Studies - 9274</option>
+                                            <option value="Computer Science - 9608">Computer Science - 9608</option>
+                                            <option value="Computer Science - 9618 (from 2021)&nbsp;New">Computer Science - 9618 (from 2021)&nbsp;New</option>
+                                            <option value="Design and Technology - 9705">Design and Technology - 9705</option>
+                                            <option value="Design and Textiles - 9631">Design and Textiles - 9631</option>
+                                            <option value="Digital Media and Design - 9481&nbsp;New">Digital Media and Design - 9481&nbsp;New</option>
+                                            <option value="Divinity - 8041">Divinity - 8041</option>
+                                            <option value="Divinity - 9011">Divinity - 9011</option>
+                                            <option value="Economics - 9708">Economics - 9708</option>
+                                            <option value="English - Language - 9093">English - Language - 9093</option>
+                                            <option value="English - Language and Literature - 8695">English - Language and Literature - 8695</option>
+                                            <option value="English - Literature - 9695">English - Literature - 9695</option>
+                                            <option value="English General Paper - 8021New">English General Paper - 8021New</option>
+                                            <option value="Environmental Management - 8291">Environmental Management - 8291</option>
+                                            <option value="Food Studies - 9336">Food Studies - 9336</option>
+                                            <option value="French - Language - 8682">French - Language - 8682</option>
+                                            <option value="French - Literature - 8670">French - Literature - 8670</option>
+                                            <option value="General Paper 8001 - 8001">General Paper 8001 - 8001</option>
+                                            <option value="General Paper 8004 - 8004">General Paper 8004 - 8004</option>
+                                            <option value="Geography - 9696">Geography - 9696</option>
+                                            <option value="German - Language - 8683">German - Language - 8683</option>
+                                            <option value="Global Perspectives and Research - 9239">Global Perspectives and Research - 9239</option>
+                                            <option value="Hindi - Language - 8687">Hindi - Language - 8687</option>
+                                            <option value="Hindi - Literature - 8675">Hindi - Literature - 8675</option>
+                                            <option value="Hinduism - 8058">Hinduism - 8058</option>
+                                            <option value="Hinduism - 9014">Hinduism - 9014</option>
+                                            <option value="Hinduism - 9487&nbsp;New">Hinduism - 9487&nbsp;New</option>
+                                            <option value="History - 9389">History - 9389</option>
+                                            <option value="History - 9489&nbsp;New">History - 9489&nbsp;New</option>
+                                            <option value="Information Technology - 9626">Information Technology - 9626</option>
+                                            <option value="Islamic Studies - 8053">Islamic Studies - 8053</option>
+                                            <option value="Islamic Studies - 9013">Islamic Studies - 9013</option>
+                                            <option value="Islamic Studies - 9488&nbsp;New">Islamic Studies - 9488&nbsp;New</option>
+                                            <option value="Japanese Language - 8281">Japanese Language - 8281</option>
+                                            <option value="Law - 9084">Law - 9084</option>
+                                            <option value="Marathi - Language - 8688">Marathi - Language - 8688</option>
+                                            <option value="Marine Science - 9693">Marine Science - 9693</option>
+                                            <option value="Mathematics - 9709">Mathematics - 9709</option>
+                                            <option value="Mathematics - Further - 9231">Mathematics - Further - 9231</option>
+                                            <option value="Media Studies - 9607&nbsp;New">Media Studies - 9607&nbsp;New</option>
+                                            <option value="Music - 8663">Music - 8663</option>
+                                            <option value="Music - 9483&nbsp;New">Music - 9483&nbsp;New</option>
+                                            <option value="Music - 9703">Music - 9703</option>
+                                            <option value="Nepal Studies - 8024">Nepal Studies - 8024</option>
+                                            <option value="Physical Education - 9396">Physical Education - 9396</option>
+                                            <option value="Physics - 9702">Physics - 9702</option>
+                                            <option value="Portuguese - Language - 8684">Portuguese - Language - 8684</option>
+                                            <option value="Portuguese - Literature - 8672">Portuguese - Literature - 8672</option>
+                                            <option value="Psychology - 9990&nbsp;New">Psychology - 9990&nbsp;New</option>
+                                            <option value="Sociology - 9699">Sociology - 9699</option>
+                                            <option value="Spanish - First Language - 8665">Spanish - First Language - 8665</option>
+                                            <option value="Spanish - Language - 8685">Spanish - Language - 8685</option>
+                                            <option value="Spanish - Literature - 8673">Spanish - Literature - 8673</option>
+                                            <option value="Tamil - 9689">Tamil - 9689</option>
+                                            <option value="Tamil - Language - 8689">Tamil - Language - 8689</option>
+                                            <option value="Thinking Skills - 9694">Thinking Skills - 9694</option>
+                                            <option value="Travel and Tourism - 9395">Travel and Tourism - 9395</option>
+                                            <option value="Urdu - Language - 8686">Urdu - Language - 8686</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.TITLE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                    <div class="clearDiv">&nbsp;</div>
+                                    (other)
+                                    <div class="clearDiv">&nbsp;</div>
+                                    <input type="text" name="txtTitle" value="" size="39" maxlength="50" onchange="if(document.forms[0].titleCombo){document.forms[0].titleCombo.selectedIndex=0;}" class="floatLeft" id="titleTextEntry">
+                                </div>
+                            </div><!--close form element -->
                             <!--Start date-->
                             <div class="thisFormElem">
                                 <!--open form element -->
@@ -107,16 +193,40 @@
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.DATE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
+                            <!--Awarding Body-->
+                            <div class="thisFormElem"><!--open form element -->
+                                <div class="thisFormTxt">
+                                    <label for="awarding body">Awarding organisation<span class="Req">*</span></label>
+                                </div>
+                                <div class="thisFormField">
+                                    <div id="fullWidth">
+                                        <select name="cboAwardingBody" size="1" onchange="document.forms[0].awardingBodyTextEntry.value='';" class="floatLeft" id="awardingBodyCombo">
+                                            <option value="">Please select...</option>
+                                            <option value="CAIE">CAIE</option>
+                                            <option value="CI">CI</option>
+                                        </select>
+                                    </div>
+                                    <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
+                                    <input type="text" name="txtAwardingBody" value="" size="7" maxlength="7" onchange="if(document.forms[0].awardingBodyCombo){document.forms[0].awardingBodyCombo.selectedIndex=0;}" class="floatLeft" id="awardingBodyTextEntry">
+                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.AWARDINGBODY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
+                                </div>
+                            </div><!--close form element -->
                             <!--Grade-->
                             <div class="thisFormElem"><!--open form element -->
                                 <div class="thisFormTxt">
-                                    <label for="grade">Result<span class="Req">*</span></label>
+                                    <label for="grade">Grade<span class="Req">*</span></label>
                                 </div>
                                 <div class="thisFormField">
-                                    <div id="fullWidth"><select name="cboGrade" size="1" onchange="document.forms[0].gradeTextEntry.value='';" class="floatLeft" id="gradeCombo">
+                                    <div id="fullWidth">
+                                        <select name="cboGrade" size="1" onchange="document.forms[0].gradeTextEntry.value='';" class="floatLeft" id="gradeCombo">
                                             <option value="?" selected="selected">Please select...</option>
                                             <option value="">Pending</option>
-                                            <option value="Pass">Pass</option>
+                                            <option value="U (Ungraded)">U (Ungraded)</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
                                         </select>
                                     </div>
                                     <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
@@ -197,19 +307,10 @@
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.MODDATE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
-                            <!--Module Grade-->
-                            <div class="thisFormElem"><!--open form element -->
-                                <div class="thisFormTxt">
-                                    <label for="module grade">Result</label>
-                                </div>
-                                <div class="thisFormField">
-                                    <input type="text" name="txtModGrade0" value="" size="14" maxlength="15" class="floatLeft" id="modGradeTextEntry0">
-                                    <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.MODGRADE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
-                                </div>
-                            </div><!--close form element -->
                             <div class="clearDiv">&nbsp;</div>
                     </div>
-                            <div id="parent"></div>
+                    <div id="parent"></div>
+
 
 
 
@@ -218,7 +319,7 @@
 
                             <hr>
                             <br>
-                            <input type="button" name="btnAddModule" value="add another module" onclick="addDiv();" class="seeListBtn">
+                            <input type="button" name="btnAddModule" value="add another module"  onclick="addDiv();" class="seeListBtn">
 
                             <div class="clearDiv">&nbsp;</div>
                             <hr>
@@ -233,7 +334,21 @@
                             <br>&nbsp;
 
                             <!--display 'save' button clip -->
-                            <input type="submit" name="btnSave" value="save" class="submitBtn">
+                            <input type="button" name="btnSave" value="save" class="submitBtn">
+
+
+
+                            <!--spacer -->
+                            &nbsp;&nbsp;
+                            <!--end spacer-->
+
+                            <!--display 'save and add similar' button clip -->
+                            <input type="button" name="btnSaveAndAdd" value="save and add similar" class="submitBtn">
+
+
+
+
+
 
                             <!--spacer -->
                             <div class="thisFormTxt">&nbsp;</div>
@@ -241,6 +356,7 @@
                             <!--end spacer-->
 
                         </form>
+
 
 
                         <!--clip ends-->
@@ -316,6 +432,7 @@
         divs++;
         number++;
         $('#'+oDiv.id).find('.num').text(number)
+        $('#parent').find('.Req').text('')
     }
 
 </script>

@@ -45,11 +45,27 @@
                         <div class="thisForm">
 
 
-                            <p class="bold">You are registering through...<br><br><span class="warningTxt">Guangdong Country Garden School<br>Beijiao Town<br>Shunde District<br>Foshan City 528312<br>Guandong Province</span></p>
+
 
                             <div class="errorTxt"></div>
 
                             <form name="Form1" method="post" action="PostRegistrationServlet?id=37e7a685165f21aaf8a54412a0ef&amp;ran=zff1zpq8dbzo">
+                                <p class="bold">You are registering through...<br><br></p>
+                                <div style="position: relative; float: left;" >
+                                    <div>
+                                        <input type="text" style="width: 260px;" placeholder="School/college/centre name" id="title1" name="title1">
+                                        <span style="color: red">*</span>
+                                    </div>
+                                    <div>
+                                        <textarea style="width: 260px; height: 80px;" placeholder="School/college/centre address" id="title2"  name="title2"></textarea>
+                                        <span style="color: red; position: absolute; top: 35px; ">&nbsp;&nbsp;*</span>
+                                    </div>
+
+                                </div>
+                                <div style="margin-left: 300px; font-size: 14px;" >
+                                    真实官方UCAS网站中，本项目会根据上页填写的Buzzword自动跳出详细信息。本模拟网站填写方式为手动填写，
+                                    <span style="color: red;">与官网有一定差异。正式申请时务必以官网为准。</span>
+                                </div>
 
                                 <!--Confirm 'Yes'-->
                                 <div class="thisFormElem"><!--open form element -->
