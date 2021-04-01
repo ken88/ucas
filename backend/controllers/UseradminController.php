@@ -499,6 +499,22 @@ although you will be able to print these letters from the Track system if necess
     }
 
     /**
+     * 资格删除
+     * @return \yii\web\Response
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDeleteQualifications()
+    {
+        $model = Qualifications::findOne(Yii::$app->request->get('id'));
+        if ($model->delete()) {
+            return $this->redirect(['useradmin/education']);
+        } else {
+            exit('delete error');
+        }
+    }
+
+    /**
      * 新增就业机会
      */
     public function actionAddEmployment()
