@@ -295,7 +295,9 @@
                                                 <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.MODGRADE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                             </div>
                                         </div><!--close form element -->
-                                        <div class="clearDiv">&nbsp;</div>
+                                        <div class="">
+                                            <input onclick="del_div(this)" type="button" value="delete" id="3" class="del" style="margin-top: 10px; margin-left: 220px;">
+                                        </div>
                                     </div>
                                 <?php }?>
 
@@ -407,20 +409,16 @@
         oDiv.style.marginTop = "30px";
         var _div = document.getElementById("unit").innerHTML;
         document.getElementById(oDiv.id).innerHTML = _div;
-        //添加按钮
-        // var commit = document.createElement("input");
-        // commit.type = "button";
-        // commit.value = "提交";
-        // commit.id = "com_" + divs;
-        // commit.className = "btn btn-success";
-        // commit.style.marginTop = "10px";
-        // commit.style.marginLeft = "220px";
-        // oDiv.appendChild(commit);
 
         divs++;
         number++;
         $('#'+oDiv.id).find('.num').text(number)
         $('#parent').find('.Req').text('')
+
+    }
+
+    function del_div(t){
+        $(t).parents('.unit').remove()
     }
 
     $('input[name=btnSaveAndAdd]').click(function () {
