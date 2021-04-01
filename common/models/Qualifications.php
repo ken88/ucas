@@ -38,7 +38,7 @@ class Qualifications extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'school_id', 'cboTitle', 'cboQualMonth', 'cboQualYear', 'cboAwardingBody', 'cboGrade'], 'required'],
+//            [['user_id', 'school_id', 'cboTitle', 'cboQualMonth', 'cboQualYear', 'cboAwardingBody', 'cboGrade'], 'required'],
             [['user_id', 'school_id', 'cboQualYear'], 'integer'],
             [['cboTitle', 'txtTitle', 'txtAwardingBody', 'txtGrade'], 'string', 'max' => 255],
             [['cboQualMonth', 'cboAwardingBody', 'cboGrade'], 'string', 'max' => 20],

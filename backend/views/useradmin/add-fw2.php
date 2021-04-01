@@ -48,7 +48,7 @@
 
 
 
-                        <form name="Form1" method="post" action="EducationServlet?id=cee5ad2d4e49b1d23bfa995de0f2&amp;ran=1xqcdeok7xr0f">
+                        <form name="Form1" method="post" action="">
 
                             <h2 class="inPage">International GCSE</h2>
                             <p class="bold">Please enter details below, using the 'other' boxes only where the applicable option cannot be found in the lists provided.</p>
@@ -194,7 +194,7 @@
                                     <div class="clearDiv">&nbsp;</div>
                                     (other)
                                     <div class="clearDiv">&nbsp;</div>
-                                    <input type="text" name="txtTitle" value="" size="39" maxlength="50" onchange="if(document.forms[0].titleCombo){document.forms[0].titleCombo.selectedIndex=0;}" class="floatLeft" id="titleTextEntry">
+                                    <input type="text" name="txtTitle" value="<?= \common\logics\Func::getAttributes($data, 'txtTitle')?>" size="39" maxlength="50" onchange="if(document.forms[0].titleCombo){document.forms[0].titleCombo.selectedIndex=0;}" class="floatLeft" id="titleTextEntry">
                                 </div>
                             </div><!--close form element -->
                             <!--Start date-->
@@ -206,44 +206,15 @@
                                 <div class="thisFormField">
                                     <div id="fullWidth"><select name="cboQualMonth" size="1" class="floatLeft" id="qualDateCombo">
                                             <option value="-">Month</option>
-                                            <option value="1">January</option>
-                                            <option value="2">February</option>
-                                            <option value="3">March</option>
-                                            <option value="4">April</option>
-                                            <option value="5">May</option>
-                                            <option value="6">June</option>
-                                            <option value="7">July</option>
-                                            <option value="8">August</option>
-                                            <option value="9">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
+                                            <?php foreach (Yii::$app->params['months'] as $k=>$month){?>
+                                                <option <?php if ($k==\common\logics\Func::getAttributes($data, 'cboQualMonth')) echo 'selected'?> value="<?= $k?>"><?= $month?></option>
+                                            <?php } ?>
                                         </select>
                                         <select name="cboQualYear" size="1" class="floatLeft" id="qualDateCombo">
                                             <option value="">Year</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2020">2020</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2015">2015</option>
-                                            <option value="2014">2014</option>
-                                            <option value="2013">2013</option>
-                                            <option value="2012">2012</option>
-                                            <option value="2011">2011</option>
-                                            <option value="2010">2010</option>
-                                            <option value="2009">2009</option>
-                                            <option value="2008">2008</option>
-                                            <option value="2007">2007</option>
-                                            <option value="2006">2006</option>
-                                            <option value="2005">2005</option>
-                                            <option value="2004">2004</option>
-                                            <option value="2003">2003</option>
-                                            <option value="2002">2002</option>
-                                            <option value="2001">2001</option>
-                                            <option value="2000">2000</option>
-                                            <option value="1999">1999</option>
+                                            <?php foreach(\common\logics\Func::generateYear() as $year){?>
+                                                <option <?php if ($year == \common\logics\Func::getAttributes($data, 'cboQualYear')) echo 'selected' ?> value="<?= $year?>"><?= $year?></option>
+                                            <?php }?>
                                         </select>
                                     </div>
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.DATE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
@@ -257,15 +228,15 @@
                                 <div class="thisFormField">
                                     <div id="fullWidth"><select name="cboAwardingBody" size="1" onchange="document.forms[0].awardingBodyTextEntry.value='';" class="floatLeft" id="awardingBodyCombo">
                                             <option value="">Please select...</option>
-                                            <option value="CAIE">CAIE</option>
-                                            <option value="CIE">CIE</option>
-                                            <option value="Edexcel">Edexcel</option>
-                                            <option value="PEARSON">PEARSON</option>
-                                            <option value="UCLES">UCLES</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboAwardingBody')=='CAIE') echo 'selected' ?> value="CAIE">CAIE</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboAwardingBody')=='CIE') echo 'selected' ?> value="CIE">CIE</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboAwardingBody')=='Edexcel') echo 'selected' ?> value="Edexcel">Edexcel</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboAwardingBody')=='PEARSON') echo 'selected' ?> value="PEARSON">PEARSON</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboAwardingBody')=='UCLES') echo 'selected' ?> value="UCLES">UCLES</option>
                                         </select>
                                     </div>
                                     <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
-                                    <input type="text" name="txtAwardingBody" value="" size="7" maxlength="7" onchange="if(document.forms[0].awardingBodyCombo){document.forms[0].awardingBodyCombo.selectedIndex=0;}" class="floatLeft" id="awardingBodyTextEntry">
+                                    <input type="text" name="txtAwardingBody" value="<?= \common\logics\Func::getAttributes($data, 'txtAwardingBody')?>" size="7" maxlength="7" onchange="if(document.forms[0].awardingBodyCombo){document.forms[0].awardingBodyCombo.selectedIndex=0;}" class="floatLeft" id="awardingBodyTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.AWARDINGBODY'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -278,19 +249,19 @@
                                     <div id="fullWidth"><select name="cboGrade" size="1" onchange="document.forms[0].gradeTextEntry.value='';" class="floatLeft" id="gradeCombo">
                                             <option value="?" selected="selected">Please select...</option>
                                             <option value="">Pending</option>
-                                            <option value="A*">A*</option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="U">U</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='A*') echo 'selected' ?> value="A*">A*</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='A') echo 'selected' ?>  value="A">A</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='B') echo 'selected' ?> value="B">B</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='C') echo 'selected' ?> value="C">C</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='D') echo 'selected' ?> value="D">D</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='E') echo 'selected' ?> value="E">E</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='F') echo 'selected' ?> value="F">F</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='G') echo 'selected' ?> value="G">G</option>
+                                            <option <?php if (\common\logics\Func::getAttributes($data, 'cboGrade')=='U') echo 'selected' ?> value="U">U</option>
                                         </select>
                                     </div>
                                     <span class="floatLeft">&nbsp;&nbsp;(other)&nbsp;&nbsp;</span>
-                                    <input type="text" name="txtGrade" value="" size="16" maxlength="20" onchange="if(document.forms[0].gradeCombo){document.forms[0].gradeCombo.selectedIndex=0;}" class="floatLeft" id="gradeTextEntry">
+                                    <input type="text" name="txtGrade" value="<?= \common\logics\Func::getAttributes($data, 'txtGrade')?>" size="16" maxlength="20" onchange="if(document.forms[0].gradeCombo){document.forms[0].gradeCombo.selectedIndex=0;}" class="floatLeft" id="gradeTextEntry">
                                     <a href="#" onclick="launchFieldHelp('PopUpServlet', '?functionname=help&amp;page=HELP.EDUCATION.QUALIFICATION.FIELD.GRADE'); return false;"><img src="/static/images/questMarkBox.gif" width="20" height="20" class="floatLeft" alt="Help"></a>
                                 </div>
                             </div><!--close form element -->
@@ -362,6 +333,14 @@
 </body>
 </html>
 <script type="text/javascript">
+    $(function () {
+        var cboTitle_selected = "<?= \common\logics\Func::getAttributes($data, 'cboTitle') ?>"
+        $('#titleCombo').find("option[value='" + cboTitle_selected + "']").attr("selected", true);
+    })
 
+    $('input[name=btnSaveAndAdd]').click(function () {
+        $('form').append('<input type="hidden" name="saveAndAdd" value="1" />')
+        $('form').submit()
+    })
 
 </script>

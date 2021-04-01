@@ -20,7 +20,6 @@ use common\models\School;
 use common\models\Statement;
 use common\models\User;
 use common\models\ViewAll;
-use DeepCopyTest\Matcher\Y;
 use Yii;
 use yii\helpers\Url;
 
@@ -324,9 +323,25 @@ although you will be able to print these letters from the Track system if necess
      */
     public function actionAddFw()
     {
-//        $model = Qualifications::findOne(Yii::$app->request->get('id')) ?: new Qualifications();
+        $model = Qualifications::findOne(Yii::$app->request->get('id')) ?: new Qualifications();
 
-//        if (Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
+            $json = json_encode(Yii::$app->request->post());
+//            var_dump(json_decode($json, true));
+            $model->content = $json;
+            if (Yii::$app->request->get('school_id'))
+                $model->school_id = Yii::$app->request->get('school_id');
+            $model->val = Yii::$app->request->get('val');
+            if (!$model->save()) {
+                var_dump($model->getFirstErrors());
+                die;
+            } else {
+                if (Yii::$app->request->post('saveAndAdd'))
+                    return $this->redirect(Url::to(['useradmin/add-qualifications', 'school_id' => $model->school_id]));
+                else
+                    return $this->redirect(Url::to(['useradmin/education']));
+            }
+//            die;
 //            $model->attributes = Yii::$app->request->post();
 //            if (Yii::$app->request->get('school_id')) {
 //                $model->school_id = Yii::$app->request->get('school_id');
@@ -335,7 +350,7 @@ although you will be able to print these letters from the Track system if necess
 //                exit('create/edit error');
 //            } else
 //                return $this->redirect(Url::to(['useradmin/education']));
-//        }
+        }
 
         $arr = [];
         $view = 'add-fw';
@@ -453,10 +468,11 @@ although you will be able to print these letters from the Track system if necess
         }
 
 
-
         return $this->renderPartial($view, [
             'view' => 'education',
-            'arr' => json_encode($arr)
+            'arr' => json_encode($arr),
+            'model' => $model,
+            'data' => json_decode($model->content, true),
         ]);
     }
 
