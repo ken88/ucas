@@ -83,7 +83,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             [['title', 'gender', 'rdRoute', 'rdConfirm'], 'string', 'max' => 10],
             [['txtForename', 'txtSurname', 'Country', 'txtHomePhone', 'txtMobilePhone'], 'string', 'max' => 50],
             [['cboDobMonth', 'personal_id', 'cboGroups'], 'string', 'max' => 20],
-            [['radioLocation', 'addrLine1Text', 'addrLine2Text', 'addrLine3Text', 'addrLine4Text', 'passwordText', 'daan1', 'daan2', 'daan3', 'daan4'], 'string', 'max' => 255],
+            [['radioLocation', 'addrLine1Text', 'addrLine2Text', 'addrLine3Text', 'addrLine4Text', 'passwordText', 'daan1', 'daan2', 'daan3', 'daan4', 'school_name', 'school_address'], 'string', 'max' => 255],
             [['emailText', 'wenti1', 'wenti2', 'wenti3', 'wenti4', 'txtBuzzword'], 'string', 'max' => 100],
         ];
     }

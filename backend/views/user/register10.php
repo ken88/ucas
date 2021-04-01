@@ -53,11 +53,11 @@
                                 <p class="bold">You are registering through...<br><br></p>
                                 <div style="position: relative; float: left;" >
                                     <div>
-                                        <input type="text" style="width: 260px;" placeholder="School/college/centre name" id="title1" name="title1">
+                                        <input type="text" style="width: 260px;" placeholder="School/college/centre name" id="title1" name="school_name">
                                         <span style="color: red">*</span>
                                     </div>
                                     <div>
-                                        <textarea style="width: 260px; height: 80px;" placeholder="School/college/centre address" id="title2"  name="title2"></textarea>
+                                        <textarea style="width: 260px; height: 80px;" placeholder="School/college/centre address" id="title2"  name="school_address"></textarea>
                                         <span style="color: red; position: absolute; top: 35px; ">&nbsp;&nbsp;*</span>
                                     </div>
 

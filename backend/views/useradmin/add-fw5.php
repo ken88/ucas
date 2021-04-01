@@ -148,7 +148,6 @@
                             <input type="submit" name="btnSave" value="save" class="submitBtn">
 
 
-
                             <!--spacer -->
                             &nbsp;&nbsp;
                             <!--end spacer-->
@@ -157,7 +156,9 @@
                             <input type="submit" name="btnSaveAndAdd" value="save and add similar" class="submitBtn">
 
 
-
+                            <?php if (Yii::$app->request->get('id')){ ?>
+                                <input style="margin-left: 10px" onclick="window.location.href='<?= \yii\helpers\Url::to(['useradmin/delete-qualifications', 'id'=>Yii::$app->request->get('id')])?>'" type="button" name="btnDelete" value="delete" class="submitBtn">
+                            <?php }?>
 
 
 

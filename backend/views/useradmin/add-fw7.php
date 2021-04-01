@@ -136,7 +136,9 @@
                             <input type="hidden" name="hidJavaScriptEnabled" value="true" id="hidJavaScriptEnabled">
                             <input type="submit" name="btnSave" value="save" class="submitBtn">
 
-
+                            <?php if (Yii::$app->request->get('id')){ ?>
+                                <input style="margin-left: 10px" onclick="window.location.href='<?= \yii\helpers\Url::to(['useradmin/delete-qualifications', 'id'=>Yii::$app->request->get('id')])?>'" type="button" name="btnDelete" value="delete" class="submitBtn">
+                            <?php }?>
 
 
 

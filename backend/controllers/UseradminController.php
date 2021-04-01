@@ -337,7 +337,7 @@ although you will be able to print these letters from the Track system if necess
                 die;
             } else {
                 if (Yii::$app->request->post('saveAndAdd'))
-                    return $this->redirect(Url::to(['useradmin/add-qualifications', 'school_id' => $model->school_id]));
+                    return $this->redirect(Url::to(['useradmin/add-fw', 'school_id' => $model->school_id, 'val' => $model->val]));
                 else
                     return $this->redirect(Url::to(['useradmin/education']));
             }
@@ -496,6 +496,22 @@ although you will be able to print these letters from the Track system if necess
             'employer' => $employer,
             'model' => $model,
         ]);
+    }
+
+    /**
+     * 资格删除
+     * @return \yii\web\Response
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDeleteQualifications()
+    {
+        $model = Qualifications::findOne(Yii::$app->request->get('id'));
+        if ($model->delete()) {
+            return $this->redirect(['useradmin/education']);
+        } else {
+            exit('delete error');
+        }
     }
 
     /**
