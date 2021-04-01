@@ -305,6 +305,10 @@
                             <!--display 'save and add similar' button clip -->
                             <input type="button" name="btnSaveAndAdd" value="save and add similar" class="submitBtn">
 
+                            <?php if (Yii::$app->request->get('id')){ ?>
+                                <input style="margin-left: 10px" onclick="window.location.href='<?= \yii\helpers\Url::to(['useradmin/delete-qualifications', 'id'=>Yii::$app->request->get('id')])?>'" type="button" name="btnDelete" value="delete" class="submitBtn">
+                            <?php }?>
+
                             <!--spacer -->
                             <div class="thisFormTxt">&nbsp;</div>
                             <div class="thisFormField">&nbsp;</div>
@@ -373,19 +377,23 @@
         var _div = document.getElementById("unit").innerHTML;
         document.getElementById(oDiv.id).innerHTML = _div;
         //添加按钮
-        // var commit = document.createElement("input");
-        // commit.type = "button";
-        // commit.value = "提交";
-        // commit.id = "com_" + divs;
-        // commit.className = "btn btn-success";
-        // commit.style.marginTop = "10px";
-        // commit.style.marginLeft = "220px";
-        // oDiv.appendChild(commit);
+        var commit = document.createElement("input");
+        commit.type = "button";
+        commit.value = "delete";
+        commit.id = divs;
+        commit.className = "del";
+        commit.style.marginTop = "10px";
+        commit.style.marginLeft = "220px";
+        oDiv.appendChild(commit);
 
         divs++;
         number++;
         $('#'+oDiv.id).find('.num').text(number)
         $('#parent').find('.Req').text('')
+
+        $('.del').click(function () {
+            $("#div_"+this.id).remove();
+        })
     }
 
     $('input[name=btnSaveAndAdd]').click(function () {
