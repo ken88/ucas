@@ -337,7 +337,7 @@ although you will be able to print these letters from the Track system if necess
                 die;
             } else {
                 if (Yii::$app->request->post('saveAndAdd'))
-                    return $this->redirect(Url::to(['useradmin/add-qualifications', 'school_id' => $model->school_id]));
+                    return $this->redirect(Url::to(['useradmin/add-fw', 'school_id' => $model->school_id, 'val' => $model->val]));
                 else
                     return $this->redirect(Url::to(['useradmin/education']));
             }
