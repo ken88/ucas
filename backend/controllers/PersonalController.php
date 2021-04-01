@@ -77,7 +77,7 @@ class PersonalController extends Controller
     {
         $model = User::findOne(\Yii::$app->user->identity->id);
         if (\Yii::$app->request->isPost) {
-            $model->rdConfirm = \Yii::$app->request->post('rdConfirm');
+            $model->attributes = \Yii::$app->request->post();
             $model->save();
             return $this->redirect(Url::to(['/personal/register11']));
         }
