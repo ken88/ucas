@@ -429,7 +429,9 @@
                                     </div>
                                 </div><!--close form element -->
                                 <div class="">&nbsp;
+                                    <?php if ($key!=0){ ?>
                                     <input onclick="del_div(this)" type="button" value="delete" id="3" class="del" style="margin-top: 10px; margin-left: 220px;">
+                                    <?php } ?>
                                 </div>
                             </div>
                             <?php
