@@ -24,13 +24,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Preferred first name',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtPrefFName'];
+                        return $model->personalDetails['txtPrefFName'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Previous surname at 16th birthday',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtPrefFName'];
+                        return $model->personalDetails['txtPrefFName'] ?? '';
                     }
                 ],
                 [
@@ -43,13 +43,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Is your permanent home in the UK?',
                     'value' => function ($model) {
-                        return $model->personalDetails['rdPermUK'];
+                        return $model->personalDetails['rdPermUK'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Home address',
                     'value' => function ($model) {
-                        return $model->personalDetails['addrLine1Text'] . '<br>' . $model->personalDetails['addrLine2Text'] . '<br>' . $model->personalDetails['addrLine3Text'] . '<br>' . $model->personalDetails['addrLine4Text'] . '<br>' . $model->Country;
+                        if (isset($model->personalDetails['addrLine1Text']) && isset($model->personalDetails['addrLine2Text']) && isset($model->personalDetails['addrLine3Text']) && isset($model->personalDetails['addrLine4Text']))
+                            return $model->personalDetails['addrLine1Text'] . '<br>' . $model->personalDetails['addrLine2Text'] . '<br>' . $model->personalDetails['addrLine3Text'] . '<br>' . $model->personalDetails['addrLine4Text'] . '<br>' . $model->Country;
                     },
                     'format' => 'raw'
                 ],
@@ -65,37 +66,38 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Country of birth',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtCntryOfBirth'];
+                        return $model->personalDetails['txtCntryOfBirth'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Date of first entry to UK',
                     'value' => function ($model) {
-                        return $model->personalDetails['cboEntryUkDay'] . '/' . $model->personalDetails['cboEntryUkMonth'] . '/' . $model->personalDetails['cboEntryUkYear'];
+                        if (isset($model->personalDetails['cboEntryUkDay']) && isset($model->personalDetails['cboEntryUkMonth']) && isset($model->personalDetails['cboEntryUkYear']))
+                            return $model->personalDetails['cboEntryUkDay'] . '/' . $model->personalDetails['cboEntryUkMonth'] . '/' . $model->personalDetails['cboEntryUkYear'];
                     }
                 ],
                 [
                     'label' => 'Nationality',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtNatioality'];
+                        return $model->personalDetails['txtNatioality'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Dual nationality',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtDualNatioality'];
+                        return $model->personalDetails['txtDualNatioality'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Area of permanent residence',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtResidenceArea'];
+                        return $model->personalDetails['txtResidenceArea'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Residential category',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtResidentialCategory'];
+                        return $model->personalDetails['txtResidentialCategory'] ?? '';
                     }
                 ],
                 [
@@ -105,19 +107,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Unique Learner Number (ULN)',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtUniqueLearnerNo'];
+                        return $model->personalDetails['txtUniqueLearnerNo'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Test of English as a Foreign Language (TOEFL) Number',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtToeflNo'];
+                        return $model->personalDetails['txtToeflNo'] ?? '';
                     }
                 ],
                 [
                     'label' => 'International English Language Testing System (IELTS) TRF Number',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtIeltsNo'];
+                        return $model->personalDetails['txtIeltsNo'] ?? '';
                     }
                 ],
                 [
@@ -127,13 +129,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Do you require a student visa?',
                     'value' => function ($model) {
-                        return $model->personalDetails['cboStudentVisa'];
+                        return $model->personalDetails['cboStudentVisa'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Have you previously studied in the UK on a student visa?',
                     'value' => function ($model) {
-                        return $model->personalDetails['cboStudiedUK'];
+                        return $model->personalDetails['cboStudiedUK'] ?? '';
                     }
                 ],
                 [
@@ -143,25 +145,25 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Fee code',
                     'value' => function ($model) {
-                        return $model->personalDetails['cboFeeCode'];
+                        return $model->personalDetails['cboFeeCode'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Student support arrangements',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtSSA_FeeName'];
+                        return $model->personalDetails['txtSSA_FeeName'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Have you ever lived or worked in the EU (excluding the UK), European Economic Area (EEA) or Switzerland?',
                     'value' => function ($model) {
-                        return $model->personalDetails['euAnswers'];
+                        return $model->personalDetails['euAnswers'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Do you have a parent, step parent, spouse or civil partner who is an EU (excluding the UK), EEA or Swiss national?',
                     'value' => function ($model) {
-                        return $model->personalDetails['parentSpouse'];
+                        return $model->personalDetails['parentSpouse'] ?? '';
                     }
                 ],
                 [
@@ -171,13 +173,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Full name of nominee',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtNominPerson'];
+                        return $model->personalDetails['txtNominPerson'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Relationship to you',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtNominPersonRelation'];
+                        return $model->personalDetails['txtNominPersonRelation'] ?? '';
                     }
                 ],
                 [
@@ -187,13 +189,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'label' => 'Category',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtDisabilitySplNeeds'];
+                        return $model->personalDetails['txtDisabilitySplNeeds'] ?? '';
                     }
                 ],
                 [
                     'label' => 'Please give details of any special needs',
                     'value' => function ($model) {
-                        return $model->personalDetails['txtDisabilitySplNeedsText'];
+                        return $model->personalDetails['txtDisabilitySplNeedsText'] ?? '';
                     }
                 ],
             ],
@@ -261,9 +263,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <tbody>
             <tr>
                 <td>
-                    <?php if(isset($model->statement['taPersonalStatementArr'])){ foreach ($model->statement['taPersonalStatementArr'] as $key => $val) { ?>
-                        <p><?= $val ?></p>
-                    <?php } } ?>
+                    <?php if (isset($model->statement['taPersonalStatementArr'])) {
+                        foreach ($model->statement['taPersonalStatementArr'] as $key => $val) { ?>
+                            <p><?= $val ?></p>
+                        <?php }
+                    } ?>
                 </td>
             </tr>
             </tbody>
