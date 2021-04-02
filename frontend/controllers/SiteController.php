@@ -5,13 +5,14 @@ namespace frontend\controllers;
 use common\logics\AdminLoginLogic;
 use frontend\logics\UpdatePasswordLogic;
 use Yii;
+use yii\helpers\Url;
 
 /**
  * Site controller
  */
 class SiteController extends BaseController
 {
-     /**
+    /**
      * Logs in a user.
      *
      * @return mixed
@@ -53,9 +54,11 @@ class SiteController extends BaseController
     {
         $model = new UpdatePasswordLogic();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            exit('修改成功');
+            return $this->redirect(Url::to(['site/logout']));
         }
 
-        return $this->render('update-password');
+        return $this->render('update-password', [
+            'model' => $model,
+        ]);
     }
 }

@@ -41,9 +41,9 @@ class UpdatePasswordLogic extends Model
     public function attributeLabels()
     {
         return [
-            'oldPassword' => '原密码',
-            'newPassword' => '新密码',
-            'confirmPassword' => '确认密码',
+            'oldPassword' => 'old password',
+            'newPassword' => 'new password',
+            'confirmPassword' => 'confirm password',
         ];
     }
 
@@ -53,7 +53,7 @@ class UpdatePasswordLogic extends Model
     public function validateOldPassword()
     {
         if (!$this->_user->validatePassword($this->oldPassword)) {
-            $this->addError('oldPassword', '原始密码错误');
+            $this->addError('oldPassword', 'old password error');
         }
     }
 
