@@ -25,14 +25,6 @@ return [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
-        # 数据库
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=47.116.137.216:23306;dbname=ucas',
-            'username' => 'root',
-            'password' => '8771cd!',
-            'charset' => 'utf8',
-        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
