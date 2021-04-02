@@ -59,5 +59,9 @@ vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
 # ucas
+配置数据库 common/config/main-local.php  
+backend/web/index.php 文件中要加入 require __DIR__ . '/../../public/function.php';  
+前台 backend/web
+后台 frontend/web
 # ucas1
 # ucas
