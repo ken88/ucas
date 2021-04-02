@@ -7,8 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model frontend\logics\UpdatePasswordLogic */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->title = 'Create User';
-$this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
+$this->title = 'update password';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-create">
